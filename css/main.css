@@ -1692,13 +1692,14 @@ header .logo a {
 	padding-left: 60px;
 }
 #resume .timeline-content img{
- /* width: auto;
-  height: 210px;*/
   position: absolute;
-  /*top: 180pt;*/
   left: 12.5pt;
-  /*margin-top: -10%;*/
-  background: orange;
+  background: transparent;
+  transition-duration: 2s;
+}
+#resume .timeline-content img:hover{
+    top: -10px;
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.6), 0 15px 12px rgba(0, 0, 0, 0.4);
 }
 #resume .timeline-content h4 {
 	position: relative;
