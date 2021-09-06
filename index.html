@@ -654,7 +654,7 @@
 
 	   				<div class="timeline-content">
 	   					<h4>Sample Efficient Actor-Critic with Experience Replay. <a href="https://github.com/alirezakazemipour/A3C-ACER-PyTorch">[Project Page]</a></h4>
-						<p>Asynchronous Methods for Deep RL (A3C) paper is known to be one of the breakthrough papers such that many of the state-of-the-art current advanced Deep RL methods has taken significant inspirations from it.
+						<p>Asynchronous Methods for Deep RL (A3C) paper is known to be one of the breakthrough papers such that many of the state-of-the-art current advanced Deep RL methods have taken significant inspirations from it.
 						<br>Key ideas that made the A3C stand out from other works of its time were:
 						<ol>
 							<li>Asynchronous updates to the policy from parallel workers.</li>
@@ -662,8 +662,8 @@
 							<li>Eliminating usage of Experience Replay thus, less memory consumption.</li>
 						</ol>
 						<b>But</b>:
-						<br>The absence of the Experience Replay ib A3C's framework make it quite sample inefficient and thus, causes the agent to perform huge number of interactions with the environment until it learns what it's supposed to.
-						<br>Considering this big disavantage of the A3C, the ACER method introduces an actor-critic method upon A3C's core structure accompanied by the benefits of having thread-based Experience Replays to improve sample efficiency. More precisely, in the ACER algorithm, each of the parallel agents, on the one hand, performs A3C-like on-policy updates, and on the other, has its own Experience Replay buffer to perform off-policy updates.
+						<br>The absence of the Experience Replay ib A3C's framework makes it quite sample inefficient and thus, causes the agent to perform a huge number of interactions with the environment until it learns what it's supposed to.
+						<br>Considering this big disadvantage of the A3C, the ACER method introduces an actor-critic method upon A3C's core structure accompanied by the benefits of having thread-based Experience Replays to improve sample efficiency. More precisely, in the ACER algorithm, each of the parallel agents, on the one hand, performs A3C-like on-policy updates, and on the other, has its own Experience Replay buffer to perform off-policy updates.
 
 						<br>Also, the ACER utilizes more advanced techniques like Truncated Importance Sampling with Bias Correction, Stochastic Dueling Network Architectures and, Efficient Trust Region Policy Optimization to further improve stability (which is a common challenge in Policy Gradient methods) and also helps increasing Sample Efficiency even more.
 					   </p>
