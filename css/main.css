@@ -1699,7 +1699,7 @@ header .logo a {
 }
 #resume .timeline-content img:hover{
     top: -10px;
-    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.6), 0 15px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.6), 0 15px 20px rgba(0, 0, 0, 0.4);
 }
 #resume .timeline-content h4 {
 	position: relative;

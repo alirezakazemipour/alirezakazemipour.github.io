@@ -632,7 +632,9 @@
 						<br>Instead of regular user-defined rewards, DIAYN defines that the reward that the agent receives is equal to his ability to distinguish tasks from each other.
 						<br>Put simply, as long as the agent recognizes a task undistinguishable from others, he receives rewards to acquire that task and to master it. Thus, making him learn <b>diverse</b> capabilities.
 					   </p>
-	   				<img src="gifs/skill7.gif" style="top: 150pt; margin-top: 0%; width: 210px; height: 160px;"/>
+					   <a href="https://github.com/alirezakazemipour/DIAYN-PyTorch">
+	   					<img src="gifs/skill7.gif" style="top: 150pt; margin-top: 0%; width: 210px; height: 160px;"/>
+	   				</a>
 
 	   				</div>
 
@@ -665,7 +667,9 @@
 
 						<br>Also, the ACER utilizes more advanced techniques like Truncated Importance Sampling with Bias Correction, Stochastic Dueling Network Architectures and, Efficient Trust Region Policy Optimization to further improve stability (which is a common challenge in Policy Gradient methods) and also helps increasing Sample Efficiency even more.
 					   </p>
-	   				<img src="gifs/SpaceInvaders.gif" style="top: 275pt; margin-top: 0%;"/>
+					   <a href="https://github.com/alirezakazemipour/A3C-ACER-PyTorch">
+	   					<img src="gifs/SpaceInvaders.gif" style="top: 275pt; margin-top: 0%;"/>
+	   				</a>
 
 	   				</div>
 
@@ -697,7 +701,9 @@
 						<li>Multi-Step Learning: Reduces bias in the short-term horizon and variance in the long-term horizon.</li>
 						</ol>
 					   </p>
-	   				<img src="gifs/rainbow.gif" style="top: 175pt; margin-top: 0%;"/>
+					   <a href="https://github.com/alirezakazemipour/Rainbow-Atari">
+	   					<img src="gifs/rainbow.gif" style="top: 175pt; margin-top: 0%;"/>
+	   				</a>
 
 	   				</div>
 
@@ -719,8 +725,12 @@
 	   					<h4>RND on Montezuma's Revenge and Super Mario Bros. <a href="https://github.com/alirezakazemipour/PPO-RND">[Project Page]</a></h4>
 	   					<p>    Implementation of "Exploration by Random Network Distillation" to solve the Atari game Montezuma's Revenge which is an extremely sparse-reward environment.
 	   					This algorithm also solved the first level of the Retro game Super Mario Bros.
-						<br>   Primarily Count-Base exploration methods seemed to be a good representative of the novelty that the agent is facing but the Random Network Distillation showed that novelty can be expressed in a much straightforward manner as if no other methods (with even complicated approaches) can achieve its performance on the game of Montezuma's Revenge.</p>
-   					<img src="gifs/RNN_Policy.gif" style="top: 160pt; margin-top: -5%;"/>	
+							<br>   Primarily Count-Base exploration methods seemed to be a good representative of the novelty that the agent is facing but the Random Network Distillation showed that novelty can be expressed in a much straightforward manner as if no other methods (with even complicated approaches) can achieve its performance on the game of Montezuma's Revenge.</p>
+
+							<a href="https://github.com/alirezakazemipour/PPO-RND">
+   							<img src="gifs/RNN_Policy.gif" style="top: 160pt; margin-top: -5%;"/>	
+   						</a>
+
 	   				</div>
 
 	   	     	<div class="timeline-block">
@@ -742,7 +752,9 @@
 	   					<p>In terms of Sample Efficiency and Ease of implementation, Proximal Policy Optimization (PPO) is currently inimitable. It is an extension to Trust Region Policy Optimization (TRPO) that constrains the policy updates to be not far from the current policy.
 						<br>PPO is applicable both in discrete and continuous spaces and uses General Advantage Estimation (GAE) to reduce variance common in Policy Gradient Methods.
 						This project was carried on the Atari game Breakout, some MuJoCo environments such as Ant, and the game of Super Mario Bros.</p>
-   					<img src="gifs/Ant.gif"  style="top: 175pt; margin-top: -5%; width: 160px; height: 210px;"/>		
+						<a href="https://github.com/alirezakazemipour/Mujoco-PPO">
+   						<img src="gifs/Ant.gif"  style="top: 175pt; margin-top: -5%; width: 160px; height: 210px;"/>		
+   					</a>
 						</div>
 	   			</div>
 
@@ -768,7 +780,9 @@
 						<li>It helps the agent to explore widely</li>
 					By using both the papers individually the hard continuous problem of Humanoid could be successfully solved.</p>
 							</ol>
+						<a href="https://github.com/alirezakazemipour/SAC">
 							<img src="gifs/humanoid.gif" style="top: 150pt; margin-top: -10%;"/>	
+						</a>
 					</div>
 	   			</div>
 
@@ -792,7 +806,9 @@
 						<br>The most appealing property of SAC is that it tries to maximize Entropy as well as the original RL objective, Discounted Returns.
 						The change that is needed to make SAC applicable to discrete spaces is that since the probability of each action in each state is known, all Expectations are transformed to the product of each probability.
 						<br>This algorithm was tested on the Pacman Atari game.</p>
-						<img src="gifs/greedy.gif"  style="top: 165pt; margin-top: -10%;"/>	
+						<a href="https://github.com/alirezakazemipour/Discrete-SAC-PyTorch">
+							<img src="gifs/greedy.gif"  style="top: 165pt; margin-top: -10%;"/>
+						</a>	
 
 						</div>
 	   			</div>
@@ -821,7 +837,9 @@
 							<li>The auxiliary goal that is given externally to the agent for encouraging him to learn to be active</li>
 						</ol>
 						This simple idea was combined with Deep Deterministic Policy Gradient method (which can be seen as an equivalent for DQN in continuous space) to solve Fetch, Pick and Place environment that requires a robot manipulator to find and place an object in various locations.</p>
-   					<img src="gifs/FetchPickPlace.gif"  style="top: 175pt; margin-top: 0%; width: 210px; height: 160px;"/>		
+						<a href="https://github.com/alirezakazemipour/DDPG-her">
+   					<img src="gifs/FetchPickPlace.gif"  style="top: 175pt; margin-top: 0%; width: 210px; height: 160px;"/>	
+   					</a>	
 
 						</div>
 	   			</div>
@@ -850,7 +868,9 @@
 						<br>An analogous method to DQN in continuous-action spaces is Deep Deterministic Policy Gradient (DDPG) although, DDPG is in Actor-Critic settings but TD3 paper showed that DDPG still suffers from Overestimation.
 						<br>Thus, TD3 proposed a similar idea to Double Q-Learning for continuous-action spaces based on DDPG method and mitigated this undesirable effect considerably though, it could not completely diminish Overestimation.
 						<br>Also, since DDPG is a Policy Gradient method it suffers from high variance hence, TD3 utilized from tricks like Target Policy Smoothing Regularization to reduce the Variance.</p>
-						<img src="gifs/Hopper.gif"  style="top: 250pt; margin-top: 0%; width: 160px; height: 210px;"/>		
+						<a href="https://github.com/alirezakazemipour/TD3-PyTorch">
+							<img src="gifs/Hopper.gif"  style="top: 250pt; margin-top: 0%; width: 160px; height: 210px;"/>		
+						</a>
 
 						</div>
 	   			</div>
@@ -879,7 +899,9 @@
 							<li>Y -> X ->F(X) such that: Y = F(Y)</li>
 						</ol>
 					By using these ideas, two mappings of Horse-to-Zebra and Zebra-to-Horse was developed.</p>
-  					<img src="images/cycle_gan.png"  style="top: 130pt; margin-top: 0%; width: 250px; height: 250px;"/>		
+						<a href="https://github.com/alirezakazemipour/Cycle-GAN-PyTorch">
+  						<img src="images/cycle_gan.png"  style="top: 130pt; margin-top: 0%; width: 250px; height: 250px;"/>	
+  						</a>	
 
 					</div>
 	   			</div>
