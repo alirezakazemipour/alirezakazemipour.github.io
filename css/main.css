@@ -1691,6 +1691,16 @@ header .logo a {
 	margin-left: 35%;
 	padding-left: 60px;
 }
+#resume .timeline-content img{
+  width: 160px;
+  height: 210px;
+  position: absolute;
+  top: 140pt;
+  left: 12.5pt;
+  margin-top: 0%;
+  margin-left: 0%;
+  background: orange;
+}
 #resume .timeline-content h4 {
 	position: relative;
 	padding-bottom: 1.8rem;
