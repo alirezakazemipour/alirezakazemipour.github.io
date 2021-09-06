@@ -110,7 +110,7 @@
 
    				<img src="images/profile-pic.jpg" alt="Profile Picture">
 
-   				<p class="lead">I'm a graduate B.Sc. student from K. N. Toosi University of Technology, studied Electrical-Control Engineering meanwhile, I was and still am fascinated by A.I. thus, I tried to experience many subfields of A.I. and in the end I found (Deep)(Multi-Agent) Reinforcement Learning as my main Research Interest since its objective is as exactly as what the objective of A.I. is! &#128525;</p>
+   				<p class="lead">I'm a graduate B.Sc. student from K. N. Toosi University of Technology, studied Electrical-Control Engineering meanwhile, I was and still am fascinated by A.I. thus, I tried to experience many subfields of A.I. and in the end, I found (Deep)(Multi-Agent) Reinforcement Learning as my main Research Interest since its objective is as exactly as what the objective of A.I. is! &#128525;</p>
    			</div>   			
 
    		</div>   		
@@ -616,6 +616,65 @@
    				<div class="timeline-block">
 
    					<div class="timeline-header">
+	   					<h3>Diversity is All You Need</h3>
+	   					<p>Aug 2021 – Aug 2021</p>
+	   				</div>
+
+	   				<div class="timeline-ico">
+	   					<i class="fa fa-keyboard-o"></i>
+	   				</div>
+
+
+	   				<div class="timeline-content">
+	   					<h4>Learning Skills without a Reward Function. <a href="https://github.com/alirezakazemipour/DIAYN-PyTorch">[Project Page]</a></h4>
+						<p>Most of the success of current RL methods (even advanced state-of-the-art ones) relies on the presumption that the desired behavior can be abstracted into a <b>Reward Function</b> however, natural intelligent creatures tend to learn various skills without any supervision. 
+						<br>The Diversity is All You Need (DIAYN) surpasses this presumption and introduces a framework in which the agent should learn <b>as many diverse as possible</b> skills without any external supervision.
+						<br>Instead of regular user-defined rewards, DIAYN defines that the reward that the agent receives is equal to his ability to distinguish tasks from each other.
+						<br>Put simply, as long as the agent recognizes a task undistinguishable from others, he receives rewards to acquire that task and to master it. Thus, making him learn <b>diverse</b> capabilities.
+					   </p>
+	   				<img src="gifs/skill7.gif" style="top: 150pt; margin-top: 0%; width: 210px; height: 160px;"/>
+
+	   				</div>
+
+	   			</div>
+
+	   			<div class="timeline-block">
+
+   					<div class="timeline-header">
+	   					<h3>ACER + A3C</h3>
+	   					<p>Aug 2021 – Aug 2021</p>
+	   				</div>
+
+	   				<div class="timeline-ico">
+	   					<i class="fa fa-keyboard-o"></i>
+	   				</div>
+
+
+	   				<div class="timeline-content">
+	   					<h4>Sample Efficient Actor-Critic with Experience Replay. <a href="https://github.com/alirezakazemipour/A3C-ACER-PyTorch">[Project Page]</a></h4>
+						<p>Asynchronous Methods for Deep RL (A3C) paper is known to be one of the breakthrough papers such that many of the state-of-the-art current advanced Deep RL methods has taken significant inspirations from it.
+						<br>Key ideas that that made the A3C to stand out from other works of its time were:
+						<ol>
+							<li>Asynchronous updates to the policy from parallel workers.</li>
+							<li>Layer sharing between the Actor and the Critic networks.</li>
+							<li>Eliminating usage of Experience Replay thus, less memory consumption.</li>
+						</ol>
+						<b>But</b>:
+						<br>The absence of the Experience Replay ib A3C's framework make it quite sample inefficient and thus, causes the agent to perform huge number of interactions with the environment until it learns what it's supposed to.
+						<br>Considering this big disavantage of the A3C, the ACER method introduces an actor-critic method upon A3C's core structure accompanied by the benefits of having thread-based Experience Replays to improve sample efficiency. More precisely, in the ACER algorithm, each of the parallel agents, on the one hand, performs A3C-like on-policy updates, and on the other, has its own Experience Replay buffer to perform off-policy updates.
+
+						<br>Also, the ACER utilizes more advanced techniques like Truncated Importance Sampling with Bias Correction, Stochastic Dueling Network Architectures and, Efficient Trust Region Policy Optimization to further improve stability (which is a common challenge in Policy Gradient methods) and also helps increasing Sample Efficiency even more.
+					   </p>
+	   				<img src="gifs/SpaceInvaders.gif" style="top: 275pt; margin-top: 0%;"/>
+
+	   				</div>
+
+	   			</div>
+
+
+   				<div class="timeline-block">
+
+   					<div class="timeline-header">
 	   					<h3>Rainbow</h3>
 	   					<p>Jun 2020 – Jul 2020</p>
 	   				</div>
@@ -632,7 +691,7 @@
 						<!-- <br>Here is how each individual improvement was helpful: -->
 						<ol><li>Double Q-Learning: Reduce overestimation.</li>
 						<li>Dueling architecture: Reduce variance.</li>
-						<li>Prioritized experience replay: Use rare/more-valuable experiences more frequently.</li>
+						<li>Prioritized experience replay: Use rare/more valuable experiences more frequently.</li>
 						<li>Distributional reinforcement learning: Instead of the expected value of the discounted returns, learn the distribution that governs it</li>
 						<li>Noisy Nets: Explore more intelligently than Epsilon-Greedy.</li>
 						<li>Multi-Step Learning: Reduces bias in the short-term horizon and variance in the long-term horizon.</li>
