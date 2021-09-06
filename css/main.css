@@ -1695,10 +1695,9 @@ header .logo a {
   width: 160px;
   height: 210px;
   position: absolute;
-  top: 140pt;
+  /*top: 180pt;*/
   left: 12.5pt;
-  margin-top: 0%;
-  margin-left: 0%;
+  /*margin-top: -10%;*/
   background: orange;
 }
 #resume .timeline-content h4 {
