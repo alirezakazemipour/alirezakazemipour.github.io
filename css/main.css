@@ -1692,8 +1692,8 @@ header .logo a {
 	padding-left: 60px;
 }
 #resume .timeline-content img{
-  width: 160px;
-  height: 210px;
+ /* width: auto;
+  height: 210px;*/
   position: absolute;
   /*top: 180pt;*/
   left: 12.5pt;
