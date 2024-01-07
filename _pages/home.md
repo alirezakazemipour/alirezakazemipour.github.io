@@ -8,8 +8,8 @@ redirect_from:
   - /home.html
 ---
 
-I'm a MSc student studying Computing Science at the University of Alberta. I' under the supervision of Matt Taylor
-[Matthew E. Taylor](https://drmatttaylor.net/).
+I'm a MSc student studying Computing Science at the University of Alberta. I' under the supervision of 
+[Matt Taylor](https://drmatttaylor.net/).
 And I love to do research in **Reinforcement Learning**.
 
 While I'm interested in learning about almost every aspect of RL currently, my research focuses on evaluating the reward availability (observability) in RL and how more structured exploration techniques could help the agent thrive in different scenarios where the reward may not be observable at all.
