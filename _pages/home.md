@@ -8,7 +8,7 @@ redirect_from:
   - /home.html
 ---
 
-I'm a MSc student studying Computing Science at the University of Alberta. I'm under the supervision of 
+I'm an MSc student studying Computing Science at the University of Alberta. I'm under the supervision of 
 [Matt Taylor](https://drmatttaylor.net/).
 And I love to do research in **Reinforcement Learning**.
 
