@@ -14,4 +14,4 @@ And I love to do research in **Reinforcement Learning**.
 
 While I'm interested in learning about almost every aspect of RL currently, my research focuses on evaluating the reward availability (observability) in RL and how more structured exploration techniques could help the agent thrive in different scenarios where the reward may not be observable at all.
 
-My _Google Scholar profile_ is under construction... .
+My _Google Scholar profile_ is under construction.
