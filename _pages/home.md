@@ -1,7 +1,6 @@
 ---
 permalink: /
 title: "Home"
-excerpt: "Alireza Kazemipour's Home Page"
 author_profile: true
 redirect_from: 
   - /home/
