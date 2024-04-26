@@ -7,8 +7,8 @@ redirect_from:
   - /home.html
 ---
 
-I'm an MSc student studying Computing Science at the University of Alberta. I'm under the supervision of 
-[Matt Taylor](https://drmatttaylor.net/).
-And I love to do research in **Reinforcement Learning**.
+I'm an MSc student studying Computing Science at the University of Alberta. I'm under the co-supervision of 
+[Matt Taylor](https://drmatttaylor.net/) and [Mike Bowling](http://webdocs.cs.ualberta.ca/~bowling/).
+And I'm interested in Reinforcement Learning.
 
-While I'm interested in learning about almost every aspect of RL currently, my research focuses on evaluating the reward availability (observability) in RL and how more structured exploration techniques could help the agent thrive in different scenarios where the reward may not be observable at all.
+Currently, my research focuses on evaluating the reward availability (observability) in RL and how more structured exploration techniques could help the agent thrive in different scenarios where the reward may not be observable at all.
