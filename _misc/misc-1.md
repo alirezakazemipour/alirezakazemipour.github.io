@@ -1,10 +1,9 @@
 ---
-title: "Useful Videos for Myself"
 collection: misc
 permalink: /misc/misc-1
 ---
 
-- [failure is your friend](_vids/failure is your friend.mp4)
+- [failure is your friend](../_vids/failure is your friend.mp4)
 - [Failure-BO](..%2F_vids%2FFailure-BO.mp4)
 - [Finite Thinking vs. Infinite Mindset-SS](..%2F_vids%2FFinite%20Thinking%20vs.%20Infinite%20Mindset-SS.mp4)
 - [Horrible THINGS are Chasing-JP](..%2F_vids%2FHorrible%20THINGS%20are%20Chasing-JP.mp4)
