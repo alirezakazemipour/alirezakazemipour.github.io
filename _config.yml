@@ -178,6 +178,9 @@ collections:
   teaching:
     output: true
     permalink: /:collection/:path/
+  misc:
+    output: true
+    permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/
@@ -213,6 +216,10 @@ defaults:
   - scope:
       path: ""
       type: teaching
+  # _misc
+  - scope:
+      path: ""
+      type: misc
     values:
       layout: single
       author_profile: true
