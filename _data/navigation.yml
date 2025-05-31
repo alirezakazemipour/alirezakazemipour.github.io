@@ -3,8 +3,8 @@ main:
   - title: "Miscellaneous"
     url: /misc/
 
-  - title: "Talks"
-    url: /talks/
+  #  - title: "Talks"
+  #    url: /talks/
 
   # - title: "Teaching"
   #   url: /teaching/
