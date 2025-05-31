@@ -1,4 +1,8 @@
-# Useful Videos for Myself
+---
+title: "Useful Videos for Myself"
+collection: misc
+permalink: /misc/misc-1
+---
 
 - [failure is your friend](..%2F_vids%2Ffailure%20is%20your%20friend.mp4)
 - [Failure-BO](..%2F_vids%2FFailure-BO.mp4)
