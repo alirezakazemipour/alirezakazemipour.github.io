@@ -181,6 +181,9 @@ collections:
   misc:
     output: true
     permalink: /:collection/:path/
+  unfi_idea:
+    output: true
+    permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/
