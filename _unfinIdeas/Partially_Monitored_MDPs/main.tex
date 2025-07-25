@@ -1,0 +1,200 @@
+\documentclass[a4paper]{article}
+\usepackage{fullpage}
+\usepackage{lipsum}
+\usepackage{todonotes}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[sort]{natbib}
+\usepackage{amsthm, amsmath, amssymb}
+\usepackage{mathrsfs, eufrak}
+\usepackage{hyperref}
+\usepackage[capitalize, sort, noabbrev]{cleveref}
+\usepackage[shortlabels]{enumitem}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\bibliographystyle{apalike}
+\title{Partially Monitored MDPs}
+\author{Alireza Kazemipour}
+\date{July 2025}
+
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\fB}{\mathfrak{B}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\P}{\mathbb{P}}
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    The goal of this document to make connections between the frameworks of partial monitoring, MDPs, and POMDPs. I call this new framework, partially monitored MDP. I'm not convinced nor necessarily a proponent that Mon-MDPs would come to play (due to their particularities), but I don't rule out their usefulness in the future of this project.
+
+    I will try to keep the precision under control for now, but it seems from the outset that formalism and precision will be unavoidable. My solution is to remain as clear as possible.
+
+    I want to keep the number of references as low as possible, so we pursue a more unified line of thoughts. For doing so, for the parts that are about partial monitoring (bandits like), I keep \citet{lattimore2020bandit} as my main reference. For the parts that are related to POMDPs, I keep \citet{ghavamzadeh2015bayesian} as my main reference for now. In particular, I have been advised multiple times, including during ICML, to take a Bayesian approach and my gut feeling also tells me that this project will be under the 
+    Bayesian perspective, hence \citet{ghavamzadeh2015bayesian}, who studies Bayesian RL will come handy.
+
+    The sloppy structure for now, to get the ball rolling, would be revisiting prerequisites and then concepts that we need formally accompanied by an informal explanation in the end to the get the intuition across. I will start with bandits and then POMDPs and eventually get the required inspirations from the both worlds.
+\end{abstract}
+
+\section{Notation}
+$\cA$ detonates the set of actions. There are $n$ rounds in the bandit setting. $X_t$ is the reward at round $t$ in the bandit setting. If I said learner somewhere I mean the agent and vice versa. $\P$ would represent the probability measure with respect to the whole (measurable part of) universe of random variables. It needs to be defined, but sometimes I don't define it assumes it somehow exists. Sometime I call it the oracle measure. 
+
+\section{Bandits: Stochastic Partial Monitoring}
+In this section I revisit how \citet{lattimore2020bandit} defined the problem of \emph{stochastic} partial monitoring. My goal for this review is make sure we understand how this problem is defined in the (simple) bandit settings first.
+\subsection{Prerequisites}
+In this section I revisit the background needed to understand and decipher \cref{def:pm_formal}.
+%
+\paragraph{How do we define a stochastic bandit instance $\nu$?}
+
+Let $P$ represents a probability distribution. A stochastic bandit instance $\nu$ is a collection of distributions where the number of distributions is equal to the number of arms, i.e., $\nu = (P_a: a \in \cA)$. Now, if $P$ is a parametric distribution with parameter(s) $\theta$ ---e.g., for a normal distribution with known variance of 1, $\theta$ is the mean---, then instead of $P$, we can use the notation $P_\theta$ and define $\Theta$ to the set of parameters. In this case the bandit instance $\nu$ is defined as: $\nu = (P_{\theta, a}: \theta \in \Theta, a \in \cA)$. Read the latest expression such that there are $|\cA|$ arms with their own distribution and each distribution is parametrized by $\theta$.
+
+\paragraph{What are these sigma algebras? Specifically, $\cF, \cG, \cH$, and $\fB(\R)$?}
+
+We are going to be dealing with the set of parameters $\Theta$, the set of actions $\cA$, the set of alphabets $\Sigma$ and the set of real numbers for rewards $\R$. Since these set are not necessarily finite (especially for $\R$), in order to make sure the (probability) measures we define on these sets are well-defined, we should only focus on some specific subsets of them. These sigma algebras represents those safe subsets. Specifically, $\fB(\R)$ denotes the Borel sigma algebra which is the set of open intervals in $\R$.
+    
+\paragraph{What is a probability kernel?} I take this from \citet[pp. 48]{lattimore2020bandit}.
+    
+Let $(\cX, \cF)$ and $(\cY, \cG)$ be measurable spaces [meaning we can assign (probability) measures to the elements of $\cF$ and $\cG$]. A probability kernel from $(\cX, \cF)$ to $(\cY, \cG)$ is a function $K: \cX \times \cG \to [0, 1]$ such that
+%
+\begin{enumerate}[(a)]
+    \item $K(x, \cdot)$ is a measure for all $x \in \cX$; 
+    \item $K(\cdot, A)$ is $\cF$-measurable for all $A \in \cG$.
+\end{enumerate}
+%
+The idea here is that $K$ describes a stochastic transition. Having arrived at $x$, a process’s next state is sampled $Y \sim K(x, \cdot)$.
+
+Let simplify the above definition. What is $K$? $K(X, Y)$ is telling us what is the probability that event $Y$ happens where $Y \in \cG$ given that the event $X$ where $X \in \cX$ has happened. Simply put, the conditional probability $K(Y \mid X)$. (a) and (b) are giving us guarantees for having well-defined measures. I believe Tor and Csaba made things more complicated by not having the $\cF$ in the domain definition of $K$ and later saying ``$\cF$-measurable'' in (b). Anyhow, in short just think of the probability kernel as the conditional probability.
+    
+%
+%
+%
+\subsection{Formal definition}
+\label{sec:pm_formal}
+\begin{definition}[{\normalfont\citet[pp. 504]{lattimore2020bandit}}]
+\label{def:pm_formal}
+    A stochastic partial monitoring problem is defined by a probability kernel $(P_{\theta, a}: \theta \in \Theta, a \in \cA)$ from $(\Theta \times \cA, \cF \otimes \cG)$ to $(\Sigma \times \R, \cH \times \fB(\R))$. The environment chooses $\theta \in \Theta$, and the learner chooses actions $(A_t)_{t = 1}^{n}$ with $A_t \in \cA$ and observes $(\sigma_t)_{t = 1}^n$ with $\sigma_t \in \Sigma$ in a sequential manner, where $(\sigma_t, X_t) \sim P_{\theta, A_t}(\cdot)$. The reward $X_t$ of round $t$ is unobserved. 
+\end{definition}
+
+\subsection{Informal interpretation}
+At the intuitive level \cref{sec:pm_formal} is saying that there is a joint distribution over the rewards and the alphabet that are conditioned on arm the learner chooses and the parameter characterizing the arm's distribution. Concretely, let the symbol and the reward at round $t$ to be $\sigma_t$ and $X_t$. Then, if the learner chooses action $A_t$ and the parameter of the chosen arm is $\theta$, then the conditional probability $P(\sigma_t, X_t \mid \theta, A_t)$ holds. As expected, the learner only observes $\sigma_t$.
+
+\subsection{What worries me looking ahead}
+The framework of the stochastic bandits is very precise, this precision would lead us to the precision that people don't pay attention to. Specifically, in stochastic bandits the assumption is that the learner knows the \emph{type} of each arm's distribution but doesn't know their underlying parameter $\theta$ like mean. Later on, we might end up in MDP-like setup that we assume the same. The learner knows that the distribution of the rewards is normal with unknown parameters. Theoretically speaking, having these sort of assumptions seems nice and precise (and I'd say necessary). But depending on our audience, is it okay? People are way sloppier in practice.
+%
+\section{POMDPs}
+I feel the path forward to integrate the partial monitoring problem into sequential decision-making is through POMPDs. In this section I first review some elementary components of POMDPs that we need in these early stages. Let see how it goes around this feeling on mine.
+%
+\subsection{Prerequisite}
+Bayesian learning is ingrained in POMDPs. I should revisit the Bayes rule here and I will.
+\paragraph{Bayes Rule.} I state the Bayes' rule using two languages. The first one is dry but I feel it is concise enough to wrap up the Bayes rule. The second has more semantics which seems a bit superficial to me. Anyway...
+\begin{enumerate}
+    \item Let $(\Omega, \cF, \P)$ be a probability space, and let two events (random variable) $A, B \in \cF$ be such that $\P(B) >0$. Then the conditional probability $\P(A \mid B)$ and Bayes rule are respectively are:
+    \begin{align*}
+        \P(A \mid B) = \frac{\P(A \cap B)}{\P(B)}, \quad
+        \P(A \mid B) = \frac{\P(B \mid A)\P(A)}{\P(B)}.
+    \end{align*}
+    Bayes rule also require $\P(A)$ is non-zero, in that case the above formulae are equal.
+
+    \item I take this one with my own modifications from \citet{ghahramani2011bayes}. Let $M$ denote a model or a belief that you might have. Also, let $D$ denote data you have after running an experiment on $M$. Then, the Bayes rule states that [assume $\P$ is somehow defined]:
+    \begin{equation*}
+        \P(M \mid D) = \frac{\P(D \mid M)\P(M)}{\P(D)}.
+    \end{equation*}
+    \begin{quote}
+        ``The probability of the model given the data $\P(M \mid D)$ is the probability of the data given the model $\P(D \mid M)$ times the prior probability of the model $\P(M)$ divided by the probability of the data $\P(D)$.''~\citep{ghahramani2011bayes}
+    \end{quote}
+\end{enumerate}
+
+
+%
+\subsection{Formal definition}
+Define a POMDP, $M$ to be the tuple  $<\cS, \cA, \cO, T, \Omega, Q>$, where
+\begin{itemize}
+    \item $\cS$ is the state space.
+    \item $\cA$ is the action space.
+    \item $\cO$ is the observation space.
+    \item $T(\cdot \mid s, a) \in \cP(\cS)$ is the transition probability conditioned on taking action $a$ in state $s$.
+    \item $\Omega(\cdot \mid s, a) \in \cP(\cO)$ is the probability distribution over possible observations. Note that the probability over next observations \emph{is conditioned on the state}. Also, $a$ is the action that led to $s$, so it one time step behind. This probability kernel is also known as the emission kernel. Some references only mention that the observations is dependent on the state and not the action. We might converge to that version later on if necessary.
+    
+    \item $R(s, a) \sim Q(\cdot \mid s, a) \in \cP(\R)$ [the reference has been sloppy with respect to sigma algebras; $\cP(\R)$ is dangerous.] is the random reward coming from distribution $Q$.
+\end{itemize}
+Since the state is not directly observed, the agent must rely on the recent history of actions, observations and rewards, $\{O_0, A_0, R_1, \dots, O_{t - 1}, A_{t - 1}, R_t\}$ to \textbf{infer} a distribution over states. [Looks so Bayesian already].
+
+This \emph{belief} $B_t$ (also called information state) is defined over the state probability simplex, i.e., $B_t \in \cP(\cS)$ and can be calculated recursively as [assume $\P$ is defined somehow and representing the oracle probability measure]:
+\begin{align}
+B_{t + 1}\left(s'\right) = \P(s' \mid O_{t + 1}, A_t, B_t) & = \frac{\P(O_{t + 1} \mid s', A_t, B_t)\P(s' \mid A_t, B_t)}{\P(O_{t + 1} \mid A_t, B_t)} \label{eq:bayes_pomdp}\\
+     &= \frac{\Omega(O_{t + 1} \mid s', A_t)\int_{\cS}T(s' \mid s, A_t)B_t(s)ds}{\int_{\cS}\Omega(O_{t + 1} \mid s'', A_t)\int_{\cS}T(s'' \mid s, A_t)B_t(s)dsds''}, \quad \forall s' \in \cS. \nonumber
+\end{align}
+In the POMDP framework, the policy is defined as $\pi: \cP(\cS) \to \cA$ and the Bellman optimality equation is defined as
+\begin{equation*}
+    V^*(B_t) = \max_a \left[\int_{\cS}R(s, a)B_t(s)ds + \gamma\int_\cO \P(o \mid B_t, a))V^*(B_{t + 1})do \right].
+\end{equation*}
+%
+\subsection{Informal interpretations}
+A straight application of Bayes rule gives us the posterior distribution on the possible states given the observations. Since now we're dealing with a distribution over states, in the Bellman optimality equation wee need to compute the expected reward with respect to this distribution os states (the first term). For the next value, note that $B_{t + 1}$ is dependent on $O_{t + 1}, A_t$, and $B_t$. This is clear from \cref{eq:bayes_pomdp}. So, since there is a distribution over possible next observations, we need to compute the expectation with respect to these possible observations (the second term's integral). 
+
+\subsection{Solutions for POMPDs}
+I have no idea as of now (\date{\today}). 
+\subsubsection{My findings}
+\begin{enumerate}
+    \item \citet[Lemma 1]{porta2006pointbased} showed and reproved that as \citet{sondik1978optimalcontrol} had shown, in finite-horizon POMDPs, \cref{eq:bayes_pomdp} is piece-wise linear convex, so there exits a way to compute the optimal policy in the belief space. Let $\alpha$-vectors be piece-wise linear segments, then
+    \begin{equation*}
+        V^*(B_t) = \max_\alpha \int_\cS \alpha(s)B_t(s)ds,
+    \end{equation*}
+    where $B_t$ is computed using \cref{eq:bayes_pomdp}, and \citet{porta2006pointbased} has given a way of computing $\alpha$-vectors.
+    \begin{quote}
+        ``Using this formulation, value iteration algorithms for discrete state POMDPs typically focus on the computation of the $\alpha$-vectors~\citep{porta2006pointbased}.''
+    \end{quote}
+\end{enumerate}
+
+\section{Partially Monitored MDPs}
+Now we have all the tools to define Partially Monitored MDPs where instead of the reward, the agent only sees symbols belonging to an alphabet. 
+
+Define a stochastic partially monitored MDP $M$, to be a tuple $<\cS, \cA, \cR, \Sigma, T, P, \Theta>$ where
+\begin{itemize}
+    \item $\cS$ is the state space.
+    \item $\cA$ is the action space.
+    \item $\cR$ is the set of rewards.
+    \item $\Sigma$ is the alphabet containing some symbols.
+    \item $T(\cdot \mid s, a) \in \cP(\cS)$ is the transition probability conditioned on taking action $a$ in state $s$.
+    \item $P(\cdot, \cdot \mid s, a, \theta) \in \cP(\R \times\Sigma)$ is the probability distribution over joint possible symbols and rewards given action $a$ is taken in state $s$ and the underlying reward distribution is parameterized by $\theta$.
+    \item $\Theta$ is the set of parameters characterizing the reward distributions.
+    \item We define $\Phi(\cdot \mid s, a, \theta) = \int_{\cR}P(r, \cdot \mid s, a , \theta)dr$ the marginal distribution of symbols for taking action $a$ in state $s$ when the reward distribution is parameterized by $\theta$.
+    \item We define $Q(\cdot \mid s, a, \theta) = \int_{\Sigma}P(\cdot, \sigma \mid s, a , \theta)d\sigma$ the marginal distribution of rewards for taking action $a$ in state $s$ when the reward distribution is parameterized by $\theta$.
+\end{itemize}
+Instead of reward, the agent only observes symbols $\sigma \in \Sigma$. Hence, the history generated by the agent until time step 4t is equal to $\{S_0, A_0, \sigma_1, \dots, S_{t - 1}, A_{t - 1}, \sigma_t \}$. Similar to POMDPs, since the agent does not observe the rewards, it maintains a belief $B_t \in \cP(\R)$ (a distribution) over possible reward distributions. Let's use the Bayes rule to derive the posterior distribution on the belief:
+\begin{align}
+B_{t + 1}\left(\theta \right) = \P(\theta \mid \sigma_{t + 1}, S_t, A_t, B_t) & = \frac{\P(\sigma_{t + 1} \mid \theta, S_t, A_t, B_t)\P(\theta \mid S_t, A_t, B_t)}{\P(\sigma_{t + 1} \mid S_t, A_t, B_t)} \nonumber \\
+     &= \frac{\Phi(\sigma_{t + 1} \mid \theta, S_t, A_t)B_t(\theta)}{\int_{\Theta}\Phi(\sigma_{t + 1} \mid \theta', S_t, A_t) B_t(\theta') d\theta'}, \quad \forall \theta \in \Theta. \nonumber
+\end{align}
+%
+\paragraph{Bellman optimality equation.}
+%
+\begin{equation}
+\label{eq:bellman-opt-par-mon-mdp}
+    V^*(s) = \max_a \left[\int_{\cR}\int_\Theta Q(r \mid s, a, \theta) B(\theta) d\theta dr + \gamma\int_\cS T\left(s' \mid s, a\right) V^*\left(s'\right)ds' \right]
+\end{equation}
+
+\subsection{Informal interpretations}
+Given observed symbols, we use the Bayes rule to construct the posterior over the reward distributions' parameters. Then in the Bellman optimality equation (\cref{eq:bellman-opt-par-mon-mdp}), we compute the mean reward in the outer integral and in the inner integral we compute the mean over possible beliefs on the parameter.
+
+\subsection{Solutions}
+I have no idea as of now (\date{\today}). The problem formulation sounds precise. I first need to learn about the solutions to POMDPs and then see how I can approximate the inner integral of \cref{eq:bellman-opt-par-mon-mdp}.
+
+\subsubsection{Possibilities}
+\begin{enumerate}
+    \item The same as \citet{porta2006pointbased} who did it (again) for POMDPs, can I show that \cref{eq:bellman-opt-par-mon-mdp} is piece-wise linear convex? I'd very much think it's possible.
+\end{enumerate}
+
+\bibliography{my_bibs}
+\end{document}
