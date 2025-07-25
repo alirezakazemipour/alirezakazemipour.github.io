@@ -230,6 +230,15 @@ defaults:
       author_profile: true
       share: true
       comments: true
+  # _unfin_ideas
+  - scope:
+      path: ""
+      type: unfin_ideas
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
   # _publications
   - scope:
       path: ""
