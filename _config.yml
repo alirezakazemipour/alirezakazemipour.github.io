@@ -236,7 +236,7 @@ defaults:
   # _unfinIdeas
   - scope:
       path: ""
-      type: unfinIdeas
+      type: unfin
     values:
       layout: single
       author_profile: true
