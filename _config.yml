@@ -181,7 +181,7 @@ collections:
   misc:
     output: true
     permalink: /:collection/:path/
-  unfi_idea:
+  unfin:
     output: true
     permalink: /:collection/:path/
   publications:
@@ -233,7 +233,7 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _unfinIdeas
+  # _unfin
   - scope:
       path: ""
       type: unfin
