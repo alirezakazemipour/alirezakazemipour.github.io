@@ -233,10 +233,10 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _unfin_ideas
+  # _unfinIdeas
   - scope:
       path: ""
-      type: unfin_ideas
+      type: unfinIdeas
     values:
       layout: single
       author_profile: true
