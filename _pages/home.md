@@ -12,3 +12,4 @@ I'm an MSc student studying Computing Science at the University of Alberta. I'm 
 And I'm interested in Reinforcement Learning.
 
 Currently, my research focuses on evaluating the reward availability (observability) in RL and how more structured exploration techniques could help the agent thrive in different scenarios where the reward may not be observable at all.
+[Here](/pdfs/CV.pdf) is my CV.
