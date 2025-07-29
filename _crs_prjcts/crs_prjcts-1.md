@@ -1,5 +1,5 @@
 ---
-title: "Some Useful Videos for Myself"
+title: "My course projects"
 collection: crs_prjcts
 permalink: /crs_prjcts/crs_prjcts-1
 ---
