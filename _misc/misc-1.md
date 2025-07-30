@@ -31,3 +31,4 @@ permalink: /misc/misc-1
 - [You're Underestimating How Much You Can Improve-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids%2FYou%27re%20Underestimating%20How%20Much%20You%20Can%20Improve-JP.mp4)
 - [You Don’t Get the Gold Without the Dragon-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids%2FYou%20Don%E2%80%99t%20Get%20the%20Gold%20Without%20the%20Dragon-JP.mp4)
 - [Maintain your faith in your darkest hours-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids%2FMaintain%20your%20faith%20in%20your%20darkest%20hours.mp4)
+- [The perils of jealousy-HA (Only in persian)](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids%2jealousy-HA.mp4)
