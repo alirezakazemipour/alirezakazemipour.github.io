@@ -10,8 +10,7 @@ I defnitely should give my best to stay in a good _really_ shape.
 2. She does blogging [here](https://clarelyle.com/archive.html)
 explaining math/reesrch materissl and also life lessons. It made me realize I should do 
 that too to have a clearer mind
-3. As of August 5th, 2025, I'm learning stuff that she learned in her [2nd year of undergrad]
-(https://clarelyle.com/posts/2016-04-28-firstyearproofs.html). This made me realize that I should temper my
+3. As of August 5th, 2025, I'm learning stuff that she learned in her [2nd year of undergrad](https://clarelyle.com/posts/2016-04-28-firstyearproofs.html). This made me realize that I should temper my
 expectations, be much more humble, try harder to acquire those knowledge too. We've roughly started our undergrad at 
 the same time and compared to how I was behaving in my 2nd year, she is miles ahead and throughout the years the drift 
 has exponentially grown; _I shouldn't expect to clode the gap overnight_.
