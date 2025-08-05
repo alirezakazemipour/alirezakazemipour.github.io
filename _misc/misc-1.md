@@ -32,3 +32,5 @@ permalink: /misc/misc-1
 - [You Don’t Get the Gold Without the Dragon-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids%2FYou%20Don%E2%80%99t%20Get%20the%20Gold%20Without%20the%20Dragon-JP.mp4)
 - [Maintain your faith in your darkest hours-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids%2FMaintain%20your%20faith%20in%20your%20darkest%20hours.mp4)
 - [The perils of jealousy-HA (Only in persian)](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/jealousy-HA.mp4)
+- [Half of the men already hate you, do it-AT](https://github.com/alirezakazemipour/alirezakazemipour.github.io/blob/master/_vids/Half%20of%20the%20men%20already%20hate%20you%2C%20do%20it-AT.mp4)
+- [What do you want-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/blob/master/_vids/What%20do%20you%20want-JP.mp4)
