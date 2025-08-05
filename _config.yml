@@ -187,6 +187,9 @@ collections:
   crs_prjcts:
       output: true
       permalink: /:collection/:path/
+  journal:
+    output: true
+    permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/

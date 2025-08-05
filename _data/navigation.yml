@@ -9,6 +9,9 @@ main:
   - title: "Course projects"
     url: /crs_prjcts/
 
+  - title: "Journal"
+    url: /journal/
+
   #  - title: "Talks"
   #    url: /talks/
 
