@@ -13,7 +13,7 @@ that too to have a clearer mind
 3. As of August 5th, 2025, I'm learning stuff that she learned in her [2nd year of undergrad](https://clarelyle.com/posts/2016-04-28-firstyearproofs.html). This made me realize that I should temper my
 expectations, be much more humble, try harder to acquire those knowledge too. We've roughly started our undergrad at 
 the same time and compared to how I was behaving in my 2nd year, she is miles ahead and throughout the years the drift 
-has exponentially grown; _I shouldn't expect to clode the gap overnight_.
+has exponentially grown; _I shouldn't expect to close the gap overnight_.
 4. She was asked: "How do you choose a topic/research question out of this huge world to do research on?"
 Her answer:
 > I usually take something that works really well and test it on a setting that it doesn't work
