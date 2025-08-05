@@ -10,8 +10,9 @@ I defnitely should give my best to stay in a good _really_ shape.
 2. She does blogging [here](https://clarelyle.com/archive.html)
 explaining math/reesrch materissl and also life lessons. It made me realize I should do 
 that too to have a clearer mind
-3. As of August 5th, 2025, I'm learning stuff that she learned in her 2nd year of undergrad. This 
-made me realize that I should temper my expectations, be much more humble, try harder to acquire those knowledge too.
+3. As of August 5th, 2025, I'm learning stuff that she learned in her [2nd year of undergrad]
+(https://clarelyle.com/posts/2016-04-28-firstyearproofs.html). This made me realize that I should temper my
+expectations, be much more humble, try harder to acquire those knowledge too.
 4. She was asked: "How do you choose a topic/research question out of this huge world to do research on?"
 Her answer:
 > I usually take something that works really well and test it on a setting that it doesn't work
