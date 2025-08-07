@@ -1,4 +1,4 @@
----  
+---
 title: "What are p-values?"  
 permalink: /journal/p_values/  
 date: 2025-09-6  
