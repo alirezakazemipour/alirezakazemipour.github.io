@@ -2,6 +2,7 @@
 title: "What to remember from RLC 2025"
 collection: journal
 permalink: /journal/rlc
+date: 2025-09-6
 ---
 
 What I learned from Clare Lyle at Finding the Frame workshop:
@@ -19,3 +20,6 @@ Her answer:
 > I usually take something that works really well and test it on a setting that it doesn't work
 > well anymore. Then, I try to figure out why it isn't working. This
 > Approach results in a cycle of questioning and answering that leads to interesting research.
+
+
+

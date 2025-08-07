@@ -1,12 +1,18 @@
----
 layout: archive
-title: "Journal"
 permalink: /journal/
+title: "Journal"
 author_profile: true
+redirect_from:
+  - /wordpress/blog-posts/
 ---
 
 {% include base_path %}
-
-{% for post in site.journal reversed %}
+{% capture written_year %}'None'{% endcapture %}
+{% for post in site.journal %}
+  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+  {% if year != written_year %}
+    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
+    {% capture written_year %}{{ year }}{% endcapture %}
+  {% endif %}
   {% include archive-single.html %}
 {% endfor %}

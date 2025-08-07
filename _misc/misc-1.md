@@ -34,3 +34,14 @@ permalink: /misc/misc-1
 - [The perils of jealousy-HA (Only in persian)](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/jealousy-HA.mp4)
 - [Half of the men already hate you, do it-AT](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/Half%20of%20the%20men%20already%20hate%20you,%20do%20it-AT.mp4)
 - [What do you want-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/What%20do%20you%20want-JP.mp4)
+
+JP: 
+> You're in a damaged structure, you're a damaged structure, you're ina damaged structure.
+
+JP:
+> It has to be that the fragility is built into the courage. If it wasn't the case that you could be hurt or ended up
+> in failure, where is the moral courage in the endeavour.
+
+JP:
+> In many sense, you're made of the unknown. The more you voluntarily encounter it, the more you get made of it. The
+> more you get made of, there more is to you.

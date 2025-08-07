@@ -1,0 +1,32 @@
+
+---  
+title: "What are p-values?"  
+collection: journal  
+permalink: /journal/icml  
+date: 2025-09-6  
+---
+Let's see what Sir [Larry Wasserman](https://www.stat.cmu.edu/~brian/valerie/617-2022/0%20-%20books/2004%20-%20wasserman%20-%20all%20of%20statistics.pdf) has to tell us about it.
+
+So we're in the realm of hypothesis testing ([Aaditya Ramdas](https://stat.cmu.edu/~aramdas/icml25/ramdas1.pdf) calls it stochastic proof by contraction, _I love this phrase_). Suppose we divide our parameter space $\Theta$ into two disjoint sets $\Theta_0$ and $\Theta_1$. We wish to test
+
+$$H_0: \theta \in \Theta_0 \quad\text{versus} \quad H_1: \theta \in \Theta_1$$.
+
+We call $H_0$ the null hypothesis that we'd like to reject. Because it says nothing interesting is going on (hence the name null). Let $\mathbb{P}_\theta$ be a probability distribution with support $\mathcal{X}$ parameterized by $\theta$. Define $\mathcal{R} \subset \mathcal{X}$ called the rejection region. Let $X \sim \mathbb{P}_\theta(\cdot)$. Then, if 
+$$X \in \mathcal{R} \Rightarrow \text{ reject } H_0, \\
+X \notin \mathcal{R} \Rightarrow \text{ retain } H_0.$$
+Usually, the rejection region is of the form
+$$R = \{x \in \mathcal{X}: T(x) > c \},$$
+where $T$ is a  test statistic and $c$ is a  critical value. The problem in hypothesis testing is to find an appropriate  test statistic $T$ and an appropriate critical value $c$. 
+P.S.: A test statistic is  a single number calculated from sample data that is used to evaluate a hypothesis in statistical analysis. It quantifies the difference between the observed data and what would be expected if the null hypothesis were true. Essentially, it helps determine how compatible your data is with a specific hypothesis.
+__Definition__: The power function of a test with rejection region $\mathcal{R}$ is defined by
+$$\beta(\theta) = \mathbb{P}_\theta(X \in \mathcal{R}).$$
+The size of a test is defined to be 
+$$\alpha = \sup_{\theta \in \Theta_0} \beta(\theta).$$
+A test is said to have level $\alpha$ if its size is less than or equal to $\alpha$.
+Basically, the level $\alpha$ specifies the __maximum__ probability of rejection the null hypothesis.
+
+To define the $p$-values, unfortunately Larry Wassermann doesn't transition smoothly and uses $\alpha$ for different things that made me confused. That said, for the following don't assume that $\alpha$ was defined above.
+
+__Definition__. Let $X^n = (X_1, X_2, \dots, X_n)$ (n-fold Cartesian product of the random variable $X$). Suppose that for very $\alpha \in (0, 1)$,  we have a size $\alpha$ test with with rejection region $\mathcal{R}_\alpha$, Then,
+$$p\text{-value} = \inf\{\alpha: T(X^n) \in \mathcal{R}_\alpha\} $$
+That is, the $p$-value is the smallest level (__probability__) at which we can reject $H_0$ [quite the opposite of the definition above that involved $\beta$]. 
