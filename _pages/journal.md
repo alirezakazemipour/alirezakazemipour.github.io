@@ -1,3 +1,4 @@
+---
 layout: archive
 permalink: /journal/
 title: "Journal"
