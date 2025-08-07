@@ -2,6 +2,10 @@
 title: "What to remember from RLC 2025"
 permalink: /journal/rlc/
 date: 2025-09-6
+tags:
+  - cool posts
+  - category1
+  - category2
 ---
 
 What I learned from Clare Lyle at Finding the Frame workshop:

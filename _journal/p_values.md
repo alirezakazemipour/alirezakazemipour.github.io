@@ -2,7 +2,12 @@
 title: "What are p-values?"  
 permalink: /journal/p_values/  
 date: 2025-09-6  
+tags:
+  - cool posts
+  - category1
+  - category2
 ---
+
 Let's see what Sir [Larry Wasserman](https://www.stat.cmu.edu/~brian/valerie/617-2022/0%20-%20books/2004%20-%20wasserman%20-%20all%20of%20statistics.pdf) has to tell us about it.
 
 So we're in the realm of hypothesis testing ([Aaditya Ramdas](https://stat.cmu.edu/~aramdas/icml25/ramdas1.pdf) calls it stochastic proof by contraction, _I love this phrase_). Suppose we divide our parameter space $\Theta$ into two disjoint sets $\Theta_0$ and $\Theta_1$. We wish to test
