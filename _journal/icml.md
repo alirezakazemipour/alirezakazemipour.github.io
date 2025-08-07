@@ -1,6 +1,5 @@
 ---
 title: "What to remember from ICML 2025"
-collection: journal
 permalink: /journal/icml/
 date: 2025-09-6
 ---

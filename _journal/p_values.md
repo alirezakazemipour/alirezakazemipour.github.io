@@ -1,6 +1,5 @@
 ---  
 title: "What are p-values?"  
-collection: journal  
 permalink: /journal/p_values/  
 date: 2025-09-6  
 ---

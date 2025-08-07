@@ -1,6 +1,5 @@
 ---
 title: "What to remember from RLC 2025"
-collection: journal
 permalink: /journal/rlc/
 date: 2025-09-6
 ---
