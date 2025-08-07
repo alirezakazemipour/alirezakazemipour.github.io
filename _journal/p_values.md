@@ -1,8 +1,7 @@
-
 ---  
 title: "What are p-values?"  
 collection: journal  
-permalink: /journal/icml  
+permalink: /journal/p_values/  
 date: 2025-09-6  
 ---
 Let's see what Sir [Larry Wasserman](https://www.stat.cmu.edu/~brian/valerie/617-2022/0%20-%20books/2004%20-%20wasserman%20-%20all%20of%20statistics.pdf) has to tell us about it.
