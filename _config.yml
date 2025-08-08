@@ -9,8 +9,8 @@
 locale                   : "en-US"
 title                    : "Alireza Kazemipour"
 title_separator          : "-"
-name                     : &name "Alireza Kazemipour"
-description              : &description "personal description"
+name                     : "Alireza Kazemipour"
+description              : "personal description"
 url                      : https://alirezakazemipour.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "https://alirezakazemipour.github.io"
@@ -200,7 +200,7 @@ collections:
 
 # Defaults
 defaults:
-  # _posts
+  # _journal
   - scope:
       path: ""
       type: journal

@@ -10,7 +10,7 @@ tags:
 
 What I learned from Clare Lyle at Finding the Frame workshop:
 1. Clare is in pretty good shape, comparison to her made realize 
-I defnitely should give my best to stay in a good _really_ shape.
+I definitely should give my best to stay in a good _really_ shape.
 2. She does blogging [here](https://clarelyle.com/archive.html)
 explaining math/reesrch materissl and also life lessons. It made me realize I should do 
 that too to have a clearer mind
