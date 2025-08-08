@@ -52,10 +52,10 @@ JP:
 > You need an antidote to your suffering.
 
 CW:
-> Action is the antidote tot suffering
+> Action is the antidote to anxiety
 
 JW:
-> If you're afraid of doing something. Do it anyway. It's the appropriate response to anxiety.
+> If you're afraid of doing something. Do it anyway. That's the response to fear.
 
 # Generic
 [Learning how to learn course](https://www.coursera.org/learn/learning-how-to-learn)
