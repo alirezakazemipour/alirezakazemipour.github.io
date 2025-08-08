@@ -200,10 +200,10 @@ collections:
 
 # Defaults
 defaults:
-  # _journal
+  # _posts
   - scope:
       path: ""
-      type: journal
+      type: posts
     values:
       layout: single
       author_profile: true
