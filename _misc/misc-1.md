@@ -4,6 +4,8 @@ collection: misc
 permalink: /misc/misc-1
 ---
 
+# Personal
+
 - [failure is your friend](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/failure%20is%20your%20friend.mp4)
 - [Failure-BO](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids%2FFailure-BO.mp4)
 - [Finite Thinking vs. Infinite Mindset-SS](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids%2FFinite%20Thinking%20vs.%20Infinite%20Mindset-SS.mp4)
@@ -45,3 +47,15 @@ JP:
 JP:
 > In many sense, you're made of the unknown. The more you voluntarily encounter it, the more you get made of it. The
 > more you get made of, there more is to you.
+
+JP:
+> You need an antidote to your suffering.
+
+CW:
+> Action is the antidote tot suffering
+
+JW:
+> If you're afraid of doing something. Do it anyway. It's the appropriate response to anxiety.
+
+# Generic
+[Learning how to learn course](https://www.coursera.org/learn/learning-how-to-learn)
