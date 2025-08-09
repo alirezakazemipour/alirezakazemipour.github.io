@@ -3,9 +3,7 @@ title: "What I don't know"
 permalink: /posts/2025/08/lstofunknwn/
 date: 2025-09-6
 tags:
-  - cool posts
-  - category1
-  - category2
+  - learning
 ---
 
 # Mentioned in RLC 2025
@@ -29,3 +27,4 @@ tags:
 - IMPACT (Trimbach 2019)
 - Mirror Descent
 - Paper: Recursive Reward Aggregation
+- [Rich's Dyna with function approximation](https://drive.google.com/drive/folders/1cMJWR90IkMxWngWpjOtD-qdLS_a7KiYL).
