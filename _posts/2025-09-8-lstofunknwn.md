@@ -28,3 +28,5 @@ tags:
 - Mirror Descent
 - Paper: Recursive Reward Aggregation
 - [Rich's Dyna with function approximation](https://drive.google.com/drive/folders/1cMJWR90IkMxWngWpjOtD-qdLS_a7KiYL).
+- Banach Spaces
+- Black-well optimality
