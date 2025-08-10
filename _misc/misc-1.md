@@ -55,5 +55,11 @@ CW:
 JW:
 > If you're afraid of doing something. Do it anyway. That's the response to fear.
 
+Job in the midst of his suffering:
+
+> __I will do good no matter what. No matter what happens to me. No matter how much suffering comes my way.
+> No matter how much _undeserved_ and _unjust_ suffering comes my way, in spite my of innocence. I will not lose faith 
+> and I will do good.__
+
 # Generic
 [Learning how to learn course](https://www.coursera.org/learn/learning-how-to-learn)
