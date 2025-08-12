@@ -11,7 +11,7 @@ Let's see what Sir [Larry Wasserman](https://www.stat.cmu.edu/~brian/valerie/617
 # Definitions 
 
 __Definition__. The $k^{\text{th}}$ moment of a random variable $X$ is $\mathbb{E}\left[X^k\right]$,
-assuming $\mathbb{E}\left[\lvertX\rvert^k\right]$ exits. With this definition the mean is the first moment.
+assuming $\mathbb{E}\left[\lvert X \rvert^k\right]$ exits. With this definition the mean is the first moment.
 
 __Definition__. The variance of a random variable $X$ with mean $\mu$ is defined by
 
@@ -71,4 +71,6 @@ The above display shows that the variance of the return for a state is mostly in
 
 __Definition__. [Bertsekas, Neuro dynamic programming] A stationary policy $\pi$ is said to be proper if, using this policy, there is positive probability that the termination state will be reached after at most $n$ stages, regardless of the initial state, that is, if
 
-$$\max_{x = 1, \dots, n} \mathbb{P}_{\pi} \left( X_n \neq x_T \mid X_0=x\right) < 1$$.
+$$\begin{equation*}
+\max_{x = 1, \dots, n} \mathbb{P}_{\pi} \left( X_n \neq x_T \mid X_0=x\right) < 1
+\end{equation*}.$$
