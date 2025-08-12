@@ -9,9 +9,7 @@ tags:
 # Mentioned in RLC 2025
 - Bounded rationality
 - $\pi: (O, A)^* \to A$
-- Moments of a random variable
-- We have a Bellman operator for the second moment (Tamar 2013)
-- Non-parametric bandits: Arms' distribution can be multi modal, not conforming to a single parameter exponential family.
+- - Non-parametric bandits: Arms' distribution can be multi modal, not conforming to a single parameter exponential family.
 - Thomson Sampling only works for parameteric bandits.
 - Statistical bootstrap (ET94)
 - Pure exploration
@@ -30,3 +28,8 @@ tags:
 - [Rich's Dyna with function approximation](https://drive.google.com/drive/folders/1cMJWR90IkMxWngWpjOtD-qdLS_a7KiYL).
 - Banach Spaces
 - Black-well optimality
+- discrete vs countable
+- e values/processes
+- RKHS
+- Why $n-1$ for the empirical variance?
+- ergodic, i.e., aperiodic, recurrent, and irreducible MDPs
