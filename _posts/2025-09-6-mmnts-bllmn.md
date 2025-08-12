@@ -53,7 +53,7 @@ $$\begin{align*}
 M(x)  &= \mathbb{E} \left[ \left(\sum_{t = 0}^{\tau - 1} \gamma^t r_\pi(X_t)\right)^2 \middle\vert X_0 = x \right] \\
 &= \mathbb{E} \left[ \left(r_\pi(x) + \sum_{t = 1}^{\tau - 1} \gamma^t r_\pi(X_t)\right)^2 \middle\vert X_0 = x \right] \\
 & = r_\pi(x)^2 + 2r_\pi(x)\mathbb{E} \left[  \sum_{t = 1}^{\tau - 1} \gamma^t r_\pi(X_t) \middle\vert X_0 = x \right] + \mathbb{E} \left[ \left(\sum_{t = 1}^{\tau - 1} \gamma^t r_\pi(X_t)\right)^2 \middle\vert X_0 = x \right] \\
-& r_\pi(x)^2 + 2\gamma r_\pi(x) \sum_{x' }P_\pi\left(x' \middle\vert x\right)J(x') + \gamma^2 \sum_{x' }P_\pi\left(x' \middle\vert x\right)M(x').
+& r_\pi(x)^2 + 2\gamma r_\pi(x) \sum_{x' }P_\pi\left(x' \middle\vert x\right)J(x') + \gamma^2 \sum_{x' }P_\pi\left(x' \middle\vert x\right)M(x') & \text{(tower rule)}.
 \end{align*} $$
 
 So the variance of $G$ at state $x$ is equal to
