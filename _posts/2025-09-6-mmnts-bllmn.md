@@ -10,9 +10,10 @@ Let's see what Sir [Larry Wasserman](https://www.stat.cmu.edu/~brian/valerie/617
 
 # Definitions 
 
-__Definition__. The $k^{\text{th}}$ moment of a random variable $X$ is $\mathbb{E}\left[X^k\right]$, assuming $\mathbb{E}\left[|X|^k\right]$ exits. With this definition the mean is the first moment.
+__Definition__. The $k^{\text{th}}$ moment of a random variable $X$ is $\mathbb{E}\left[X^k\right]$,
+assuming $\mathbb{E}\left[\lvertX\rvert^k\right]$ exits. With this definition the mean is the first moment.
 
-__Definition__ .The variance of a random variable $X$ with mean $\mu$ is defined by
+__Definition__. The variance of a random variable $X$ with mean $\mu$ is defined by
 
 $$\mathbb{V}(X) = \mathbb{E}[X - m]^2.$$
 
@@ -24,7 +25,11 @@ $$\mathbb{V}(X) = \mathbb{E}[X^2] - \mathbb{E}[X]^2 .$$
 
 I follow the derivation of [Tamar, et al. 2013](https://jmlr.org/papers/volume17/14-335/14-335.pdf).
 
-We assume we're in the episodic settings. The state space is finite $\mathcal{X} = \{1, \dots, n\}$ and there is a special terminal state $x_T$. We assume the agent follows a _fixed_ proper (definition below) policy $\pi$. Let $r_\pi \in \mathbb{R}^n$ and $P_\pi \in \mathbb{R}^{n \times n}$ denote the expected reward vector and the transition probability induced by $\pi$. Let $\tau = \min \{t > 0 \mid X_t = X_T \}$ denote the first visit time to the terminal state, and let the random variable $G$ denote the accumulated discounted reward along the trajectory until that time
+We assume we're in the episodic settings.
+The state space is finite $\mathcal{X} = \{1, \dots, n\}$ and there is a special terminal state $x_T$.
+We assume the agent follows a _fixed_ proper (definition below) policy $\pi$.
+Let $r_\pi \in \mathbb{R}^n$ and $P_\pi \in \mathbb{R}^{n \times n}$ denote the expected reward vector,
+and the transition probability induced by $\pi$. Let $\tau = \min \{t > 0 \mid X_t = X_T \}$ denote the first visit time to the terminal state, and let the random variable $G$ denote the accumulated discounted reward along the trajectory until that time
 
 $$G = \sum_{t = 0}^{\tau - 1} \gamma^t r_\pi(X_t).$$
 
@@ -57,7 +62,7 @@ $$\begin{align*}
 V(x) = \mathbb{V}(G \mid X_0=x) & = M(x) - J(x)^2  \\
 & = \gamma^2 \sum_{x' }P_\pi\left(x' \middle\vert x\right)M(x') - \left(\gamma \sum_{x'} P_\pi\left(x' \middle\vert x\right)J\left(x'\right)\right)^2 \\ 
 & = \gamma^2\left[ \sum_{x' }P_\pi\left(x' \middle\vert x\right)M(x')  - \left(\sum_{x'} P_\pi\left(x' \middle\vert x\right)J\left(x'\right)\right)^2 \right] \\
-& \geq \gamma^2\left[ \sum_{x' }P_\pi\left(x' \middle\vert x\right)M(x')  - \sum_{x'} P_\pi\left(x' \middle\vert x\right)^2 J\left(x'\right)^2 \right] & \text {(Cauchy Swhartz)} \\
+& \geq \gamma^2\left[ \sum_{x' }P_\pi\left(x' \middle\vert x\right)M(x')  - \sum_{x'} P_\pi\left(x' \middle\vert x\right)^2 J\left(x'\right)^2 \right] & \text {(Cauchy-Swhartz)} \\
 & \geq \gamma^2\left[ \sum_{x'} P_\pi\left(x' \middle\vert x\right) \left(M\left(x'\right) - J(x')^2\right) \right] \\
 & = \gamma^2 \mathbb{E}\left[V(x') \right].
 \end{align*}$$
