@@ -6,10 +6,10 @@ tags:
   - learning
 ---
 
-# Mentioned in RLC 2025
+# Some Mentioned in RLC 2025
 - Bounded rationality
 - $\pi: (O, A)^* \to A$
-- - Non-parametric bandits: Arms' distribution can be multi modal, not conforming to a single parameter exponential family.
+- Non-parametric bandits: Arms' distribution can be multi modal, not conforming to a single parameter exponential family.
 - Thomson Sampling only works for parameteric bandits.
 - Statistical bootstrap (ET94)
 - Pure exploration
@@ -19,7 +19,7 @@ tags:
 - Data set: $D = \langle s, a, r, s'\rangle^+$
 - Compact MDPs
 - KWIK learners
-- Tower rule
+- Tower rule 
 - Sobolev Spaces (Larry Wasserman)
 - Mansour, Littman, et al. (Lunch 2023)
 - IMPACT (Trimbach 2019)
@@ -30,6 +30,8 @@ tags:
 - Black-well optimality
 - discrete vs countable
 - e values/processes
-- RKHS
+- Damn RKHS
 - Why $n-1$ for the empirical variance?
 - ergodic, i.e., aperiodic, recurrent, and irreducible MDPs
+- The law of total variance in RL
+- moment generating function
