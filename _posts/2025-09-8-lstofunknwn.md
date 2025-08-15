@@ -8,7 +8,6 @@ tags:
 
 # Some Mentioned in RLC 2025
 - Bounded rationality
-- $\pi: (O, A)^* \to A$
 - Non-parametric bandits: Arms' distribution can be multi modal, not conforming to a single parameter exponential family.
 - Thomson Sampling only works for parameteric bandits.
 - Statistical bootstrap (ET94)
@@ -16,7 +15,6 @@ tags:
 - Ambient dimension
 - Optimal Design
 - Round robin
-- Data set: $D = \langle s, a, r, s'\rangle^+$
 - Compact MDPs
 - KWIK learners
 - Tower rule 
@@ -35,3 +33,5 @@ tags:
 - ergodic, i.e., aperiodic, recurrent, and irreducible MDPs
 - The law of total variance in RL
 - moment generating function
+- $\sigma$-algebra vs. a topology
+- Why $\mathrm{rank}(A \otimes B) = rank(A) \cdot \rank{B}$
