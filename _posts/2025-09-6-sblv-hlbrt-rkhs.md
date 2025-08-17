@@ -1,7 +1,7 @@
 ---
 title: "Sobolev spaces (not too wiggly functions), Hilbert spaces, and RHKS"
 permalink: /posts/2025/08/sblv/
-date: 2025-09-17
+date: 2025-08-17
 tags:  
  - learning 
 ---
@@ -18,7 +18,7 @@ In this section we review the required notation and concepts.
 
 A list $\alpha = (\alpha_1, \dots, \alpha_n)$ of integers $\alpha_i \geq 0$ is a __multi-inex__ of order 
 
-$$|\alpha| \coloneqq \alpha_1 + \dots \alpha_n.$$
+$$|\alpha| := \alpha_1 + \dots \alpha_n.$$
 
 ## Closure of a set $A$
 
@@ -81,7 +81,7 @@ Two function $f, g: \mathbb{R}^n \to \mathbb{R}$ are  equal _almost everywhere_ 
 
 Let $f: \mathbb{R}^n \to \mathbb{R}$ be a measurable function. For $p \in [1, \infty]$ the $L^p$ norm of $f$ is the extended real defined by
 
-$$\lVert f \rVert_p \coloneqq \left( \int_{\mathbb{R}^n} |f|^p\right)^{\frac{1}{p}} \: \in [0, \infty].$$
+$$\lVert f \rVert_p := \left( \int_{\mathbb{R}^n} |f|^p\right)^{\frac{1}{p}} \: \in [0, \infty].$$
 
 On the other hand, consider the following (possibly empty) set:
 
@@ -89,7 +89,7 @@ $$I_f = \left\{ c \in [0, \infty): \text{ the set } \{|f| > c\} \text{ has zero 
 
 The infimum of such $c$ is called the $L^\infty$ norm of $f$:
 
-$$ \lVert f \rVert_\infty \coloneqq \inf I_f = \mathrm{ess}\,\sup |f|.$$
+$$ \lVert f \rVert_\infty := \inf I_f = \mathrm{ess}\,\sup |f|.$$
 
 By convention, $\inf \varnothing = \infty$. Hence $\lVert f \rVert_\infty \in [0, \infty].$
 
@@ -128,7 +128,7 @@ These functions are called *test functions*. They are used to “localize” pro
 
 ##  Weak derivatives $D^\alpha$
 
-$$D^\alpha f(x) \coloneqq \frac{\partial^{|\alpha|}f(x)}{\partial x_1^{\alpha_1} \dots \partial x_n^{\alpha_n}}$$
+$$D^\alpha f(x) := \frac{\partial^{|\alpha|}f(x)}{\partial x_1^{\alpha_1} \dots \partial x_n^{\alpha_n}}$$
 
 Weak derivatives are the extension of the classical derivatives to non-differentiable functions (like $|x|$).
 
@@ -193,7 +193,7 @@ $$ \lVert u \rVert_{k, p} = \left(\int_\Omega \sum_{|\alpha| \leq k} \left|D^\al
 
 ## Hilbert space
 
-Hilbert space $H$ is a complete normed vector space, where the norm is defined to be the square root of the inner product for $f, g \in H$ $\langle f, g \rangle \coloneqq \sqrt{\int fg}$. 
+Hilbert space $H$ is a complete normed vector space, where the norm is defined to be the square root of the inner product for $f, g \in H$ $\langle f, g \rangle := \sqrt{\int fg}$. 
 
  Note that $\mathcal{L}^2(\Omega)$ is a Hilbert space when the non-degeneracy is taken care of through the quotient space. Complete normed vector spaces are called _Banach spaces_, hence Hilbert spaces are Banach spaces. $W^{2, k}(\Omega)$ is a Hilbert space as well. 
 
