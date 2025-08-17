@@ -73,12 +73,12 @@ In the definition of the measure, the domain was a $\sigma$-algebra. So the inpu
 
 A function $f: \mathbb{R}^n \to \mathbb{R}$ is called (Lebesgue) measurable if $\mathbb{R}^n$ equipped with Lebesgue $\sigma$-algebra $\mathfrak{L}(\mathbb{R}^n)$, and $\mathbb{R}$ equipped with Borel $\sigma$-algebra $\mathfrak{B}(\mathbb{R})$ and pre-images $f^{-1}(B) \in \mathfrak{L} (\mathbb{R^n})$, for all Borel measurable sets $B \in \mathfrak{B}(\mathbb{R})$ are $\mathfrak{L}(\mathbb{R}^n)$ measurable. $f$ will be called Borel measurable $\mathfrak{B}(\mathbb{R}^n)$ if $f^{-1}(B) \in \mathfrak{B}(\mathbb{R}^n) \subset \mathfrak{L}(\mathbb{R}^n)$.
 
-### Almost every where
+### Almost everywhere
 
 Two function $f, g: \mathbb{R}^n \to \mathbb{R}$ are  equal _almost everywhere_ if the set
-$\{f \neq g\} \subset \mathbb{R}^n$ is a Lebesgue null set.  
+{$f \neq g$} $\subset \mathbb{R}^n$ is a Lebesgue null set.  
 
-## $\mathcal{L}^p(\Omega)$
+## $\mathcal{L}^p(\Omega)$ spaces
 
 Let $f: \mathbb{R}^n \to \mathbb{R}$ be a measurable function. For $p \in [1, \infty]$ the $L^p$ norm of $f$ is the extended real defined by
 
@@ -93,8 +93,6 @@ The infimum of such $c$ is called the $L^\infty$ norm of $f$:
 $$ \lVert f \rVert_\infty := \inf I_f = \mathrm{ess}\,\sup |f|.$$
 
 By convention, $\inf \varnothing = \infty$. Hence $\lVert f \rVert_\infty \in [0, \infty].$
-
-### $\mathcal{L}^p$ spaces
 
 Let $p \in [0, \infty]$. A measurable function $f: \mathbb{R}^n \to \mathbb{R}$ with finite $L^p$ norm is called $p$-integrable or an $L^p$-function.  A $1$-integrable function is called integrable. $\mathcal{L}^p(\mathbb{R}^n)$ is the space of real $L^p$-functions. Note that non-degeneracy does not apply to $L^p$ so it is not a norm. The reason is that $\lVert f \rVert_p = 0 \Rightarrow f = 0$ is an almost everywhere statement which doesn't mean $f$ is absolutely zero.
 
@@ -119,7 +117,7 @@ Let $p \in [1, \infty]$. $\mathcal{L}^p_\textsf{loc}(\Omega)$ is set of all meas
 The space of infinitely often diﬀerentiable real functions with compact (closed and bounded) support, hence the subscript $c$, in $\Omega$ is defined by
 
 $$
-C^\infty_c(\Omega) = \{v: v \in  C^\infty(\Omega), \mathrm{supp}(v) ⊂ Ω \},$$
+C^\infty_c(\Omega) = \{v: v \in  C^\infty(\Omega), \, \mathrm{supp}(v) ⊂ Ω \},$$
 
 where
 
@@ -213,11 +211,11 @@ The problem is that if $\psi(x)$ is infinite-dimensional, the inner product can'
 
 Given a kernel $k$ such that $\sum_{i = 1}^{n} \sum_{j = 1}^{n} \alpha_i \alpha_j k(x_i, x_j) \geq 0$, we define RKHS of $k$ as the function space $\mathcal{H}_0$ of the form 
 
-$$\mathcal{H}_0 = \left \{f(x): f(x) = \sum_{i = 1}^m \alpha_i k(x_i, x) = k\mathbf{\alpha}^\top\right\},$$
+$$\mathcal{H}_0 = \left \{f(x): f(x) = \sum_{i = 1}^m \alpha_i k(x_i, x) = k\pmb{\alpha}^\top\right\},$$
 
 with the inner product (norm) defines as
 
-$$\lVert f(x) \rVert_\mathcal{H}^2 = \sum_{i = 1}^m f(x_i)^2 = \mathbf{f}^\top\mathbf{f}  = \mathbf{\alpha}k^\top k\mathbf{\alpha}^\top =  \mathbf{\alpha} \mathbf{K}\mathbf{\alpha}^\top = \sum_{i = 1}^{m} \sum_{j = 1}^{m} \alpha_i \alpha_j k(x_i, x_j) = \langle w, w\rangle,$$
+$$\lVert f(x) \rVert_\mathcal{H}^2 = \sum_{i = 1}^m f(x_i)^2 = \mathbf{f}^\top\mathbf{f}  = \pmb{\alpha}k^\top k\pmb{\alpha}^\top =  \pmb{\alpha} \mathbf{K}\pmb{\alpha}^\top = \sum_{i = 1}^{m} \sum_{j = 1}^{m} \alpha_i \alpha_j k(x_i, x_j) = \langle w, w\rangle,$$
 
 where 
 
