@@ -14,11 +14,11 @@ Ah before I forget, we're in the regime of partial derivatives.
 
 In this section we review the required notation and concepts.
 
-## Multi-index $|\alpha|$
+## Multi-index $\vert \alpha \vert$
 
 A list $\alpha = (\alpha_1, \dots, \alpha_n)$ of integers $\alpha_i \geq 0$ is a __multi-inex__ of order 
 
-$$|\alpha| := \alpha_1 + \dots \alpha_n.$$
+$$\vert \alpha \vert := \alpha_1 + \dots \alpha_n.$$
 
 ## Closure of a set $A$
 
@@ -30,7 +30,7 @@ $$\bar{A} = A \cup \{\text{all limit points of } A\}.$$
 -   If  $A$ is already closed, its closure is just  $A$.
 -   If  $A$  is open, its closure adds all the points “on the edge.”
 
-## (Lebesgue) integrablility
+## (Lebesgue) integrability
 
 First, let's visit some requirements. 
 
@@ -129,7 +129,7 @@ These functions are called *test functions*. They are used to “localize” pro
 
 ##  Weak derivatives $D^\alpha$
 
-$$D^\alpha f(x) := \frac{\partial^{|\alpha|}f(x)}{\partial x_1^{\alpha_1} \dots \partial x_n^{\alpha_n}}.$$
+$$D^\alpha f(x) := \frac{\partial^{\vert \alpha \vert}f(x)}{\partial x_1^{\alpha_1} \dots \partial x_n^{\alpha_n}}.$$
 
 Weak derivatives are the extension of the classical derivatives to non-differentiable functions (like $\vert x \vert$).
 
@@ -142,7 +142,7 @@ If for all functions $g \in C^\infty_c(\Omega$), it holds that
 
 $$\int_\Omega f(\mathbf{x}) g(\mathbf{x})d\mathbf{x} =  (-1)^{\vert \alpha \vert} \int_\Omega F(\mathbf{x}) D^\alpha g(\mathbf{x})d\mathbf{x} ,$$
 
-then $f(x)$ is called weak derivative of $F(x) $with respect to the multi-index $|\alpha|$.
+then $f(x)$ is called weak derivative of $F(x) $with respect to the multi-index $\vert \alpha \vert$.
 
 ###  On the weak derivative.
 
@@ -185,12 +185,12 @@ $$
 Or, in other words, 
 
 $$
-W^{k,p}(\Omega) = \left\{f \in L_{\textsf{loc}}^1(\Omega): D^\alpha f \in L^p(\Omega) \text{ with } |\alpha| \leq k \right\}.
+W^{k,p}(\Omega) = \left\{f \in L_{\textsf{loc}}^1(\Omega): D^\alpha f \in L^p(\Omega) \text{ with } \vert \alpha \vert \leq k \right\}.
 $$
 
 For $u \in W^{k, p}(\Omega)$, this space is equipped with the norm
 
-$$ \lVert u \rVert_{k, p} = \left(\int_\Omega \sum_{|\alpha| \leq k} \left|D^\alpha u(x)\right|^p dx\right)^\frac{1}{p} = \left( \sum_{|\alpha| \leq k} \left\lVert D^\alpha u(x)\right\rVert_p^p \right)^\frac{1}{p} \: \in [0, \infty].$$
+$$ \lVert u \rVert_{k, p} = \left(\int_\Omega \sum_{\vert \alpha \vert \leq k} \left|D^\alpha u(x)\right|^p dx\right)^\frac{1}{p} = \left( \sum_{\vert \alpha \vert \leq k} \left\lVert D^\alpha u(x)\right\rVert_p^p \right)^\frac{1}{p} \: \in [0, \infty].$$
 
 
 ## Hilbert space
