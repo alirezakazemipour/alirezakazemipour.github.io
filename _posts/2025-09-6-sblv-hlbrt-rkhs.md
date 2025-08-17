@@ -75,7 +75,8 @@ A function $f: \mathbb{R}^n \to \mathbb{R}$ is called (Lebesgue) measurable if $
 
 ### Almost every where
 
-Two function $f, g: \mathbb{R}^n \to \mathbb{R}$ are  equal _almost everywhere_ if the set $\{f \neq g\} \subset \mathbb{R}^n$ is a Lebesgue null set.  
+Two function $f, g: \mathbb{R}^n \to \mathbb{R}$ are  equal _almost everywhere_ if the set
+$\{f \neq g\} \subset \mathbb{R}^n$ is a Lebesgue null set.  
 
 ## $\mathcal{L}^p(\Omega)$
 
@@ -128,9 +129,9 @@ These functions are called *test functions*. They are used to “localize” pro
 
 ##  Weak derivatives $D^\alpha$
 
-$$D^\alpha f(x) := \frac{\partial^{|\alpha|}f(x)}{\partial x_1^{\alpha_1} \dots \partial x_n^{\alpha_n}}$$
+$$D^\alpha f(x) := \frac{\partial^{|\alpha|}f(x)}{\partial x_1^{\alpha_1} \dots \partial x_n^{\alpha_n}}.$$
 
-Weak derivatives are the extension of the classical derivatives to non-differentiable functions (like $|x|$).
+Weak derivatives are the extension of the classical derivatives to non-differentiable functions (like $\vert x \vert$).
 
 __Definition__. Suppose $\Omega$ is an open set in $\mathbb{R}^n$. Let $F, f \in L_\textsf{loc}^1(\Omega)$. A function $u$ belongs to $L_\textsf{loc}^1(\Omega)$, if for each compact (closed bounded) subset $\Omega' \subset \Omega$, it holds
 
