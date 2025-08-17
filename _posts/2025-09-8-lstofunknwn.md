@@ -1,12 +1,11 @@
 ---
 title: "What I don't know"
-permalink: /posts/2025/08/lstofunknwn/
-date: 2025-09-6
+permalink: /posts/2999/01/lstofunknwn/
+date: 2999-01-1
 tags:
   - learning
 ---
 
-# Some Mentioned in RLC 2025
 - Bounded rationality
 - Non-parametric bandits: Arms' distribution can be multi modal, not conforming to a single parameter exponential family.
 - Thomson Sampling only works for parameteric bandits.
@@ -17,8 +16,7 @@ tags:
 - Round robin
 - Compact MDPs
 - KWIK learners
-- Tower rule 
-- Sobolev Spaces (Larry Wasserman)
+- Tower rule
 - Mansour, Littman, et al. (Lunch 2023)
 - IMPACT (Trimbach 2019)
 - Mirror Descent
@@ -28,13 +26,12 @@ tags:
 - Black-well optimality
 - discrete vs countable
 - e values/processes
-- Damn RKHS
 - Why $n-1$ for the empirical variance?
 - ergodic, i.e., aperiodic, recurrent, and irreducible MDPs
-- The law of total variance in RL
-- moment generating function
+- Use of the law of total variance in RL
 - $\sigma$-algebra vs. a topology
-- Why $\mathrm{rank}(A \otimes B) = rank(A) \cdot \rank{B}$
+- Why $\mathrm{rank}(A \otimes B) = \mathrm{rank}(A) \cdot \mathrm{rank}(B)$
 - Bayesian vs. Frequenist analysis of TS
 - Gradient vs. derivative
 - t-student distribution
+- Exchanging derivative and expectation?

@@ -8,7 +8,7 @@ tags:
 
 This post will be hell of a post! Haha 🤩
 
-Ah before I forget, we're in the regime of partial derivatives.
+Ah before I forget, Sobolev spaces are useful in the regime of partial derivatives.
 
 # Supplementary definitions and notation
 
@@ -32,7 +32,7 @@ $$\bar{A} = A \cup \{\text{all limit points of } A\}.$$
 
 ## (Lebesgue) integrability
 
-First, let's visit some requirements. 
+First, let's visit some background. 
 
 ### $\sigma$-algebra. 
 
@@ -142,7 +142,7 @@ $$\int_\Omega f(\mathbf{x}) g(\mathbf{x})d\mathbf{x} =  (-1)^{\vert \alpha \vert
 
 then $f(x)$ is called weak derivative of $F(x) $with respect to the multi-index $\vert \alpha \vert$.
 
-###  On the weak derivative.
+###  On the weak derivatives
 
 • The notion ‘weak’ is used in mathematics if something holds for all appropriate test elements (test functions).
 
