@@ -133,13 +133,14 @@ $$D^\alpha f(x) := \frac{\partial^{|\alpha|}f(x)}{\partial x_1^{\alpha_1} \dots 
 
 Weak derivatives are the extension of the classical derivatives to non-differentiable functions (like $\vert x \vert$).
 
-__Definition__. Suppose $\Omega$ is an open set in $\mathbb{R}^n$. Let $F, f \in L_\textsf{loc}^1(\Omega)$. A function $u$ belongs to $L_\textsf{loc}^1(\Omega)$, if for each compact (closed bounded) subset $\Omega' \subset \Omega$, it holds
+__Definition__. Suppose $\Omega$ is an open set in $\mathbb{R}^n$. Let $F, f \in L_\textsf{loc}^1(\Omega)$.
+A function $u$ belongs to $L_\textsf{loc}^1(\Omega)$, if for each compact (closed bounded) subset $\Omega' \subset \Omega$, it holds
 
 $$\int_{\Omega'} |u(\mathbf{x})|d\mathbf{x} \leq \infty.$$
 
 If for all functions $g \in C^\infty_c(\Omega$), it holds that
 
-$$\int_\Omega f(\mathbf{x}) g(\mathbf{x})d\mathbf{x} =  (-1)^{|\alpha|} \int_\Omega F(\mathbf{x}) D^\alpha g(\mathbf{x})d\mathbf{x} ,$$
+$$\int_\Omega f(\mathbf{x}) g(\mathbf{x})d\mathbf{x} =  (-1)^{\vert \alpha \vert} \int_\Omega F(\mathbf{x}) D^\alpha g(\mathbf{x})d\mathbf{x} ,$$
 
 then $f(x)$ is called weak derivative of $F(x) $with respect to the multi-index $|\alpha|$.
 
@@ -155,7 +156,7 @@ then $f(x)$ is called weak derivative of $F(x) $with respect to the multi-index 
 
 • The weak derivative is uniquely determined, in the sense described above.
 
-__Example__.  The weak derivative of the function $F(x) = |x|$ is
+__Example__.  The weak derivative of the function $F(x) = \vert x \vert$ is
 
 $$
 f(x) = 
@@ -212,11 +213,11 @@ The problem is that if $\psi(x)$ is infinite-dimensional, the inner product can'
 
 Given a kernel $k$ such that $\sum_{i = 1}^{n} \sum_{j = 1}^{n} \alpha_i \alpha_j k(x_i, x_j) \geq 0$, we define RKHS of $k$ as the function space $\mathcal{H}_0$ of the form 
 
-$$\mathcal{H}_0 = \left \{f(x): f(x) = \sum_{i = 1}^m \alpha_i k(x_i, x) = k\bm{\alpha}^\top\right\},$$
+$$\mathcal{H}_0 = \left \{f(x): f(x) = \sum_{i = 1}^m \alpha_i k(x_i, x) = k\mathbf{\alpha}^\top\right\},$$
 
 with the inner product (norm) defines as
 
-$$\lVert f(x) \rVert_\mathcal{H}^2 = \sum_{i = 1}^m f(x_i)^2 = \mathbf{f}^\top\mathbf{f}  = \bm{\alpha}k^\top k\bm{\alpha}^\top =  \bm{\alpha} \mathbf{K}\bm{\alpha}^\top = \sum_{i = 1}^{m} \sum_{j = 1}^{m} \alpha_i \alpha_j k(x_i, x_j) = \langle w, w\rangle,$$
+$$\lVert f(x) \rVert_\mathcal{H}^2 = \sum_{i = 1}^m f(x_i)^2 = \mathbf{f}^\top\mathbf{f}  = \mathbf{\alpha}k^\top k\mathbf{\alpha}^\top =  \mathbf{\alpha} \mathbf{K}\mathbf{\alpha}^\top = \sum_{i = 1}^{m} \sum_{j = 1}^{m} \alpha_i \alpha_j k(x_i, x_j) = \langle w, w\rangle,$$
 
 where 
 
