@@ -35,3 +35,6 @@ tags:
 - moment generating function
 - $\sigma$-algebra vs. a topology
 - Why $\mathrm{rank}(A \otimes B) = rank(A) \cdot \rank{B}$
+- Bayesian vs. Frequenist analysis of TS
+- Gradient vs. derivative
+- t-student distribution
