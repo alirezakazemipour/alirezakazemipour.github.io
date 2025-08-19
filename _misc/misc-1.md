@@ -35,6 +35,11 @@ permalink: /misc/misc-1
 - [Half of the men already hate you, do it-AT](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/Half%20of%20the%20men%20already%20hate%20you,%20do%20it-AT.mp4)
 - [What do you want-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/What%20do%20you%20want-JP.mp4)
 - [Will all my impossible dreams come true? The answer is yes!-HG (Only in persian)](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/All%20impossible%20dreams%20come%20true.mp4)
+- [THE BEST POSSIBLE OUTCOME-JP](https://www.youtube.com/watch?v=qVic3EqUqo8)
+- [The fool is the precursor to the savior-JP](https://www.youtube.com/watch?v=PrIrZRd0pGE)
+- [Anything Worth Doing Is Worth Doing Badly-JP](https://www.youtube.com/watch?v=FJV7HeHT4q4)
+- [DON'T WASTE YOUR LIFE-JP](https://www.youtube.com/watch?v=7uEgS8ZnSaA)
+- So true: [There is nothing more practical than developing a vision-JP](https://youtube.com/shorts/kJ-3g4kzLf4?si=koYQ6PF29-YENm1Z)
 
 JP: 
 > You're in a damaged structure, you're a damaged structure, you're ina damaged structure.
@@ -62,5 +67,11 @@ Job in the midst of his suffering:
 > No matter how much _undeserved_ and _unjust_ suffering comes my way, in spite my of _innocence_. I will not lose faith 
 > and I will do good.__
 
+JP:
+> You have to spend your life developing your character.
+
 # Generic
 [Learning how to learn course](https://www.coursera.org/learn/learning-how-to-learn)
+
+# If you're struggling with Ulcerative Colitis
+[What I Eat to Optimize My Gut | Daily Routine After UC & IBD](https://www.youtube.com/watch?v=7Lo2I1gUYfg)
