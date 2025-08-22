@@ -70,6 +70,9 @@ Job in the midst of his suffering:
 JP:
 > You have to spend your life developing your character.
 
+JP:
+> So now Pinocchio has to face the thing he's afraid the most!
+
 # Generic
 [Learning how to learn course](https://www.coursera.org/learn/learning-how-to-learn)
 
