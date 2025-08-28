@@ -73,6 +73,9 @@ JP:
 JP:
 > So now Pinocchio has to face the thing he's afraid the most!
 
+21P:
+> They say I'm emotional, but you're black, bullet-proof like a funeral.
+
 # Generic
 [Learning how to learn course](https://www.coursera.org/learn/learning-how-to-learn)
 
