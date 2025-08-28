@@ -40,6 +40,7 @@ permalink: /misc/misc-1
 - [Anything Worth Doing Is Worth Doing Badly-JP](https://www.youtube.com/watch?v=FJV7HeHT4q4)
 - [DON'T WASTE YOUR LIFE-JP](https://www.youtube.com/watch?v=7uEgS8ZnSaA)
 - So true: [There is nothing more practical than developing a vision-JP](https://youtube.com/shorts/kJ-3g4kzLf4?si=koYQ6PF29-YENm1Z)
+- [Why reality has an adversarial nature-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/Horrible%20THINGS%20are%20Chasing%20YOU%20by%20Jordan%20B%20Peterson.mp4)
 
 JP: 
 > You're in a damaged structure, you're a damaged structure, you're ina damaged structure.
