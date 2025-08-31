@@ -41,6 +41,7 @@ permalink: /misc/misc-1
 - [DON'T WASTE YOUR LIFE-JP](https://www.youtube.com/watch?v=7uEgS8ZnSaA)
 - So true: [There is nothing more practical than developing a vision-JP](https://youtube.com/shorts/kJ-3g4kzLf4?si=koYQ6PF29-YENm1Z)
 - [Why reality has an adversarial nature-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/Horrible%20THINGS%20are%20Chasing%20YOU%20by%20Jordan%20B%20Peterson.mp4)
+- [You're the only one-Rumi (Only in persian)](https://rozmusic.com/مهران-مدیری-یار-تویی.html)
 
 JP: 
 > You're in a damaged structure, you're a damaged structure, you're ina damaged structure.
@@ -73,9 +74,6 @@ JP:
 
 JP:
 > So now Pinocchio has to face the thing he's afraid the most!
-
-21P:
-> They say I'm emotional, but you're black, bullet-proof like a funeral.
 
 # Generic
 [Learning how to learn course](https://www.coursera.org/learn/learning-how-to-learn)
