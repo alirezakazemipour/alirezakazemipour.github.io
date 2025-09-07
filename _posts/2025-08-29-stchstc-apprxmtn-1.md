@@ -21,7 +21,7 @@ In this section I'll review some concepts needed throughout the document.
 The $\alpha$-sublevel set of a function $f: \mathbb{R}^n \to \mathbb{R}$ is defined as
 $$C_\alpha = \{x \in \mathsf{dom}(f): f(x) \leq \alpha \}.$$
 ## Stationary point of a function
-Stationary point of a function is very its derivative is zero
+Stationary point of a function is where its derivative is zero
 
 ## Limit point of a sequence
 Let $\left(a_i \right)^\infty_{i=m}$ be a sequence of real numbers,
@@ -60,6 +60,7 @@ f(r + z) - f(r) & \leq z^\top\nabla f(r) + \int_0^1\ \lVert z \rVert \cdot \lVer
 & \leq z^\top\nabla f(r) + \lVert z \rVert \int_0^1\ \beta\xi\lVert z \rVert d\xi \\
 & = \leq z^\top\nabla f(r) + \frac \beta2 \lVert z \rVert^2.
 \end{align*}$$
+
 By replacing $r = x$ and $r + z = y$ the proof is completes. $\square$
 
 ## Filterations
@@ -91,20 +92,29 @@ Then, we have $\sum_{t = 0}^\infty X_t < \infty$, and the sequence $Y_t$ converg
 
 _Proof_ (Gemini).
 Define the following $\mathcal{F}_t$ measurable process:
+
 $$U_t := Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i).$$
+
 We show that $\{U_t\}$ is a supermartingale:
+
 $$\begin{align*} \mathbb{E}[U_{t + 1} \mid \mathcal{F}_t] &= \mathbb{E}[Y_{t + 1} \mid \mathcal{F}_t] + \sum_{i = 0}^{t}(Z_i - X_i) \leq Y_t +Z_t - X_t + \sum_{i = 0}^{t}(X_i - Z_i) \\
 & = Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i) = U_t.
 \end{align*}
 $$
+
 We now show that $\{U_t\}$ is bounded below:
+
 $$U_t := Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i) \geq 0 + 0 -\sum_{i = 0}^{t - 1}Z_i \geq -\sum_{i = 0}^{\infty}Z_i$$
 Since $S_\infty := \sum_{i = 0}^{\infty}Z_i$ is bounded by the assumption, then $U_t \geq -S_\infty$. Since $\{U_t\}$ is a supermartingale that is bounded below, the Supermartingale Convergence Theorem implies that $U_t$ must converge to a finite limit w.p. 1. Let's call this limit $U$:
 $$\lim_{t\to \infty} U_t = U < \infty.$$
+
 Substituting the definition of $U_t$:
+
 $$\lim_{t \to \infty} \left( Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i)\right) = U,$$
 which means
+
 $$\lim_{t \to \infty} \left( Y_t + \sum_{i = 0}^{t - 1}X_i\right) = U + S_\infty.$$
+
 For the sum of two non-negative sequences to converge to a finite limit, both sequences must be bounded. Hence, $\lim_{t \to \infty} Y_t = Y_\infty < \infty$, and $\sum_{i = 0}^{\infty}X_i < \infty$, which means $X_t \to 0$. $\square$
 ## Mathematical optimization  
 A mathematical optimization problem is finding the maximum/minimum of a real-valued function.  
