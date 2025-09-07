@@ -172,7 +172,7 @@ Throughout, we implicitly assume that the stepsize sequence meet the Robbins-Mon
 There are three paradigm of optimization problems that can be solved by stochastic approximation. I'll dig into each of separately. Instead of mentioning the required assumptions in the beginning, I'll explain the required assumptions during proofs to see where they're needed (except the Robbins-Monro conditions on the stepsize that I've assumed are met implicitly throughout).
 ## Convergence under a smooth Lyapunov or potential function
 
-One way if determining the convergence to the fixed point $r^*$ is introducing a Lyapunov or in other words, a potential function that act as a distance such that $f(r_{t +1}) < f(r_t)$ whenever $r_t \neq r^*$. Since noise is involved, instead of requiring $f(r_{t +1}) < f(r_t)$, it's more appropriate to want the *expected direction* of update is a _direction_ of $f$'s decrease. 
+One way if determining the convergence to the fixed point $r$<sup>2</sup> is introducing a Lyapunov or in other words, a potential function that act as a distance such that $f(r_{t +1}) < f(r_t)$ whenever $r_t \neq r^*$. Since noise is involved, instead of requiring $f(r_{t +1}) < f(r_t)$, it's more appropriate to want the *expected direction* of update is a _direction_ of $f$'s decrease. 
 
 In this section our algorithm is of the form 
 $$r_{t+1} = r_t + \gamma_t s_t,$$
