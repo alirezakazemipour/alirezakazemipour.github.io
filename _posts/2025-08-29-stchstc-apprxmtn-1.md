@@ -112,7 +112,8 @@ $$U_t := Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i).$$
 We show that $\{U_t\}$ is a supermartingale:
 
 $$
-\begin{align*} \mathbb{E}\[U_{t + 1} \mid \mathcal{F}\_t\] &= \mathbb{E}\[Y_{t + 1} \mid \mathcal{F}\_t\] +
+\begin{align*} 
+\mathbb{E}\[U\_{t + 1} \mid \mathcal{F}\_t\] &= \mathbb{E}\[Y_{t + 1} \mid \mathcal{F}\_t\] +
 \sum_{i = 0}^{t}(Z_i - X_i) \leq Y_t +Z_t - X_t + \sum_{i = 0}^{t}(X_i - Z_i) \\
 & = Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i) = U_t.
 \end{align*}
@@ -185,9 +186,13 @@ The first condition says that the stepsize should be big enough so we can make p
 
 ## Why do we need $\sum_{t = 0}^\infty \gamma_t(i) = \infty$? 
 The reason is that if we compute how much we have progressed from the initial iteration
+
 $$|r_t(i) - r_0(i)|
 \stackrel{\text{traingle inequality}}{\leq} \sum_{\tau = 0}^{t - 1} \gamma_\tau(i) |(Hr_\tau)(i) + w_\tau - r_\tau(i)|,$$
-and if the magnitude of the updates $|(Hr_\tau)(i) + w_\tau - r_\tau(i)|$ is bounded and $\sum_{t = 0}^\infty \gamma_t(i)  = A < \infty$, then the algorithm will be confined within a fixed radius and if the desired solution is outside of that radius, we'll never succeeding in getting it.
+
+and if the magnitude of the updates $|(Hr_\tau)(i) + w_\tau - r_\tau(i)|$
+is bounded and $\sum_{t = 0}^\infty \gamma_t(i)  = A < \infty$, then the algorithm will be confined within
+a fixed radius and if the desired solution is outside of that radius, we'll never succeed in getting it.
 
 ## Why do we need $\sum_{t = 0}^\infty \gamma^2_t(i) < \infty$? 
 Suppose we want to apply the Robbins-Monro algorithm on sequence of i.i.d. random variable with a unknown mean $\mu$ and known variance of one.
