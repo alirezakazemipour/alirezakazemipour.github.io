@@ -111,13 +111,11 @@ $$U_t := Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i).$$
 
 We show that $\{U_t\}$ is a supermartingale:
 
-$$
-\begin{align*} 
-\mathbb{E}\[U\_{t + 1} \mid \mathcal{F}\_t\] &= \mathbb{E}\[Y_{t + 1} \mid \mathcal{F}\_t\] +
+$$\begin{align*} 
+\mathbb{E}[U_{t + 1} \mid \mathcal{F}\_t] &= \mathbb{E}\[Y_{t + 1} \mid \mathcal{F}\_t\] +
 \sum_{i = 0}^{t}(Z_i - X_i) \leq Y_t +Z_t - X_t + \sum_{i = 0}^{t}(X_i - Z_i) \\
 & = Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i) = U_t.
-\end{align*}
-$$
+\end{align*} $$
 
 We now show that $\{U_t\}$ is bounded below:
 
