@@ -142,7 +142,7 @@ $$\begin{equation*} r = Hr - \nabla f(r) \end{equation*},$$
 
 where the solution $Hr = r$ mandates that $\nabla f(r) = 0$, which means $r$ is the minimizer of $f$ [Spoiler: the fixed point of $H$ is the minimizer of $f$].
 
-In general we might not have direct access to $Hr$,  but instead some noisy corrupted measurement of it. Then our optimization problem takes the following form, where $w$ denotes the random noise
+In general, we might not have direct access to $Hr$,  but instead some noisy corrupted measurement of it. Then our optimization problem takes the following form, where $w$ denotes the random noise
 
 $$\begin{equation*} r := (1 - \gamma) r + \gamma (Hr + w) \end{equation*}.$$
 
@@ -182,16 +182,24 @@ Throughout, we implicitly assume that the stepsize sequence meet the Robbins-Mon
 There are three paradigm of optimization problems that can be solved by stochastic approximation. I'll dig into each of separately. Instead of mentioning the required assumptions in the beginning, I'll explain the required assumptions during proofs to see where they're needed (except the Robbins-Monro conditions on the stepsize that I've assumed are met implicitly throughout).
 ## Convergence under a smooth Lyapunov or potential function
 
-One way if determining the convergence to the fixed point $r$<sup>2</sup> is introducing a Lyapunov or in other words, a potential function that act as a distance such that $f(r_{t +1}) < f(r_t)$ whenever $r_t \neq r^*$. Since noise is involved, instead of requiring $f(r_{t +1}) < f(r_t)$, it's more appropriate to want the *expected direction* of update is a _direction_ of $f$'s decrease. 
+One way if determining the convergence to the fixed point $r$<sup>*</sup> is introducing a Lyapunov or in other words, a potential function that act as a distance such that $f(r_{t +1}) < f(r_t)$ whenever $r_t \neq r^*$. Since noise is involved, instead of requiring $f(r_{t +1}) < f(r_t)$, it's more appropriate to want the *expected direction* of update is a _direction_ of $f$'s decrease. 
 
 In this section our algorithm is of the form 
+
 $$r_{t+1} = r_t + \gamma_t s_t,$$
-  and for simplicity we assume a universal stepsize sequence for all components of $r,$ $\Vert \cdot \rVert$ represents the Euclidean norm, i.e., $\lVert r \rVert = r^\top \cdot r$, and $\mathcal{F}_t$ represents the history ($\sigma$-algebra) of the algorithm until time $t$ as 
-  $$\mathcal{F}_t = \{r_0, \dots, r_t, s_0, \dots, s_{t - 1}, \gamma_0, \dots \gamma_t \}.$$ Note that only the sequence of update until time $t-1$ is include in $\mathcal{F}_t$. I'll mention two examples to problems that fit into this paradigm. 
+
+and for simplicity we assume a universal stepsize sequence for all components of
+$r,$ $\Vert \cdot \rVert$ represents the Euclidean norm, i.e., 
+$\lVert r \rVert = r^\top \cdot r$, and $\mathcal{F}_t$
+represents the history ($\sigma$-algebra) of the algorithm until time $t$ as 
+
+$$\mathcal{F}_t = \{r_0, \dots, r_t, s_0, \dots, s_{t - 1}, \gamma_0, \dots \gamma_t \}.$$ Note that only the sequence of update until time $t-1$ is include in $\mathcal{F}_t$. I'll mention two examples to problems that fit into this paradigm. 
 
 ### Stochastic gradient algorithm
 In this example we have that 
+
 $$r_{t + 1} = r_{t} - \gamma_t (\nabla f(r_t) + w_t),$$
+
 where $s_t = -\nabla f(r_t) - w_t$, the potential function is $f$, and the expected direction of the update, assuming that $\mathbb{E}[w_t \mid \mathcal{F}_t] = 0$, is $\mathbb{E}[s_t \mid \mathcal{F}_t] = -\nabla f(r_t)$.
 
 ### Euclidean norm pseudo-contractions
