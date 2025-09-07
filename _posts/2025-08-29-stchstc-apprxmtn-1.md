@@ -243,8 +243,9 @@ In this algorithm $f(r) = \frac 12 \lVert r - r^* \rVert^2$ is the potential fun
 
 Using Hölder's inequality and the fact that $H$ us a pseudo-contraction w.r.t the Euclidean norm, we have
 
-$$(Hr - r^\*)^\top(r - r^\*) \leq \lVert Hr - r^\*\rVert \cdot \lVert r - r^\* \rVert \leq \beta \lVert r - r^\* \rVert^2.$$
-Subtract $(r - r^\*)^\top(r - r^\*)$ from both sides and we get
+$$(Hr - r^*)^\top(r - r^*) \leq \lVert Hr - r^*\rVert \cdot \lVert r - r^* \rVert \leq \beta \lVert r - r^* \rVert^2.$$
+
+Subtract $(r - r^\*)^\top(r - r^\*)$ from both sides, and we get
 $$(Hr - r)^\top(r - r*) \leq -(1 - \beta) \lVert r - r^* \rVert^2.$$
 
 With $r = r_t$, the inequality can be rewritten as 
@@ -258,20 +259,24 @@ __Proposition__. Consider the algorithm $r_{t + 1} = r_t + \gamma_ts_t,$ with th
 2. We have $\lim_{t \to \infty} \nabla f(r_t) = 0$.
 3. Every limit point of $r_t$ is a stationary point of $f$.
 ---
+
 Note that the above proposition says nothing about the convergence or the boundedness of the sequence $r_t$, however if $f$ has __bounded level sets__, part (1) implies 
 the sequence $r_t$ is bounded. Moreover, if $f$ has unique __stationary point__ $r^*$, part (3) implies that $r^*$ is the only __limit point__ of $r_t$, and hence $r_t$ converges to $r^*$.
 
 _Proof_.
 
 We need our first __assumption__ to begin the proof. 
+
 ___
 1. We need to assume $f$ is $L$-smooth.
 ___
+
 Hence,
 $$f(\bar r) \leq f(r) + \nabla f(r)^\top(\bar r - r) + \frac L2 \Vert \bar r - r \Vert^2.$$
 By replacing $r = r_t$ and $\bar r  = r_{t + 1} = r_t + \gamma_t s_t$ we have 
 $$f(r_{t + 1}) \leq f(r_t) + \gamma_t \nabla f(r_t)^\top s_t + \gamma_t^2 \frac L2 s_t^2.$$
 Now we need the next two __assumptions__. We want the magnitude of the update to be comparable to the gradient of $f$, and the expected direction of the update and the direction of $f$'s gradient never get orthogonal. 
+
 ___
 2. There exists positive constants $K_2, K_2$ such that
 $$\mathbb{E}\left[\Vert s_t \Vert^2 \mid \mathcal{F}_t\right] \leq K_1 + K_2 \Vert f(r_t) \Vert^2, \: \forall t.$$
@@ -279,14 +284,18 @@ Note that $s_t$ is allowed to be nonzero [because of the noise] even if $\nabla 
 3. There exits a positive constant $c$ such that
 $$c\Vert f(r_t) \Vert^2 \leq -\nabla f(r_t)^\top \mathbb{E}[s_t \mid \mathcal{F}_t], \: \forall t.$$
 ___
+
 We have 
+
 $$
 \begin{align*}
 \mathbb{E}[f(r_{t + 1}) \mid \mathcal{F}_t] & \leq f(r_t) - c\gamma_t \Vert \nabla f(r_t) \Vert^2 + \gamma_t^2 \frac L2 \left(K_1 + K_2 \Vert\nabla f(r_t)\Vert^2\right) \\
 & = f(r_t) - \gamma_t \left( c - \frac{LK_2\gamma_t}{2} \right)\Vert \nabla f(r_t) \Vert^2 + \frac{LK_1\gamma_t^2}{2}.
 \end{align*}
 $$
+
 We want to come to conclusion about the convergence of $f(r_t)$s and we already have relationship between $\mathbb{E}[f(r_{t + 1}) \mid \mathcal{F}_t]$ and $f(r_t$) which already is a reminisce of a (sub/super) martingale difference sequence. This relationship can be exploited if we can establish if we actually facing a (sub/super) martingale difference sequence. To so do, define
+
 $$\begin{align*}
 X_t &= \begin{cases}
 \gamma_t \left( c - \frac{LK_2\gamma_t}{2} \right)\Vert \nabla f(r_t) \Vert^2, & \mathrm{if}\; LK_2\gamma_t \leq 2c, \\
@@ -299,10 +308,11 @@ Z_t &= \begin{cases}
 \end{cases}
 \end{align*}
 $$
-Note that $X_t$ and $Z_t$ are nonnegative and $\mathcal{F}_t$ measurable. Using the assumption
+
+Note that $X_t$ and $Z_t$ are nonnegative and $\mathcal{F}\_t$ measurable. Using the assumption
 $\sum\_{t=0}\infty \gamma_t^2 < \infty$, $\gamma_t$ converges to zero and 
 there exists some finite time after which $LK_2\gamma_t \leq 2c$. 
-Hence, after some finite time we have $Z_t = \frac{LK_1\gamma_t^2}{2}$ and 
+Hence, after some finite time we have $Z_t = \frac{LK\_1\gamma_t^2}{2}$ and 
 therefore $\sum_{t = 0}^\infty Z_t < \infty$. Therefore, to use the positive
 supermartingale convergence theorem, we introduce the next __assumption__ we need.
 
@@ -350,11 +360,16 @@ Now, we take an unconditional expectation from the both sides and apply the towe
 $$\mathbb{E}\left[\Vert u_t \Vert^2 \right] \leq (K_1 + K_2\epsilon^2)\sum_{\tau = 0}^\infty \gamma_\tau^2 \leq (K_1 + K_2\epsilon^2)A, \quad \forall t,$$
 and since $\Vert u_t \Vert \leq 1 + \Vert u_t \Vert^2$, we have $\sup_t \mathbb{E}[\Vert u_t \Vert] < \infty$. Now, we can apply the martingale convergence theorem to $\{u_t\}$ and conclude it almost surely converges. 
 
-Now let's consider the case that $\gamma_t$ is stochastic and $\sum_{t=0}^\infty \gamma^2_t$ is finite (which implies $\gamma_t$ has finite variance) but not by a deterministic constant. Consider any arbitrary positive integer $k$ and let $u^k_t$ represent the process that is equal to $u_t$ as long as $\sum_{t=0}^\infty \gamma_t \leq k$ and stays constant afterwards. Let $\Omega_k$ denote the set of sample paths $(r_0, r_1, \dots)$ for which $u^k_t$ doesn't converge. Since $\sum_{t=0}^\infty \gamma^2_t < \infty$ is finite, for every sample path there and $k$, there exits a time $t_0$, where  $\sum_{t=t_0}^\infty \gamma^2_t \leq k$ almost surely, hence the set $\cup_{k=1}^\infty \Omega_k$ has measure zero, for every sample path and $k$, there exits a time $u_t = u_t^k$ for all $t \geq t_0$ and $u_t$ converges almost surely. 
+Now let's consider the case that $\gamma_t$ is stochastic and $\sum_{t=0}^\infty \gamma^2_t$ is finite (which implies
+$\gamma_t$ has finite variance) but not by a deterministic constant. Consider any arbitrary positive integer $k$ and
+let $u^k_t$ represent the process that is equal to $u_t$ as long as $\sum_{t=0}^\infty \gamma_t \leq k$ and stays
+constant afterward. Let $\Omega_k$ denote the set of sample paths $(r_0, r_1, \dots)$ for which $u^k_t$ doesn't converge. Since $\sum_{t=0}^\infty \gamma^2_t < \infty$ is finite, for every sample path there and $k$, there exits a time $t_0$, where  $\sum_{t=t_0}^\infty \gamma^2_t \leq k$ almost surely, hence the set $\cup_{k=1}^\infty \Omega_k$ has measure zero, for every sample path and $k$, there exits a time $u_t = u_t^k$ for all $t \geq t_0$ and $u_t$ converges almost surely. 
 ___
-Let us now consider a sample path with an infinity of upcrossings and let $\{t_k, \dots, \bar{t}_k\}$ be the $k$th such interval. Using the above lemma we obtain:
-$$\lim_{k \to \infty} \sum_{t = t_k}^{\bar{t}_k - 1} \gamma_t w_t = 0,$$
+
+Let us now consider a sample path with an infinity of upcrossings and let $\{t_k, \dots, \bar{t}\_k\}$ be the $k$th such interval. Using the above lemma we obtain:
+$$\lim_{k \to \infty} \sum_{t = t_k}^{\bar{t}\_k - 1} \gamma_t w_t = 0,$$
 which also implies that $\lim_{k \to \infty} \gamma_{t_k} w_{t_k} = 0$. Now we have
+
 $$
 \begin{align*}
 \Vert \nabla f(r_{t_k + 1}) \Vert - \Vert \nabla f(r_{t_k}) \Vert & \leq \Vert \nabla f(r_{t_k + 1}) - \nabla f(r_{t_k})\Vert \\
@@ -363,7 +378,9 @@ $$
 & \leq L \gamma_{t_k} \Vert \bar{s}_{t_k} \Vert +  L \gamma_{t_k} \Vert w_{t_k} \Vert.
 \end{align*}
 $$
+
 The right hand side of the above display goes to zero as $k$ goes to infinity because $\Vert \bar{s}_{t_k} \Vert^2$ is bounded by $K_1 + K_2 \epsilon^2$ and $\gamma_t$ goes to zero, and we have just proved it for $\Vert w_{t_k} \Vert$ as well. Then, since $\Vert \nabla f(r_{t_k + 1}) \Vert \geq \epsilon/2$ (the condition of an upcrossing interval in the definition of $\chi_{t}, \, t \in [t_k, \, \bar{t}_k]$), we have $\Vert \nabla f(r_{t_k}) \Vert \geq \epsilon/4$. Hence for every $k$ we have
+
 $$
 \begin{align*}
 \frac \epsilon2 & \leq \Vert \nabla f(r_{\bar{t}_k}) \Vert - \Vert \nabla f(r_{t_k}) \Vert \\
@@ -372,16 +389,21 @@ $$
 & \leq L \sum_{t = t_k}^{\bar{t}_{t_k} -1} \gamma_t\Vert \bar{s}_t\Vert + L \sum_{t = t_k}^{\bar{t}_{t_k} -1} \gamma_t\Vert w_t\Vert.
 \end{align*}
 $$
+
 We have proved that the second term on the right-hand side of the above display goes to zero. Also, for $t_k \leq t \leq \bar{t}_k - 1, \, \Vert \bar{s}_t \Vert^2 \leq K_1 + K_2 \epsilon^2$, which by the inequality $x \leq x^2 +1$ implies that $\Vert \bar{s}_t \Vert \leq 1 + K_1 + K_2 \epsilon^2:=d$. By taking the $\liminf_{k \to \infty}$ from the above display we have
+
 $$
-\liminf_{k \to \infty} \sum_{t = t_k} ^{\bar{t}_k - 1} \gamma_t \geq \frac{\epsilon}{2Ld}.
+\liminf\_{k \to \infty} \sum_{t = t_k} ^{\bar{t}_k - 1} \gamma_t \geq \frac{\epsilon}{2Ld}.
 $$
+
 For $t_k \leq t \leq \bar{t}_k - 1$ we have
+
 $$
 \begin{align*}
 \liminf_{k \to \infty} \sum_{t = t_k} ^{\bar{t}_k - 1} \gamma_t \Vert \nabla f(r_t)\Vert^2 \geq \frac{\epsilon}{2Ld} \cdot \frac{\epsilon^2}{16}.
 \end{align*}
 $$
+
 This means by summing over all upcrossing intervals we get that $\sum_{t=0}^{\infty} \gamma_t \Vert \nabla f(r_t)\Vert^2 =\infty$ (infinite sum of possible numbers is infinite). This is a contradiction because after assumption 4 we had shown that $\sum_{t=0}^{\infty} \gamma_t \Vert \nabla f(r_t)\Vert^2 < \infty$, hence the number of upcrossings should be finite.
 
 Given that $\Vert \nabla f(r_t) \Vert$ comes infinitely often arbitrarily close to zero and since there are finitely many upcrossings, it follows that $\Vert \nabla f(r_t) \Vert$ can exceed $\epsilon$ only a finite number of times, and lim $\sup_{t \to \infty}\Vert \nabla f(r_t) \Vert \leq \epsilon$  . Since $\epsilon$ was arbitrary, it follows that $\sup_{t \to \infty}\Vert \nabla f(r_t) \Vert  = 0$, and part (b) of the proposition has been proved. Finally, if $r$ is a limit point of $r_t$,  is the limit of some subsequence of $\nabla f(r_t)$ and must be equal to 0, which establishes part (c).
