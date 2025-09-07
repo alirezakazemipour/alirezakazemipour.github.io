@@ -1,7 +1,7 @@
 ---  
 title: "Why does Q-Learning and SARSA converge? (a.k.a Stochastic Approximation Part 4)"
  permalink: /posts/2025/08/qlrng-sarsa/ 
- date: 2025-08-20 tags:    
+ date: 1900-08-20 tags:    
 - learning   
 ---  
 
