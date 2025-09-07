@@ -66,31 +66,31 @@ By replacing $r = x$ and $r + z = y$ the proof is completed. $\square$
 ## Filterations
 Given a measurable space $(\Omega, \mathcal{F})$,
 a filteration is a sequence $\left(\mathcal{F}\_t\right)^n_{t = 0}$ of sub-$\sigma$-algebras of $\mathcal{F}$, where
-$\mathcal{F}_t \subseteq \mathcal{F}_{t + 1}$ for all $t < n$, $\mathcal{F}_n \subseteq \mathcal{F}$,
+$\mathcal{F}_t \subseteq \mathcal{F}\_{t + 1}$ for all $t < n$, $\mathcal{F}_n \subseteq \mathcal{F}$,
 and $\mathcal{F}_0 = \{\varnothing, \Omega\}$ (note that the set of
 $\mathcal{F}_0$-measurable functions is the set of constant functions on $\Omega$).
 A sequence of random variables $(X_t)^n_{t = 1}$ is adapted to filtration
-$\mathbb{F} = \left(\mathcal{F}_t\right)^n_{t = 0}$  if $X_t$ is $\mathcal{F}_t$-measurable for each t.
+$\mathbb{F} = \left(\mathcal{F}\_t\right)^n_{t = 0}$  if $X_t$ is $\mathcal{F}_t$-measurable for each t.
 We also say in this case that $(X_t)_t$ is $\mathbb{F}$-adapted.
 
 ## (Super) Martingale difference sequence
 A $\mathbb{F}$-adapted sequence of random variables $(X_t)_{t \in \mathbb{N}}$ is a $\mathbb{F}$-adapted martingale if 
-1. $X_t$ is integrable, i.e., $\mathbb{E}[|x|] < \infty$.
-2. $\mathbb{E}[X_{t} \mid \mathcal{F}_{t - 1}] = X_{t - 1}$ almost surely for each $t \in \{2, 3, \dots\}$.
+1. $X_t$ is integrable, i.e., $\mathbb{E}\[|x|\] < \infty$.
+2. $\mathbb{E}\[X_{t} \mid \mathcal{F}\_{t - 1}\] = X_{t - 1}$ almost surely for each $t \in \{2, 3, \dots\}$.
 If the equality in the second point is replaced with a less-than, then we call $(X_t)_t$ a supermartingale
 
 ## Martingle convergence theorem
 Let $X_t, t = 0, 1, 2, \dots$, be a sequence of random variables and let $\mathcal{F}_t, t = 0, 1,2 \dots$, be sets of random variables such that $\mathcal{F}_t \subseteq \mathcal{F}_{t + 1}$ for all $t$. Suppose that:
 1. $X_t$ is $\mathcal{F}_t$-measurable.
-2. For each $t$, we have $\mathbb{E}[X_{t + 1} \mid \mathcal{F}_t] = X_t$. 
-3. There exists a constant $M$ such that $\mathbb{E}[|X_t|] \leq M$ for all $t$. 
+2. For each $t$, we have $\mathbb{E}\[X_{t + 1} \mid \mathcal{F}_t\] = X_t$. 
+3. There exists a constant $M$ such that $\mathbb{E}\[|X_t|\] \leq M$ for all $t$. 
 Then $X_t$ converges to a random variable $X_\infty$ almost surely. 
 
-The proof essentially comes from the fact that $\mathbb{E}[|X_t|] \leq M$ make any sub/super martingale upper/lower bounded, thus converging. Hence, the martingale will also converge. An example of the proof is given in the supermartingale convergence section.
+The proof essentially comes from the fact that $\mathbb{E}\[|X_t|\] \leq M$ make any sub/super martingale upper/lower bounded, thus converging. Hence, the martingale will also converge. An example of the proof is given in the supermartingale convergence section.
 ## Supermartingale convergence theorem
 Let $Y_t, X_t,\, \mathrm{and}\, Z_t, t = 0, 1, 2, \dots,$ be three sequences of random variables and let $\mathcal{F}_t, t = 0, 1, 2, \dots,$ be sets of random variables such that $\mathcal{F}_t \subseteq \mathcal{F}_{t+1}$ for all $t$. Suppose that:
 1. The random variables $Y_t, X_t,\, \mathrm{and}\, Z_t$ are nonnegative, and are functions of the random variables in $\mathcal{F}_t$.
-2. For each $t$, we have $\mathbb{E}[Y_{t + 1} \mid \mathcal{F}_{t}] \leq Y_t - X_t + Z_t$.
+2. For each $t$, we have $\mathbb{E}\[Y_{t + 1} \mid \mathcal{F}_{t}\] \leq Y_t - X_t + Z_t$.
 3. There holds $\sum_{t = 0}^\infty Z_t < \infty$.
 
 Then, we have $\sum_{t = 0}^\infty X_t < \infty$, and the sequence $Y_t$ converges to a nonnegative random variable $Y$, with probability (w.p.) 1.
