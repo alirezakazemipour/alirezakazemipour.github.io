@@ -24,7 +24,7 @@ $$C_\alpha = \{x \in \mathsf{dom}(f): f(x) \leq \alpha \}.$$
 Stationary point of a function is very its derivative is zero
 
 ## Limit point of a sequence
-Let $\left(a_i \right)_{i=m}^\infty$ be a sequence of real numbers, let $x$ be a real number, and let $\varepsilon>0$ be a real number. We say that $x$ is $\varepsilon$-adherent to $\left(a_i \right)_{i=m}^\infty$ if and only if there exits $n \geq m$ such that $a_n$ is $\varepsilon$-close to $x$. We say that $x$ is _continually_ $\varepsilon$-adherent to $\left(a_i \right)_{i=m}^\infty$ if and only if it is $\varepsilon$-adherent to $\left(a_i \right)_{i=N}^\infty$ for every $N \geq m$. We say that $x$ is a limit point of $\left(a_i \right)_{i=m}^\infty$ if and only if it is _continually_ $\varepsilon$-adherent to $\left(a_i \right)_{i=m}^\infty$ for every $\varepsilon > 0$.
+Let $\left(a_i \right)^\infty_{i=m}$ be a sequence of real numbers, let $x$ be a real number, and let $\varepsilon>0$ be a real number. We say that $x$ is $\varepsilon$-adherent to $\left(a_i \right)_{i=m}^\infty$ if and only if there exits $n \geq m$ such that $a_n$ is $\varepsilon$-close to $x$. We say that $x$ is _continually_ $\varepsilon$-adherent to $\left(a_i \right)_{i=m}^\infty$ if and only if it is $\varepsilon$-adherent to $\left(a_i \right)_{i=N}^\infty$ for every $N \geq m$. We say that $x$ is a limit point of $\left(a_i \right)_{i=m}^\infty$ if and only if it is _continually_ $\varepsilon$-adherent to $\left(a_i \right)_{i=m}^\infty$ for every $\varepsilon > 0$.
 
 ## Smooth function
 A continuously differentiable function $f: \mathbb{R}^n \to \infty$ is $\beta$-smooth if 
