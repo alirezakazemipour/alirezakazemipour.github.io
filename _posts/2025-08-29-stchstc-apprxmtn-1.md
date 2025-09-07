@@ -52,15 +52,19 @@ f(r + z) - f(r) & = g(1) - g(0) = \int_0^1\frac{d}{d\xi}g(\xi)d\xi = \int_0^1\ z
 & \leq z^\top\nabla f(r) + \int_0^1\ \lVert z \rVert \cdot \lVert\nabla f(r + \xi z) - \nabla f(r)\rVert d\xi.
 \end{align*}
 $$
-Now assume there exits a $\beta \geq 0$ such that $\lVert \nabla f(x_1) - \nabla f(x_2)\rVert \leq \beta \lVert x_1 - x_2\rVert$ for all $x_1, x_2$ in the domain of $f. Then,
+
+Now assume there exists a $\beta \geq 0$ such that $\lVert \nabla f(x_1) - \nabla f(x_2)\rVert \leq \beta \lVert x_1 - x_2\rVert$ for all $x_1, x_2$ in the domain of $f. Then,
+
 $$\begin{align*}
 f(r + z) - f(r) & \leq z^\top\nabla f(r) + \int_0^1\ \lVert z \rVert \cdot \lVert\nabla f(r + \xi z) - \nabla f(r)\rVert d\xi \\
 & \leq z^\top\nabla f(r) + \lVert z \rVert \int_0^1\ \beta\xi\lVert z \rVert d\xi \\
 & = \leq z^\top\nabla f(r) + \frac \beta2 \lVert z \rVert^2.
 \end{align*}$$
 By replacing $r = x$ and $r + z = y$ the proof is completes. $\square$
+
 ## Filterations
-Given a measurable space $(\Omega, \mathcal{F})$, a filteration is a sequence $\left(\mathcal{F}_t\right)^n_{t = 0}$ of sub-$\sigma$-algebras of $\mathcal{F}$, where $\mathcal{F}_t \subseteq \mathcal{F}_{t + 1}$ for all $t < n$, $\mathcal{F}_n \subseteq \mathcal{F}$, and $\mathcal{F}_0 = \{\varnothing, \Omega\}$ (note that the set of $\mathcal{F}_0$-measurable functions is the set of constant functions on $\Omega$). A sequence of random variables $(X_t)_{t = 1}^n$ is adapted to filtration $\mathbb{F} = \left(\mathcal{F}_t\right)^n_{t = 0}$  if $X_t$ is $\mathcal{F}_t$-measurable for each t. We also say in this case that $(X_t)_t$ is $\mathbb{F}$-adapted.
+Given a measurable space $(\Omega, \mathcal{F})$,
+a filteration is a sequence $\left(\mathcal{F}_t\right)^n_{t = 0}$ of sub-$\sigma$-algebras of $\mathcal{F}$, where $\mathcal{F}_t \subseteq \mathcal{F}_{t + 1}$ for all $t < n$, $\mathcal{F}_n \subseteq \mathcal{F}$, and $\mathcal{F}_0 = \{\varnothing, \Omega\}$ (note that the set of $\mathcal{F}_0$-measurable functions is the set of constant functions on $\Omega$). A sequence of random variables $(X_t)_{t = 1}^n$ is adapted to filtration $\mathbb{F} = \left(\mathcal{F}_t\right)^n_{t = 0}$  if $X_t$ is $\mathcal{F}_t$-measurable for each t. We also say in this case that $(X_t)_t$ is $\mathbb{F}$-adapted.
 
 ## (Super) Martingale difference sequence
 A $\mathbb{F}$-adapted sequence of random variables $(X_t)_{t \in \mathbb{N}}$ is a $\mathbb{F}$-adapted martingale if 
