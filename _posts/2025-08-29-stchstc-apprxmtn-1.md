@@ -211,7 +211,10 @@ Throughout, we implicitly assume that the stepsize sequence meet the Robbins-Mon
 There are three paradigm of optimization problems that can be solved by stochastic approximation. I'll dig into each of separately. Instead of mentioning the required assumptions in the beginning, I'll explain the required assumptions during proofs to see where they're needed (except the Robbins-Monro conditions on the stepsize that I've assumed are met implicitly throughout).
 ## Convergence under a smooth Lyapunov or potential function
 
-One way if determining the convergence to the fixed point $r^\*$ is introducing a Lyapunov or in other words, a potential function that act as a distance such that $f(r_{t +1}) < f(r_t)$ whenever $r_t \neq r^*$. Since noise is involved, instead of requiring $f(r_{t +1}) < f(r_t)$, it's more appropriate to want the *expected direction* of update is a _direction_ of $f$'s decrease. 
+One way if determining the convergence to the fixed point $r^\*$ is introducing a Lyapunov or in other words, a
+potential function that act as a distance such that $f(r_{t +1}) < f(r_t)$ whenever $r\_t \neq r^\*$.
+Since noise is involved, instead of requiring $f(r_{t +1}) < f(r_t)$, it's more appropriate to want the
+*expected direction* of update is a _direction_ of $f$'s decrease. 
 
 In this section our algorithm is of the form 
 
@@ -240,13 +243,14 @@ In this algorithm $f(r) = \frac 12 \lVert r - r^* \rVert^2$ is the potential fun
 
 Using Hölder's inequality and the fact that $H$ us a pseudo-contraction w.r.t the Euclidean norm, we have
 
-$$(Hr - r^*)^\top(r - r*) \leq \lVert Hr - r^*\rVert \cdot \lVert r - r^* \rVert \leq \beta \lVert r - r^* \rVert^2.$$
-Subtract $(r - r^*)^\top(r - r*)$ from both sides and we get
+$$(Hr - r^\*)^\top(r - r^\*) \leq \lVert Hr - r^\*\rVert \cdot \lVert r - r^\* \rVert \leq \beta \lVert r - r^\* \rVert^2.$$
+Subtract $(r - r^\*)^\top(r - r^\*)$ from both sides and we get
 $$(Hr - r)^\top(r - r*) \leq -(1 - \beta) \lVert r - r^* \rVert^2.$$
+
 With $r = r_t$, the inequality can be rewritten as 
 $$\mathbb{E}[s_t \mid \mathcal{F}_t]^\top\nabla f(r_t) \leq -(1 - \beta)\lVert \nabla f(r_t) \rVert^2,$$
 
-which means that $\mathbb{E}[s_t \mid \mathcal{F}_t]$ and $\nabla f(r_t)$ are not orthogonal and they are in the opposite direction.
+which means that $\mathbb{E}[s_t \mid \mathcal{F}_t]$ and $\nabla f(r_t)$ are not orthogonal, and they are in the opposite direction.
 
 ---
 __Proposition__. Consider the algorithm $r_{t + 1} = r_t + \gamma_ts_t,$ with the potential function $f: \mathbb{R}^n \to \mathbb{R}$. Under certain assumptions that will be stated in the proof, the following holds with probability one:
