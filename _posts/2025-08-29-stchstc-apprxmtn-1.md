@@ -82,8 +82,9 @@ A $\mathbb{F}$-adapted sequence of random variables $(X_t)_{t \in \mathbb{N}}$ i
 If the equality in the second point is replaced with a less-than, then we call $(X_t)_t$ a supermartingale
 
 ## Martingle convergence theorem
-Let $X_t, t = 0, 1, 2, \dots$, be a sequence of random variables and let $\mathcal{F}_t, t = 0, 1,2 \dots$, be sets of random variables such that $\mathcal{F}_t \subseteq \mathcal{F}_{t + 1}$ for all $t$. Suppose that:
-1. $X_t$ is $\mathcal{F}_t$-measurable.
+Let $X_t, t = 0, 1, 2, \dots$, be a sequence of random variables and let $\mathcal{F}\_t, t = 0, 1,2 \dots$, be sets
+of random variables such that $\mathcal{F}\_t \subseteq \mathcal{F}_{t + 1}$ for all $t$. Suppose that:
+1. $X_t$ is $\mathcal{F}\_t$-measurable.
 2. For each $t$, we have $\mathbb{E}\[X_{t + 1} \mid \mathcal{F}_t\] = X_t$. 
 3. There exists a constant $M$ such that $\mathbb{E}\[|X_t|\] \leq M$ for all $t$. 
 Then $X_t$ converges to a random variable $X_\infty$ almost surely. 
@@ -100,8 +101,8 @@ $\mathcal{F}\_t \subseteq \mathcal{F}_{t+1}$ for all $t$. Suppose that:
 2. For each $t$, we have $\mathbb{E}\[Y_{t + 1} \mid \mathcal{F}_{t}\] \leq Y_t - X_t + Z_t$.
 3. There holds $\sum_{t = 0}^\infty Z_t < \infty$.
 
-Then, we have $\sum_{t = 0}^\infty X_t < \infty$, and the sequence $Y_t$ converges to a nonnegative random variable $Y$, with probability (w.p.) 1.
-
+Then, we have $\sum_{t = 0}^\infty X_t < \infty$, and the sequence $Y_t$ converges to a nonnegative random variable
+$Y$, with probability (w.p.) 1.
 
 _Proof_ (Gemini).
 Define the following $\mathcal{F}_t$ measurable process:
@@ -110,7 +111,9 @@ $$U_t := Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i).$$
 
 We show that $\{U_t\}$ is a supermartingale:
 
-$$\begin{align*} \mathbb{E}\[U_{t + 1} \mid \mathcal{F}_t\] &= \mathbb{E}[Y_{t + 1} \mid \mathcal{F}_t] + \sum_{i = 0}^{t}(Z_i - X_i) \leq Y_t +Z_t - X_t + \sum_{i = 0}^{t}(X_i - Z_i) \\
+$$
+\begin{align*} \mathbb{E}\[U_{t + 1} \mid \mathcal{F}\_t\] &= \mathbb{E}\[Y_{t + 1} \mid \mathcal{F}\_t\] +
+\sum_{i = 0}^{t}(Z_i - X_i) \leq Y_t +Z_t - X_t + \sum_{i = 0}^{t}(X_i - Z_i) \\
 & = Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i) = U_t.
 \end{align*}
 $$
