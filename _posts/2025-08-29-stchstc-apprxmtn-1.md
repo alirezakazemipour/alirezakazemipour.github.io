@@ -122,7 +122,11 @@ $$
 We now show that $\{U_t\}$ is bounded below:
 
 $$U_t := Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i) \geq 0 + 0 -\sum_{i = 0}^{t - 1}Z_i \geq -\sum_{i = 0}^{\infty}Z_i$$
-Since $S_\infty := \sum_{i = 0}^{\infty}Z_i$ is bounded by the assumption, then $U_t \geq -S_\infty$. Since $\{U_t\}$ is a supermartingale that is bounded below, the Supermartingale Convergence Theorem implies that $U_t$ must converge to a finite limit w.p. 1. Let's call this limit $U$:
+
+Since $S_\infty := \sum_{i = 0}^{\infty}Z_i$ is bounded by the assumption, then $U_t \geq -S_\infty$.
+Since $\{U_t\}$ is a supermartingale that is bounded below, the Supermartingale Convergence Theorem implies
+that $U_t$ must converge to a finite limit w.p. 1. Let's call this limit $U$:
+
 $$\lim_{t\to \infty} U_t = U < \infty.$$
 
 Substituting the definition of $U_t$:
@@ -182,6 +186,7 @@ $$r_{t + 1}(i) = (1 - \gamma_t(i))r_t(i) + \gamma_t(i)((Hr_t)(i) + w(i)).$$
 Note that we wrote the function equation for each component of $r$ and we made the stepsize $\gamma$ dependent on the iteration. The reason behind making stepsize dependent on the iteration is make sure our iterative algorithm eventually converges to the fixed point and a fixed stepsize doesn't necessary gives us this guarantee. Specifically, the stepsize should meet the following two conditions known as the Robbins-Monro conditions
 
 $$\text{A)} \sum_{t = 0}^\infty \gamma_t(i) = \infty, \qquad \text{B) }\sum_{t = 0}^\infty \gamma^2_t(i) < \infty, \quad \forall i.$$
+
 The first condition says that the stepsize should be big enough so we can make progress and also due to the upper limit of its summation, it mandates that every component should be updated infinitely-often. The second condition says that the stepsize should be small enough so we can converge (even in the presence of noise). Let's see why these to conditions are necessary:
 
 ## Why do we need $\sum_{t = 0}^\infty \gamma_t(i) = \infty$? 
@@ -290,10 +295,17 @@ Z_t &= \begin{cases}
 \end{cases}
 \end{align*}
 $$
-Note that $X_t$ and $Z_t$ are nonnegative and $\mathcal{F}_t$ measurable. Using the assumption $\sum_{t=0}\infty \gamma_t^2 < \infty$, $\gamma_t$ converges to zero and there exists some finite time after which $LK_2\gamma_t \leq 2c$. Hence, after some finite time we have $Z_t = \frac{LK_1\gamma_t^2}{2}$ and therefore $\sum_{t = 0}^\infty Z_t < \infty$. Therefore to use the positive supermartingale convergence theorem, we introduce the next __assumption__ we need.
+Note that $X_t$ and $Z_t$ are nonnegative and $\mathcal{F}_t$ measurable. Using the assumption
+$\sum\_{t=0}\infty \gamma_t^2 < \infty$, $\gamma_t$ converges to zero and 
+there exists some finite time after which $LK_2\gamma_t \leq 2c$. 
+Hence, after some finite time we have $Z_t = \frac{LK_1\gamma_t^2}{2}$ and 
+therefore $\sum_{t = 0}^\infty Z_t < \infty$. Therefore, to use the positive
+supermartingale convergence theorem, we introduce the next __assumption__ we need.
+
 ___
 4. $f(r) \geq 0, \forall r \in \mathbb{R}^n$.
 ___
+
 Now, the positive supermartingale convergence applies: $f(r_t)$ converges and $\sum_t X_t < \infty$. Since $\gamma_t$ converges to zero, we have $LK_2\gamma_t \leq c$ after some finite time, and 
 $$X_t = \gamma_t \left( c - \frac{LK_2\gamma_t}{2} \right)\Vert \nabla f(r_t) \Vert^2 \geq \frac c2 \gamma_t\lVert \nabla f(r_t)\rVert^2.$$
 Hence, 
@@ -313,6 +325,7 @@ We define the following $\mathcal{F}_t$ measurable indicator random variable tha
 $$\chi_t = \begin{cases}1, & \mathrm{if}\, \Vert \nabla f(r_\tau) \Vert \leq \epsilon \\ 0, & \mathrm{otherwise}. \end{cases}$$
 The following lemma states that the cumulative discounted effect of noise on the events that upcrossings happen converges almost surely, which we will show later convergence is to zero.
 ___
+
 __Lemma__. The sequence defined by $u_t$ converges w.p. 1:
 $$u_t = \sum_{\tau =0}^{t - 1}\chi_\tau\gamma_\tau w_\tau, \quad u_0 := 0.$$
 _Proof_.
