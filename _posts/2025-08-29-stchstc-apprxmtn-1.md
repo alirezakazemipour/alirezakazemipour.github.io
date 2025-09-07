@@ -255,7 +255,7 @@ which means that $\mathbb{E}[s_t \mid \mathcal{F}_t]$ and $\nabla f(r_t)$ are no
 __Proposition__. Consider the algorithm $r_{t + 1} = r_t + \gamma_ts_t,$ with the potential function $f: \mathbb{R}^n \to \mathbb{R}$. Under certain assumptions that will be stated in the proof, the following holds with probability one:
 1. The sequence $f(r_t)$ converges.
 2. We have $\lim_{t \to \infty} \nabla f(r_t) = 0$.
-3. Every limit point of $r_t$ is a stationary point of $f$.
+3. Every limit point of $r\_t$ is a stationary point of $f$.
 ---
 
 Note that the above proposition says nothing about the convergence or the boundedness of the sequence $r_t$, however if $f$ has __bounded level sets__, part (1) implies 
