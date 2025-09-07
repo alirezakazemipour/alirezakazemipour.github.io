@@ -61,11 +61,17 @@ f(r + z) - f(r) & \leq z^\top\nabla f(r) + \int_0^1\ \lVert z \rVert \cdot \lVer
 & = \leq z^\top\nabla f(r) + \frac \beta2 \lVert z \rVert^2.
 \end{align*}$$
 
-By replacing $r = x$ and $r + z = y$ the proof is completes. $\square$
+By replacing $r = x$ and $r + z = y$ the proof is completed. $\square$
 
 ## Filterations
 Given a measurable space $(\Omega, \mathcal{F})$,
-a filteration is a sequence $\left(\mathcal{F}_t\right)^n_{t = 0}$ of sub-$\sigma$-algebras of $\mathcal{F}$, where $\mathcal{F}_t \subseteq \mathcal{F}_{t + 1}$ for all $t < n$, $\mathcal{F}_n \subseteq \mathcal{F}$, and $\mathcal{F}_0 = \{\varnothing, \Omega\}$ (note that the set of $\mathcal{F}_0$-measurable functions is the set of constant functions on $\Omega$). A sequence of random variables $(X_t)_{t = 1}^n$ is adapted to filtration $\mathbb{F} = \left(\mathcal{F}_t\right)^n_{t = 0}$  if $X_t$ is $\mathcal{F}_t$-measurable for each t. We also say in this case that $(X_t)_t$ is $\mathbb{F}$-adapted.
+a filteration is a sequence $\left(\mathcal{F}\_t\right)^n_{t = 0}$ of sub-$\sigma$-algebras of $\mathcal{F}$, where
+$\mathcal{F}_t \subseteq \mathcal{F}_{t + 1}$ for all $t < n$, $\mathcal{F}_n \subseteq \mathcal{F}$,
+and $\mathcal{F}_0 = \{\varnothing, \Omega\}$ (note that the set of
+$\mathcal{F}_0$-measurable functions is the set of constant functions on $\Omega$).
+A sequence of random variables $(X_t)^n_{t = 1}$ is adapted to filtration
+$\mathbb{F} = \left(\mathcal{F}_t\right)^n_{t = 0}$  if $X_t$ is $\mathcal{F}_t$-measurable for each t.
+We also say in this case that $(X_t)_t$ is $\mathbb{F}$-adapted.
 
 ## (Super) Martingale difference sequence
 A $\mathbb{F}$-adapted sequence of random variables $(X_t)_{t \in \mathbb{N}}$ is a $\mathbb{F}$-adapted martingale if 
