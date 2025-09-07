@@ -115,7 +115,7 @@ $$\begin{align*}
 \mathbb{E}[U_{t + 1} \mid \mathcal{F}\_t] &= \mathbb{E}\[Y_{t + 1} \mid \mathcal{F}\_t\] +
 \sum_{i = 0}^{t}(Z_i - X_i) \leq Y_t +Z_t - X_t + \sum_{i = 0}^{t}(X_i - Z_i) \\
 & = Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i) = U_t.
-\end{align*} $$
+\end{align*}$$
 
 We now show that $\{U_t\}$ is bounded below:
 
@@ -270,9 +270,13 @@ ___
 ___
 
 Hence,
+
 $$f(\bar r) \leq f(r) + \nabla f(r)^\top(\bar r - r) + \frac L2 \Vert \bar r - r \Vert^2.$$
+
 By replacing $r = r_t$ and $\bar r  = r_{t + 1} = r_t + \gamma_t s_t$ we have 
+
 $$f(r_{t + 1}) \leq f(r_t) + \gamma_t \nabla f(r_t)^\top s_t + \gamma_t^2 \frac L2 s_t^2.$$
+
 Now we need the next two __assumptions__. We want the magnitude of the update to be comparable to the gradient of $f$, and the expected direction of the update and the direction of $f$'s gradient never get orthogonal. 
 
 ___
@@ -314,9 +318,9 @@ Hence, after some finite time we have $Z_t = \frac{LK\_1\gamma_t^2}{2}$ and
 therefore $\sum_{t = 0}^\infty Z_t < \infty$. Therefore, to use the positive
 supermartingale convergence theorem, we introduce the next __assumption__ we need.
 
-___
+---
 4. $f(r) \geq 0, \forall r \in \mathbb{R}^n$.
-___
+---
 
 Now, the positive supermartingale convergence applies: $f(r_t)$ converges and $\sum_t X_t < \infty$. Since $\gamma_t$ converges to zero, we have $LK_2\gamma_t \leq c$ after some finite time, and 
 $$X_t = \gamma_t \left( c - \frac{LK_2\gamma_t}{2} \right)\Vert \nabla f(r_t) \Vert^2 \geq \frac c2 \gamma_t\lVert \nabla f(r_t)\rVert^2.$$
@@ -342,11 +346,12 @@ __Lemma__. The sequence defined by $u_t$ converges w.p. 1:
 $$u_t = \sum_{\tau =0}^{t - 1}\chi_\tau\gamma_\tau w_\tau, \quad u_0 := 0.$$
 _Proof_.
 Initially assume that $\sum_{t=0}^\infty \gamma_t^2 \leq A$, for some constant $A$. Note that:
-$$\mathbb{E}[\chi_t\gamma_t w_t \mid \mathcal{F}_t] = \chi_t\gamma_t \mathbb{E}[w_t \mid \mathcal{F}_t]=0,$$
-and therefore $\mathbb{E}\left[u_{t + 1} \mid \mathcal{F}_t\right] = \mathbb{E}\left[u_t + \chi_t\gamma_t w_t \mid \mathcal{F}_t\right] = u_t,$
+$$\mathbb{E}[\chi_t\gamma_t w_t \mid \mathcal{F}\_t] = \chi_t\gamma_t \mathbb{E}[w_t \mid \mathcal{F}\_t]=0,$$
+and therefore $\mathbb{E}\left[u_{t + 1} \mid \mathcal{F}\_t\right] = \mathbb{E}\left[u_t + \chi_t\gamma_t w_t \mid \mathcal{F}_t\right] = u_t,$
 and $\{u_t\}$ is a martingale difference sequence.
 
 If $\chi_t$ is zero, then $\mathbb{E}\left[\Vert u_{t+1} \Vert^2 \mid \mathcal{F}_t \right] = \mathbb{E}\left[\Vert u_{t}\Vert^2 \mid \mathcal{F}_t \right] = \Vert u_{t}\Vert^2$. If on the other hand, $\chi_t$ is one then,
+
 $$
 \begin{align}
 \mathbb{E}\left[\Vert u_{t+1} \Vert^2 \mid \mathcal{F}_t \right]& = \mathbb{E}\left[\Vert u_t + \gamma_t w_t\Vert^2 \mid \mathcal{F}_t \right] \stackrel{\text{triangle inequality}}{\leq} \mathbb{E}\left[\left(\Vert u_t \Vert + \Vert \gamma_t w_t\Vert \right)^2 \mid \mathcal{F}_t \right] \\
@@ -354,6 +359,7 @@ $$
 & \leq \Vert u_{t} \Vert^2  + \gamma^2_t\left(K_1 + K_2\epsilon^2\right).
 \end{align}
 $$
+
 Now, we take an unconditional expectation from the both sides and apply the tower rule, and sum over $t$ and apply the telescopic sum to obtain
 $$\mathbb{E}\left[\Vert u_t \Vert^2 \right] \leq (K_1 + K_2\epsilon^2)\sum_{\tau = 0}^\infty \gamma_\tau^2 \leq (K_1 + K_2\epsilon^2)A, \quad \forall t,$$
 and since $\Vert u_t \Vert \leq 1 + \Vert u_t \Vert^2$, we have $\sup_t \mathbb{E}[\Vert u_t \Vert] < \infty$. Now, we can apply the martingale convergence theorem to $\{u_t\}$ and conclude it almost surely converges. 
