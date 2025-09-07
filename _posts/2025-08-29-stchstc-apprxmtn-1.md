@@ -17,9 +17,11 @@ assumptions were inevitably needed.
   
 # Needed background  
 In this section I'll review some concepts needed throughout the document.
+
 ## Level sets of a function
 The $\alpha$-sublevel set of a function $f: \mathbb{R}^n \to \mathbb{R}$ is defined as
 $$C_\alpha = \{x \in \mathsf{dom}(f): f(x) \leq \alpha \}.$$
+
 ## Stationary point of a function
 Stationary point of a function is where its derivative is zero
 
@@ -75,7 +77,7 @@ We also say in this case that $(X_t)_t$ is $\mathbb{F}$-adapted.
 
 ## (Super) Martingale difference sequence
 A $\mathbb{F}$-adapted sequence of random variables $(X_t)_{t \in \mathbb{N}}$ is a $\mathbb{F}$-adapted martingale if 
-1. $X_t$ is integrable, i.e., $\mathbb{E}\[|x|\] < \infty$.
+1. $X_t$ is integrable, i.e., $\mathbb{E}\[\|x\|\] < \infty$.
 2. $\mathbb{E}\[X_{t} \mid \mathcal{F}\_{t - 1}\] = X_{t - 1}$ almost surely for each $t \in \{2, 3, \dots\}$.
 If the equality in the second point is replaced with a less-than, then we call $(X_t)_t$ a supermartingale
 
@@ -92,7 +94,7 @@ the supermartingale convergence section.
 
 ## Supermartingale convergence theorem
 Let $Y_t, X_t,\, \mathrm{and}\, Z_t, t = 0, 1, 2, \dots,$ be three sequences of random variables and 
-let $\mathcal{F}_t, t = 0, 1, 2, \dots,$ be sets of random variables such that
+let $\mathcal{F}\_t, t = 0, 1, 2, \dots,$ be sets of random variables such that
 $\mathcal{F}\_t \subseteq \mathcal{F}_{t+1}$ for all $t$. Suppose that:
 1. The random variables $Y_t, X_t,\, \mathrm{and}\, Z_t$ are nonnegative, and are functions of the random variables in $\mathcal{F}_t$.
 2. For each $t$, we have $\mathbb{E}\[Y_{t + 1} \mid \mathcal{F}_{t}\] \leq Y_t - X_t + Z_t$.
@@ -108,7 +110,7 @@ $$U_t := Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i).$$
 
 We show that $\{U_t\}$ is a supermartingale:
 
-$$\begin{align*} \mathbb{E}[U_{t + 1} \mid \mathcal{F}_t] &= \mathbb{E}[Y_{t + 1} \mid \mathcal{F}_t] + \sum_{i = 0}^{t}(Z_i - X_i) \leq Y_t +Z_t - X_t + \sum_{i = 0}^{t}(X_i - Z_i) \\
+$$\begin{align*} \mathbb{E}\[U_{t + 1} \mid \mathcal{F}_t\] &= \mathbb{E}[Y_{t + 1} \mid \mathcal{F}_t] + \sum_{i = 0}^{t}(Z_i - X_i) \leq Y_t +Z_t - X_t + \sum_{i = 0}^{t}(X_i - Z_i) \\
 & = Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i) = U_t.
 \end{align*}
 $$
@@ -126,7 +128,10 @@ which means
 
 $$\lim_{t \to \infty} \left( Y_t + \sum_{i = 0}^{t - 1}X_i\right) = U + S_\infty.$$
 
-For the sum of two non-negative sequences to converge to a finite limit, both sequences must be bounded. Hence, $\lim_{t \to \infty} Y_t = Y_\infty < \infty$, and $\sum_{i = 0}^{\infty}X_i < \infty$, which means $X_t \to 0$. $\square$
+For the sum of two non-negative sequences to converge to a finite limit, both sequences must be bounded. Hence,
+$\lim_{t \to \infty} Y_t = Y_\infty < \infty$, and $\sum_{i = 0}^{\infty}X_i < \infty$, 
+which means $X_t \to 0$. $\square$
+
 ## Mathematical optimization  
 A mathematical optimization problem is finding the maximum/minimum of a real-valued function.  
   
