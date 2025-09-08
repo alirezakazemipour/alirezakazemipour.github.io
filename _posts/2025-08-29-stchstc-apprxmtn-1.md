@@ -268,7 +268,8 @@ __Proposition__. Consider the algorithm $r_{t + 1} = r_t + \gamma_ts_t,$ with th
 ---
 
 Note that the above proposition says nothing about the convergence or the boundedness of the sequence $r_t$, however if $f$ has __bounded level sets__, part (1) implies 
-the sequence $r_t$ is bounded. Moreover, if $f$ has unique __stationary point__ $r^*$, part (3) implies that $r^*$ is the only __limit point__ of $r_t$, and hence $r_t$ converges to $r^*$.
+the sequence $r_t$ is bounded. Moreover, if $f$ has unique __stationary point__ $r^\*$, part (3) implies that $r^\*$
+is the only __limit point__ of $r_t$, and hence $r_t$ converges to $r^\*$.
 
 _Proof_.
 
@@ -292,7 +293,7 @@ ___
 2. There exists positive constants $K_2, K_2$ such that
 $$\mathbb{E}\left[\Vert s_t \Vert^2 \mid \mathcal{F}_t\right] \leq K_1 + K_2 \Vert f(r_t) \Vert^2, \: \forall t.$$
 Note that $s_t$ is allowed to be nonzero [because of the noise] even if $\nabla f(r_t)$ is zero.
-3. There exits a positive constant $c$ such that
+3. There exists a positive constant $c$ such that
 
 $$c\Vert f(r_t) \Vert^2 \leq -\nabla f(r_t)^\top \mathbb{E}[s_t \mid \mathcal{F}_t], \: \forall t.$$
 ___
@@ -360,8 +361,8 @@ We define the following $\mathcal{F}_t$ measurable indicator random variable tha
 
 $$\chi_t = \begin{cases}1, & \mathrm{if}\, \Vert \nabla f(r_\tau) \Vert \leq \epsilon \\ 0, & \mathrm{otherwise}. \end{cases}$$
 The following lemma states that the cumulative discounted effect of noise on the events that upcrossings happen converges almost surely, which we will show later convergence is to zero.
-___
 
+---
 __Lemma__. The sequence defined by $u_t$ converges w.p. 1:
 
 $$u_t = \sum_{\tau =0}^{t - 1}\chi_\tau\gamma_\tau w_\tau, \quad u_0 := 0.$$
