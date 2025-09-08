@@ -20,6 +20,7 @@ In this section I'll review some concepts needed throughout the document.
 
 ## Level sets of a function
 The $\alpha$-sublevel set of a function $f: \mathbb{R}^n \to \mathbb{R}$ is defined as
+
 $$C_\alpha = \{x \in \mathsf{dom}(f): f(x) \leq \alpha \}.$$
 
 ## Stationary point of a function
@@ -37,9 +38,13 @@ to $\left(a_i \right)^\infty_{i=m}$ for every $\varepsilon > 0$.
 
 ## Smooth function
 A continuously differentiable function $f: \mathbb{R}^n \to \infty$ is $\beta$-smooth if 
+
 $$f(y) \leq f(x) + \nabla f(x)^\top(y - x) + \frac \beta2 \lVert y - x\rVert^2 \qquad \forall y,x \in \mathbb{R}^n,\, \text{and } \beta > 0.$$
+
 The above condition is equivalent to a Lipschitz continuity over the gradients, i.e., 
+
 $$\lVert \nabla f(y) - \nabla f(x)\rVert \leq \beta \lVert y - x\rVert, \qquad \forall y,x \in \mathbb{R}^n\, \text{and } \beta > 0.$$
+
 This assumption is satisfied, in particular, if $f$ is twice differentiable and all of its second derivatives are bounded globally by some constant.
 
 _proof_.
@@ -111,12 +116,12 @@ $$U_t := Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i).$$
 
 We show that $\{U_t\}$ is a supermartingale:
 
-$$
-\begin{align} 
-\mathbb{E}\[U_{t + 1} \mid \mathcal{F}\_t\] &= \mathbb{E}\[Y_{t + 1} \mid \mathcal{F}\_t\] +
-\sum\_{i = 0}^{t}(Z_i - X_i) \leq Y_t +Z_t - X_t + \sum_{i = 0}^{t}(X_i - Z_i) \\
-& = Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i) = U_t.
-\end{align}
+$$  
+\begin{align*}   
+\mathbb{E}[U_{t + 1} \mid \mathcal{F}\_t] &= \mathbb{E}[Y_{t + 1} \mid \mathcal{F}\_t] +  
+\sum\_{i = 0}^{t}(Z_i - X_i) \leq Y_t +Z_t - X_t + \sum_{i = 0}^{t}(X_i - Z_i) \\  
+& = Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i) = U_t.  
+\end{align*}  
 $$
 
 We now show that $\{U_t\}$ is bounded below:
