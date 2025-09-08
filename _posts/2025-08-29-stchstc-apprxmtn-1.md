@@ -207,9 +207,13 @@ a fixed radius and if the desired solution is outside of that radius, we'll neve
 
 ## Why do we need $\sum_{t = 0}^\infty \gamma^2_t(i) < \infty$? 
 Suppose we want to apply the Robbins-Monro algorithm on sequence of i.i.d. random variable with a unknown mean $\mu$ and known variance of one.
+
 $$r_{t + 1} = (1 - \gamma_t)r_t + \gamma_t v_t = (1 - \gamma_t)r_t + \gamma_t \mu + \gamma_t (v_t - \mu).$$
+
 If we want the above equation converge to $\mu$ we need to make sue that the total variance converges to zero. So, we need to show, $\sum_{t = 0}^\infty \mathbb{E}\left[\left(\gamma_t (v_t - \mu)\right)^2\right] \leq \infty$ (Infinite sum of non-zero variables can't become bounded unless they become zero at some point). 
+
 $$\sum_{t = 0}^\infty \mathbb{E}\left[\left(\gamma_t (v_t - \mu)\right)^2\right] \leq \sum_{t = 0}^\infty \gamma_t^2.$$
+
 So, the only way that the total variance is bounded is that $\sum_{t = 0}^\infty \gamma^2_t(i) < \infty$.
 
 Throughout, we implicitly assume that the stepsize sequence meet the Robbins-Monro conditions and I don't mention explicitly again. The stepsize can also easily become a random variable which is the case in reinforcement learning for example, which I'll touch upon it later.
@@ -261,9 +265,9 @@ which means that $\mathbb{E}[s_t \mid \mathcal{F}_t]$ and $\nabla f(r_t)$ are no
 
 ---
 __Proposition__. Consider the algorithm $r_{t + 1} = r_t + \gamma_ts_t,$ with the potential function $f: \mathbb{R}^n \to \mathbb{R}$. Under certain assumptions that will be stated in the proof, the following holds with probability one:
-1. The sequence $f(r_t)$ converges.
-2. We have $\lim_{t \to \infty} \nabla f(r_t) = 0$.
-3. Every limit point of $r\_t$ is a stationary point of $f$.
+a): The sequence $f(r_t)$ converges.
+b): We have $\lim_{t \to \infty} \nabla f(r_t) = 0$.
+c): Every limit point of $r\_t$ is a stationary point of $f$.
 
 ---
 
@@ -276,7 +280,7 @@ _Proof_.
 We need our first __assumption__ to begin the proof. 
 
 ---
-1. We need to assume $f$ is $L$-smooth.
+One: We need to assume $f$ is $L$-smooth.
 ---
 
 Hence,
@@ -290,11 +294,11 @@ $$f(r_{t + 1}) \leq f(r_t) + \gamma_t \nabla f(r_t)^\top s_t + \gamma_t^2 \frac 
 Now we need the next two __assumptions__. We want the magnitude of the update to be comparable to the gradient of $f$, and the expected direction of the update and the direction of $f$'s gradient never get orthogonal. 
 
 ___
-2. There exists positive constants $K_2, K_2$ such that
+Two: There exists positive constants $K_2, K_2$ such that
 $$\mathbb{E}\left[\Vert s_t \Vert^2 \mid \mathcal{F}_t\right] \leq K_1 + K_2 \Vert f(r_t) \Vert^2, \: \forall t.$$
 
 Note that $s_t$ is allowed to be nonzero [because of the noise] even if $\nabla f(r_t)$ is zero.
-3. There exists a positive constant $c$ such that
+Three: There exists a positive constant $c$ such that
 
 $$c\Vert f(r_t) \Vert^2 \leq -\nabla f(r_t)^\top \mathbb{E}[s_t \mid \mathcal{F}_t], \: \forall t.$$
 ___
@@ -331,7 +335,7 @@ therefore $\sum_{t = 0}^\infty Z_t < \infty$. Therefore, to use the positive
 supermartingale convergence theorem, we introduce the next __assumption__ we need.
 
 ---
-4. $f(r) \geq 0, \forall r \in \mathbb{R}^n$.
+Four: $f(r) \geq 0, \forall r \in \mathbb{R}^n$.
 ---
 
 Now, the positive supermartingale convergence applies: $f(r_t)$ converges and $\sum_t X_t < \infty$. Since $\gamma_t$ converges to zero, we have $LK_2\gamma_t \leq c$ after some finite time, and 
