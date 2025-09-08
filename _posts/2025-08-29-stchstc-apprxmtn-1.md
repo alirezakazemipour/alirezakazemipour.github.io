@@ -169,13 +169,21 @@ In general, we might not have direct access to $Hr$,  but instead some noisy cor
 $$\begin{equation*} r := (1 - \gamma) r + \gamma (Hr + w) \end{equation*}.$$
 
 More explicitly, suppose $Hr = \mathbb{E}[g(r, v)]$, where $v$ is a random variable with the a known distribution $v \sim P(\cdot \mid r)$ and $g$ is a known function. We would like to the equation:
+
 $$r := (1 - \gamma)r + \gamma \mathbb{E}[g(r, v)],$$
+
 but computing $\mathbb{E}[g(r, v)]$ is generally intractable. Since $P(\cdot \mid r)$ is known, through simulation, we can obtain $k$ samples use the following target:
+
 $$Hr = \frac 1k \sum_{i = 1}^k g(r, v_i),$$
+
 and as $k$ gets large, the law of large numbers gives the confidence that we'll find the right answer. On the other extreme, we can set $k$ to one and use a single sample, an approach called the Robbins-Monro algorithm, and get
+
 $$r := (1-\gamma)r + g(r, v_1).$$
+
 In this case we have 
+
 $$r := (1 - \gamma)r +\gamma \left(\mathbb{E}[g(r, v) + g(r, v_1) - g(r, v)] \right) = (1 - \gamma)r +\gamma \left(Hr + w \right),$$
+
 where $w = g(r, v_1) - \mathbb{E}[g(r, v)]$ is the zero mean noise term.
 
 So, in general we're looking for the fixed point of $H$ and we use the following iterative algorithm 
@@ -284,6 +292,7 @@ ___
 $$\mathbb{E}\left[\Vert s_t \Vert^2 \mid \mathcal{F}_t\right] \leq K_1 + K_2 \Vert f(r_t) \Vert^2, \: \forall t.$$
 Note that $s_t$ is allowed to be nonzero [because of the noise] even if $\nabla f(r_t)$ is zero.
 3. There exits a positive constant $c$ such that
+4. 
 $$c\Vert f(r_t) \Vert^2 \leq -\nabla f(r_t)^\top \mathbb{E}[s_t \mid \mathcal{F}_t], \: \forall t.$$
 ___
 
@@ -400,11 +409,15 @@ $$
 \Vert \nabla f(r_{t_k + 1}) \Vert - \Vert \nabla f(r_{t_k}) \Vert & \leq \Vert \nabla f(r_{t_k + 1}) - \nabla f(r_{t_k})\Vert \\
 &\leq L \Vert r_{t_k + 1} - r_{t_k} \Vert \\
 &= L \gamma_{t_k} \Vert \bar{s}_{t_k} + w_{t_k} \Vert \\
-& \leq L \gamma_{t_k} \Vert \bar{s}_{t_k} \Vert +  L \gamma_{t_k} \Vert w_{t_k} \Vert.
+& \leq L \gamma_{t_k} \Vert \bar{s}\_{t_k} \Vert +  L \gamma_{t_k} \Vert w_{t_k} \Vert.
 \end{align*}
 $$
 
-The right hand side of the above display goes to zero as $k$ goes to infinity because $\Vert \bar{s}_{t_k} \Vert^2$ is bounded by $K_1 + K_2 \epsilon^2$ and $\gamma_t$ goes to zero, and we have just proved it for $\Vert w_{t_k} \Vert$ as well. Then, since $\Vert \nabla f(r_{t_k + 1}) \Vert \geq \epsilon/2$ (the condition of an upcrossing interval in the definition of $\chi_{t}, \, t \in [t_k, \, \bar{t}_k]$), we have $\Vert \nabla f(r_{t_k}) \Vert \geq \epsilon/4$. Hence for every $k$ we have
+The right hand side of the above display goes to zero as $k$ goes to infinity
+because $\Vert \bar{s}\_{t_k} \Vert^2$ is bounded by $K_1 + K_2 \epsilon^2$ and $\gamma_t$ goes to zero,
+and we have just proved it for $\Vert w_{t_k} \Vert$ as well. Then, since $\Vert \nabla f(r_{t_k + 1})
+\Vert \geq \epsilon/2$ (the condition of an upcrossing interval in the definition of $\chi_{t}, \, 
+t \in [t_k, \, \bar{t}_k]$), we have $\Vert \nabla f(r_{t_k}) \Vert \geq \epsilon/4$. Hence, for every $k$ we have
 
 $$
 \begin{align*}
@@ -415,7 +428,9 @@ $$
 \end{align*}
 $$
 
-We have proved that the second term on the right-hand side of the above display goes to zero. Also, for $t_k \leq t \leq \bar{t}_k - 1, \, \Vert \bar{s}_t \Vert^2 \leq K_1 + K_2 \epsilon^2$, which by the inequality $x \leq x^2 +1$ implies that $\Vert \bar{s}_t \Vert \leq 1 + K_1 + K_2 \epsilon^2:=d$. By taking the $\liminf_{k \to \infty}$ from the above display we have
+We have proved that the second term on the right-hand side of the above display goes to zero. Also,
+for $t_k \leq t \leq \bar{t}\_k - 1, \, \Vert \bar{s}\_t \Vert^2 \leq K\_1 + K\_2 \epsilon^2$, which by the inequality
+$x \leq x^2 +1$ implies that $\Vert \bar{s}\_t \Vert \leq 1 + K\_1 + K\_2 \epsilon^2:=d$. By taking the $\liminf_{k \to \infty}$ from the above display we have
 
 $$
 \liminf\_{k \to \infty} \sum_{t = t_k}^{\bar{t}\_k - 1} \gamma_t \geq \frac{\epsilon}{2Ld}.
