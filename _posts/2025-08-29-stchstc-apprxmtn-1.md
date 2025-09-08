@@ -264,6 +264,7 @@ __Proposition__. Consider the algorithm $r_{t + 1} = r_t + \gamma_ts_t,$ with th
 1. The sequence $f(r_t)$ converges.
 2. We have $\lim_{t \to \infty} \nabla f(r_t) = 0$.
 3. Every limit point of $r\_t$ is a stationary point of $f$.
+
 ---
 
 Note that the above proposition says nothing about the convergence or the boundedness of the sequence $r_t$, however if $f$ has __bounded level sets__, part (1) implies 
@@ -273,9 +274,9 @@ _Proof_.
 
 We need our first __assumption__ to begin the proof. 
 
-___
+---
 1. We need to assume $f$ is $L$-smooth.
-___
+---
 
 Hence,
 
@@ -292,7 +293,7 @@ ___
 $$\mathbb{E}\left[\Vert s_t \Vert^2 \mid \mathcal{F}_t\right] \leq K_1 + K_2 \Vert f(r_t) \Vert^2, \: \forall t.$$
 Note that $s_t$ is allowed to be nonzero [because of the noise] even if $\nabla f(r_t)$ is zero.
 3. There exits a positive constant $c$ such that
-4. 
+
 $$c\Vert f(r_t) \Vert^2 \leq -\nabla f(r_t)^\top \mathbb{E}[s_t \mid \mathcal{F}_t], \: \forall t.$$
 ___
 
@@ -397,7 +398,7 @@ let $u^k_t$ represent the process that is equal to $u\_t$ as long as $\sum\_{t=0
 constant afterward.
 Let $\Omega\_k$ denote the set of sample paths $(r_0, r_1, \dots)$ for which $u^k_t$ doesn't converge.
 Since $\sum\_{t=0}^\infty \gamma^2\_t < \infty$ is finite, for every sample path there and $k$, there exists a
-time $t_0$, where  $\sum\_{t=t_0}^\infty \gamma^2_t \leq k$ almost surely, hence the set $\cup_{k=1}^\infty \Omega_k$
+time $t_0$, where  $\sum\_{t=t_0}^\infty \gamma^2_t \leq k$ almost surely, hence the set $\cup\_{k=1}^\infty \Omega_k$
 has measure zero, for every sample path and $k$, there exists a time $u_t = u_t^k$ for all $t \geq t_0$ and $u_t$
 converges almost surely. 
 ___
@@ -419,7 +420,7 @@ The right hand side of the above display goes to zero as $k$ goes to infinity
 because $\Vert \bar{s}\_{t_k} \Vert^2$ is bounded by $K_1 + K_2 \epsilon^2$ and $\gamma_t$ goes to zero,
 and we have just proved it for $\Vert w_{t_k} \Vert$ as well. Then, since $\Vert \nabla f(r_{t_k + 1})
 \Vert \geq \epsilon/2$ (the condition of an upcrossing interval in the definition of $\chi_{t}, \, 
-t \in [t_k, \, \bar{t}_k]$), we have $\Vert \nabla f(r_{t_k}) \Vert \geq \epsilon/4$. Hence, for every $k$ we have
+t \in [t_k, \, \bar{t}\_k]$), we have $\Vert \nabla f(r_{t_k}) \Vert \geq \epsilon/4$. Hence, for every $k$ we have
 
 $$
 \begin{align*}
