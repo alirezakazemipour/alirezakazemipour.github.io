@@ -448,9 +448,17 @@ $$
 \end{align*}
 $$
 
-This means by summing over all upcrossing intervals we get that $\sum_{t=0}^{\infty} \gamma_t \Vert \nabla f(r_t)\Vert^2 =\infty$ (infinite sum of possible numbers is infinite). This is a contradiction because after assumption 4 we had shown that $\sum_{t=0}^{\infty} \gamma_t \Vert \nabla f(r_t)\Vert^2 < \infty$, hence the number of upcrossings should be finite.
+This means by summing over all upcrossing intervals we get that
+$\sum_{t=0}^{\infty} \gamma_t \Vert \nabla f(r_t)\Vert^2 =\infty$
+(infinite sum of positive numbers is infinite). This is a contradiction because after assumption 4 we had shown
+that $\sum_{t=0}^{\infty} \gamma_t \Vert \nabla f(r_t)\Vert^2 < \infty$, hence the number of upcrossings should be finite.
 
-Given that $\Vert \nabla f(r_t) \Vert$ comes infinitely often arbitrarily close to zero and since there are finitely many upcrossings, it follows that $\Vert \nabla f(r_t) \Vert$ can exceed $\epsilon$ only a finite number of times, and lim $\sup_{t \to \infty}\Vert \nabla f(r_t) \Vert \leq \epsilon$  . Since $\epsilon$ was arbitrary, it follows that $\sup_{t \to \infty}\Vert \nabla f(r_t) \Vert  = 0$, and part (b) of the proposition has been proved. Finally, if $r$ is a limit point of $r_t$,  is the limit of some subsequence of $\nabla f(r_t)$ and must be equal to 0, which establishes part (c).
+Given that $\Vert \nabla f(r_t) \Vert$ comes infinitely often arbitrarily close to zero and since there 
+are finitely many upcrossings, it follows that $\Vert \nabla f(r_t) \Vert$ can exceed $\epsilon$ only a 
+finite number of times, and lim $\limsup_{t \to \infty}\Vert \nabla f(r_t) \Vert \leq \epsilon$.
+Since $\epsilon$ was arbitrary, it follows that $\limsup_{t \to \infty}\Vert \nabla f(r_t) \Vert  = 0$, and
+part (b) of the proposition has been proved. Finally, if $r$ is a limit point of $r_t$,  is the limit of some
+subsequence of $\nabla f(r_t)$ and must be equal to 0, which establishes part (c).
 
 $$\textbf{END OF PART 1!}$$
 
