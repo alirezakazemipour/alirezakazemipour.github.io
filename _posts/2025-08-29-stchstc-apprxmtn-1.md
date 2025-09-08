@@ -323,19 +323,29 @@ supermartingale convergence theorem, we introduce the next __assumption__ we nee
 ---
 
 Now, the positive supermartingale convergence applies: $f(r_t)$ converges and $\sum_t X_t < \infty$. Since $\gamma_t$ converges to zero, we have $LK_2\gamma_t \leq c$ after some finite time, and 
+
 $$X_t = \gamma_t \left( c - \frac{LK_2\gamma_t}{2} \right)\Vert \nabla f(r_t) \Vert^2 \geq \frac c2 \gamma_t\lVert \nabla f(r_t)\rVert^2.$$
+
 Hence, 
+
 $$\sum_{t = 0}^\infty \gamma_t\lVert \nabla f(r_t)\rVert^2 < \infty.$$
+
 If $\lVert \nabla f(r_t)\rVert$ doesn't converge to zero, then the condition $\sum_{t =0}^\infty \gamma_t = \infty$ creates a contradiction to the above finite inequality. Hence, it must be case that $\lVert \nabla f(r_t)\rVert$ gets infinitely-often arbitrarily close to zero, i.e., $\liminf_{t \to \infty} \lVert \nabla f(r_t)\rVert=0$. Why $\liminf$ and not simply $\lim$? Because of the noise $\lVert \nabla f(r_t)\rVert$ fluctuates, so now we need to prove that its fluctuations dampen as well so that actually $\lim_{t \to \infty}\lVert \nabla f(r_t)\rVert = 0$. 
 
 To prove that $\lVert \nabla f(r_t)\rVert$ won't be oscillating, now we show that it has finite _upcrossings_.
 
 Fix  a positive constant $\epsilon$. We say that the interval $\{t, t+1, \dots, \bar{t}\}$ is an upcrossing interval from $\epsilon/2$ to $\epsilon$ if
 
-$$\Vert \nabla f(r_t) \Vert < \frac{\epsilon}{2}, \quad \Vert \nabla f(r_\bar{t}) \Vert > \epsilon,$$ and
+$$\Vert \nabla f(r_t) \Vert < \frac{\epsilon}{2}, \quad \Vert \nabla f(r_\bar{t}) \Vert > \epsilon,$$
+
+and
+
 $$\frac{\epsilon}{2} \leq \Vert \nabla f(r_\tau) \Vert \leq \epsilon, \quad t < \tau < \bar{t}.$$
+
 To show the finiteness of the upcrossings for any sample path $\{r_t\}$, we need to show that the effect of the noise terms $w_t$ will be dampened out. Define $\bar{s}_t = \mathbb{E}[s_t \mid \mathcal{F}_t]$, so $w_t = s_t - \bar{s}_t$. Using assumption 2 we have
+
 $$\Vert \bar{s}_t \Vert^2 + \mathbb{E}\left[\Vert w_t\Vert^2 \mid \mathcal{F}_t\right] = \mathbb{E}\left[\Vert s_t\Vert^2 \mid \mathcal{F}_t\right] \leq K_1 + K_2 \Vert \nabla f(r_t) \Vert^2, \quad \forall t.$$
+
 We define the following $\mathcal{F}_t$ measurable indicator random variable that indicates whether an upcrossing has occurred or not:
 
 $$\chi_t = \begin{cases}1, & \mathrm{if}\, \Vert \nabla f(r_\tau) \Vert \leq \epsilon \\ 0, & \mathrm{otherwise}. \end{cases}$$
@@ -343,10 +353,14 @@ The following lemma states that the cumulative discounted effect of noise on the
 ___
 
 __Lemma__. The sequence defined by $u_t$ converges w.p. 1:
+
 $$u_t = \sum_{\tau =0}^{t - 1}\chi_\tau\gamma_\tau w_\tau, \quad u_0 := 0.$$
+
 _Proof_.
 Initially assume that $\sum_{t=0}^\infty \gamma_t^2 \leq A$, for some constant $A$. Note that:
+
 $$\mathbb{E}[\chi_t\gamma_t w_t \mid \mathcal{F}\_t] = \chi_t\gamma_t \mathbb{E}[w_t \mid \mathcal{F}\_t]=0,$$
+
 and therefore $\mathbb{E}\left[u_{t + 1} \mid \mathcal{F}\_t\right] = \mathbb{E}\left[u_t + \chi_t\gamma_t w_t \mid \mathcal{F}_t\right] = u_t,$
 and $\{u_t\}$ is a martingale difference sequence.
 
@@ -361,15 +375,20 @@ $$
 $$
 
 Now, we take an unconditional expectation from the both sides and apply the tower rule, and sum over $t$ and apply the telescopic sum to obtain
+
 $$\mathbb{E}\left[\Vert u_t \Vert^2 \right] \leq (K_1 + K_2\epsilon^2)\sum_{\tau = 0}^\infty \gamma_\tau^2 \leq (K_1 + K_2\epsilon^2)A, \quad \forall t,$$
+
 and since $\Vert u_t \Vert \leq 1 + \Vert u_t \Vert^2$, we have $\sup_t \mathbb{E}[\Vert u_t \Vert] < \infty$. Now, we can apply the martingale convergence theorem to $\{u_t\}$ and conclude it almost surely converges. 
 
 Now let's consider the case that $\gamma_t$ is stochastic and $\sum\_{t=0}^\infty \gamma^2\_t$ is finite (which implies
 $\gamma_t$ has finite variance) but not by a deterministic constant. Consider any arbitrary positive integer $k$ and
 let $u^k_t$ represent the process that is equal to $u\_t$ as long as $\sum\_{t=0}^\infty \gamma_t \leq k$ and stays
 constant afterward.
-Let $\Omega_k$ denote the set of sample paths $(r_0, r_1, \dots)$ for which $u^k_t$ doesn't converge.
-Since $\sum_{t=0}^\infty \gamma^2_t < \infty$ is finite, for every sample path there and $k$, there exits a time $t_0$, where  $\sum_{t=t_0}^\infty \gamma^2_t \leq k$ almost surely, hence the set $\cup_{k=1}^\infty \Omega_k$ has measure zero, for every sample path and $k$, there exits a time $u_t = u_t^k$ for all $t \geq t_0$ and $u_t$ converges almost surely. 
+Let $\Omega\_k$ denote the set of sample paths $(r_0, r_1, \dots)$ for which $u^k_t$ doesn't converge.
+Since $\sum\_{t=0}^\infty \gamma^2_t < \infty$ is finite, for every sample path there and $k$, there exists a
+time $t_0$, where  $\sum_{t=t_0}^\infty \gamma^2_t \leq k$ almost surely, hence the set $\cup_{k=1}^\infty \Omega_k$
+has measure zero, for every sample path and $k$, there exists a time $u_t = u_t^k$ for all $t \geq t_0$ and $u_t$
+converges almost surely. 
 ___
 
 Let us now consider a sample path with an infinity of upcrossings and let $\{t_k, \dots, \bar{t}\_k\}$ be the $k$th such interval. Using the above lemma we obtain:
