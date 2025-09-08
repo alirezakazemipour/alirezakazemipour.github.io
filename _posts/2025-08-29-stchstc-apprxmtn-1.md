@@ -373,7 +373,9 @@ $$\mathbb{E}[\chi_t\gamma_t w_t \mid \mathcal{F}\_t] = \chi_t\gamma_t \mathbb{E}
 and therefore $\mathbb{E}\left[u_{t + 1} \mid \mathcal{F}\_t\right] = \mathbb{E}\left[u_t + \chi_t\gamma_t w_t \mid \mathcal{F}_t\right] = u_t,$
 and $\{u_t\}$ is a martingale difference sequence.
 
-If $\chi_t$ is zero, then $\mathbb{E}\left[\Vert u_{t+1} \Vert^2 \mid \mathcal{F}_t \right] = \mathbb{E}\left[\Vert u_{t}\Vert^2 \mid \mathcal{F}_t \right] = \Vert u_{t}\Vert^2$. If on the other hand, $\chi_t$ is one then,
+If $\chi_t$ is zero, then $\mathbb{E}\left[\Vert u_{t+1} \Vert^2 \mid \mathcal{F}\_t \right] =
+\mathbb{E}\left[\Vert u_{t}\Vert^2 \mid \mathcal{F}\_t \right] = \Vert u_{t}\Vert^2$. If on the other hand,
+$\chi_t$ is one then,
 
 $$
 \begin{align}
@@ -394,8 +396,8 @@ $\gamma_t$ has finite variance) but not by a deterministic constant. Consider an
 let $u^k_t$ represent the process that is equal to $u\_t$ as long as $\sum\_{t=0}^\infty \gamma_t \leq k$ and stays
 constant afterward.
 Let $\Omega\_k$ denote the set of sample paths $(r_0, r_1, \dots)$ for which $u^k_t$ doesn't converge.
-Since $\sum\_{t=0}^\infty \gamma^2_t < \infty$ is finite, for every sample path there and $k$, there exists a
-time $t_0$, where  $\sum_{t=t_0}^\infty \gamma^2_t \leq k$ almost surely, hence the set $\cup_{k=1}^\infty \Omega_k$
+Since $\sum\_{t=0}^\infty \gamma^2\_t < \infty$ is finite, for every sample path there and $k$, there exists a
+time $t_0$, where  $\sum\_{t=t_0}^\infty \gamma^2_t \leq k$ almost surely, hence the set $\cup_{k=1}^\infty \Omega_k$
 has measure zero, for every sample path and $k$, there exists a time $u_t = u_t^k$ for all $t \geq t_0$ and $u_t$
 converges almost surely. 
 ___
