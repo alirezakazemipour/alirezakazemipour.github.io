@@ -364,10 +364,12 @@ Now, we take an unconditional expectation from the both sides and apply the towe
 $$\mathbb{E}\left[\Vert u_t \Vert^2 \right] \leq (K_1 + K_2\epsilon^2)\sum_{\tau = 0}^\infty \gamma_\tau^2 \leq (K_1 + K_2\epsilon^2)A, \quad \forall t,$$
 and since $\Vert u_t \Vert \leq 1 + \Vert u_t \Vert^2$, we have $\sup_t \mathbb{E}[\Vert u_t \Vert] < \infty$. Now, we can apply the martingale convergence theorem to $\{u_t\}$ and conclude it almost surely converges. 
 
-Now let's consider the case that $\gamma_t$ is stochastic and $\sum_{t=0}^\infty \gamma^2_t$ is finite (which implies
+Now let's consider the case that $\gamma_t$ is stochastic and $\sum\_{t=0}^\infty \gamma^2\_t$ is finite (which implies
 $\gamma_t$ has finite variance) but not by a deterministic constant. Consider any arbitrary positive integer $k$ and
-let $u^k_t$ represent the process that is equal to $u_t$ as long as $\sum_{t=0}^\infty \gamma_t \leq k$ and stays
-constant afterward. Let $\Omega_k$ denote the set of sample paths $(r_0, r_1, \dots)$ for which $u^k_t$ doesn't converge. Since $\sum_{t=0}^\infty \gamma^2_t < \infty$ is finite, for every sample path there and $k$, there exits a time $t_0$, where  $\sum_{t=t_0}^\infty \gamma^2_t \leq k$ almost surely, hence the set $\cup_{k=1}^\infty \Omega_k$ has measure zero, for every sample path and $k$, there exits a time $u_t = u_t^k$ for all $t \geq t_0$ and $u_t$ converges almost surely. 
+let $u^k_t$ represent the process that is equal to $u\_t$ as long as $\sum\_{t=0}^\infty \gamma_t \leq k$ and stays
+constant afterward.
+Let $\Omega_k$ denote the set of sample paths $(r_0, r_1, \dots)$ for which $u^k_t$ doesn't converge.
+Since $\sum_{t=0}^\infty \gamma^2_t < \infty$ is finite, for every sample path there and $k$, there exits a time $t_0$, where  $\sum_{t=t_0}^\infty \gamma^2_t \leq k$ almost surely, hence the set $\cup_{k=1}^\infty \Omega_k$ has measure zero, for every sample path and $k$, there exits a time $u_t = u_t^k$ for all $t \geq t_0$ and $u_t$ converges almost surely. 
 ___
 
 Let us now consider a sample path with an infinity of upcrossings and let $\{t_k, \dots, \bar{t}\_k\}$ be the $k$th such interval. Using the above lemma we obtain:
@@ -390,14 +392,14 @@ $$
 \frac \epsilon2 & \leq \Vert \nabla f(r_{\bar{t}_k}) \Vert - \Vert \nabla f(r_{t_k}) \Vert \\
 & \leq \Vert \nabla f(r_{\bar{t}_k}) - \nabla f(r_{t_k}) \Vert \\
 & \leq L \Vert r_{\bar{t}_k} - r_{t_k} \Vert \\
-& \leq L \sum_{t = t_k}^{\bar{t}_{t_k} -1} \gamma_t\Vert \bar{s}_t\Vert + L \sum_{t = t_k}^{\bar{t}_{t_k} -1} \gamma_t\Vert w_t\Vert.
+& \leq L \sum_{t = t_k}^{\bar{t}\_{t_k} -1} \gamma_t\Vert \bar{s}\_t\Vert + L \sum_{t = t_k}^{\bar{t}_{t_k} -1} \gamma_t\Vert w_t\Vert.
 \end{align*}
 $$
 
 We have proved that the second term on the right-hand side of the above display goes to zero. Also, for $t_k \leq t \leq \bar{t}_k - 1, \, \Vert \bar{s}_t \Vert^2 \leq K_1 + K_2 \epsilon^2$, which by the inequality $x \leq x^2 +1$ implies that $\Vert \bar{s}_t \Vert \leq 1 + K_1 + K_2 \epsilon^2:=d$. By taking the $\liminf_{k \to \infty}$ from the above display we have
 
 $$
-\liminf\_{k \to \infty} \sum_{t = t_k} ^{\bar{t}_k - 1} \gamma_t \geq \frac{\epsilon}{2Ld}.
+\liminf\_{k \to \infty} \sum_{t = t_k}^{\bar{t}\_k - 1} \gamma_t \geq \frac{\epsilon}{2Ld}.
 $$
 
 For $t_k \leq t \leq \bar{t}_k - 1$ we have
@@ -412,7 +414,7 @@ This means by summing over all upcrossing intervals we get that $\sum_{t=0}^{\in
 
 Given that $\Vert \nabla f(r_t) \Vert$ comes infinitely often arbitrarily close to zero and since there are finitely many upcrossings, it follows that $\Vert \nabla f(r_t) \Vert$ can exceed $\epsilon$ only a finite number of times, and lim $\sup_{t \to \infty}\Vert \nabla f(r_t) \Vert \leq \epsilon$  . Since $\epsilon$ was arbitrary, it follows that $\sup_{t \to \infty}\Vert \nabla f(r_t) \Vert  = 0$, and part (b) of the proposition has been proved. Finally, if $r$ is a limit point of $r_t$,  is the limit of some subsequence of $\nabla f(r_t)$ and must be equal to 0, which establishes part (c).
 
-$$\textbf{END of PART 1!}$$
+$$\textbf{END OF PART 1!}$$
 
 # References  
 - [Neuro-Dynamic Programming](https://web.mit.edu/dimitrib/www/NDP.pdf)  
