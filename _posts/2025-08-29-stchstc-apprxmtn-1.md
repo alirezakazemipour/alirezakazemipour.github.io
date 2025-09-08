@@ -111,11 +111,13 @@ $$U_t := Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i).$$
 
 We show that $\{U_t\}$ is a supermartingale:
 
-$$\begin{align*} 
+$$
+\begin{align*} 
 \mathbb{E}[U_{t + 1} \mid \mathcal{F}\_t] &= \mathbb{E}\[Y_{t + 1} \mid \mathcal{F}\_t\] +
 \sum_{i = 0}^{t}(Z_i - X_i) \leq Y_t +Z_t - X_t + \sum_{i = 0}^{t}(X_i - Z_i) \\
 & = Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i) = U_t.
-\end{align*}$$
+\end{align*}
+$$
 
 We now show that $\{U_t\}$ is bounded below:
 
@@ -404,10 +406,10 @@ let $u^k_t$ represent the process that is equal to $u\_t$ as long as $\sum\_{t=0
 constant afterward.
 Let $\Omega\_k$ denote the set of sample paths $(r_0, r_1, \dots)$ for which $u^k_t$ doesn't converge.
 Since $\sum\_{t=0}^\infty \gamma^2\_t < \infty$ is finite, for every sample path there and $k$, there exists a
-time $t_0$, where  $\sum^\infty_{t=t_0}\gamma^2_t \leq k$ almost surely, hence the set $\cup\_{k=1}^\infty \Omega_k$
+time $t_0$, where  $\sum^\infty\_{t=t\_0}\gamma^2\_t \leq k$ almost surely, hence the set $\cup\_{k=1}^\infty \Omega_k$
 has measure zero, for every sample path and $k$, there exists a time $u_t = u_t^k$ for all $t \geq t_0$ and $u_t$
 converges almost surely. 
-___
+---
 
 Let us now consider a sample path with an infinity of upcrossings and let $\{t_k, \dots, \bar{t}\_k\}$ be the $k$th such interval. Using the above lemma we obtain:
 $$\lim_{k \to \infty} \sum_{t = t_k}^{\bar{t}\_k - 1} \gamma_t w_t = 0,$$
