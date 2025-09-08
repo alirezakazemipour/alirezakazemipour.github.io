@@ -282,7 +282,7 @@ _Proof_.
 We need our first __assumption__ to begin the proof. 
 
 ---
-One: We need to assume $f$ is $L$-smooth.
+__One__: We need to assume $f$ is $L$-smooth.
 ---
 
 Hence,
@@ -296,14 +296,16 @@ $$f(r_{t + 1}) \leq f(r_t) + \gamma_t \nabla f(r_t)^\top s_t + \gamma_t^2 \frac 
 Now we need the next two __assumptions__. We want the magnitude of the update to be comparable to the gradient of $f$, and the expected direction of the update and the direction of $f$'s gradient never get orthogonal. 
 
 ___
-Two: There exists positive constants $K_2, K_2$ such that
+__Two__: There exists positive constants $K_2, K_2$ such that
+
 $$\mathbb{E}\left[\Vert s_t \Vert^2 \mid \mathcal{F}_t\right] \leq K_1 + K_2 \Vert f(r_t) \Vert^2, \: \forall t.$$
 
 Note that $s_t$ is allowed to be nonzero [because of the noise] even if $\nabla f(r_t)$ is zero.
-Three: There exists a positive constant $c$ such that
+
+__Three__: There exists a positive constant $c$ such that
 
 $$c\Vert f(r_t) \Vert^2 \leq -\nabla f(r_t)^\top \mathbb{E}[s_t \mid \mathcal{F}_t], \: \forall t.$$
-___
+---
 
 We have 
 
@@ -337,7 +339,7 @@ therefore $\sum_{t = 0}^\infty Z_t < \infty$. Therefore, to use the positive
 supermartingale convergence theorem, we introduce the next __assumption__ we need.
 
 ---
-Four: $f(r) \geq 0, \forall r \in \mathbb{R}^n$.
+__Four__: $f(r) \geq 0, \forall r \in \mathbb{R}^n$.
 ---
 
 Now, the positive supermartingale convergence applies: $f(r_t)$ converges and $\sum_t X_t < \infty$. Since $\gamma_t$ converges to zero, we have $LK_2\gamma_t \leq c$ after some finite time, and 
@@ -367,6 +369,7 @@ $$\Vert \bar{s}_t \Vert^2 + \mathbb{E}\left[\Vert w_t\Vert^2 \mid \mathcal{F}_t\
 We define the following $\mathcal{F}_t$ measurable indicator random variable that indicates whether an upcrossing has occurred or not:
 
 $$\chi_t = \begin{cases}1, & \mathrm{if}\, \Vert \nabla f(r_\tau) \Vert \leq \epsilon \\ 0, & \mathrm{otherwise}. \end{cases}$$
+
 The following lemma states that the cumulative discounted effect of noise on the events that upcrossings happen converges almost surely, which we will show later convergence is to zero.
 
 ---
