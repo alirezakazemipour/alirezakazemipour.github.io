@@ -113,7 +113,7 @@ We show that $\{U_t\}$ is a supermartingale:
 
 $$
 \begin{align*} 
-\mathbb{E}[U_{t + 1} \mid \mathcal{F}\_t] &= \mathbb{E}\[Y_{t + 1} \mid \mathcal{F}\_t\] +
+\mathbb{E}\[U_{t + 1} \mid \mathcal{F}\_t\] &= \mathbb{E}\[Y_{t + 1} \mid \mathcal{F}\_t\] +
 \sum_{i = 0}^{t}(Z_i - X_i) \leq Y_t +Z_t - X_t + \sum_{i = 0}^{t}(X_i - Z_i) \\
 & = Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i) = U_t.
 \end{align*}
@@ -286,6 +286,7 @@ We need our first __assumption__ to begin the proof.
 
 ---
 __One__: We need to assume $f$ is $L$-smooth.
+
 ---
 
 Hence,
@@ -443,7 +444,7 @@ $$
 \frac \epsilon2 & \leq \Vert \nabla f(r_{\bar{t}_k}) \Vert - \Vert \nabla f(r_{t_k}) \Vert \\
 & \leq \Vert \nabla f(r_{\bar{t}_k}) - \nabla f(r_{t_k}) \Vert \\
 & \leq L \Vert r_{\bar{t}_k} - r_{t_k} \Vert \\
-& \leq L \sum_{t = t_k}^{\bar{t}\_{t_k} -1} \gamma_t\Vert \bar{s}\_t\Vert + L \sum_{t = t_k}^{\bar{t}_{t_k} -1} \gamma_t\Vert w_t\Vert.
+& \leq L \sum_{t = t_k}^{\bar{t}\_{t_k} -1} \gamma_t\Vert \bar{s}_t\Vert + L \sum_{t = t_k}^{\bar{t}_{t_k} -1} \gamma_t\Vert w_t\Vert.
 \end{align*}
 $$
 
