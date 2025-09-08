@@ -191,7 +191,8 @@ where $w = g(r, v_1) - \mathbb{E}[g(r, v)]$ is the zero mean noise term.
 So, in general we're looking for the fixed point of $H$ and we use the following iterative algorithm 
 
 $$r_{t + 1}(i) = (1 - \gamma_t(i))r_t(i) + \gamma_t(i)((Hr_t)(i) + w(i)).$$
-Note that we wrote the function equation for each component of $r$ and we made the stepsize $\gamma$ dependent on the iteration. The reason behind making stepsize dependent on the iteration is make sure our iterative algorithm eventually converges to the fixed point and a fixed stepsize doesn't necessary gives us this guarantee. Specifically, the stepsize should meet the following two conditions known as the Robbins-Monro conditions
+
+Note that we wrote the function equation for each component of $r$, and we made the stepsize $\gamma$ dependent on the iteration. The reason behind making stepsize dependent on the iteration is make sure our iterative algorithm eventually converges to the fixed point and a fixed stepsize doesn't necessary gives us this guarantee. Specifically, the stepsize should meet the following two conditions known as the Robbins-Monro conditions
 
 $$\text{A)} \sum_{t = 0}^\infty \gamma_t(i) = \infty, \qquad \text{B) }\sum_{t = 0}^\infty \gamma^2_t(i) < \infty, \quad \forall i.$$
 
@@ -258,9 +259,11 @@ Using Hölder's inequality and the fact that $H$ us a pseudo-contraction w.r.t t
 $$(Hr - r^*)^\top(r - r^*) \leq \lVert Hr - r^*\rVert \cdot \lVert r - r^* \rVert \leq \beta \lVert r - r^* \rVert^2.$$
 
 Subtract $(r - r^\*)^\top(r - r^\*)$ from both sides, and we get
+
 $$(Hr - r)^\top(r - r*) \leq -(1 - \beta) \lVert r - r^* \rVert^2.$$
 
 With $r = r_t$, the inequality can be rewritten as 
+
 $$\mathbb{E}[s_t \mid \mathcal{F}_t]^\top\nabla f(r_t) \leq -(1 - \beta)\lVert \nabla f(r_t) \rVert^2,$$
 
 which means that $\mathbb{E}[s_t \mid \mathcal{F}_t]$ and $\nabla f(r_t)$ are not orthogonal, and they are in the opposite direction.
@@ -305,6 +308,7 @@ Note that $s_t$ is allowed to be nonzero [because of the noise] even if $\nabla 
 __Three__: There exists a positive constant $c$ such that
 
 $$c\Vert f(r_t) \Vert^2 \leq -\nabla f(r_t)^\top \mathbb{E}[s_t \mid \mathcal{F}_t], \: \forall t.$$
+
 ---
 
 We have 
@@ -340,6 +344,7 @@ supermartingale convergence theorem, we introduce the next __assumption__ we nee
 
 ---
 __Four__: $f(r) \geq 0, \forall r \in \mathbb{R}^n$.
+
 ---
 
 Now, the positive supermartingale convergence applies: $f(r_t)$ converges and $\sum_t X_t < \infty$. Since $\gamma_t$ converges to zero, we have $LK_2\gamma_t \leq c$ after some finite time, and 
@@ -470,7 +475,7 @@ Since $\epsilon$ was arbitrary, it follows that $\limsup_{t \to \infty}\Vert \na
 part (b) of the proposition has been proved. Finally, if $r$ is a limit point of $r_t$,  is the limit of some
 subsequence of $\nabla f(r_t)$ and must be equal to 0, which establishes part (c).
 
-$$\textbf{END OF PART 1!}$$
+$$\begin{equation*}\textbf{END OF PART 1!}\end{equation*}$$
 
 # References  
 - [Neuro-Dynamic Programming](https://web.mit.edu/dimitrib/www/NDP.pdf)  
