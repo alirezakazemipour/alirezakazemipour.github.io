@@ -292,6 +292,7 @@ Now we need the next two __assumptions__. We want the magnitude of the update to
 ___
 2. There exists positive constants $K_2, K_2$ such that
 $$\mathbb{E}\left[\Vert s_t \Vert^2 \mid \mathcal{F}_t\right] \leq K_1 + K_2 \Vert f(r_t) \Vert^2, \: \forall t.$$
+
 Note that $s_t$ is allowed to be nonzero [because of the noise] even if $\nabla f(r_t)$ is zero.
 3. There exists a positive constant $c$ such that
 
@@ -399,7 +400,7 @@ let $u^k_t$ represent the process that is equal to $u\_t$ as long as $\sum\_{t=0
 constant afterward.
 Let $\Omega\_k$ denote the set of sample paths $(r_0, r_1, \dots)$ for which $u^k_t$ doesn't converge.
 Since $\sum\_{t=0}^\infty \gamma^2\_t < \infty$ is finite, for every sample path there and $k$, there exists a
-time $t_0$, where  $\sum\_{t=t_0}^\infty \gamma^2_t \leq k$ almost surely, hence the set $\cup\_{k=1}^\infty \Omega_k$
+time $t_0$, where  $\sum^\infty_{t=t_0}\gamma^2_t \leq k$ almost surely, hence the set $\cup\_{k=1}^\infty \Omega_k$
 has measure zero, for every sample path and $k$, there exists a time $u_t = u_t^k$ for all $t \geq t_0$ and $u_t$
 converges almost surely. 
 ___
@@ -451,7 +452,7 @@ $$
 This means by summing over all upcrossing intervals we get that
 $\sum_{t=0}^{\infty} \gamma_t \Vert \nabla f(r_t)\Vert^2 =\infty$
 (infinite sum of positive numbers is infinite). This is a contradiction because after assumption 4 we had shown
-that $\sum_{t=0}^{\infty} \gamma_t \Vert \nabla f(r_t)\Vert^2 < \infty$, hence the number of upcrossings should be finite.
+that $\sum\_{t=0}^{\infty} \gamma_t \Vert \nabla f(r_t)\Vert^2 < \infty$, hence the number of upcrossings should be finite.
 
 Given that $\Vert \nabla f(r_t) \Vert$ comes infinitely often arbitrarily close to zero and since there 
 are finitely many upcrossings, it follows that $\Vert \nabla f(r_t) \Vert$ can exceed $\epsilon$ only a 
