@@ -9,6 +9,7 @@ tags:
 In non-theory research papers, I often see that the optimal (deterministic Markov) policy for MDPs is defined as 
 
 $$\pi^* \in \arg\max_\pi v_\pi(s), \quad \forall s \in S,$$
+
 where for a real-valued function $g$ on set $X$ $\arg\max$ is defined as 
 
 $$\arg\max_{x \in X} g(x) := \{x' \in X: g(x') \geq g(x), \: \forall x \in X \}.$$
@@ -19,7 +20,7 @@ $$v^*: = v_{\pi^*}(s) = \sup_\pi v_\pi(s), \quad \forall s \in S.$$
 
 In this post, I wanna dig into Proposition 4.4.3 in [Martin L. Puterman's book](https://onlinelibrary.wiley.com/doi/book/10.1002/9780470316887). So, here is the question: __When is the supremum defined below attainable, i.e., $\sup = \max$?__
 
-$$u^*_t(h_t) = \sup_{a \in A_s} \left\{r_t(s_t, a) + \sum_{j \in S}p_t(j \mid s_t, a)u^*_{t + 1}(h_t, a, j)\right\}.$$
+$$u^\*\_t(h_t) = \sup_{a \in A_s} \left\{r_t(s_t, a) + \sum_{j \in S}p_t(j \mid s_t, a)u^*_{t + 1}(h_t, a, j)\right\}.$$
 
 In the above display, $u_t^*$ is optimal history dependent value function at time step $t$, $h_t = s_0, a_0, \dots, s_t$ is the history until time step $t$, $s_t$ is the state at time step $t$, $r_t$ is the deterministic reward function at time step $t$, $p_t$ is the transition dynamics at time step $t$, and $A_s$ is the set of available actions at state $s \in S$. 
 
@@ -124,7 +125,7 @@ ____
 _Proof._
 
 We need to show that for each state $s$, there exists an action $a' \in A_s$, for which
-$$r_t(s, a') + \sum_{j \in S}p_t(j \mid s, a') u^*_{t + 1}(j) = \sup_{a \in A_s} \left\{r_t(s, a) + \sum_{j \in S}p_t(j \mid s, a) u^*_{t + 1}(j)\right\}.$$
+$$r_t(s, a') + \sum_{j \in S}p_t(j \mid s, a') u^\*\_{t + 1}(j) = \sup_{a \in A_s} \left\{r_t(s, a) + \sum_{j \in S}p_t(j \mid s, a) u^*_{t + 1}(j)\right\}.$$
 If $A_s$ is finite the result is immediate. So, Part (1) follows naturally. Now consider the setting of Part (3). Since $|r_t(s_t, a)| < M$ for all $a \in A_s$ and $s \in S$ and $t \in [N]$, Therefore, for each $t$, $u^*_t(s) - NM \leq 0$. Now we apply Proposition 2, where $X = S, f(x) = u^*_{t + 1}(x), \, \mathrm{and}\, q(x, y) = p_t(j \mid s, y)$ for a fixed state $x$. Then,
 
 $$\sum_{j \in S}p_t(j \mid s, a)\left[u_{t + 1}^*(j) - NM\right]$$
