@@ -67,7 +67,7 @@ Let $(X, d)$ be a metric space. A sequence $(x_n)_{n=1}^\infty$ of points in $X$
 
 A space is complete if every Cauchy sequence is convergent. 
 
-#### Lebesgue measure
+### Lebesgue measure
 
 In the definition of the measure, the domain was a $\sigma$-algebra. So the input to the measure is set, but the subset of the chosen set is not necessarily in the $\sigma$-algebra. Hence, if the chosen set has a measure zero, the subset would not which would be wierd. This can happen in Borel measure space. Lebesgue $\sigma$-algebra with its corresponding  measure $\lambda$ completes this gap by including every subset of the null sets to the $\sigma$-algebra and thus making measure zero sets consistent.
 
