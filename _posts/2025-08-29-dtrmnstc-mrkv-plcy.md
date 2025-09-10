@@ -134,7 +134,7 @@ We need to show that for each state $s$, there exists an action $a' \in A_s$, fo
 
 $$r_t(s, a') + \sum_{j \in S}p_t(j \mid s, a') u^*_{t + 1}(j) = \sup_{a \in A_s} \left\{r_t(s, a) + \sum_{j \in S}p_t(j \mid s, a) u^*_{t + 1}(j)\right\}.$$
 
-If $A\_s$ is finite the result is immediate. So, Part (1) follows naturally. Now consider the setting of Part (3). Since $|r_t(s_t, a)| < M$ for all $a \in A_s$ and $s \in S$ and $t \in [N]$, Therefore, for each $t$, $u^*_t(s) - NM \leq 0$. Now we apply Proposition 2, where $X = S, f(x) = u^*_{t + 1}(x), \, \mathrm{and}\, q(x, y) = p_t(j \mid s, y)$ for a fixed state $x$. Then,
+If $A\_s$ is finite the result is immediate. So, Part (1) follows naturally. Now consider the setting of Part (3). Since $\|r_t(s_t, a)\| < M$ for all $a \in A_s$ and $s \in S$ and $t \in [N]$, Therefore, for each $t$, $u^*_t(s) - NM \leq 0$. Now we apply Proposition 2, where $X = S, f(x) = u^*_{t + 1}(x), \, \mathrm{and}\, q(x, y) = p_t(j \mid s, y)$ for a fixed state $x$. Then,
 
 $$\sum_{j \in S}p_t(j \mid s, a)\left[u_{t + 1}^*(j) - NM\right]$$
 
