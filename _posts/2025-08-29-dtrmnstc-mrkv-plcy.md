@@ -66,7 +66,7 @@ Like
 
 $$f(x) = \begin{cases}x + 1 & \mathrm{if}\, x = 1 \\ x & \mathrm{otherwise}\end{cases}$$
 
-and $x_n \to 1$$. Similarly,
+and $x_n \to 1$. Similarly,
 $f$ is said to be lower semicontinuous (l.s.c.) whenever $-f$ is u.s.c., or equivalently,
 $\lim\inf_{n \to \infty} f(x_n) \geq f(x^*).$ A continuous function is both u.s.c and l.s.c. 
 
@@ -81,7 +81,7 @@ __Lemma__ 1. Let $X$ be a complete separable metric space. Then,
 _Proof_. [ChatGPT]
 
 Part (1). 
-One convenient characterization of upper semicontinuity is that: $h$ is u.s.c. iff for every $\alpha \in \mathbb{R}$, the set $\{x: h(x) < \alpha\}$ is open. 
+One convenient characterization of upper semicontinuity is that: $h$ is u.s.c. iff for every $\alpha \in \mathbb{R}$, the set {$x: h(x) < \alpha$} is open. 
 
 We will show that for every $c \in \mathbb{R}$ the set $\{x \in X: f(x)g(x) < c\}$ is open. If $c \leq 0$, then $U_c = \varnothing$ because $f,g$ are nonnegative, and $\varnothing$ is open. So, fix $c > 0$. We have
 
@@ -100,7 +100,8 @@ $$\{x \in X:  f(x) < c\} = \cup_{n =1}^\infty \{x \in X:  f_n(x) < c\}.$$
 
 The proof is completed by stating that since $f_n$s are u.s.c., $\{x \in X:  f_n(x) < c\}$ is open and the union of open sets is open. $\square$
 
-__Proposition__ 1. Suppose $C$ is a compact subset of a complete separable metric space $X$, and $f$ is u.s.c. on $X$. Then there exists an $x^*$ in $C$ such that $f(x^*) \geq f(x)$ for all $x \in C.$
+__Proposition__ 1. Suppose $C$ is a compact subset of a complete separable metric space $X$, and $f$ is u.s.c. on $X$.
+Then there exists an $x^\*$ in $C$ such that $f(x^*) \geq f(x)$ for all $x \in C.$
 
 _Proof_. Let $y^* = \sup_{x \in C}f(x)$ and the corresponding $x$ by $x^\*$. Let $\{x_n\}$ be a sequence in $C$ for which $\lim_{n \to \infty} f(x_n) = y^*$. Then, since $C$ is a compact subset of a complete separable metric space, there exits a subsequence $\{x_{n_k}\}$ which has a limit $x^*$. By since $f$ is u.s.c., then $f(x^*) \geq \lim_{k \to \infty}f(x_{n_k}) = y^*$. Hence, $f(x^*) = y^*$. $\square$ 
 
