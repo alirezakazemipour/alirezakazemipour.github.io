@@ -64,13 +64,13 @@ $$\lim\sup_{n \to \infty} f(x_n) \leq f(x^*).$$
 
 Like
 
-$$f(x) = \begin{cases}x + 1 & \mathrm{if}\, x = 1 \\ x & \mathrm{otherwise}\end{cases}$$
+$$f(x) = \begin{cases}x + 1 & \mathrm{if}\, x \geq 1 \\ x & x < 1 \end{cases}$$
 
 and $x_n \to 1$. Similarly,
 $f$ is said to be lower semicontinuous (l.s.c.) whenever $-f$ is u.s.c., or equivalently,
 $\lim\inf_{n \to \infty} f(x_n) \geq f(x^*).$ A continuous function is both u.s.c and l.s.c. 
 
-$$f(x) = \begin{cases}x + 1 & \mathrm{if}\, x > 1\\ x & \mathrm{if}\, x \leq 1\end{cases}$$
+$$f(x) = \begin{cases}x + 1 & x > 1\\ x & x \leq 1\end{cases}$$
 
 when  $x_n \to 1$ is l.s.c. 
 
@@ -105,7 +105,7 @@ The proof is completed by stating that since $f_n$s are u.s.c., $\{x \in X:  f_n
 __Proposition__ 1. Suppose $C$ is a compact subset of a complete separable metric space $X$, and $f$ is u.s.c. on $X$.
 Then there exists an $x^\*$ in $C$ such that $f(x^*) \geq f(x)$ for all $x \in C.$
 
-_Proof_. Let $y^* = \sup_{x \in C}f(x)$ and the corresponding $x$ by $x^\*$. Let $\{x_n\}$ be a sequence in $C$ for which $\lim_{n \to \infty} f(x_n) = y^\*$. Then, since $C$ is a compact subset of a complete separable metric space, there exists a subsequence $\{x_{n_k}\}$ which has a limit $x^\*$. By since $f$ is u.s.c., then $f(x^*) \geq \lim_{k \to \infty}f(x_{n_k}) = y^*$. Hence, $f(x^*) = y^*$. $\square$ 
+_Proof_. Let $y^\* = \sup_{x \in C}f(x)$ and the corresponding $x$ by $x^\*$. Let $\{x_n\}$ be a sequence in $C$ for which $\lim_{n \to \infty} f(x_n) = y^\*$. Then, since $C$ is a compact subset of a complete separable metric space, there exists a subsequence $\{x_{n_k}\}$ which has a limit $x^\*$. By since $f$ is u.s.c., then $f(x^*) \geq \lim_{k \to \infty}f(x_{n_k}) = y^\*$. Hence, $f(x^\*) = y^\*$. $\square$ 
 
 __Proposition__ 2. Let $X$ be a countable set, $Y$ a complete separable metric space and $q(x, y)$ a bounded nonnegative real-valued function that is l.s.c. in $y$ for each $x \in X$. Let, $f(x)$ be bounded nonpositive real-values function on $X$ for which $\sum_{x \in X}f(x)$ is finite. Then,
 
