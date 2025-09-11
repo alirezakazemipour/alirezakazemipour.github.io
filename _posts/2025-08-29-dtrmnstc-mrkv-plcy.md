@@ -105,7 +105,7 @@ The proof is completed by stating that since $f_n$s are u.s.c., $\{x \in X:  f_n
 __Proposition__ 1. Suppose $C$ is a compact subset of a complete separable metric space $X$, and $f$ is u.s.c. on $X$.
 Then there exists an $x^\*$ in $C$ such that $f(x^*) \geq f(x)$ for all $x \in C.$
 
-_Proof_. Let $y^* = \sup_{x \in C}f(x)$ and the corresponding $x$ by $x^\*$. Let $\{x_n\}$ be a sequence in $C$ for which $\lim_{n \to \infty} f(x_n) = y^\*$. Then, since $C$ is a compact subset of a complete separable metric space, there exits a subsequence $\{x_{n_k}\}$ which has a limit $x^*$. By since $f$ is u.s.c., then $f(x^*) \geq \lim_{k \to \infty}f(x_{n_k}) = y^*$. Hence, $f(x^*) = y^*$. $\square$ 
+_Proof_. Let $y^* = \sup_{x \in C}f(x)$ and the corresponding $x$ by $x^\*$. Let $\{x_n\}$ be a sequence in $C$ for which $\lim_{n \to \infty} f(x_n) = y^\*$. Then, since $C$ is a compact subset of a complete separable metric space, there exists a subsequence $\{x_{n_k}\}$ which has a limit $x^\*$. By since $f$ is u.s.c., then $f(x^*) \geq \lim_{k \to \infty}f(x_{n_k}) = y^*$. Hence, $f(x^*) = y^*$. $\square$ 
 
 __Proposition__ 2. Let $X$ be a countable set, $Y$ a complete separable metric space and $q(x, y)$ a bounded nonnegative real-valued function that is l.s.c. in $y$ for each $x \in X$. Let, $f(x)$ be bounded nonpositive real-values function on $X$ for which $\sum_{x \in X}f(x)$ is finite. Then,
 
@@ -141,7 +141,7 @@ If $A\_s$ is finite the result is immediate. So, Part (1) follows naturally. Now
 
 $$\sum_{j \in S}p_t(j \mid s, a)\left[u_{t + 1}^*(j) - NM\right]$$
 
-is u.s.c., from which we can conclude that $\sum\_{j \in S}p_t(j \mid s, a)\left[u\_{t + 1}^\*(j)\right]$ is u.s.c. because shifting by a constant doesn't change the continuity. By, Part (2) of Lemma 1 we can conclude that $r_t(s, a) + \sum_{j \in S}p_t(j \mid s, a)\left[u_{t + 1}^*(j) \right]$ is u.s.c. in $a$ for each state $s$. Hence, by Proposition 1, the supermum over $A_s$ is attained. Part (2) is a special case of Part(3) since continuous functions are both upper and lower s.c. $\square$
+is u.s.c., from which we can conclude that $\sum\_{j \in S}p_t(j \mid s, a)u\_{t + 1}^\*(j)$ is u.s.c. because shifting by a constant doesn't change the continuity. By, Part (2) of Lemma 1 we can conclude that $r_t(s, a) + \sum_{j \in S}p_t(j \mid s, a)u_{t + 1}^*(j)$ is u.s.c. in $a$ for each state $s$. Hence, by Proposition 1, the supermum over $A_s$ is attained. Part (2) is a special case of Part(3) since continuous functions are both upper and lower s.c. $\square$
 # References
 - [Markov Decision Processes: Discrete Stochastic Dynamic Programming](https://onlinelibrary.wiley.com/doi/book/10.1002/9780470316887)
 - [245B, Notes 8: A quick review of point set topology](https://terrytao.wordpress.com/2009/01/30/254a-notes-8-a-quick-review-of-point-set-topology/)
