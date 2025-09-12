@@ -21,7 +21,7 @@ Then, $P(n)$ is true for all $n \in \mathbb{N}$.
 
 _Proof_.
 
-Let $S=$ {$n ∈N |P (n)$ is not true}. We wish to show that $S= \varnothing$. We will prove this by contradiction. When we prove something by contradiction, we assume the conclusion we want is false, and then show that we will reach a false statement. Rules of logic thus imply that the initial statement must be false.
+Let $S = $  {$n \in \mid P(n)$ is not true}. We wish to show that $S= \varnothing$. We will prove this by contradiction. When we prove something by contradiction, we assume the conclusion we want is false, and then show that we will reach a false statement. Rules of logic thus imply that the initial statement must be false.
 
 Suppose that $S \neq \varnothing$. Then, by the well-ordering property of $\mathbb{N}$, $S$ has a least element $m \in S$. Since according to the theorem $P(1)$ is true, then it must be that $m > 1$. Since $m$ is a least element of $S$, $m - 1 \notin S \Rightarrow P(m−1)$ is true. According to the theorem, this implies that $P(m)$ is true which implies that $m \in S$ by assumption. But, this is a contradiction. Thus $S = \varnothing$, and hence $P(n)$ is true for all $n \in \mathbb{N}$.
 
