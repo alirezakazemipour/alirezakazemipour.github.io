@@ -76,6 +76,9 @@ JP:
 JP:
 > So now Pinocchio has to face the thing he's afraid the most!
 
+A truth by JP that I have experienced as well:
+> Everything I actually did, paid off! 
+
 # Generic
 [Learning how to learn course](https://www.coursera.org/learn/learning-how-to-learn)
 
