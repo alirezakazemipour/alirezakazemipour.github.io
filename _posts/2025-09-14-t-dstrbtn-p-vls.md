@@ -45,7 +45,7 @@ __Definition__ (The Wald test). Consider testing:
 
 $$H_0: \theta = \theta_0 \quad \mathrm{versus} \quad H_1: \theta = \theta_1.$$
 
-Assume under $H_0$, $\hat{\theta}$ is asymptotically normal, i.e., as $n$ tends to infinity $\frac{\hat{\theta} -  \theta_0}{\hat{\sigma}}$ tends to $\mathcal{N}(0, 1)$ due to central limit theorem. Then, the size $\alpha$ Wald test is: reject $H_0$, when $|W|\geq F_W^{-1}(\frac \alpha2)$, where $W = \frac{\hat{\theta} -  \theta_0}{\hat{\sigma}}$ and $F_W$ is the law of $W$. 
+Assume under $H_0$, $\hat{\theta}$ is asymptotically normal, i.e., as $n$ tends to infinity $\frac{\hat{\theta} -  \theta_0}{\hat{\sigma}}$ tends to $\mathcal{N}(0, 1)$ due to central limit theorem. Then, the size $\alpha$ Wald test is: reject $H_0$, when $\|W\|\geq F_W^{-1}(\frac \alpha2)$, where $W = \frac{\hat{\theta} -  \theta_0}{\hat{\sigma}}$ and $F_W$ is the law of $W$. 
 
 
 The Wald test uses the central limit theorem and is only asymptotically valid. The _t-test_ is instead used where we have finite sample size, with the caveat that we assume the data is coming from a Normal distribution. A random variable $T$ has a (Student's) t-distribution with $k$ degrees of freedom with the following density function:
@@ -57,7 +57,7 @@ where $\Gamma(\alpha) = \int_0^\infty y^{\alpha - 1}e^{-y}dy$ is the gamma funct
 Now, assume $X\_1, X\_2 \dots, X\_n \sim \mathcal{N}(\mu, \sigma^2)$, where $\theta = (\mu, \sigma)$ are both unknown. Suppose we want to test $\mu = \mu_0$ versus $\mu \neq \mu_0$. Let
 
 $$T = \frac{\bar{\mu} - \mu_0}{\bar{\sigma}}.$$
-The same as the Wald test, for large $n$, $T \sim \mathcal{N}(0, 1)$ under $H_0$. However, the exact distribution of $T$ under $H_0$ has the $f(t_{n -1})$ density, i.e., the t-distribution with $n - 1$ degrees of freedom. Hence if we reject when $|T| \geq F_T^{-1}(\frac \alpha 2)$ then we get a size $\alpha$ test.
+The same as the Wald test, for large $n$, $T \sim \mathcal{N}(0, 1)$ under $H_0$. However, the exact distribution of $T$ under $H_0$ has the $f(t_{n -1})$ density, i.e., the t-distribution with $n - 1$ degrees of freedom. Hence if we reject when $\|T\| \geq F_T^{-1}(\frac \alpha 2)$ then we get a size $\alpha$ test.
 
 ___
 
