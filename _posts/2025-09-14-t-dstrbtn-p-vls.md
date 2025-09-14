@@ -56,7 +56,7 @@ where $\Gamma(\alpha) = \int_0^\infty y^{\alpha - 1}e^{-y}dy$ is the gamma funct
 
 Now, assume $X\_1, X\_2 \dots, X\_n \sim \mathcal{N}(\mu, \sigma^2)$, where $\theta = (\mu, \sigma)$ are both unknown. Suppose we want to test $\mu = \mu_0$ versus $\mu \neq \mu_0$. Let
 
-$$T = \frac{\bar{\mu} - \mu_0}{\bar{\sigma}}.$$
+$$T = \frac{\hat{\mu} - \mu_0}{\hat{\sigma}}.$$
 The same as the Wald test, for large $n$, $T \sim \mathcal{N}(0, 1)$ under $H_0$. However, the exact distribution of $T$ under $H_0$ has the $f(t_{n -1})$ density, i.e., the t-distribution with $n - 1$ degrees of freedom. Hence if we reject when $\|T\| \geq F_T^{-1}(\frac \alpha 2)$ then we get a size $\alpha$ test.
 
 ___
