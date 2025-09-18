@@ -43,6 +43,7 @@ permalink: /misc/misc-1
 - [Why reality has an adversarial nature-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/Horrible%20THINGS%20are%20Chasing%20YOU%20by%20Jordan%20B%20Peterson.mp4)
 - [You're the only one-Rumi (Only in persian)](https://rozmusic.com/مهران-مدیری-یار-تویی.html)
 - [No matter what happens to me I will do good-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/No%20matter%20what%20happens%20to%20me%20I%20will%20do%20good-JP.mp4)
+- [When you go from a bad place to a better place, you go to a worse place first](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/When%20you%20go%20from%20a%20bad%20place%20to%20a%20better%20place,%20you%20go%20to%20a%20worse%20place%20first.mp4)
 
 JP: 
 > You're in a damaged structure, you're a damaged structure, you're ina damaged structure.
