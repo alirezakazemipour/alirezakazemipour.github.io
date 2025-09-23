@@ -42,9 +42,9 @@ permalink: /misc/misc-1
 - So true: [There is nothing more practical than developing a vision-JP](https://youtube.com/shorts/kJ-3g4kzLf4?si=koYQ6PF29-YENm1Z)
 - [Why reality has an adversarial nature-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/Horrible%20THINGS%20are%20Chasing%20YOU%20by%20Jordan%20B%20Peterson.mp4)
 - [You're the only one-Rumi (Only in persian)](https://rozmusic.com/مهران-مدیری-یار-تویی.html)
-- [No matter what happens to me I will do good-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/No%20matter%20what%20happens%20to%20me%20I%20will%20do%20good-JP.mp4)
+- [No matter what happens to me, I will do good-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/No%20matter%20what%20happens%20to%20me%20I%20will%20do%20good-JP.mp4)
 - [When you go from a bad place to a better place, you go to a worse place first](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/When%20you%20go%20from%20a%20bad%20place%20to%20a%20better%20place,%20you%20go%20to%20a%20worse%20place%20first.mp4)
-- [If you failed or lost ans etc, it's fine. Don't worry.-AN (Onky in persian)](https://www.instagram.com/reel/DMgH1PjIMdk/?l=1)
+- [If you failed or lost, etc., it's fine. Don't worry.-AN (Onky in persian)](https://www.instagram.com/reel/DMgH1PjIMdk/?l=1)
 
 JP: 
 > You're in a damaged structure, you're a damaged structure, you're ina damaged structure.
