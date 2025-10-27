@@ -25,7 +25,9 @@ $$
 
 I really enjoyed reading Chapter two of [Discrete Parameter Martingales](https://www.sciencedirect.com/bookseries/north-holland-mathematical-library/vol/10/suppl/C) and I thought why not making a blog post. 
 
-The book is quite advanced, but I'll try my best state everything clearly and simply given my temporal boredom threshold. Haha
+The book is quite advanced,
+but I'll try my best state everything clearly and simply given my temporal boredom threshold.
+Haha :)!
 
 Let me fix the probability space first. Our probability space (as usual) is $(\Omega, \mathscr{F}, \mathbb{P})$. HOWEVER, in what follows it is more convenient to define a subset of the above probability space as $(\Omega', \mathscr{B}, \mathbb{P})$ (because we're going to work with filterations and naturally they are sub-$\sigma$-algebras that are growing, so we're always in the subset case).  A mapping $X$ only defined on $\Omega'$ is random variable on $\Omega'$ if it is measurable with respect to (w.r.t.) the trace $\sigma$-algebra $\mathscr{F} \cap \Omega'$. So, what is a trace $\sigma$-algebra? I found it [here](https://proofwiki.org/wiki/Definition:Trace_Sigma-Algebra).
 
@@ -39,7 +41,7 @@ $$
 It is a $\sigma$-algebra on $\Omega'$. 
 
 ---
-Now we can define what positive supermartingale is. Let $(\Omega, \mathscr{F}, \mathbb{P})$ be our probability space and $(\mathscr{B}_n, n \in \mathbb{N})$ an increasing sub-$\sigma$-algebrs of $\mathscr{F}$ (a.k.a a filteration).
+Now we can define what a positive supermartingale is. Let $(\Omega, \mathscr{F}, \mathbb{P})$ be our probability space and $(\mathscr{B}_n, n \in \mathbb{N})$ an increasing sub-$\sigma$-algebrs of $\mathscr{F}$ (a.k.a a filteration).
 
 __Definition__. An adapted sequence $(X_n, n \in \mathbb{N})$ of _positive_ random variables is called a positive supermartingale if the almost sure (a.s.) inequality 
 
@@ -243,9 +245,13 @@ then the claim follows since the countable union of measurable sets is measurabl
 
 - $\subseteq$ 
 
-If $x \in g^{-1}((a, \infty]))$, then $g(x) = sup_n f_n(x) > a. If every $f_n(x) \leq a$, then $\sup_n f_n(x) \leq a$ which is a contradiction. Hence there exists some $n$ with $f_n(x) > a$. Thus, $x \in f^{-1}((a, \infty]))$ for that $n$, so $x$ belongs to the union.
+If $x \in g^{-1}((a, \infty]))$, then $g(x) = sup\_n f\_n(x) > a$.
+If every $f_n(x) \leq a$, then $\sup_n f_n(x) \leq a$ which is a contradiction.
+Hence, there exists some $n$ with $f_n(x) > a$.
+Thus, $x \in f^{-1}((a, \infty]))$ for that $n$, so $x$ belongs to the union.
 
 - $\supseteq$ 
+
 If $x \in \cup_{n \geq 1}f_n^{-1}((a, \infty]))$, then for some $n$ we have $f_n(x) > a$. Therefore, $g(x) = \sup_n f_n(x) \geq f_n(x) > a$ and $x \in g^{-1}((a, \infty]))$.
 
 Since both inclusions hold, the sets are equal.
@@ -343,6 +349,7 @@ if we show that $(\star\star)$ holds. Then by taking limits as $\epsilon \to 0$ 
 $$
 \sup_n \int_{E_n}s = \int_{\Omega}s,
 $$
+
 which would prove $(\star)$. 
 
 Since $s$ is a simple function, $\int_\Omega s = \sum_{j = 1}^N c_j \cdot m(F_j)$, where $F_1, F_2, \dots$ are disjoint and in $\Omega$. Similarly, $\int_{E_n} s = \sum_{j = 1}^N c_j \cdot m(F_j \cap E_n)$. Since the sums are finite and the summands are positive, it suffices to show that $\sup_n m(F_j \cap E_n) = m(F_j)$. $(\star\star\star)$
@@ -418,6 +425,7 @@ $$
 & = \sup_{m \geq 1} \int_\Omega \inf_{n \geq m} f_n \tag{monotone convergence}. 
 \end{align*}
 $$
+
 $\inf_{n \geq m} f_n \leq f_j$ for all $j \geq m$. Hence, $\int_\Omega \inf_{n \geq m} f_n \leq \int_\Omega f_j$. By taking infima w.r.t. $j$, we have
 
 $$
@@ -471,9 +479,9 @@ $$\Ev{X_\infty}{\sB_n} \leq X_n, \quad n \ \in \mathbb{N}.$$
 
 _Proof_. 
 
-First we'll discuss what it means that a sequence of real numbers converge. 
+First, we'll discuss what it means that a sequence of real numbers converges. 
 
-Given a sequence of real number $(x_n)$ in $\R^*$ and pair of real number $a, b$ where $a<b$, let us define $\nu_k (k \geq 1)$ as some special moments in time, where
+Given a sequence of real number $(x_n)$ in $\R^*$ and a pair of real number $a, b$ where $a<b$, let us define $\nu_k (k \geq 1)$ as some special moments in time, where
 
 $$
 \begin{align*}
@@ -518,7 +526,6 @@ correspondence that preserves the algebraic structure involved. The analogous co
 homeomorphism; i t is a bijective correspondence that preserves the topological structure involved.
 
 ___
-
 Hence, to prove our proposition, we need to prove $\beta_{a, b} < \infty$ a.s. for every $0 < a < b \in \R$. We only considered positive numbers since $(X_n)$ is positive and we have a homeomorphism between $\R^*$ and $[0, \infty]$ using $f(x) = x, x \geq 0$.
 
 To this end, we need the Dubin's inequalities.
