@@ -225,7 +225,7 @@ __Absolutely Integrable__. ([Analysis II](https://link.springer.com/book/10.1007
 
 __Pointwise Convergence__. ([Analysis II](https://link.springer.com/book/10.1007/978-981-19-7284-3)) 
 The most obvious notion of convergence of functions is pointwise convergence, or _convergence at each point of the domain_.
-Let $\left(f^{(n)} \right)\_{n = 1}\^\infty$ be a sequence of functions from one metric space $(X, d_X$) to another
+Let $\left(f^{(n)} \right)\_{n = 1}^\infty$ be a sequence of functions from one metric space $(X, d_X$) to another
 $(Y, d_Y)$, and let $f: X \to Y$ be another function. We say that $\left(f^{(n)} \right)_{n = 1}^\infty$ converges pointwise
 to $f$ if we have
 
