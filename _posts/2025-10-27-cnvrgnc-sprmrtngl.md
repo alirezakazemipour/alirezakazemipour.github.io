@@ -166,6 +166,7 @@ Since $Y_0$ is equal to $X_0$ or $a$ according to the relation between $X_0$ and
 and since $Y_n \geq a \mathbb{1}_{\{\nu_a \leq n\}}$, we have:
 
 $$ a \mathbb{P}^{\mathscr{B}_0}(\nu_a \leq n) \leq \min(X_0, a).$$
+
 Letting $n$ tend to infinity, we obtain
 
 $$ \mathbb{P}^{\mathscr{B}_0}(\sup_n X_n > a) \leq \min\left(\frac{X_0}{a}, 1\right),$$
@@ -215,13 +216,18 @@ __Measurable Sets__. ([Analysis II](https://link.springer.com/book/10.1007/978-9
 $$
 m^*(A) = m^*(A \cap E) + m^*(A-E)
 $$
-for every subset $A$ of $\R^n$.  If $E$ is measurable, we define the Lebesgue measure of $E$ to be $m(E)= m^*(E)$; if $E$ is not measurable, we leave $m(E)$ undefined. In words, $E$ being measurable means that if we use the set $E to divide up an arbitrary set $A$ into two parts, we keep the additivity property.
+for every subset $A$ of $\R^n$.  If $E$ is measurable, we define the Lebesgue measure of $E$ to be $m(E)= m^*(E)$; if $E$ is not measurable, we leave $m(E)$ undefined. In words, $E$ being measurable means that if we use the set
+$E$ to divide up an arbitrary set $A$ into two parts, we keep the additivity property.
 
 __Measurable Functions__. ([Analysis II](https://link.springer.com/book/10.1007/978-981-19-7284-3)) Let  be a measurable subset of $\mathbb{R}^n$ and let $f: \Omega \to \R^m$ be a function. A function $f$ is measurable iff $f^{-1}(V)$ is measurable for **every** open set $V \subseteq \R^m$.  Another characterization of measurable functions is given by: Let $\Omega$ be a measurable subset of $\R^n$. A function $f: \Omega \to \R^*$ is said to be _measurable_ iff $f^{-1}((a, \infty]))$ is measurable for every real number $a$.
 
 __Absolutely Integrable__. ([Analysis II](https://link.springer.com/book/10.1007/978-981-19-7284-3)) Let $\Omega$ be a measurable subset of . A measurable function $f: \Omega \to \mathbb{R}^* := \mathbb{R} \cup \{-\infty, +\infty\}$ is said to be absolutely integrable if the integral $\int_\Omega f$ (w.r.t. the Lebesgue measure) is finite.
 
-__Pointwise Convergence__. ([Analysis II](https://link.springer.com/book/10.1007/978-981-19-7284-3)) The most obvious notion of convergence of functions is pointwise convergence, or _convergence at each point of the domain_. Let $\left(f^{(n)} \right)_{n = 1}^\infty$ be a sequence of functions from one metric space $(X, d_X$) to another $(Y, d_Y)$, and let $f: X \to Y$ be another function. We say that $\left(f^{(n)} \right)_{n = 1}^\infty$ converges pointwise to $f$ if we have
+__Pointwise Convergence__. ([Analysis II](https://link.springer.com/book/10.1007/978-981-19-7284-3)) 
+The most obvious notion of convergence of functions is pointwise convergence, or _convergence at each point of the domain_.
+Let $\left(f^{(n)} \right)\_{n = 1}\^\infty$ be a sequence of functions from one metric space $(X, d_X$) to another
+$(Y, d_Y)$, and let $f: X \to Y$ be another function. We say that $\left(f^{(n)} \right)_{n = 1}^\infty$ converges pointwise
+to $f$ if we have
 
 $$
 \lim_{n \to \infty}f^{(n)}(x) = f(x), \quad \forall x \in X,
