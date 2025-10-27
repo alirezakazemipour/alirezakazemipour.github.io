@@ -102,7 +102,8 @@ Note that events in $\mathscr{B}_\nu$ are __prior__ to $\nu$.
 Back to the considered lemma:
 
 ___
-__Lemma__ (master). Given tow positive supermartingales $(X^{(i)}_n)(i =1, 2)$ and a stopping time $\nu$ such that $X_\nu^{(1)} \geq X_\nu^{(2)}$ on {$\nu < \infty$}, the formula
+__Lemma__ (master). Given tow positive supermartingales $(X^{(i)}\_n)(i =1, 2)$ and a stopping time $\nu$ such that
+$X_\nu^{(1)} \geq X_\nu^{(2)}$ on {$\nu < \infty$}, the formula
 
 $$
 X_n(\omega) = \begin{cases}
@@ -169,7 +170,7 @@ Letting $n$ tend to infinity, we obtain
 
 $$ \mathbb{P}^{\mathscr{B}_0}(\sup_n X_n > a) \leq \min\left(\frac{X_0}{a}, 1\right),$$
 
-Since {$\nu_a < \infty$} = {$\sup_n X_n > a$}. It suffices to replace $a$ by $a\left(1 - k{^-1}\right)$ in the
+Since {$\nu_a < \infty$} = {$\sup_n X_n > a$}. It suffices to replace $a$ by $a\left(1 - k^{-1}\right)$ in the
 inequality above and let $k$ tend to infinity to obtain the same inequality with $\geq$ instead of $>$ on the left-hand side. Let us integrate both sides over the event {$X_0 < \infty$}, which belongs to $\mathscr{B}_0$. Let $A := \{\sup_n X_n > a\}$ we find that 
 
 $$
@@ -189,6 +190,7 @@ As $a$ tends to infinity, the R.H.S. tends to zero by the dominated convergence 
 $$
 \mathbb{P}(X_0 < \infty, \sup_n X_n = \infty) = 0. \; \square
 $$
+
 ___
 __Box__. ([Analysis II](https://link.springer.com/book/10.1007/978-981-19-7284-3))  A box $B$ in $\mathbb{R}^n$ is any set of the form
 
@@ -233,7 +235,11 @@ $$
 
 We call the function _f_ the pointwise limit of the functions $f^{(n)}$.
 
-**Limits of measurable functions are measurable** ([Analysis II](https://link.springer.com/book/10.1007/978-981-19-7284-3)) Let $\Omega$ be a measurable subset of $\mathbb{R}^n$, for each positive integer $n$, let $f_n: \Omega \to \mathbb{R}^*$ be a measurable function. Then, the functions $\sup_n f_n, \inf_n f_n, \limsup_{n \to \infty} f_n, \mathrm{and}\, \liminf_{n \to \infty} f_n$ are also measurable. In particular, if $f_n$ converge pointwise to another function $f: \Omega \to \mathbb{R}^*$, then $f$ is also measurable.
+**Limits of measurable functions are measurable** ([Analysis II](https://link.springer.com/book/10.1007/978-981-19-7284-3)) 
+Let $\Omega$ be a measurable subset of $\mathbb{R}^n$, for each positive integer $n$,
+let $f_n: \Omega \to \mathbb{R}^\*$ be a measurable function. Then, the functions
+$\sup_n f_n, \inf_n f_n, \limsup_{n \to \infty} f_n, \mathrm{and}\, \liminf_{n \to \infty} f_n$ are also measurable.
+In particular, if $f_n$ converge pointwise to another function $f: \Omega \to \mathbb{R}^*$, then $f$ is also measurable.
 
 _Proof_. We first prove the claim about $\sup_n f_n$. Call this function $g$. We have to prove that $g^{-1}((a, \infty]))$ is measurable for every $a$. First we show that
 
@@ -361,7 +367,8 @@ So to summarize, we need to prove the following that prove $(\star)$.
 
 The following proposition proves $(\star\star)$:
 
-Let $\Omega$ be a measurable set, and $f: \Omega \to [0, \infty]$ be a non-negative measurable function. If $\Omega' \subseteq \Omega$ is measurable, then $\int_{\Omega'} f = \int_{\Omega} f \mathbb{1}_{\{\Omega'\}} \leq \int_\Omega f$. 
+Let $\Omega$ be a measurable set, and $f: \Omega \to [0, \infty]$ be a non-negative measurable function. 
+If $\Omega' \subseteq \Omega$ is measurable, then $\int_{\Omega'} f = \int_{\Omega} f \mathbb{1}\_{\{\Omega'\}} \leq \int_\Omega f$. 
 
 _Proof_. By the definition of the Lebesgue integral
 
@@ -450,7 +457,7 @@ _Proof_. If $F$ was infinite on a set of non-zero meaure, then $F$ would not be 
 where $F$ is infinite has zero measure. We may delete this set from (this does not affect any of the integrals) and 
 thus assume without loss of generality that $F(x)$ is finite for every $x \in \Omega$, which implies the same assertion for the $f_n(x)$. 
 
-Let $f:\Omega \to \mathbb{R} \cup \{-\infty, +\infty\}$ be the function $f(x) := \lim_{n \to \infty}f_n(x)$ which
+Let $f:\Omega \to \mathbb{R} \cup$ {$-\infty, +\infty$} be the function $f(x) := \lim_{n \to \infty}f_n(x)$ which
 exists by assumption. Since $f$ is the limit of measurable functions, it's measurable. Also, 
 since $\|f_n(x)\| \leq F(x)$ for all $n$ and all $x \in \Omega$ , we see that each $f_n$ is absolutely integrable, and by taking limits we obtain $\| f(x)\| \leq F(x)$ for all $x \in \Omega$ , so $f$ is also absolutely integrable. Our task is to show that $\lim_{n \to \infty}\int_{\Omega} f_n = \int_\Omega f$. The functions $F + f_n$ are non-negative and converge pointwise to $F + f$. So by Fatou’s lemma
 
