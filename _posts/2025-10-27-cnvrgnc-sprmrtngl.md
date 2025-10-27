@@ -10,6 +10,7 @@ tags:
 [//]: Latex Macros
 
 $$
+\begin{align*}
 \newcommand{\I}{\mathbb{1}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -19,6 +20,7 @@ $$
 \DeclareMathOperator{\PP}{\mathbb{P}}
 \newcommand{\Ev}[2]{\EE^{#2}\left[ #1 \right]}
 \newcommand{\Pr}[2]{\PP^{#2}\left( #1 \right)}
+\end{align*}
 $$
 
 I really enjoyed reading Chapter two of [Discrete Parameter Martingales](https://www.sciencedirect.com/bookseries/north-holland-mathematical-library/vol/10/suppl/C) and I thought why not making a blog post. 
@@ -83,7 +85,7 @@ First, we need an auxiliary lemma which constitutes the switching principle for 
 
 Stopping time (unsurprisingly) is a concept from gambling. A stopping rule for the player is a rule for leaving the game, based at each time on information it his/her disposal at that time. By this definition, a "dishonest" player who decides to leave the game any time already knowing certain subsequent outcomes of the game is excluded. Also, note that the stopping time could be $\infty$ meaning that the game never ends.
 
-__Definition__. Let $\mathbb{N}^*$ denote $\mathbb{N} \cup {\infty}$. A mapping $\nu: \Omega \to \mathbb{N}^*$ is called a stopping time if 
+__Definition__. Let $\mathbb{N}^\*$ denote $\mathbb{N} \cup {\infty}$. A mapping $\nu: \Omega \to \mathbb{N}^*$ is called a stopping time if 
 
 $$\{ \nu = n \} \in \mathscr{B}_n, \quad \forall n \in \mathbb{N}.$$
 
@@ -96,6 +98,7 @@ $$
 Note that events in $\mathscr{B}_\nu$ are __prior__ to $\nu$.
 
 Back to the considered lemma:
+
 ___
 __Lemma__ (master). Given tow positive supermartingales $(X^{(i)}_n)(i =1, 2)$ and a stopping time $\nu$ such that $X_\nu^{(1)} \geq X_\nu^{(2)}$ on {$\nu < \infty$}, the formula
 
@@ -118,11 +121,11 @@ $$
 then it is clear that $X_n$ is $\mathscr{B}_n$ measurable. The supermartingale property of $X^{(i)}_n$ allows us to write
 
 $$
-\begin{align}
+\begin{align*}
 X_n &= \mathbb{1}_{\{v > n\}}X_n^{(1)} + \mathbb{1}_{\{v \leq n\}}X_n^{(2)} \\
 &\geq \mathbb{1}_{\{v > n\}} \mathbb{E}^{\mathscr{B}_n}\left[X_{n+1}^{(1)}\right] + \mathbb{1}_{\{v \leq n\}} \mathbb{E}^{\mathscr{B}_n}\left[X_{n+1}^{(2)}\right] \\
 & = \mathbb{E}^{\mathscr{B}_n}\left[\mathbb{1}_{\{v > n\}} X_{n+1}^{(1)} + \mathbb{1}_{\{v \leq n\}}  X_{n+1}^{(2)}\right]. \tag{since $\nu$ is $\mathscr{B}_n$-measurable}
-\end{align}
+\end{align*}
 $$
 
 The assumption $X_\nu^{(1)} \geq X_\nu^{(2)}$ implies that $X_{n + 1}^{(1)} \geq X_{n + 1}^{(2)}$ on {$\nu = n + 1$}, and
@@ -154,17 +157,21 @@ X_n & n < \nu_a\\
 a & n \geq \nu_a
 \end{cases}
 $$
-defines a new supermartingale by our pervious lemma. Hence $Y_0 \geq \mathbb{E}^{\mathscr{B}_0}[Y_n]$. Since $Y_0$ is equal to $X_0$ or $a$ according to the relation between $X_0$ and $a$, and since $Y_n \geq a \mathbb{1}_{\{\nu_a \leq n\}}$, we have:
+defines a new supermartingale by our previous lemma. 
+Hence, $Y_0 \geq \mathbb{E}^{\mathscr{B}\_0}[Y_n]$.
+Since $Y_0$ is equal to $X_0$ or $a$ according to the relation between $X_0$ and $a$,
+and since $Y_n \geq a \mathbb{1}_{\{\nu_a \leq n\}}$, we have:
 
 $$ a \mathbb{P}^{\mathscr{B}_0}(\nu_a \leq n) \leq \min(X_0, a).$$
 Letting $n$ tend to infinity, we obtain
 
 $$ \mathbb{P}^{\mathscr{B}_0}(\sup_n X_n > a) \leq \min\left(\frac{X_0}{a}, 1\right),$$
 
-since {$\nu_a < \infty$} = {$\sup_n X_n > a$}. It suffices to replace $a$ by $a\left(1 - k{^-1}\right)$ in the inequality above and let $k$ tend to infinity to obtain the same inequality with $\geq$ instead of $>$ on the left-hand side. Let us integrate both sides over the event {$X_0 < \infty$}, which belongs to $\mathscr{B}_0$. Let $A := \{\sup_n X_n > a\}$ we find that 
+Since {$\nu_a < \infty$} = {$\sup_n X_n > a$}. It suffices to replace $a$ by $a\left(1 - k{^-1}\right)$ in the
+inequality above and let $k$ tend to infinity to obtain the same inequality with $\geq$ instead of $>$ on the left-hand side. Let us integrate both sides over the event {$X_0 < \infty$}, which belongs to $\mathscr{B}_0$. Let $A := \{\sup_n X_n > a\}$ we find that 
 
 $$
-\begin{align}
+\begin{align*}
  \int_{\{X_0 < \infty\}}\mathbb{P}(A \mid \mathscr{B}_0) d\mathbb{P} & \leq \int_{\{X_0 < \infty\}} \min\left(\frac{X_0}{a}, 1\right)d\mathbb{P} \Rightarrow \\
  \int_{\mathscr{B}_0}\mathbb{E}(\mathbb{1}_A \mid \mathscr{B}_0) d\mathbb{P} &\leq \int_{\{X_0 < \infty\}} \min\left(\frac{X_0}{a}, 1\right)d\mathbb{P} \Rightarrow \\
 \mathbb{E}[\mathbb{1}_{\mathscr{B}_0} \cdot \mathbb{E}(\mathbb{1}_A \mid \mathscr{B}_0)] &\leq \int_{\{X_0 < \infty\}} \min\left(\frac{X_0}{a}, 1\right)d\mathbb{P} \Rightarrow \\
@@ -172,10 +179,10 @@ $$
 \mathbb{E}(\mathbb{1}_{\mathscr{B}_0} \cdot\mathbb{1}_A) &\leq \int_{\{X_0 < \infty\}} \min\left(\frac{X_0}{a}, 1\right)d\mathbb{P} \Rightarrow \\
 \mathbb{P}(\mathscr{B}_0 \cap A) &\leq \int_{\{X_0 < \infty\}} \min\left(\frac{X_0}{a}, 1\right)d\mathbb{P} \Rightarrow \\
 \mathbb{P}(X_0 < \infty, \sup_n X_n > a) &\leq \int_{\{X_0 < \infty\}} \min\left(\frac{X_0}{a}, 1\right)d\mathbb{P}.
-\end{align}
+\end{align*}
 $$
 
-As $a$ tends to infinity the R.H.S. tends to zero by the dominated convergence theorem and we have 
+As $a$ tends to infinity, the R.H.S. tends to zero by the dominated convergence theorem and we have 
 
 $$
 \mathbb{P}(X_0 < \infty, \sup_n X_n = \infty) = 0. \; \square
@@ -235,7 +242,9 @@ $$
 then the claim follows since the countable union of measurable sets is measurable. To show the above display consdier two cases:
 
 - $\subseteq$ 
+
 If $x \in g^{-1}((a, \infty]))$, then $g(x) = sup_n f_n(x) > a. If every $f_n(x) \leq a$, then $\sup_n f_n(x) \leq a$ which is a contradiction. Hence there exists some $n$ with $f_n(x) > a$. Thus, $x \in f^{-1}((a, \infty]))$ for that $n$, so $x$ belongs to the union.
+
 - $\supseteq$ 
 If $x \in \cup_{n \geq 1}f_n^{-1}((a, \infty]))$, then for some $n$ we have $f_n(x) > a$. Therefore, $g(x) = \sup_n f_n(x) \geq f_n(x) > a$ and $x \in g^{-1}((a, \infty]))$.
 
@@ -350,19 +359,19 @@ Let $\Omega$ be a measurable set, and $f: \Omega \to [0, \infty]$ be a non-negat
 _Proof_. By the definition of the Lebesgue integral
 
 $$
-\begin{align}
+\begin{align*}
 \int_\Omega f &= \sup \left\{\int_\Omega s: s \text{ is simple, non-negative and dominated by } f \right\}, \\
 \int_{\Omega'} f &= \sup \left\{\int_{\Omega'} s: s \text{ is simple, non-negative and dominated by } f \right\}.
-\end{align}
+\end{align*}
 $$
 
 Fix $s$. We have
 
 $$
-\begin{align}
+\begin{align*}
 \int_\Omega s &= \sum_{j = 1}^N c_j \cdot m(F_j), \\
 \int_{\Omega'} s &= \sum_{j = 1}^N c_j \cdot m(F_j \cap \Omega').
-\end{align}
+\end{align*}
 $$
 
 But, $F_j \cap \Omega' \subseteq F_j$. Therefore, $m\left(F_j \cap \Omega'\right) \leq m(F_j)$. By multiplying both sides by positive constants $c_j$ and summing over $j$ we get that $\int_{\Omega'} s \leq \int_{\Omega} s$. Taking suprema from both sides competes the proof.
@@ -404,10 +413,10 @@ $$
 _Proof_. 
 
 $$
-\begin{align}
+\begin{align*}
 \int_\Omega \liminf_{n \to \infty} f_n & = \int_\Omega \sup_{m \geq 1} \inf_{n \geq m} f_n \\
 & = \sup_{m \geq 1} \int_\Omega \inf_{n \geq m} f_n \tag{monotone convergence}. 
-\end{align}
+\end{align*}
 $$
 $\inf_{n \geq m} f_n \leq f_j$ for all $j \geq m$. Hence, $\int_\Omega \inf_{n \geq m} f_n \leq \int_\Omega f_j$. By taking infima w.r.t. $j$, we have
 
@@ -421,13 +430,21 @@ $$
 \int_\Omega \liminf_{n \to \infty} f_n \leq \sup_{m \geq 1}\int_\Omega \inf_{n \geq m} f_n \leq \sup_{m \geq 1}\inf_{j \geq m}\int_\Omega f_j = \liminf_{n \to \infty} \int_{\Omega} f_n.
 $$
 
-__Lebesgue Dominated Convergence Theorem__. ([Analysis II](https://link.springer.com/book/10.1007/978-981-19-7284-3)) Let  be a measurable subset of $\mathbb{R}^n$, and let $f_1, f_2, \dots$ be a sequence of measurable functions from $\Omega$ to $\mathbb{R} \cup \{-\infty, +\infty\}$ which converge pointwise.  Suppose also that there is an absolutely integrable function $F: \Omega \to [0, \infty]$ such that $|f_n(x)| < F(x)$ for all $x \in \Omega$ and all $n = 1, 2, 3, \dots$. Then,
+__Lebesgue Dominated Convergence Theorem__. ([Analysis II](https://link.springer.com/book/10.1007/978-981-19-7284-3)) 
+Let $\Omega$ be a measurable subset of $\mathbb{R}^n$, and let $f_1, f_2, \dots$ be a sequence of measurable functions from 
+$\Omega$ to $\mathbb{R} \cup \{-\infty, +\infty\}$ which converge pointwise. Suppose also that there is an absolutely
+integrable function $F: \Omega \to [0, \infty]$ such that $\|f_n(x)\| < F(x)$ for all
+$x \in \Omega$ and all $n = 1, 2, 3, \dots$. Then,
 
 $$\int_{\Omega} \lim_{n \to \infty} f_n = \lim_{n \to \infty}\int_{\Omega} f_n.$$
 
-_Proof_. If $F$ was infinite on a set of non-zero meaure, then $F$ would not be absolutely integrable thus the set where $F$ is infinite has zero measure. We may delete this set from (this does not affect any of the integrals) and thus assume without loss of generality that $F(x)$ is finite for every $x \in \Omega$ , which implies the same assertion for the $f_n(x)$. 
+_Proof_. If $F$ was infinite on a set of non-zero meaure, then $F$ would not be absolutely integrable thus the set
+where $F$ is infinite has zero measure. We may delete this set from (this does not affect any of the integrals) and 
+thus assume without loss of generality that $F(x)$ is finite for every $x \in \Omega$, which implies the same assertion for the $f_n(x)$. 
 
-Let $f:\Omega \to \mathbb{R} \cup \{-\infty, +\infty\}$ be the function $f(x) := \lim_{n \to \infty}f_n(x)$ which exists by assumption. Since $f$ is the limit of measurable functions, it's measurable. Also, since $|f_n(x)| \leq F(x)$ for all $n$ and all $x \in \Omega$ , we see that each $f_n$ is absolutely integrable, and by taking limits we obtain $| f(x)| \leq F(x)$ for all $x \in \Omega$ , so $f$ is also absolutely integrable. Our task is to show that $\lim_{n \to \infty}\int_{\Omega} f_n = \int_\Omega f$. The functions $F + f_n$ are non-negative and converge pointwise to $F + f$. So by Fatou’s lemma
+Let $f:\Omega \to \mathbb{R} \cup \{-\infty, +\infty\}$ be the function $f(x) := \lim_{n \to \infty}f_n(x)$ which
+exists by assumption. Since $f$ is the limit of measurable functions, it's measurable. Also, 
+since $\|f_n(x)\| \leq F(x)$ for all $n$ and all $x \in \Omega$ , we see that each $f_n$ is absolutely integrable, and by taking limits we obtain $\| f(x)\| \leq F(x)$ for all $x \in \Omega$ , so $f$ is also absolutely integrable. Our task is to show that $\lim_{n \to \infty}\int_{\Omega} f_n = \int_\Omega f$. The functions $F + f_n$ are non-negative and converge pointwise to $F + f$. So by Fatou’s lemma
 
 $$
 \int_\Omega F + f \leq \int_\Omega F + \liminf_{n \to \infty} \int f_n \Rightarrow \int_\Omega f \leq \liminf_{n \to \infty} \int f_n.
@@ -459,13 +476,13 @@ First we'll discuss what it means that a sequence of real numbers converge.
 Given a sequence of real number $(x_n)$ in $\R^*$ and pair of real number $a, b$ where $a<b$, let us define $\nu_k (k \geq 1)$ as some special moments in time, where
 
 $$
-\begin{align}
+\begin{align*}
 \nu_1 &= \min\{n: n \geq 1, x_n \leq a\} \\
 \nu_2 &= \min\{n: n \geq \nu_1, x_n \geq b\} \\
 \nu_3 &= \min\{n: n \geq \nu_2, x_n \leq a\} \\
 \nu_4 &= \min\{n: n \geq \nu_3, x_n \geq b\} \\
 & \vdots .
-\end{align}
+\end{align*}
 $$
 
 If some $\nu_k$ is not defined, we put it equal to $\infty$ and all subsequent indices. Let $\beta_{a, b}$ be the largest value of $p$ where $\nu_{2p}$ is finite. If all $\nu_k$ are finite, then $\beta_{a, b} = \infty$. $\beta_{a, b}$ denote the number of upcrossings of the sequence $(x_n$) on $[a, b]$. We can see that
@@ -492,10 +509,17 @@ _Proof_.
 
 Set $z := \frac{x + y}{2}$. Since $x <y$, then $\frac{x}{2} < \frac{y}{2}$. If we add $\frac{y}{2}$ to the both sides, we get $z < y$. A symmetrical argument shows $x < z$, hence $x < z < y$. $\square$ 
 
-__A homeomorphism__. ([Topology](https://www.amazon.ca/Topology-2nd-James-Munkres/dp/0131816292)) Let $X$ and $Y$ be topological spaces (like open intervals); let $f: X \to Y$ be a bijection. If both the function $f$ and the inverse function $f^{-1}: Y \to X$ are continuous, then $f$ is called homeomorphism. You may have studied in modern algebra the notion of an isomorphism between algebraic objects such as groups or rings. An isomorphism is a bijective correspondence that preserves the algebraic structure involved. The analogous concept in topology i s that of homeomorphism; i t is a bijective correspondence that preserves the topological structure involved.
+__A homeomorphism__. ([Topology](https://www.amazon.ca/Topology-2nd-James-Munkres/dp/0131816292)) Let $X$ and $Y$ be
+topological spaces (like open intervals); let $f: X \to Y$ be a bijection. 
+If both the function $f$ and the inverse function $f^{-1}: Y \to X$ are continuous, 
+then $f$ is called homeomorphism. You may have studied in modern algebra the notion of an isomorphism between
+algebraic objects such as groups or rings. An isomorphism is a bijective 
+correspondence that preserves the algebraic structure involved. The analogous concept in topology i s that of
+homeomorphism; i t is a bijective correspondence that preserves the topological structure involved.
+
 ___
 
-Hence to prove our proposition, we need to prove $\beta_{a, b} < \infty$ a.s. for every $0 < a < b \in \R$. We only considered positive numbers since $(X_n)$ is positive and we have a homeomorphism between $\R^*$ and $[0, \infty]$ using $f(x) = x, x \geq 0$.
+Hence, to prove our proposition, we need to prove $\beta_{a, b} < \infty$ a.s. for every $0 < a < b \in \R$. We only considered positive numbers since $(X_n)$ is positive and we have a homeomorphism between $\R^*$ and $[0, \infty]$ using $f(x) = x, x \geq 0$.
 
 To this end, we need the Dubin's inequalities.
 
@@ -511,7 +535,7 @@ for every integer $k \geq 1$ and real numbers $a < b$. Therefore, r.v.s $\beta_{
 _Proof_. First note that the set of stopping times {$\omega: \nu_k(\omega) =n$} belong to $\sB_n$ so $\nu_k$ are $\sB_n$-measurable. Now extending the master lemma, we can define the following supermartingale:
 
 $$
-\begin{align}
+\begin{align*}
 Y_n & =1 \quad \mathrm{if}\: 0 \leq n < \nu_1,
 \\
 &= \frac{X_n}{a} \quad \mathrm{if}\: \nu_1 \leq n < \nu_2,
@@ -522,13 +546,13 @@ Y_n & =1 \quad \mathrm{if}\: 0 \leq n < \nu_1,
 & = \left(\frac{b}{a}\right)^{k -1} \cdot \frac{X_n}{a} \quad \mathrm{if}\: \nu_{2k - 1} \leq n < \nu_{2k},
 \\
 & = \left(\frac{b}{a}\right)^{k} \quad \mathrm{if}\: n \geq \nu_{2k}.
-\end{align}
+\end{align*}
 $$
 
 In fact we have that:
 
 $$
-\begin{align}
+\begin{align*}
 1 &\geq \frac{X_{\nu_1}}{a},
 \\
 \frac{X_{\nu_2}}{a} &\geq \frac{b}{a},
@@ -536,15 +560,15 @@ $$
 &\vdots
 \\
 \left(\frac{b}{a}\right)^{k - 1} \cdot \frac{X_{\nu_{2k}}}{a} &\geq \left(\frac{b}{a}\right)^k.
-\end{align}
+\end{align*}
 $$
 
 By construction we have that $Y_0 = \min\left(1, \frac{X_0}{a}\right)$.  Since {$Y_n$} is a supermartingale we have that $Y_0 \geq \Ev{Y_n}{\sB_0}$. Also on the set {$n \geq \nu_{2k}$}, $Y_n \geq \left(\frac{b}{a}\right)^{k}$, or equivalently $Y_n \geq \left(\frac{b}{a}\right)^{k} \cdot \I${$n \geq \nu_{2k}$}. Using all these facts, we have:
 
 $$
-\begin{align}
+\begin{align*}
 \left(\frac{b}{a}\right)^k \Pr{\nu_{2k} \leq n}{\sB_0} \leq \min\left(1, \frac{X_0}{a}\right).
-\end{align}
+\end{align*}
 $$
 
 All that remains is to let $n \to \infty$ and noting that {$\nu_{2k} < \infty$} $=$ {$\beta_{a,b} \geq k$}. $\square$
@@ -569,4 +593,6 @@ where we used the Lebesgue dominated convergence theorem to exchange the expecta
 
 We had already showed that $\sup_n X_n < \infty$ on {$X_0 < \infty$}, which implies that $X_\infty < \infty$ on {$X_0 < \infty$}; applying this result to the supermartingale $(X_n, n \geq p)$ adapted to the sequence $(\sB_n, n \geq p)$,  we find that $X_\infty$ a.s. on {$X_p < \infty$} for all $p \in \mathbb{N}$ which is another way of completing the last part of our proof.
 
-_The end. :)_
+_The end! :)_
+
+<iframe src="https://giphy.com/embed/3o7TKEP6YngkCKFofC" width="480" height="365" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/tvlandclassic-andy-griffith-the-show-3o7TKEP6YngkCKFofC">via GIPHY</a></p>
