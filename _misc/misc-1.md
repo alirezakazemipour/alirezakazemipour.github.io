@@ -86,6 +86,9 @@ A truth by JP that I have experienced as well:
 TT:
 > Solving a math problem isn't about winning or losing; it's about if you learned something from it.
 
+WC:
+> Succes is the ability tp go from one failure to another with no loss of enthusiasm.
+
 # Generic
 [Learning how to learn course](https://www.coursera.org/learn/learning-how-to-learn)
 

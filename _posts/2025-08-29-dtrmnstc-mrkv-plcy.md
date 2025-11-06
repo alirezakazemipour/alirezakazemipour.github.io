@@ -115,7 +115,7 @@ is u.s.c on $Y$.
 
 __Proof__. Based on the part (1) of the above Lemma 1, for each $x \in X, \; f(x)q(x, y) \leq 0$ is u.s.c. Let $\{x_n\}$ be an increasing sequence of finite subsets of $X$ such that $\cup_{n =1}^\infty X_n = X$. Then, by Lemma 1 we have that $h_n(y) := \sum_{x \in X_n} f(x)q(x, y)$ is u.s.c. in $y$ for each $n$. Since $h_n(y)$ is decreasing in $n$, by Part (3) of Lemma 1, $h(y) = \lim_{n \to \infty} h_n(y)$ is u.s.c. $\square$
 
-The following corollary. generalizes the previous proposition to nondiscrete sets. Note that a kernel $q(\cdot \mid y)$ on Borel subset of $X$ is continuous if $q(\cdot \mid y_n)$ converges weakly to $q(\cdot \mid y)$ whenever ${y_n}$ converges to $y$. It means for a bounded measurable real-valued function $f$ on $X$,
+The following corollary. generalizes the previous proposition to nondiscrete sets. Note that a kernel $q(\cdot \mid y)$ on Borel subset of $X$ is continuous if $q(\cdot \mid y_n)$ converges weakly to $q(\cdot \mid y)$ whenever {$y_n$} converges to $y$. It means for a bounded measurable real-valued function $f$ on $X$,
 
 $$\lim_{n \to \infty} \int_X f(x) q(dx \mid y_n) = \int_X f(x)q(dx \mid y).$$
 
