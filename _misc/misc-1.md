@@ -4,6 +4,13 @@ collection: misc
 permalink: /misc/misc-1
 ---
 
+Dr. Alan Mandell:
+> Real treasures of life silently sit right in front of us:
+> 
+> Thank you for the roof above me, thank you for the food on the table, thank you for the people who cared about me,
+> Thank you for this body that carries me though this life, thank you for giving the strength to get through what I 
+> thought would break me, etc. 
+
 - [failure is your friend](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/failure%20is%20your%20friend.mp4)
 - [Failure-BO](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids%2FFailure-BO.mp4)
 - [Finite Thinking vs. Infinite Mindset-SS](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids%2FFinite%20Thinking%20vs.%20Infinite%20Mindset-SS.mp4)
