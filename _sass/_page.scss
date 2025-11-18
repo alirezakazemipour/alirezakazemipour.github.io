@@ -23,6 +23,16 @@
     @include suffix(2 of 12);
   }
 
+/* --- PASTE THIS NEW BLOCK HERE --- */
+  &.wide {
+    @include breakpoint($large) {
+      @include span(12 of 12);
+      @include prefix(0);
+      @include suffix(0);
+    }
+  }
+/* --------------------------------- */
+
   .page__inner-wrap {
     @include full();
 
