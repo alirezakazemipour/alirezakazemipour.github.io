@@ -7,6 +7,7 @@ redirect_from:
   - /home.html
 ---
 
-I'm a PhD student studying Computing Science at the University of Alberta under 
-[Mike Bowling](http://webdocs.cs.ualberta.ca/~bowling/)'s supervision.
-I'm interested in reinforcement learning and [here](/pdfs/CV.pdf) is my CV.
+I'm a PhD student studying Computing Science at the University of Alberta. My advisor is 
+[Mike Bowling](http://webdocs.cs.ualberta.ca/~bowling/).
+I'm broadly interested in sequential-decision making, online learning, optimization, and game theory.
+My CV is [here](/pdfs/CV.pdf).

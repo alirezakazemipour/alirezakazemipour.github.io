@@ -1,0 +1,157 @@
+\documentclass[a4paper]{article}
+\usepackage{fullpage}
+\usepackage{lipsum}
+\usepackage[textsize=\tiny]{todonotes}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[sort]{natbib}
+\usepackage{amsthm, amsmath, amssymb, mathtools}
+\usepackage{mathrsfs, eufrak}
+\usepackage{hyperref}
+\usepackage[capitalize, sort, noabbrev]{cleveref}
+\usepackage[shortlabels]{enumitem}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+   linkcolor={red!50!black},
+   citecolor={red!50!black},
+   urlcolor={red!80!black}
+}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\bibliographystyle{apalike}
+
+\title{The Value Equivalence Principle in Infinite Domains and in Policy Search}
+\author{Alireza Kazemipour}
+\date{July 2025}
+
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\fB}{\mathfrak{B}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\II}{\mathbb{I}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand{\AK}[1]{\textcolor{teal}{(\textbf{AK}: {#1})}}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    As of \date{\today}: I want to pose the research question (the gap in the literature) that I'd like to answer. The atomic focus will be on \cref{sec:motiv}. The gap that I have found is the lack of value equivalence principle in the function approximation regime and also policy search approaches.
+\end{abstract}
+
+\section{Motivation}
+\label{sec:motiv}
+Let $A_t$ be the action that the agent took at state $S_t$ at time step $t$ while following policy $\pi$ and let $R_{t+1}$ be the reward received. Also, let $s_0$ be the initial state of the interaction. The performance metric in the discounted setting is the expected cumulative discounted return defined as
+\begin{equation}
+    \label{eq:j-pi}
+    J(\pi) = \E_{\pi}\left[\sum_t \gamma^tR_{t + 1} \middle\vert S_t = s_0\right].
+\end{equation}
+%
+The goal is find a policy $\pi^*$ such that
+\begin{equation}
+    \label{sec:j-pi-str}
+    J(\pi^*) = \max_\pi J(\pi).
+\end{equation}
+%
+First, let us model the interaction as an MDP $\langle\cS, \cA, P, r \rangle$. There are two general approaches to find $\pi^*$ known as \emph{policy search} and \emph{value-based} methods. Policy search methods tries to solve the optimization problem of \cref{sec:j-pi-str} directly. Value-based methods break down \cref{eq:j-pi} using dynamic programming for each state $s$ that the agent experiences during the interaction, known as the state-value function, as the following
+\begin{align}
+    \label{eq:bllmn-eq}
+    V_\pi(s) \coloneq \E_{\pi}\left[\sum_t \gamma^tR_{t + 1} \middle\vert S_t = s\right]
+    = \E_\pi \left[r(s, a) + \gamma \sum_{s'}P\left(s' \middle\vert s, a\right)V_\pi\left(s'\right) \middle\vert S_t = s, a \sim \pi(\cdot \mid s)\right].
+\end{align}
+%
+Then, value-based methods find $\pi^*$ through
+\begin{equation*}
+    \pi^* \in \argmax_{\pi} V_\pi(s), \quad \forall s \quad (\text{if } \argmax \text{ exists}).
+\end{equation*}
+%
+Note that the goal is solely finding $\pi^*$ and although we modeled the interaction as an MDP, nowhere there exits a need to learn anything about the mean reward $r$ and the transition kernel $P$. All that is useful are the quadruples $(S_t, A_t, R_{t+1}$, $S_{t+1})_t$ that agent experiences through its interaction with environment. The independence from learning $r$ and $P$ creates a contention on how to find $\pi^*$. On one hand, if learning $r$ and $P$ is hard (or even impossible), it does not exacerbate the learning of the agent. On the other hand, interaction with the environment can be expensive and learning internal models of $r$, and $p$ can significantly accelerates the agent's learning. These two perspectives have resulted on two downstream approaches employed by both policy search and value-based methods called model-free and model-based.
+
+Model-free approaches do not try to estimate $r$, nor $P$, so are not the focus of this work. In model-based methods, the agent tries to learn $r$, and $P$. For the sake of simplicity, let us assume that the agent knows $r$ in advance and only needs to learn $P$, and let us focus on only the value-based methods to unravel our argument \AK{how do model-based policy search use models? \href{https://icml.cc/2015/tutorials/PolicySearch.pdf}{Answer in}.}
+
+If $\cS$ and $\cA$ are finite, $V_\pi(s) \in \R$ is a point-wise function for any policy, hence we can use a vector representation to write \cref{eq:bllmn-eq} as
+\begin{equation*}
+    T^\pi (V) = \E_\pi \left[r(s, a) + \gamma \sum_{s'}P\left(s' \middle\vert s, a\right)V_\pi\left(s'\right) \middle\vert S_t = s, a \sim \pi(\cdot \mid s)\right].
+\end{equation*}
+%
+So, if we want to find and estimate $\widehat{P}$ such that 
+\begin{equation*}
+    \widehat{T}^\pi (V) = \E_\pi \left[r(s, a) + \gamma \sum_{s'}\widehat{P}\left(s' \middle\vert s, a\right)V^\pi\left(s'\right) \middle\vert S_t = s, a \sim \pi(\cdot \mid s)\right],
+\end{equation*}
+%
+and $T^\pi(V^\pi) - \widehat{T}^\pi(V^\pi)$ is zero, one way is to make $\widehat{P}$ as close as possible to $P$ in some measure of closeness. One objective to learn $P$ is to minimize the $\ell_1$ distance between $\widehat{P}$ and $P$ for all state-actions $(s, a)$,
+%
+\begin{equation}
+    \label{eq:l1-loss-P}
+   \widehat{P} = \argmin_{P' \in \cP} \Vert P'(\cdot \mid s, a) - P(\cdot \mid s, a) \Vert_1, 
+\end{equation}
+%
+where $\cP$ is the set of transition kernels. The solution to \cref{eq:l1-loss-P} coincides with the maximum-likelihood estimation of $P$, meaning that if $(s, a)$ has been visited $v$ times, and the next visited state is $S_i'$ after the $i$th visit, then
+\begin{equation*}
+    \widehat{P}(\cdot \mid s, a) = \frac{1}{v}\sum_{i = 1}^{v}\II\left\{S_i' = s'\right\}, \quad \forall s' \in \cS,
+\end{equation*}
+%
+where $\II$ is the indicator function. The obtained $\widehat{P}$ in this way is \textbf{accurate}, i.e., $\widehat{P} \approx P$ (for large enough $v$) for all state-actions, and also \textbf{useful} because $T^\pi(V^\pi)- \widehat{T}^\pi(V^\pi) = 0$, which consequently enables us to use $\widehat{T}(V)$ to find $\pi^*$.
+
+However, if $\cS$, or $\cA$ are infinite, then finding an accurate model is impossible in general. Because the agent needs to approximate $P$ using a model class $\widetilde{\cP}$ that does not necessarily contain $P$. Hence inevitably, the agent has approximate $P$ using the best model available in $\widetilde{\cP}$. However, now that the approximation is evitable, accuracy of models are rendered obsolete and the main goal should be on the usefulness of models. The preference of usefulness over accuracy has already be argued by \citep{grimm2020value} for finite MDPs as \emph{the value equivalence principle}. 
+%
+\begin{definition}[\cite{grimm2020value}, Definition 1]
+    \label{def:val-eq-prin}
+    Let $\widetilde{\Pi} \subseteq \Pi$ be a set of policies and let $\widetilde{\cV} \subseteq \mathcal{V}$ be a set of state-value functions. We say that models $P_1$, and $P_2$ are value equivalent with respect to $\widetilde{\Pi}$ and $\widetilde{\cV}$ if and only if
+%
+    \begin{equation*}
+        T^\pi_1(V) = T^\pi_2(V), \quad \text{for all } V \in \widetilde{\cV}, \text{ and for all } \pi \in \widetilde{\Pi}.
+    \end{equation*}
+\end{definition}
+%
+Since in the infinite spaces the agent employs function approximation, the full equally in \cref{def:val-eq-prin} is not achievable. Since the agent's approximation is constrained to the model class and the class of state-value functions it can represent, we define the \emph{constrained} value equivalence principle.
+
+\begin{definition}
+    \label{def:cns-val-eq-prin}
+    Let $\widetilde{\Pi} \subseteq \Pi$ be a set of policies, $\cV_w$ be the class of state-value functions parametrized by $w$, and $\cP_\theta$ be the model class parametrized by $\theta$. Two models $P_{\theta_1}$ and $P_{\theta_2}$ are constrained $\epsilon$-value equivalent with respect to $\widetilde{\Pi}$, and $\cV_w$ if and only if
+    %
+    \begin{equation*}
+        \left\lvert T^\pi_1(V_w)_s - T^\pi_2(V_w)_s \right\rvert \leq \epsilon, \quad \forall s \in \cS, V_w \in \widetilde{\cV}_w, \pi \in \widetilde{\Pi}, \text{ and } \epsilon > 0,
+    \end{equation*}
+    %
+    where we define
+    \begin{equation*}
+        T^\pi_i(V_w)_s \coloneq \E_\pi \left[r(s, a) + \gamma \int_\cS P_{\theta_i}\left(ds' \middle\vert s, a\right)V_w^\pi\left(s'\right) \middle\vert S_t = s,  a \sim \pi(\cdot \mid s)\right],
+    \end{equation*}
+    and $\phi: \cS \times \cA \to \R^d$ is the feature-vector.
+\end{definition}
+%
+We also emphasize again that the goal is finding $\pi^*$ and not even an accurate estimate of $V^*$. The $\epsilon$ approximation of \cref{def:cns-val-eq-prin} lets the agent benefit from the action-gap phenomenon~\citep{farahmand2011actiongap} to find an $\epsilon$-optimal state-values that are enough to find the optimal policy.
+\newline
+\newline
+$\epsilon$ in \cref{def:cns-val-eq-prin} accounts for two possibilities: the error in estimating the model, and the error in estimating the value functions. \AK{continue}
+
+\section{Next Steps}
+\begin{enumerate}
+    \item Connect the new definition to the special case of linear function approximation with exponential family of distributions for $P$, thoroughly studied by \citet{farahmand2017value}.
+
+    \item Use projected Bellman operator in the definition instead. But with an infinite dimensional $\Phi$, Banach spaces? Functional analysis definitely helps here.
+    
+     \item ODE definition.
+\end{enumerate}
+
+\bibliography{my_bibs}
+\end{document}

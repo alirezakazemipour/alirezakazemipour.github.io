@@ -1,0 +1,557 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Sobolev spaces (not too wiggly functions), Hilbert spaces, and RHKS - Alireza Kazemipour</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="Alireza Kazemipour">
+<meta property="og:title" content="Sobolev spaces (not too wiggly functions), Hilbert spaces, and RHKS">
+
+
+  <link rel="canonical" href="https://alirezakazemipour.github.io/posts/2025/08/sblv/">
+  <meta property="og:url" content="https://alirezakazemipour.github.io/posts/2025/08/sblv/">
+
+
+
+  <meta property="og:description" content="This post will be hell of a post! Haha 🤩">
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2025-08-17T00:00:00-07:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Alireza Kazemipour",
+      "url" : "https://alirezakazemipour.github.io",
+      "sameAs" : null
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://alirezakazemipour.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Alireza Kazemipour Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://alirezakazemipour.github.io/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="https://alirezakazemipour.github.io/images/apple-touch-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="https://alirezakazemipour.github.io/images/apple-touch-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="https://alirezakazemipour.github.io/images/apple-touch-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="https://alirezakazemipour.github.io/images/apple-touch-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="https://alirezakazemipour.github.io/images/apple-touch-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="https://alirezakazemipour.github.io/images/apple-touch-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="https://alirezakazemipour.github.io/images/apple-touch-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="https://alirezakazemipour.github.io/images/apple-touch-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="https://alirezakazemipour.github.io/images/apple-touch-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="https://alirezakazemipour.github.io/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="https://alirezakazemipour.github.io/images/android-chrome-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="icon" type="image/png" href="https://alirezakazemipour.github.io/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="https://alirezakazemipour.github.io/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="manifest" href="https://alirezakazemipour.github.io/images/manifest.json?v=M44lzPylqQ">
+<link rel="mask-icon" href="https://alirezakazemipour.github.io/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="https://alirezakazemipour.github.io/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="https://alirezakazemipour.github.io/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="https://alirezakazemipour.github.io/assets/css/academicons.css"/>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="https://alirezakazemipour.github.io/">Alireza Kazemipour</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://alirezakazemipour.github.io/misc/">Miscellaneous</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://alirezakazemipour.github.io/unfin/">Unfinished ideas</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://alirezakazemipour.github.io/crs_prjcts/">Course projects</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://alirezakazemipour.github.io/year-archive/">Journal</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Sobolev spaces (not too wiggly functions), Hilbert spaces, and RHKS">
+    <meta itemprop="description" content="This post will be hell of a post! Haha 🤩">
+    <meta itemprop="datePublished" content="August 17, 2025">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Sobolev spaces (not too wiggly functions), Hilbert spaces, and RHKS
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  11 minute read
+	
+</p>
+          
+        
+        
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2025-08-17T00:00:00-07:00">August 17, 2025</time></p>
+        
+        
+             
+        
+    
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>This post will be hell of a post! Haha 🤩</p>
+
+<p>Ah before I forget, Sobolev spaces are useful in the regime of partial derivatives.</p>
+
+<h1 id="supplementary-definitions-and-notation">Supplementary definitions and notation</h1>
+
+<p>In this section we review the required notation and concepts.</p>
+
+<h2 id="multi-index-vert-alpha-vert">Multi-index $\vert \alpha \vert$</h2>
+
+<p>A list $\alpha = (\alpha_1, \dots, \alpha_n)$ of integers $\alpha_i \geq 0$ is a <strong>multi-inex</strong> of order</p>
+
+\[\vert \alpha \vert := \alpha_1 + \dots \alpha_n.\]
+
+<h2 id="closure-of-a-set-a">Closure of a set $A$</h2>
+
+\[\bar{A} = A \cup \{\text{all limit points of } A\}.\]
+
+<h3 id="intuitive-meaning">Intuitive meaning</h3>
+
+<ul>
+  <li>Take  $A$  and “fill in” all the boundary points you can approach from within  $A$.</li>
+  <li>If  $A$ is already closed, its closure is just  $A$.</li>
+  <li>If  $A$  is open, its closure adds all the points “on the edge.”</li>
+</ul>
+
+<h2 id="lebesgue-integrability">(Lebesgue) integrability</h2>
+
+<p>First, let’s visit some background.</p>
+
+<h3 id="sigma-algebra">$\sigma$-algebra.</h3>
+
+<p>A $\sigma$-algebra on a set $\mathcal{X}$ is set of subsets of $\mathcal{X}$ that is closed under certain operations:</p>
+
+<ol>
+  <li>The whole set and the empty set are in $\mathcal{F}$: $\varnothing, \mathcal{X} \in \mathcal{F}$.</li>
+  <li>Closed under complement: If $A \in \mathcal{F}$, then $A^\complement \in \mathcal{F}$.</li>
+  <li>Closed under countable unions: If $A_1, A_2, \dots \in \mathcal{F}$, then $\cup_{i = 1}^\infty A_i \in \mathcal{F}$.</li>
+</ol>
+
+<h3 id="borel-sigma-algebra">Borel $\sigma$-algebra</h3>
+
+<p>The smallest $\sigma$-algebra on a topological  space $\mathcal{X}$ that contains all open sets is called the Borel σ-algebra: $\mathfrak{B}(\mathcal{X})$.</p>
+
+<h3 id="a-measure-mu">A measure $\mu$</h3>
+
+<p>A measure $\mu: \mathcal{F} \to [0, \infty)$ is a function whose domain is a $\sigma$-algebra with he following conditions:</p>
+
+<ol>
+  <li>At least for one element of $X \in \mathcal{F}, \, \mu(X) &lt; \infty$.</li>
+  <li>$\mu$ is $\sigma$-additive: $\mu\left(\cup_{i = 1}^\infty X_i \right)  = \sum_{i = 1}^\infty \mu(X_i)$, where $\left(X_i \right)_{i = 1}^\infty \in \mathcal{F}$ are countable  pairwise disjoint sets.</li>
+</ol>
+
+<p>Elements of $X \in \mathcal{F}$ are called <strong>measurable sets</strong>. Those with measure zero $\mu(X) = 0$ are called <strong>null sets</strong>.  On $\mathfrak{B}(\mathbb{R}^n)$, there is a unique measure,, called <strong>Borel measure</strong> on $\mathbb{R}^n$, which is translation invariant and assigns measure 1 to the unit cube $[0, 1]^n$.</p>
+
+<h3 id="convergence">Convergence</h3>
+
+<p>Let $(X, d)$ be a metric space. A sequence $x_n$ of points in $X$ is said to converge to a limit $x \in X$ if one has $d(x_n, x) \to \infty$. As $n \to \infty$. In this case, we say that $x_n \to x$ in the metric $d$, as $n \to \infty$ and that $\lim_{n \to \infty} x_n \to x$ in the metric space.</p>
+
+<h3 id="cauchy-sequence">Cauchy sequence</h3>
+
+<p>Let $(X, d)$ be a metric space. A sequence $(x_n)_{n=1}^\infty$ of points in $X$ is Cauchy sequence if $d(x_n x_m) \to \infty$ as $n,m \to \infty$. In other words, for every $\varepsilon &gt; 0$, there exists $N &gt; 0$ such that $d(x_n, x_m) \leq \varepsilon$ for all $n,  m \geq N.$</p>
+
+<h3 id="completeness">Completeness</h3>
+
+<p>A space is complete if every Cauchy sequence is convergent.</p>
+
+<h3 id="lebesgue-measure">Lebesgue measure</h3>
+
+<p>In the definition of the measure, the domain was a $\sigma$-algebra. So the input to the measure is set, but the subset of the chosen set is not necessarily in the $\sigma$-algebra. Hence, if the chosen set has a measure zero, the subset would not which would be wierd. This can happen in Borel measure space. Lebesgue $\sigma$-algebra with its corresponding  measure $\lambda$ completes this gap by including every subset of the null sets to the $\sigma$-algebra and thus making measure zero sets consistent.</p>
+
+<p>A function $f: \mathbb{R}^n \to \mathbb{R}$ is called (Lebesgue) measurable if $\mathbb{R}^n$ equipped with Lebesgue $\sigma$-algebra $\mathfrak{L}(\mathbb{R}^n)$, and $\mathbb{R}$ equipped with Borel $\sigma$-algebra $\mathfrak{B}(\mathbb{R})$ and pre-images $f^{-1}(B) \in \mathfrak{L} (\mathbb{R^n})$, for all Borel measurable sets $B \in \mathfrak{B}(\mathbb{R})$ are $\mathfrak{L}(\mathbb{R}^n)$ measurable. $f$ will be called Borel measurable $\mathfrak{B}(\mathbb{R}^n)$ if $f^{-1}(B) \in \mathfrak{B}(\mathbb{R}^n) \subset \mathfrak{L}(\mathbb{R}^n)$.</p>
+
+<h3 id="almost-everywhere">Almost everywhere</h3>
+
+<p>Two function $f, g: \mathbb{R}^n \to \mathbb{R}$ are  equal <em>almost everywhere</em> if the set
+{$f \neq g$} $\subset \mathbb{R}^n$ is a Lebesgue null set.</p>
+
+<h2 id="mathcallpomega-spaces">$\mathcal{L}^p(\Omega)$ spaces</h2>
+
+<p>Let $f: \mathbb{R}^n \to \mathbb{R}$ be a measurable function. For $p \in [1, \infty]$ the $L^p$ norm of $f$ is the extended real defined by</p>
+
+\[\lVert f \rVert_p := \left( \int_{\mathbb{R}^n} |f|^p\right)^{\frac{1}{p}} \: \in [0, \infty].\]
+
+<p>On the other hand, consider the following (possibly empty) set:</p>
+
+\[I_f = \left\{ c \in [0, \infty): \text{ the set } \{|f| &gt; c\} \text{ has zero measure}\right\} \subset [0, \infty).\]
+
+<p>The infimum of such $c$ is called the $L^\infty$ norm of $f$:</p>
+
+\[\lVert f \rVert_\infty := \inf I_f = \mathrm{ess}\,\sup |f|.\]
+
+<p>By convention, $\inf \varnothing = \infty$. Hence $\lVert f \rVert_\infty \in [0, \infty].$</p>
+
+<p>Let $p \in [0, \infty]$. A measurable function $f: \mathbb{R}^n \to \mathbb{R}$ with finite $L^p$ norm is called $p$-integrable or an $L^p$-function.  A $1$-integrable function is called integrable. $\mathcal{L}^p(\mathbb{R}^n)$ is the space of real $L^p$-functions. Note that non-degeneracy does not apply to $L^p$ so it is not a norm. The reason is that $\lVert f \rVert_p = 0 \Rightarrow f = 0$ is an almost everywhere statement which doesn’t mean $f$ is absolutely zero.</p>
+
+<h3 id="locally-lebesgue-integrable-functions-mathcallp_textsflocomega">Locally (Lebesgue) integrable functions $\mathcal{L}^p_\textsf{loc}(\Omega)$</h3>
+
+<h3 id="q-subset-omega-pre-compact-subset-q-of-omega">$Q \Subset \Omega$, pre-compact subset $Q$ of $\Omega$</h3>
+
+<p>An open subset of $\Omega$ whose closure $Q^\complement$ is compact and contained in $\Omega$.</p>
+
+<h3 id="the-characteristic-function-chi_e-mathbbrn-to-mathbbr-of-e-is-defined-to-be">The characteristic function $\chi_E: \mathbb{R}^n \to \mathbb{R}$ of $E$ is defined to be</h3>
+
+\[\chi_E(x) =
+ \begin{cases}
+1, &amp; x \in E; \\
+0, &amp; x \notin E.
+\end{cases}\]
+
+<p>Let $p \in [1, \infty]$. $\mathcal{L}^p_\textsf{loc}(\Omega)$ is set of all measurable functions $f: \mathbb{R}^n \to \mathbb{R}$ such that $\chi_Q f$ is $p$-integrable for every pre-compact $Q \Subset \mathbb{R}^n$.</p>
+
+<h2 id="the-space-cinfty_comega">The space $C^\infty_c(\Omega)$</h2>
+
+<p>The space of infinitely often diﬀerentiable real functions with compact (closed and bounded) support, hence the subscript $c$, in $\Omega$ is defined by</p>
+
+\[C^\infty_c(\Omega) = \{v: v \in  C^\infty(\Omega), \, \mathrm{supp}(v) ⊂ Ω \},\]
+
+<p>where</p>
+
+\[\mathrm{supp}(v) = \overline{\{\mathbf{x} \in \Omega: v(\mathbf{x}) \neq 0 \}}.\]
+
+<p>These functions are called <em>test functions</em>. They are used to “localize” problems without worrying about boundary effects. Because they vanish in a neighborhood of the boundary.</p>
+
+<h2 id="weak-derivatives-dalpha">Weak derivatives $D^\alpha$</h2>
+
+\[D^\alpha f(x) := \frac{\partial^{\vert \alpha \vert}f(x)}{\partial x_1^{\alpha_1} \dots \partial x_n^{\alpha_n}}.\]
+
+<p>Weak derivatives are the extension of the classical derivatives to non-differentiable functions (like $\vert x \vert$).</p>
+
+<p><strong>Definition</strong>. Suppose $\Omega$ is an open set in $\mathbb{R}^n$. Let $F, f \in L_\textsf{loc}^1(\Omega)$.
+A function $u$ belongs to $L_\textsf{loc}^1(\Omega)$, if for each compact (closed bounded) subset $\Omega’ \subset \Omega$, it holds</p>
+
+\[\int_{\Omega'} |u(\mathbf{x})|d\mathbf{x} \leq \infty.\]
+
+<p>If for all functions $g \in C^\infty_c(\Omega$), it holds that</p>
+
+\[\int_\Omega f(\mathbf{x}) g(\mathbf{x})d\mathbf{x} =  (-1)^{\vert \alpha \vert} \int_\Omega F(\mathbf{x}) D^\alpha g(\mathbf{x})d\mathbf{x} ,\]
+
+<p>then $f(x)$ is called weak derivative of $F(x) $with respect to the multi-index $\vert \alpha \vert$.</p>
+
+<h3 id="on-the-weak-derivatives">On the weak derivatives</h3>
+
+<p>• The notion ‘weak’ is used in mathematics if something holds for all appropriate test elements (test functions).</p>
+
+<p>• If $F(x)$ is classically diﬀerentiable on $\Omega$, then the classical derivative is also the weak derivative.</p>
+
+<p>• The assumptions on $F(x)$ and $f(x)$ are such that the integrals in the definition of the weak derivative are well defined. In particular, since the test functions vanish in a neighborhood of the boundary, the behavior of $F(x)$ and $f(x)$ if $x$ approaches the boundary is not of importance.</p>
+
+<p>• The main aspect of the weak derivative is due to the fact that the (Lebesgue) integral is not influenced from the values of the functions on a set of (Lebesgue) measure zero. Hence, the weak derivative is defined only up to a set of measure zero. It follows that $F(x)$ might be not classically diﬀerentiable on a set of measure zero, e.g., in a point, but it can still be weakly diﬀerentiable.</p>
+
+<p>• The weak derivative is uniquely determined, in the sense described above.</p>
+
+<p><strong>Example</strong>.  The weak derivative of the function $F(x) = \vert x \vert$ is</p>
+
+\[f(x) = 
+\begin{cases}
+1, &amp; x &lt; 0; \\
+0, &amp; x = 0; \\
+1, &amp; x &gt; 0.
+\end{cases}\]
+
+<h1 id="main-definitions">Main definitions</h1>
+
+<p>In this section, we’ll give the main definitions we were looking for.</p>
+
+<h2 id="sobolev-space">Sobolev space</h2>
+
+<p>Suppose $\Omega$ is an open set in $\mathbb{R}^n, k \in \mathbb{N}$, and $1 \leq p \leq \infty$. The Sobolev space $W^{k, p}(\Omega)$ consists of all locally integrable functions $f: \Omega \to \mathbb{R}$ such that</p>
+
+<p>\(\begin{equation*}
+	D^\alpha f \in L^p(\Omega), \quad \text{for all } 0 \leq \lvert \alpha \rvert \leq k.
+\end{equation*}\)
+Or, in other words,</p>
+
+\[W^{k,p}(\Omega) = \left\{f \in L_{\textsf{loc}}^1(\Omega): D^\alpha f \in L^p(\Omega) \text{ with } \vert \alpha \vert \leq k \right\}.\]
+
+<p>For $u \in W^{k, p}(\Omega)$, this space is equipped with the norm</p>
+
+\[\lVert u \rVert_{k, p} = \left(\int_\Omega \sum_{\vert \alpha \vert \leq k} \left|D^\alpha u(x)\right|^p dx\right)^\frac{1}{p} = \left( \sum_{\vert \alpha \vert \leq k} \left\lVert D^\alpha u(x)\right\rVert_p^p \right)^\frac{1}{p} \: \in [0, \infty].\]
+
+<h2 id="hilbert-space">Hilbert space</h2>
+
+<p>Hilbert space $H$ is a complete normed vector space, where the norm is defined to be the square root of the inner product for $f, g \in H$ $\langle f, g \rangle := \sqrt{\int fg}$.</p>
+
+<p>Note that $\mathcal{L}^2(\Omega)$ is a Hilbert space when the non-degeneracy is taken care of through the quotient space. Complete normed vector spaces are called <em>Banach spaces</em>, hence Hilbert spaces are Banach spaces. $W^{2, k}(\Omega)$ is a Hilbert space as well.</p>
+
+<h2 id="reproducing-kernel-hilbert-space-rkhs">Reproducing kernel Hilbert space (RKHS)</h2>
+
+<p>Consider the following linear real-valued function class, where $\psi$ is a predefined feature vector:</p>
+
+\[\mathcal{F} = \left\{f(x; w): f(x; w) = \psi(x) w^\top = \left\langle w, \phi(x) \right\rangle \right\}.\]
+
+<p>In supervised learning we smetimes look for the following minimizer of the empirical risk measure:</p>
+
+\[\hat{w} = \arg\min_w \left\{\frac{1}{n} \sum_{i=1}^{n} \ell \left(\langle w, \phi(X_i) \rangle, Y_i \right) + \frac \lambda2 \Vert w \Vert^2  \right\}.\]
+
+<p>The problem is that if $\psi(x)$ is infinite-dimensional, the inner product can’t be computed. The remedy is to use the kernel trick. Assume $k(x_1, x_2) = \langle \psi(x_1), \psi(x_2) \rangle$. If $w = \sum_{i =1}^{n}\alpha_i \psi(x_i)$, then $f(x) = \sum_{i =1}^{n}\alpha_i k(x_i, x)$, and $\langle w, w \rangle = \sum_{i = 1}^{n} \sum_{j = 1}^{n} \alpha_i \alpha_j k(x_i, x_j).$ This observation gives way to the reproducing Hilber kernel space’s definition:</p>
+
+<p>Given a kernel $k$ such that $\sum_{i = 1}^{n} \sum_{j = 1}^{n} \alpha_i \alpha_j k(x_i, x_j) \geq 0$, we define RKHS of $k$ as the function space $\mathcal{H}_0$ of the form</p>
+
+\[\mathcal{H}_0 = \left \{f(x): f(x) = \sum_{i = 1}^m \alpha_i k(x_i, x) = k\pmb{\alpha}^\top\right\},\]
+
+<p>with the inner product (norm) defines as</p>
+
+\[\lVert f(x) \rVert_\mathcal{H}^2 = \sum_{i = 1}^m f(x_i)^2 = \mathbf{f}^\top\mathbf{f}  = \pmb{\alpha}k^\top k\pmb{\alpha}^\top =  \pmb{\alpha} \mathbf{K}\pmb{\alpha}^\top = \sum_{i = 1}^{m} \sum_{j = 1}^{m} \alpha_i \alpha_j k(x_i, x_j) = \langle w, w\rangle,\]
+
+<p>where</p>
+
+\[\mathbf{K} = \begin{bmatrix}
+k(x_1, x_1), &amp; \dots&amp;  k(x_1, x_m) \\
+ \vdots &amp; \cdots &amp; \vdots \\
+ k(x_m, x_1), &amp; \dots &amp; k(x_m, x_m) 
+\end{bmatrix}\]
+
+<p>is the kernel Gram matrix.</p>
+
+<h1 id="references">References</h1>
+
+<ol>
+  <li><a href="https://tongzhang-ml.org/lt-book.html">Mathematical Analysis of Machine Learning Algorithms</a></li>
+  <li><a href="https://terrytao.wordpress.com/2009/01/30/254a-notes-8-a-quick-review-of-point-set-topology/"># 245B, Notes 8: A quick review of point set topology</a></li>
+  <li><a href="https://archive.org/details/introduction-to-topology-and-modern-analysis-simmons">Topology and Modern Analysis</a></li>
+  <li><a href="ChatGPT.com">ChatGPT</a></li>
+  <li><a href="https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/">Introduction To Functional Analysis</a></li>
+  <li><a href="https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/3d4cc88026d44a01f936cd6a0aa995cb_MIT18_102s20_lec_FA.pdf">Functional Analysis, Lecture notes for 18.102, Spring 2020</a></li>
+  <li><a href="https://www.math.ucdavis.edu/~hunter/pdes/pde_notes.pdf">Notes on Partial Diﬀerential Equations, Chapter 1 &amp; 3</a></li>
+  <li><a href="https://www.math.stonybrook.edu/~joa/PUBLICATIONS/SOBOLEV.pdf">Introduction to Sobolev Spaces, Lecture Notes MM692 2018-2</a></li>
+  <li><a href="https://www.wias-berlin.de/people/john/LEHRE/lehre.html">Numerical Mathematics 3, Chapter 3</a></li>
+</ol>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://alirezakazemipour.github.io/tags/#learning" class="page__taxonomy-item" rel="tag">learning</a>
+    
+    </span>
+  </p>
+
+
+
+
+      </footer>
+
+      
+
+      
+
+
+  <nav class="pagination">
+    
+      <a href="https://alirezakazemipour.github.io/posts/2025/08/mmnts/" class="pagination--pager" title="Random variables’ moments and thereof
+">Previous</a>
+    
+    
+      <a href="https://alirezakazemipour.github.io/posts/2025/08/ltv/" class="pagination--pager" title="The law of total variance in practice
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<a href="/sitemap/">Sitemap</a>
+<!-- end custom footer snippets -->
+
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="http://github.com/alirezakazemipour"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <!-- <li><a href="https://alirezakazemipour.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li> -->
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Alireza Kazemipour. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script src="https://alirezakazemipour.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,2397 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://alirezakazemipour.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alirezakazemipour.github.io/" rel="alternate" type="text/html" /><updated>2025-11-19T14:56:10-08:00</updated><id>https://alirezakazemipour.github.io/feed.xml</id><title type="html">Alireza Kazemipour</title><subtitle>personal description</subtitle><author><name>Alireza Kazemipour</name></author><entry><title type="html">Some cool questions</title><link href="https://alirezakazemipour.github.io/posts/2025/10/cl-qstns/" rel="alternate" type="text/html" title="Some cool questions" /><published>2025-10-31T00:00:00-07:00</published><updated>2025-10-31T00:00:00-07:00</updated><id>https://alirezakazemipour.github.io/posts/2025/10/cl-qstns</id><content type="html" xml:base="https://alirezakazemipour.github.io/posts/2025/10/cl-qstns/"><![CDATA[<p>\(\begin{align*}  
+\newcommand{\I}{\mathbb{1}}  
+\newcommand{\R}{\mathbb{R}}  
+\newcommand{\Q}{\mathbb{Q}}  
+\newcommand{\N}{\mathbb{N}}  
+\DeclareMathOperator{\EE}{\mathbb{E}}  
+\DeclareMathOperator{\PP}{\mathbb{P}}  
+\newcommand{\Ev}[1]{\EE\left[ #1 \right]}  
+\newcommand{\Pr}[1]{\PP\left( #1 \right)}  
+\end{align*}\)</p>
+<ul>
+  <li>An elementary theorem in number theory states that if two integers $m$ and $n$ are relatively prime (i.e., greatest common divisor equal to 1 ), then there exist integers $x$ and $y$ (positive or negative) such that $mx + ny = 1$. Using this theorem show the following:          <br />
+  A If $m$ and $n$ are relatively prime then the set {$xm + ny : x, y$ positive integers} contains all but a finite number of the positive integers.          <br />
+  B. Let $J$ be a set of nonnegative integers whose greatest common divisor is $d$. Suppose also that $J$ is closed under addition, $m, n \in J \Rightarrow m + n \in J$. Then $J$ contains all but a finite number of integers in the set {$0, d, 2d,\dots$}.</li>
+</ul>
+
+<p>Source: <a href="https://archive.org/details/introduction-to-stochastic-process-lawler/mode/1up?view=theater">Introduction to Stochastic Processes</a></p>
+
+<p><em>answer</em>.</p>
+
+<p>Part (A).</p>
+
+<p>First, note that if we want to contain only positive integers, then $n$ and $m$ must be nonnegative. If one of them is negative and the other is positive, we would inevitably contain the whole integers. Also, to rule out the trivial case, let us assume $n, m \geq 1$.</p>
+
+<p>Since $\mathsf{gcd} (n, m) = 1$, the great common divisor of any multiples of $n$ from $1n$ to $mn$ with $m$ is also one. In other words, the set {$n, 2n, \dots, mn$} forms the residue system modulo $m$. Let $N$ be any nonzero integer, we have $N \equiv ny \pmod m$, where $1 \leq y \leq m$. Equivalently, we can say $N - ny = mx$ for some integer $x$.</p>
+
+<p>We know that since $1 \leq y \leq m$, $y$ is positive. On the other hand, if $N \geq mn + 1$, then $x = \frac{N - ny}{m} &gt; 0$, hence $x$ is also positive. Therefore, we just proved that for positive integers $x$ and $y$, all positive integers bigger than $mn$ are in the set described in the question.</p>
+
+<p>Part (B).</p>
+
+<p>Consider the set $J’ =$ {$\frac{j}{d} \mid j \in J$}. If we show for any integer $k$ in $J’$ that is bigger than some threshold $K$, all but a finite number of nonnegative integers are in $J’$, then we can conclude for any integer $k$ in $J$ that is bigger than $Kd$, all but a finite number of nonnegative integers are in $J$</p>
+
+<p>By construction, the greatest common divisor of $J’$s elements is one and also $J’$ is closed under addition. Now, consider an arbitrary element in $J’$ and let us denote it by $a$. The set of remainder of $J’$s elements when divided by $a$ is $R = $ {$j’ \pmod{a} \mid j’ \in J’$}. Since the greatest common divisor of $J’$ is one, the greatest common divisor of $R$ is also one. Therefore, $R$ forms the residue system modulo $a$, i.e., $R = $ {$0, 1, \dots a - 1$}, where for each element of $r \in R$ there exits at least one element in $J’$ denoted by $j’_r$ such that $j’_r \equiv r \pmod{a}$. Let us denote the largest representative of these elements by $K$:</p>
+
+\[K = \max \left\{j'_0, j'_1, \dots j'_{a - 1} \right\}.\]
+
+<p>Now we show that any integer bigger than $K$ is in $J’$. Let $k$ be an integer bigger than $K$ and let its remainder when divided by $a$ be $r$, i.e., $k = r \pmod{ a}$. We know that there is an element in $J’$ with same remainder, i.e., $j’_r$, therefore:</p>
+
+\[k = j'_r + c\cdot a,\]
+
+<p>for some integer $c$. Since $k &gt; M$ and $j’_r \leq M$, $k - j’_r &gt; 0$ and $c \cdot a$ is positive multiple of $a$.          <br />
+Since $j’_r, a \in J’$, and $J’$ is closed under addition, both $j’_r$ and $c \cdot a = \underbrace{a + a + \dots + a}_{c\, \mathrm{times}}$ are in $J’$.          <br />
+Therefore, their sum, $k$, must also be in $J’$. This proves that $J’$ contains all integers greater than $K$.         <br />
+Consequently, $J$ contains {$(K + 1)d, (K + 2)d, \dots$}, which completes the proof.</p>
+
+<hr />
+<ul>
+  <li>What is an ergodic Markov chain?</li>
+</ul>
+
+<p><em>answer</em>.</p>
+
+<p>It’s an aperiodic, irreducible, and recurrent Markov chain:</p>
+
+<p>Aperiodic:        <br />
+The period of the chain is one.</p>
+
+<p>Irreducible:        <br />
+If there is only one communication class, i.e., if for all $i, j$ there exists an $n = n(i,j)$ with $P_n(i,j) &gt; 0$, then the chain is called irreducible.</p>
+
+<p>Recurrent:        <br />
+If the chain starts in a transient class (set of states), then with probability one it eventually leaves this class and never returns. Classes with this property are called transient classes and the states are called transient states. Other classes are called recurrent classes with recurrent states. A Markov chain starting in a recurrent class never leaves that class.</p>
+
+<hr />
+<ul>
+  <li>Why is the left eigenvector of a transition matrix with the eigen value of one equal to the stationary distribution of the Markov chain modelled by the transition matrix?</li>
+</ul>
+
+<p><em>answer</em>.</p>
+
+<p>Suppose $\bar{\pi}$ is the stationary distribution and $P$ is the transition matrix. Then, we know that since all rows of $P^\infty$ are the same, then for any initial any probability vector $\bar{v}$ we have</p>
+
+\[\bar{\pi} = \lim_{n \to \infty} \bar{v}P^n.\]
+
+<p>Hence, we have,</p>
+
+<p>\(\bar{\pi} = \lim_{n \to \infty} \bar{v}P^{n + 1} = \left(\lim_{n \to \infty} \bar{v}P^{n}\right)P = \bar{\pi}P.\)        <br />
+The above display is a left eigenvector of $P with eigenvalue one.</p>
+
+<p>Source: <a href="https://archive.org/details/introduction-to-stochastic-process-lawler/mode/1up?view=theater">Introduction to Stochastic Processes</a></p>
+
+<hr />
+<ul>
+  <li>Prove that every state in an irreducible Markov chain has the same period.</li>
+</ul>
+
+<p>The period of state $i$ is defined as the greatest common divisor of the set $J_i :=$ {$n \geq 1: P_n(i, i) &gt;0$}. Not that $J_i$ is closed under addition because $P_{n +m} (i, i) = \sum_k P_n(i, k) P_m(k, i) \geq P_n(i, i) P_m(i, i) &gt; 0$. Let $d$ be the greatest common divisor of $J_i$. We have shown before that $J_i$ contains all but a finite number of integers. Hence, $J_i$ contains $md$ for all $m$ greater than some integer $M$.</p>
+
+<p>Let $j$ be another state and $n,m$ such that $P_n(i, j), P_m(j, i) &gt; 0$ (chain is irreducible). Clearly $n + m \in J_i$ and $m + n \in J_j$. If $l \in J_j$, then</p>
+
+\[P_{n+m+l}(i, j) \geq P_{n}(i, j)P_l(j, j)P_m(j, i) &gt; 0.\]
+
+<p>Therefore, $n+m+l \in J_i, J_j$. $d$ used to divide $n + m$, now we showed that it must divide $l$ as well.       <br />
+So, we have just shown that if $d $divides every element of $J_i$      <br />
+then it divides every element of $J_j$. From this we see that all states have the same period.</p>
+
+<p>Source: <a href="https://archive.org/details/introduction-to-stochastic-process-lawler/mode/1up?view=theater">Introduction to Stochastic Processes</a></p>
+
+<p>—  - Consider the Markov chain with state space {1, 2, 3, 4, 5} and matrix</p>
+
+\[P = \begin{pmatrix}      
+0 &amp; 1/3 &amp; 2/3 &amp; 0 &amp; 0 \\      
+0 &amp; 0 &amp; 0 &amp; 1/4 &amp; 3/4 \\      
+0 &amp; 0 &amp; 0 &amp; 1/2 &amp; 1/2 \\      
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\      
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0      
+\end{pmatrix}\]
+
+<p>What are $P_{1000}(2, 1 ), P_{1000}(2, 2), P_{1000}(2, 4)$?</p>
+
+<p>Due to the structure of the chain at no time step there would be probability for transitioning from state 2 to state 1, nor from state 2 to itself. Hence, $P_{1000}(2, 1) = P_{1000}(2, 2) = 0$</p>
+
+<p>On the other hand to compute $P_{1000}(2, 4)$, since the chain is periodic with the period of three and the remainder of $1000$ when divided by $3$ is one, the same as number $4$, hence using Python software we raise the matrix to the power of $4$ instead, and $P_{1000}(2, 4) \approx P_4(2, 4) \approx  0.4167$.</p>
+
+\[\begin{equation*}      
+    P_4 = \begin{pmatrix}      
+  0 &amp; 0.3333 &amp; 0.6665 &amp; 0 &amp; 0\\      
+  0 &amp; 0 &amp; 0 &amp; 0.4167 &amp; 0.5835 \\      
+  0 &amp; 0 &amp; 0 &amp; 0.4167 &amp; 0.5835\\      
+  1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\      
+  1 &amp; 0 &amp; 0 &amp; 0 &amp; 0       
+    \end{pmatrix}      
+\end{equation*}\]
+
+<p>Source: <a href="https://archive.org/details/introduction-to-stochastic-process-lawler/mode/1up?view=theater">Introduction to Stochastic Processes</a></p>
+
+<hr />
+<ul>
+  <li>Let $X_1, X_2,\dots$ be the successive values from independent rolls of a standard six-sided die. Let $S_n= X_1 + \dots + X_n$. Let</li>
+</ul>
+
+\[T_1 = \min \{n \geq 1: S_n \, \text{is divisible by 8} \},\]
+
+\[T_2 = \min\{n \geq 1: S_{n - 1}\, \text{is divisible by 8}\}.\]
+
+<p>Find $\mathbb{E}[T_1]$ and $\mathbb{E}[T_2]$. (Hint: consider the remainder of $S_n after division by 8 as a Markov chain.)</p>
+
+<p><em>answer</em>.</p>
+
+<p>The state space of the chain comprises ${0, 1, 2, 3, 4, 5, 6, 7}$. Let $g(i)$ denotes the expected number of rolls until the chain reaches state zero, while starting at state $i$. We have that $g(0) = 0$. Definitely we won’t reach the state $0$ with just one roll because the outcome would be among $1$ and $6$. Hence,</p>
+
+\[\begin{equation*}      
+    \mathbb{E}[T_1] = 1 + \frac{1}{6}\sum_{i = 1}^6 g(i) = 1 + \frac{1}{6}\left(g(1) + g(2) + g(3) + g(4) + g(5) + g(6)\right).      
+\end{equation*}\]
+
+<p>On the other hand,</p>
+
+\[\begin{equation*}      
+    \sum_{i=1}^7g(i) = \sum_{i=1}^7 \left(1 + \frac{1}{6}\sum_{j=1}^6 g\left(i + j \bmod{8}\right) \right).      
+\end{equation*}\]
+
+<p>That is, the expected number of rolls starting from state $i \neq 0$ is equal to rolling the die and the expected number of rolls of the resulting state. We rearrange the summations to get:</p>
+
+\[\begin{equation*}      
+    \sum_{i=1}^7g(i) =  7 + \frac{1}{6}\sum_{j=1}^6\sum_{i=7}^6 g(i + j \bmod{8}).      
+\end{equation*}\]
+
+<p>Now for each fixed $j$, $(i + j \bmod{8})$ is a permutation of ${0, 1, 2, 3, 4, 5, 6, 7}$ excluding the number $j$.     <br />
+Hence, by denoting $S := \sum_{i = 1}^7 g(i)$, we have:</p>
+
+\[\begin{align*}      
+    S = 7 + \frac{1}{6}\sum_{j=1}^6(S - g(j)) \Rightarrow \sum_{j = 1}^6 g(j) = 42.      
+\end{align*}\]
+
+<p>Therefore,</p>
+
+\[\begin{equation*}      
+    \mathbb{E}[T_1] = 1 + \frac{1}{6}\sum_{i = 1}^6 g(i) = 1 + \frac{1}{6}\left(g(1) + g(2) + g(3) + g(4) + g(5) + g(6)\right) = 8.      
+\end{equation*}\]
+
+<p>For computing $\mathbb{E}[T_2]$, we only need to roll the die once, because the sum of the random variables before the first roll is zero, so $S_{1 - 1} = S_0 = 0$, and $0$ is divisible by 8.</p>
+
+<p>Source: <a href="https://archive.org/details/introduction-to-stochastic-process-lawler/mode/1up?view=theater">Introduction to Stochastic Processes</a></p>
+
+<hr />
+<ul>
+  <li>Let $X_n, Y_n$ be independent Markov chains with state space {$0, 1, 2$} and transition matrix</li>
+</ul>
+
+\[P = \begin{pmatrix}      
+1/2 &amp; 1/4 &amp; 1/4 \\      
+1/4 &amp; 1/4 &amp; 1/2 \\      
+0 &amp; 1/2 &amp; 1/2      
+\end{pmatrix}.\]
+
+<p>Suppose $X_0 = 0, Y_0 = 2$ and let</p>
+
+\[T = \inf\{n: X_n = Y_n\}.\]
+
+<p>(A) Find $\mathbb{E}[T]$.</p>
+
+<p>(B) What is $\mathbb{P}{X_T = 2}$?</p>
+
+<p>(C) In the long run, what percentage of the time are both chains in the same state?    <br />
+[Hint: consider the nine-state Markov chain $Z_n = (X_n, Y_n$).]</p>
+
+<p><em>answer</em>.</p>
+
+<p>Part(A).</p>
+
+<p>We need to set up a recursive formula connecting the expected number of steps until two chains meet.</p>
+
+<p>Let $g(i, j)$ be the expected number of steps until the meeting time, when ${X_n}$ has started at state $i$ and ${Y_n}$ has started in state $j$. We have that $g(k, k) = 0,: k \in {0, 1, 2}$. For all other state, since ${X_n}$ and ${Y_n}$ are independent, we have that:</p>
+
+\[\begin{equation*}      
+    g(i, j) = 1 + \sum_{k=0}^3\sum_{l=0}^3 P(i, k)P(j, l)g(k, j).      
+\end{equation*}\]
+
+<p>This gives a set of 6 equations with 6 unknowns     <br />
+($g(0, 1), g(0, 2), g(1, 0), g(1, 2), g(2, 0),\, \mathrm{and}\, g(2, 1)$) as follows:</p>
+
+\[\begin{align*}      
+    g(0, 1) &amp; = 1 + \frac{1}{2}g(0, 0) + \frac{1}{4}g(0, 1) + \frac{1}{4}g(0, 2)  \\      
+    g(0, 2) &amp; = 1 + \frac{1}{2}g(0, 0) + \frac{1}{4}g(0, 1) + \frac{1}{4}g(0, 2)      
+    \\      
+    g(1, 0) &amp; = 1 + \frac{1}{4}g(1, 0) + \frac{1}{4}g(1, 1) + \frac{1}{2}g(1, 2) \\      
+    g(1, 2) &amp; = 1 + \frac{1}{4}g(1, 0) + \frac{1}{4}g(1, 1) + \frac{1}{2}g(1, 2) \\      
+    g(2, 0) &amp; = 1 + 0\cdot g(2, 0) + \frac{1}{2}g(2, 1) + \frac{1}{2}g(2, 2) \\      
+    g(2, 1) &amp; = 1 + 0 \cdot g(2, 0) + \frac{1}{2}g(2, 1) + \frac{1}{2}g(2, 2).      
+\end{align*}\]
+
+<p>Solving this system of equations gives us: $g(0, 2) = \frac{118}{35} \approx 3.37$.</p>
+
+<p>Part (B).</p>
+
+<p>We need to set up a recursive formula connecting how the chains can meet at state 2 while starting at state 0 and 2 respectively.</p>
+
+<p>Let $h(i, j)$ be the probability of first meeting at state 2, when ${X_n}$ has started at state $i$ and ${Y_n}$ has started in state $j$. We have that $h(1, 1) = h(0 , 0) = 0$ (first meeting should be at state 2), and $h(2, 2) = 1$. For all other state, since ${X_n}$ and ${Y_n}$ are independent, we have that:</p>
+
+\[\begin{equation*}      
+    h(i, j) = \sum_{k=0}^3\sum_{l=0}^3 P(i, k)P(j, l)h(k, j).      
+\end{equation*}\]
+
+<p>This gives a set of 6 equations with 6 unknowns ($h(0, 1), h(0, 2), h(1, 0), h(1, 2), h(2, 0),\, \mathrm{and}\, h(2, 1)$) as follows:</p>
+
+\[\begin{align*}      
+    h(0, 1) &amp; = \frac{1}{2}h(0, 0) + \frac{1}{4}h(0, 1) + \frac{1}{4}h(0, 2)  \\      
+    h(0, 2) &amp; = \frac{1}{2}h(0, 0) + \frac{1}{4}h(0, 1) + \frac{1}{4}h(0, 2)      
+    \\      
+    h(1, 0) &amp; = \frac{1}{4}h(1, 0) + \frac{1}{4}h(1, 1) + \frac{1}{2}h(1, 2) \\      
+    h(1, 2) &amp; = \frac{1}{4}h(1, 0) + \frac{1}{4}h(1, 1) + \frac{1}{2}h(1, 2) \\      
+    h(2, 0) &amp; = 0\cdot h(2, 0) + \frac{1}{2}h(2, 1) + \frac{1}{2}h(2, 2) \\      
+    h(2, 1) &amp; = 0 \cdot h(2, 0) + \frac{1}{2}h(2, 1) + \frac{1}{2}h(2, 2).      
+\end{align*}\]
+
+<p>Solving this system of equations gives us: $h(0, 2) = \frac{15}{28} \approx 0.535$.</p>
+
+<p>Part (C).</p>
+
+<p>Since the chains are independent, we need to multiple their invariant distributions for states ${1, 2, 3}$. Let us find the invariant distribution by solving $\bar{\pi} = \bar{\pi}P$:</p>
+
+\[\begin{equation*}      
+    \begin{pmatrix}      
+        \bar{\pi}_1 \\      
+        \bar{\pi}_2 \\      
+        \bar{\pi}_3      
+    \end{pmatrix} =      
+    \begin{pmatrix}      
+        \bar{\pi}_1 \\      
+        \bar{\pi}_2 \\      
+        \bar{\pi}_3      
+    \end{pmatrix}^\top \begin{pmatrix}      
+        1/2 &amp; 1/4 &amp; 1/4  \\      
+        1/4 &amp; 1/4 &amp; 1/2 \\      
+        0 &amp; 1/2 &amp; 1/2      
+    \end{pmatrix}      
+    \quad \mathrm{and} \quad \bar{\pi}_1 + \bar{\pi}_2 + \bar{\pi}_3 = 1.      
+\end{equation*}\]
+
+<p>The solution of this equation is: $\bar{\pi} = \frac{1}{11}(2, 4, 5)$. Hence, the probability that both chains spend time at the same states in a long run is equal to: $\frac{1}{11^2}(4 + 16 + 25) = \frac{45}{121}$.</p>
+
+<p>Source: <a href="https://archive.org/details/introduction-to-stochastic-process-lawler/mode/1up?view=theater">Introduction to Stochastic Processes</a></p>
+
+<hr />
+<ul>
+  <li>Let $X_n$ be a Markov chain on state space {1, 2, 3, 4, 5} with transition matrix</li>
+</ul>
+
+\[P = \begin{pmatrix}      
+0 &amp; 1/2 &amp; 1/2 &amp; 0 &amp; 0\\      
+0 &amp; 0 &amp; 0 &amp; 1/5 &amp; 4/5 \\      
+0 &amp; 0 &amp; 0 &amp; 2/5 &amp; 3/5 \\      
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\      
+1/2 &amp; 0 &amp; 0 &amp; 0 &amp; 1/2      
+\end{pmatrix}\]
+
+<p>(A) Suppose $X_0 = 1$. What is the expected number of steps until the chain is in state 4?</p>
+
+<p>(B) Suppose $X_0 = 1$. What is the probability that the chain will enter state 5 before it enters state 3?</p>
+
+<p><em>answer</em>.</p>
+
+<p>Part (A).</p>
+
+<p>We need to set up a recursive formula connecting the expected number of steps until reaching state 4 for each distinct state. Let $g(i)$ be the expected number of steps until reaching state $4$, when the chain has started at state $i$. We have that $g(4) = 0$. For all other state we have that:</p>
+
+\[\begin{equation*}      
+    g(i) = 1 + \sum_{j=0, j \neq 4}^5P(i, j)g(j).      
+\end{equation*}\]
+
+<p>This gives a set of 4 equations with 4 unknowns ($g(1), g(2), g(3),\, \mathrm{and}\, g(5)$) as follows:</p>
+
+\[\begin{align*}      
+    g(5) &amp; = 1 + \frac{1}{2}g(0) + \frac{1}{2}g(5) \\      
+    g(3) &amp; = 1 + \frac{2}{5}g(4) + \frac{3}{5}g(5) \\      
+    g(2) &amp; = 1 + \frac{1}{5}g(4) + \frac{4}{5}g(5) \\      
+    g(1) &amp; = 1 + \frac{1}{2}g(2) + \frac{1}{2}g(3)      
+\end{align*}\]
+
+<p>Solving this system of equations gives us: $g(1) = \frac{34}{3}$.</p>
+
+<p>Part (B).</p>
+
+<p>We need to set up a recursive formula connecting how the chain can <em>hit</em> state 5 before state 3, while starting at state 1.</p>
+
+<p>Let $h(i)$ be the probability that the chain hits state $5$ before state 3, when the chain has started at state $i$. We have that $h(5) =1$ and $h(3) = 0$. For all other state we have that:</p>
+
+\[\begin{equation*}      
+    h(i) = \sum_{j=1}^5P(i, j)h(j).      
+\end{equation*}\]
+
+<p>This gives a set of 3 equations with 3 unknowns ($h(1), h(2),\, \mathrm{and}\, h(4)$) as follows:</p>
+
+\[\begin{align*}      
+    h(4) &amp; = h(1) \\      
+    h(2) &amp; = \frac{1}{5}h(4) + \frac{4}{5}h(5) =  \frac{1}{5}h(4) + \frac{4}{5}\\      
+    h(1) &amp; = \frac{1}{2}h(2) + \frac{1}{2}h(3) = \frac{1}{2}h(2)      
+\end{align*}\]
+
+<p>Solving this system of equations gives us: $h(1) = \frac{4}{9}$.</p>
+
+<p>Source: <a href="https://archive.org/details/introduction-to-stochastic-process-lawler/mode/1up?view=theater">Introduction to Stochastic Processes</a></p>
+
+<hr />
+<ul>
+  <li><strong>Theorem</strong>. Suppose the state space $S$ and the action space $A$ are finite. Then, there exits a deterministic stationary Markov Blackwell optimal policy.</li>
+</ul>
+
+<p><em>Proof</em>. Let $\Pi^\mathrm{MD}$ be the set of all deterministic Markov polices for an MDP with finite state and action spaces. Since $\Pi^\mathrm{MD}$ is finite, there exits a sequence of discount factors {$\gamma_n$} converging to one for which there exits a $\pi^* \in \Pi^\mathrm{MD}$ with $\left(\pi^*\right)^\infty = (\pi, \pi, \dots)  = (\pi_0, \pi_1, \dots)$ (as the stationary policy) being discount optimal for all $\gamma_n$.</p>
+
+<p>The reason the aforementioned fact is true is that since $\Pi^\mathrm{MD}$ finite and $0 \leq \gamma &lt;1$ is infinite, due to pigeonhole principle some optimal policies are shared for some discount factors. Therefore, we can pick a subsequence of discount factors that increases toward one, which will have an associated optimal policy.</p>
+
+<p>With having the above fact in mind, for each $\pi \in \Pi^\mathrm{MD}$,</p>
+
+\[v_\gamma^{\left(\pi^*\right)^\infty}(s) - v_\gamma^{\pi^\infty}(s) \geq 0,\]
+
+<p>for all states, $\gamma = \gamma_n$ and $n = 1, 2, \dots$ . Each function on L.H.S. is a rational function of $\gamma$, so is their difference. Hence, the difference is zero for all $\gamma$, or equals zero for at most finitely many $\gamma$s. Therefore, there exists a $\gamma_\pi &lt; 1$ for which the above display holds for $\gamma_\pi \leq \gamma &lt; 1$. Since $\Pi^\mathrm{MD}$ is finite the above displays holds for all $\gamma^* \leq \gamma &lt; 1$ where $\gamma^* = \max_\pi \gamma_{\pi}$.</p>
+
+<p>Now that we have fixed $\gamma$, by virtue of the existence of a deterministic stationary Markov policy in the discounted setting, the result follows. $\square$</p>
+
+<p>I’ve been concise and incomplete for this theorem. I’ll add supplementary details one day that I stumbled on this post. :D</p>
+
+<p>Source: <a href="https://personalpages.manchester.ac.uk/staff/mingfei.sun/books/mdp.pdf">Markov Decision Processes: Discrete Stochastic Dynamic Programming</a></p>
+
+<hr />
+<ul>
+  <li>Let $\Omega$ be a measurable set, and let $f: \Omega \to [0, \infty]$ be a non-negative measurable function. Prove that we have $0 \leq \int_\Omega f \leq \infty$. Furthermore, we have $\int_\Omega f = 0$ if and only if $f(x) = 0$ for almost every $x \in \Omega$.</li>
+</ul>
+
+<p><em>Proof</em>. Since $f$ is a non-negative measurable function, we have that</p>
+
+\[\int_\Omega f = \sup \{\int_\Omega s: s \text{ is non-negative, simple and dominated by } f \}.\]
+
+<p>Step 1: $0 \leq \int_\Omega \leq \infty$.</p>
+
+<p>Consider a fixed $s$. Since $s$ is simple, $\int_\Omega s = \sum_{j = 1}^N c_j \cdot m(E_j)$, <br />
+where $N \in \mathbb{N}, c_j &gt; 0, m: \Omega \to \mathbb{R}^*$ is the Lebesgue measure, $E_1, \dots, E_N \in  \Omega$, <br />
+and $E_i \cap E_j = \varnothing$ for all $i, j \in [N], \mathrm{and}\, i \neq j$. The sum of non-negative terms on the<br />
+extended real line $\mathbb{R}^*$ is in $[0, \infty]$, hence is their supremum.</p>
+
+<p>Step 2: If $f = 0$ a.e., then $\int_\Omega f = 0$.</p>
+
+<p>Since $f$ dominates $s$, then $0 \leq s(x) \leq f(x)$, for all $x \in \Omega$. If $f(x) = 0$ for almost every $x \in \Omega$, then $s = 0$ a.e., hence $\int_\Omega s = 0$, and consequently $\sup \int_\Omega s = 0$.</p>
+
+<p>Step 3: If $\int_\Omega f = 0$, then $f = 0$ a.e.</p>
+
+<p>Consider the set</p>
+
+\[E_j := \{x \in \Omega: f(x) &gt; \frac 1j \}, \quad j \geq 1.\]
+
+<p>The function $s_j := \frac 1j \mathbb{1}_{E_j}$ is simple and also dominated by $f$ because $0 \leq s_j \leq f$. By Step 1, we have $\frac 1j m(E_j) = \int_\Omega s_j \leq \int_\Omega f = 0$. This means $m(E_j) = 0$ for all $j$. The domain of $f$ where it is non zero is</p>
+
+\[\Omega' := \{x : f(x) &gt; 0 \} = \cup_{j = 1}^\infty E_j.\]
+
+<p>By the subadditivity property of the Lebesgue measure we have</p>
+
+\[m\left(\Omega' \right) = \sum_{j = 1}^\infty m(E_j) = 0 \Rightarrow f = 0\: \mathrm{a.e.}\]
+
+<p>Source: <a href="https://link.springer.com/book/10.1007/978-981-19-7284-3">Analysis II</a></p>
+
+<hr />
+<ul>
+  <li>Consider two independent Poisson processes $X(t)$ and $Y(t)$ with parameters $\lambda$ and $\mu$. Let $k \geq 1$ and define</li>
+</ul>
+
+\[\begin{equation*}
+\tau = \inf \{t &gt; 0: X(t) =k \}, \quad \tau' = \inf \{t &gt; 0: X(t) =k + 2\}.
+\end{equation*}\]
+
+<p>Find the distribution of $N = Y(\tau’) - Y(\tau)$.</p>
+
+<p><em>Solution</em>. First we need to understand what the question actually asking us. $\tau’ - \tau$
+ is the time that it takes for {$X(t)$} to go from $k$ to $k+2$. We can write</p>
+
+\[\begin{equation*}
+U := T_{i + 2} - T_{i} = \underbrace{T_{i + 2} - T_{i + 1}}_{U_2} + \underbrace{T_{i + 1} - T_{i}}_{U_1},
+\end{equation*}\]
+
+<p>where $T_i = \inf {t &gt; 0: X(t) = i }$. Each $U_i$ represents the arrival time of the $i+1$ “customer” after the fact that the $i$th customer has arrived. Hence, each $U_i$ follows the exponential distribtuion with parameter $\mu$.</p>
+
+<p>The question is asking us how much {$Y(t)$} will increase in the interval between the arrival time of the $k$th and $k+2$ customer at {$X(t)$}. So, we can write that</p>
+
+\[\begin{equation*}
+\Pr{N = i \mid U = t} = \Pr{Y(U) = i \mid U = t} = \Pr{Y(t) = i} = e^{-\mu t} \cdot \frac{\left(\mu t\right)^i}{i!}.
+\end{equation*}\]
+
+<p>So,</p>
+
+<p>\(\begin{equation*}
+\Pr{N = i} = \int_0^\infty \Pr{N = i \mid U = t} f_U(t) dt.
+\end{equation*}\)
+So, we need the probability mass function of $U$. We said that $U = U_1 + U_2$ and each $U_i$ is comes from an independent exponential distribution. We have,</p>
+
+\[\begin{align*}
+f_U(t) &amp;\stackrel{\text{(independence)}}{=} \int_0 ^ tf_{U_1}(x)\cdot f_{U_2}(t - x) dx \\
+&amp;= \int_0^t \lambda e^{-\lambda x} \cdot \lambda e^{-\lambda (t - x)} dx \\
+&amp; = \lambda^2 te^{-\lambda t}.
+\end{align*}\]
+
+<p>Therefore,</p>
+
+\[\begin{align*}
+\Pr{N = i} &amp; = \int_0^\infty \Pr{N = i \mid U = t} f_U(t) dt \\
+&amp; = \int_0^\infty e^{-\mu t} \frac{\left(\mu t\right)^i}{i!} \cdot \lambda^2 te^{-\lambda t} dt \\
+&amp; = \lambda^2\frac{\mu^i}{i!}\int_0^\infty t^{i + 1} \cdot e^{-(\lambda + \mu) t} dt \\
+&amp; = \lambda^2\frac{\mu^i}{i!}\int_0^\infty t^{i + 2 - 1} \cdot e^{-(\lambda + \mu) t} dt \\
+&amp; = \lambda^2\frac{\mu^i}{i!}\int_0^\infty t^{b - 1} \cdot e^{-a t} dt, \\
+\end{align*}\]
+
+<p>where $b = i + 2$ and $a = (\lambda + \mu)$. Let’ see how to compute</p>
+
+\[\begin{equation}
+\int_0^\infty t^{b - 1} \cdot e^{-a t} dt.
+\end{equation}\]
+
+<p>We know that for $z &gt; 0$, the Gamma function is defined as</p>
+
+\[\begin{equation*}
+\Gamma(z) = (z - 1)! = \int_0^\infty t^{z - 1}e^{-t} dt.
+\end{equation*}\]
+
+<p>So with athe change of variables $u := at$ we have,</p>
+
+\[\begin{equation}
+\int_0^\infty t^{b - 1} \cdot e^{-a t} dt = \int_0^\infty \left(\frac{u}{a}\right)^{b - 1} \cdot e^{-u} \frac{du}{a} = \left(\frac{1}{a^{b + 1}}\right) \int_0^\infty u^{b - 1} \cdot e^{-u} du = \frac{\Gamma(b)}{a^{b + 1}}.
+\end{equation}\]
+
+<p>Now replacing $b = i + 2$ and $a = (\lambda + \mu)$,</p>
+
+\[\begin{equation}
+\int_0^\infty t^{b - 1} \cdot e^{-a t} dt = \frac{\Gamma(i + 2)}{(\lambda + \mu)^{i + 2}}.
+\end{equation}\]
+
+<p>So,</p>
+
+\[\begin{align*}
+\Pr{N = i} &amp; = \lambda^2\frac{\mu^i}{i!}\int_0^\infty t^{b - 1} \cdot e^{-a t} dt, \\
+&amp; = \lambda^2\frac{\mu^i}{i!} \frac{\Gamma(i + 2)}{(\lambda + \mu)^{i + 2}} \\
+&amp; = \lambda^2\frac{\mu^i}{i!} \frac{(i + 1)!}{(\lambda + \mu)^{i + 2}} \\
+&amp; = (i + 1)\frac{\lambda^2\mu^i}{(\lambda + \mu)^{i + 2}} \\
+&amp; = \binom{i + 2 - 1}{i}\left(\frac{\mu}{\lambda + \mu}\right)^i \left( \frac{\lambda}{\lambda + \mu}\right)^2.
+\end{align*}\]
+
+<p>The negative binomial distribution with two success each with the probability of $\frac{\lambda}{ \lambda + \mu}$.</p>
+
+<p>Source: [A question on my midterm at STAT 580 that I couldn’t solve during the exam <em>:)</em>]</p>
+
+<hr />
+<ul>
+  <li>Let $X_t$ be a Yule process with parameter $\lambda&gt; 0$ and $X_0 =1$. In other words, $X_t$ is birth and death process with the birth rate $\lambda_n = n \lambda$ and the death rate $\mu_n = 0$. Show</li>
+</ul>
+
+\[\begin{equation*}
+P_n(t) = e^{-\lambda t}\left[1  - e^{-\lambda t}\right]^{n - 1}, \quad n\geq 1.
+\end{equation*}\]
+
+<p>Then, assume $X_t, Y_t$ are two independent Yule processes with parameter $\lambda$ and $X_0 = Y_0 = 1$. Determine the conditional distribution of $X_t$ given $X_t + Y_t = N,\; N \geq 2$.</p>
+
+<p><em>Solution.</em> In birth and death processes we have that</p>
+
+\[\begin{align*}
+\Pr{X_{t + \Delta t} = n \mid X_t = n} &amp;= 1 - (\lambda_n + \mu_n) \Delta t + o(\Delta t) \\
+\Pr{X_{t + \Delta t} = n+1 \mid X_t = n} &amp;= \lambda_n \Delta t + o(\Delta t) \\
+\Pr{X_{t + \Delta t} = n-1 \mid X_t = n} &amp;= \mu_n \Delta t + o(\Delta t).
+\end{align*}\]
+
+<p>On the other hand, let $P_n(t) = \Pr{X_t =n}$. We have,</p>
+
+\[\begin{align*}
+P'_n(t) &amp;= \lim_{\Delta t \to 0} \frac{P_n(t + \Delta t) - P_n(t)}{\Delta t} \\
+&amp;= \lim_{\Delta t \to 0} \frac{P_n(t)(1 - \lambda_n + \mu_n)\Delta t + \lambda_{n-1} P_{n - 1}(t) \Delta t + \mu_{n+1} P_{n + 1}(t) \Delta t - P_n(t)}{\Delta t} \\
+&amp; \stackrel{(\mu_n = 0)}{=}  \lambda_{n - 1} P_{n - 1}(t) - \lambda_n P_n(t) \\
+&amp; \stackrel{(\lambda_n = n\lambda)}{=} (n - 1)\lambda P_{n - 1}(t) - n\lambda P_n(t) \\ 
+&amp; \stackrel{\text{(replacing the solution)}}{=} \lambda e^{-\lambda t}\left[ 1 - e^{-\lambda t}\right]^{n - 1}\left(\frac{n - 1}{1 - e^{-\lambda t}}  - n\right) \\
+&amp; = \lambda e^{-\lambda t}\left[ 1 - e^{-\lambda t}\right]^{n - 1}\left(\frac{ ne^{-\lambda t} - 1}{1 - e^{-\lambda t}}\right).
+\end{align*}\]
+
+<p>Now we take the derivative of the proposed solution:</p>
+
+\[\begin{align*}
+-\lambda e^{-\lambda t}\left[1 - e^{-\lambda t}\right]^{n - 1} + (n - 1)\lambda\left[1 - e^{-\lambda t}\right]^{n - 2} e^{-2\lambda t} &amp;= \lambda e^{-\lambda t}\left[ 1 - e^{-\lambda t}\right]^{n - 1} \left(-1 + \frac{e^{-\lambda t}(n - 1)}{1 - e^{-\lambda t}} \right) \\
+&amp; = \lambda e^{-\lambda t}\left[ 1 - e^{-\lambda t}\right]^{n - 1} \left(\frac{ne^{-\lambda t} - 1}{1 - e^{-\lambda t}} \right).
+\end{align*}\]
+
+<p>For the second part let $q = e^{-\lambda t}$. We have:</p>
+
+\[\begin{align*}
+\Pr{X_t = k \mid X_t + Y_t = N} &amp;= \frac{\Pr{X_t = k, X_t + Y_t = N}}{\Pr{X_t + Y_t = N}} \\
+&amp;\stackrel{\text{(independence)}}{=} \frac{\Pr{X_t = k}\cdot \Pr{X_t + Y_t = N}}{\Pr{X_t + Y_t = N}} \\
+&amp;= \frac{\Pr{X_t = k}\cdot \Pr{Y_t = N - k}}{\sum_{i = 1}^{N - 1} \Pr{X_t = i} \cdot \Pr{Y_t = N - i}} \\
+&amp;\stackrel{\text{(part (a))}}{=} \frac{q(1 - q)^{k - 1} \cdot q(1 - q)^{N - k - 1}}{\sum_{i = 1}^{N - 1}q(1 - q)^{i - 1} \cdot q(1 - q)^{N - i - 1}} \\
+&amp;= \frac{(1 - q)^{N - 2}}{\sum_{i = 1}^{N - 1}(1 - q)^{N - 2}} = \frac{1}{N - 1}.
+\end{align*}\]
+
+<p>The uniform distribution.</p>
+
+<p>Source: [A question on my midterm at STAT 580 that I couldn’t solve during the exam <em>:)</em>]</p>
+
+<hr />]]></content><author><name>Alireza Kazemipour</name></author><category term="learning" /><summary type="html"><![CDATA[\(\begin{align*} \newcommand{\I}{\mathbb{1}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}} \newcommand{\N}{\mathbb{N}} \DeclareMathOperator{\EE}{\mathbb{E}} \DeclareMathOperator{\PP}{\mathbb{P}} \newcommand{\Ev}[1]{\EE\left[ #1 \right]} \newcommand{\Pr}[1]{\PP\left( #1 \right)} \end{align*}\) An elementary theorem in number theory states that if two integers $m$ and $n$ are relatively prime (i.e., greatest common divisor equal to 1 ), then there exist integers $x$ and $y$ (positive or negative) such that $mx + ny = 1$. Using this theorem show the following: A If $m$ and $n$ are relatively prime then the set {$xm + ny : x, y$ positive integers} contains all but a finite number of the positive integers. B. Let $J$ be a set of nonnegative integers whose greatest common divisor is $d$. Suppose also that $J$ is closed under addition, $m, n \in J \Rightarrow m + n \in J$. Then $J$ contains all but a finite number of integers in the set {$0, d, 2d,\dots$}. Source: Introduction to Stochastic Processes answer. Part (A). First, note that if we want to contain only positive integers, then $n$ and $m$ must be nonnegative. If one of them is negative and the other is positive, we would inevitably contain the whole integers. Also, to rule out the trivial case, let us assume $n, m \geq 1$. Since $\mathsf{gcd} (n, m) = 1$, the great common divisor of any multiples of $n$ from $1n$ to $mn$ with $m$ is also one. In other words, the set {$n, 2n, \dots, mn$} forms the residue system modulo $m$. Let $N$ be any nonzero integer, we have $N \equiv ny \pmod m$, where $1 \leq y \leq m$. Equivalently, we can say $N - ny = mx$ for some integer $x$. We know that since $1 \leq y \leq m$, $y$ is positive. On the other hand, if $N \geq mn + 1$, then $x = \frac{N - ny}{m} &gt; 0$, hence $x$ is also positive. Therefore, we just proved that for positive integers $x$ and $y$, all positive integers bigger than $mn$ are in the set described in the question. Part (B). Consider the set $J’ =$ {$\frac{j}{d} \mid j \in J$}. If we show for any integer $k$ in $J’$ that is bigger than some threshold $K$, all but a finite number of nonnegative integers are in $J’$, then we can conclude for any integer $k$ in $J$ that is bigger than $Kd$, all but a finite number of nonnegative integers are in $J$ By construction, the greatest common divisor of $J’$s elements is one and also $J’$ is closed under addition. Now, consider an arbitrary element in $J’$ and let us denote it by $a$. The set of remainder of $J’$s elements when divided by $a$ is $R = $ {$j’ \pmod{a} \mid j’ \in J’$}. Since the greatest common divisor of $J’$ is one, the greatest common divisor of $R$ is also one. Therefore, $R$ forms the residue system modulo $a$, i.e., $R = $ {$0, 1, \dots a - 1$}, where for each element of $r \in R$ there exits at least one element in $J’$ denoted by $j’_r$ such that $j’_r \equiv r \pmod{a}$. Let us denote the largest representative of these elements by $K$: \[K = \max \left\{j'_0, j'_1, \dots j'_{a - 1} \right\}.\] Now we show that any integer bigger than $K$ is in $J’$. Let $k$ be an integer bigger than $K$ and let its remainder when divided by $a$ be $r$, i.e., $k = r \pmod{ a}$. We know that there is an element in $J’$ with same remainder, i.e., $j’_r$, therefore: \[k = j'_r + c\cdot a,\] for some integer $c$. Since $k &gt; M$ and $j’_r \leq M$, $k - j’_r &gt; 0$ and $c \cdot a$ is positive multiple of $a$. Since $j’_r, a \in J’$, and $J’$ is closed under addition, both $j’_r$ and $c \cdot a = \underbrace{a + a + \dots + a}_{c\, \mathrm{times}}$ are in $J’$. Therefore, their sum, $k$, must also be in $J’$. This proves that $J’$ contains all integers greater than $K$. Consequently, $J$ contains {$(K + 1)d, (K + 2)d, \dots$}, which completes the proof. What is an ergodic Markov chain? answer. It’s an aperiodic, irreducible, and recurrent Markov chain: Aperiodic: The period of the chain is one. Irreducible: If there is only one communication class, i.e., if for all $i, j$ there exists an $n = n(i,j)$ with $P_n(i,j) &gt; 0$, then the chain is called irreducible. Recurrent: If the chain starts in a transient class (set of states), then with probability one it eventually leaves this class and never returns. Classes with this property are called transient classes and the states are called transient states. Other classes are called recurrent classes with recurrent states. A Markov chain starting in a recurrent class never leaves that class. Why is the left eigenvector of a transition matrix with the eigen value of one equal to the stationary distribution of the Markov chain modelled by the transition matrix? answer. Suppose $\bar{\pi}$ is the stationary distribution and $P$ is the transition matrix. Then, we know that since all rows of $P^\infty$ are the same, then for any initial any probability vector $\bar{v}$ we have \[\bar{\pi} = \lim_{n \to \infty} \bar{v}P^n.\] Hence, we have, \(\bar{\pi} = \lim_{n \to \infty} \bar{v}P^{n + 1} = \left(\lim_{n \to \infty} \bar{v}P^{n}\right)P = \bar{\pi}P.\) The above display is a left eigenvector of $P with eigenvalue one. Source: Introduction to Stochastic Processes Prove that every state in an irreducible Markov chain has the same period. The period of state $i$ is defined as the greatest common divisor of the set $J_i :=$ {$n \geq 1: P_n(i, i) &gt;0$}. Not that $J_i$ is closed under addition because $P_{n +m} (i, i) = \sum_k P_n(i, k) P_m(k, i) \geq P_n(i, i) P_m(i, i) &gt; 0$. Let $d$ be the greatest common divisor of $J_i$. We have shown before that $J_i$ contains all but a finite number of integers. Hence, $J_i$ contains $md$ for all $m$ greater than some integer $M$. Let $j$ be another state and $n,m$ such that $P_n(i, j), P_m(j, i) &gt; 0$ (chain is irreducible). Clearly $n + m \in J_i$ and $m + n \in J_j$. If $l \in J_j$, then \[P_{n+m+l}(i, j) \geq P_{n}(i, j)P_l(j, j)P_m(j, i) &gt; 0.\] Therefore, $n+m+l \in J_i, J_j$. $d$ used to divide $n + m$, now we showed that it must divide $l$ as well. So, we have just shown that if $d $divides every element of $J_i$ then it divides every element of $J_j$. From this we see that all states have the same period. Source: Introduction to Stochastic Processes — - Consider the Markov chain with state space {1, 2, 3, 4, 5} and matrix \[P = \begin{pmatrix} 0 &amp; 1/3 &amp; 2/3 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1/4 &amp; 3/4 \\ 0 &amp; 0 &amp; 0 &amp; 1/2 &amp; 1/2 \\ 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}\] What are $P_{1000}(2, 1 ), P_{1000}(2, 2), P_{1000}(2, 4)$? Due to the structure of the chain at no time step there would be probability for transitioning from state 2 to state 1, nor from state 2 to itself. Hence, $P_{1000}(2, 1) = P_{1000}(2, 2) = 0$ On the other hand to compute $P_{1000}(2, 4)$, since the chain is periodic with the period of three and the remainder of $1000$ when divided by $3$ is one, the same as number $4$, hence using Python software we raise the matrix to the power of $4$ instead, and $P_{1000}(2, 4) \approx P_4(2, 4) \approx 0.4167$. \[\begin{equation*} P_4 = \begin{pmatrix} 0 &amp; 0.3333 &amp; 0.6665 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 0.4167 &amp; 0.5835 \\ 0 &amp; 0 &amp; 0 &amp; 0.4167 &amp; 0.5835\\ 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix} \end{equation*}\] Source: Introduction to Stochastic Processes Let $X_1, X_2,\dots$ be the successive values from independent rolls of a standard six-sided die. Let $S_n= X_1 + \dots + X_n$. Let \[T_1 = \min \{n \geq 1: S_n \, \text{is divisible by 8} \},\] \[T_2 = \min\{n \geq 1: S_{n - 1}\, \text{is divisible by 8}\}.\] Find $\mathbb{E}[T_1]$ and $\mathbb{E}[T_2]$. (Hint: consider the remainder of $S_n after division by 8 as a Markov chain.) answer. The state space of the chain comprises ${0, 1, 2, 3, 4, 5, 6, 7}$. Let $g(i)$ denotes the expected number of rolls until the chain reaches state zero, while starting at state $i$. We have that $g(0) = 0$. Definitely we won’t reach the state $0$ with just one roll because the outcome would be among $1$ and $6$. Hence, \[\begin{equation*} \mathbb{E}[T_1] = 1 + \frac{1}{6}\sum_{i = 1}^6 g(i) = 1 + \frac{1}{6}\left(g(1) + g(2) + g(3) + g(4) + g(5) + g(6)\right). \end{equation*}\] On the other hand, \[\begin{equation*} \sum_{i=1}^7g(i) = \sum_{i=1}^7 \left(1 + \frac{1}{6}\sum_{j=1}^6 g\left(i + j \bmod{8}\right) \right). \end{equation*}\] That is, the expected number of rolls starting from state $i \neq 0$ is equal to rolling the die and the expected number of rolls of the resulting state. We rearrange the summations to get: \[\begin{equation*} \sum_{i=1}^7g(i) = 7 + \frac{1}{6}\sum_{j=1}^6\sum_{i=7}^6 g(i + j \bmod{8}). \end{equation*}\] Now for each fixed $j$, $(i + j \bmod{8})$ is a permutation of ${0, 1, 2, 3, 4, 5, 6, 7}$ excluding the number $j$. Hence, by denoting $S := \sum_{i = 1}^7 g(i)$, we have: \[\begin{align*} S = 7 + \frac{1}{6}\sum_{j=1}^6(S - g(j)) \Rightarrow \sum_{j = 1}^6 g(j) = 42. \end{align*}\] Therefore, \[\begin{equation*} \mathbb{E}[T_1] = 1 + \frac{1}{6}\sum_{i = 1}^6 g(i) = 1 + \frac{1}{6}\left(g(1) + g(2) + g(3) + g(4) + g(5) + g(6)\right) = 8. \end{equation*}\] For computing $\mathbb{E}[T_2]$, we only need to roll the die once, because the sum of the random variables before the first roll is zero, so $S_{1 - 1} = S_0 = 0$, and $0$ is divisible by 8. Source: Introduction to Stochastic Processes Let $X_n, Y_n$ be independent Markov chains with state space {$0, 1, 2$} and transition matrix \[P = \begin{pmatrix} 1/2 &amp; 1/4 &amp; 1/4 \\ 1/4 &amp; 1/4 &amp; 1/2 \\ 0 &amp; 1/2 &amp; 1/2 \end{pmatrix}.\] Suppose $X_0 = 0, Y_0 = 2$ and let \[T = \inf\{n: X_n = Y_n\}.\] (A) Find $\mathbb{E}[T]$. (B) What is $\mathbb{P}{X_T = 2}$? (C) In the long run, what percentage of the time are both chains in the same state? [Hint: consider the nine-state Markov chain $Z_n = (X_n, Y_n$).] answer. Part(A). We need to set up a recursive formula connecting the expected number of steps until two chains meet. Let $g(i, j)$ be the expected number of steps until the meeting time, when ${X_n}$ has started at state $i$ and ${Y_n}$ has started in state $j$. We have that $g(k, k) = 0,: k \in {0, 1, 2}$. For all other state, since ${X_n}$ and ${Y_n}$ are independent, we have that: \[\begin{equation*} g(i, j) = 1 + \sum_{k=0}^3\sum_{l=0}^3 P(i, k)P(j, l)g(k, j). \end{equation*}\] This gives a set of 6 equations with 6 unknowns ($g(0, 1), g(0, 2), g(1, 0), g(1, 2), g(2, 0),\, \mathrm{and}\, g(2, 1)$) as follows: \[\begin{align*} g(0, 1) &amp; = 1 + \frac{1}{2}g(0, 0) + \frac{1}{4}g(0, 1) + \frac{1}{4}g(0, 2) \\ g(0, 2) &amp; = 1 + \frac{1}{2}g(0, 0) + \frac{1}{4}g(0, 1) + \frac{1}{4}g(0, 2) \\ g(1, 0) &amp; = 1 + \frac{1}{4}g(1, 0) + \frac{1}{4}g(1, 1) + \frac{1}{2}g(1, 2) \\ g(1, 2) &amp; = 1 + \frac{1}{4}g(1, 0) + \frac{1}{4}g(1, 1) + \frac{1}{2}g(1, 2) \\ g(2, 0) &amp; = 1 + 0\cdot g(2, 0) + \frac{1}{2}g(2, 1) + \frac{1}{2}g(2, 2) \\ g(2, 1) &amp; = 1 + 0 \cdot g(2, 0) + \frac{1}{2}g(2, 1) + \frac{1}{2}g(2, 2). \end{align*}\] Solving this system of equations gives us: $g(0, 2) = \frac{118}{35} \approx 3.37$. Part (B). We need to set up a recursive formula connecting how the chains can meet at state 2 while starting at state 0 and 2 respectively. Let $h(i, j)$ be the probability of first meeting at state 2, when ${X_n}$ has started at state $i$ and ${Y_n}$ has started in state $j$. We have that $h(1, 1) = h(0 , 0) = 0$ (first meeting should be at state 2), and $h(2, 2) = 1$. For all other state, since ${X_n}$ and ${Y_n}$ are independent, we have that: \[\begin{equation*} h(i, j) = \sum_{k=0}^3\sum_{l=0}^3 P(i, k)P(j, l)h(k, j). \end{equation*}\] This gives a set of 6 equations with 6 unknowns ($h(0, 1), h(0, 2), h(1, 0), h(1, 2), h(2, 0),\, \mathrm{and}\, h(2, 1)$) as follows: \[\begin{align*} h(0, 1) &amp; = \frac{1}{2}h(0, 0) + \frac{1}{4}h(0, 1) + \frac{1}{4}h(0, 2) \\ h(0, 2) &amp; = \frac{1}{2}h(0, 0) + \frac{1}{4}h(0, 1) + \frac{1}{4}h(0, 2) \\ h(1, 0) &amp; = \frac{1}{4}h(1, 0) + \frac{1}{4}h(1, 1) + \frac{1}{2}h(1, 2) \\ h(1, 2) &amp; = \frac{1}{4}h(1, 0) + \frac{1}{4}h(1, 1) + \frac{1}{2}h(1, 2) \\ h(2, 0) &amp; = 0\cdot h(2, 0) + \frac{1}{2}h(2, 1) + \frac{1}{2}h(2, 2) \\ h(2, 1) &amp; = 0 \cdot h(2, 0) + \frac{1}{2}h(2, 1) + \frac{1}{2}h(2, 2). \end{align*}\] Solving this system of equations gives us: $h(0, 2) = \frac{15}{28} \approx 0.535$. Part (C). Since the chains are independent, we need to multiple their invariant distributions for states ${1, 2, 3}$. Let us find the invariant distribution by solving $\bar{\pi} = \bar{\pi}P$: \[\begin{equation*} \begin{pmatrix} \bar{\pi}_1 \\ \bar{\pi}_2 \\ \bar{\pi}_3 \end{pmatrix} = \begin{pmatrix} \bar{\pi}_1 \\ \bar{\pi}_2 \\ \bar{\pi}_3 \end{pmatrix}^\top \begin{pmatrix} 1/2 &amp; 1/4 &amp; 1/4 \\ 1/4 &amp; 1/4 &amp; 1/2 \\ 0 &amp; 1/2 &amp; 1/2 \end{pmatrix} \quad \mathrm{and} \quad \bar{\pi}_1 + \bar{\pi}_2 + \bar{\pi}_3 = 1. \end{equation*}\] The solution of this equation is: $\bar{\pi} = \frac{1}{11}(2, 4, 5)$. Hence, the probability that both chains spend time at the same states in a long run is equal to: $\frac{1}{11^2}(4 + 16 + 25) = \frac{45}{121}$. Source: Introduction to Stochastic Processes Let $X_n$ be a Markov chain on state space {1, 2, 3, 4, 5} with transition matrix \[P = \begin{pmatrix} 0 &amp; 1/2 &amp; 1/2 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 1/5 &amp; 4/5 \\ 0 &amp; 0 &amp; 0 &amp; 2/5 &amp; 3/5 \\ 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 1/2 &amp; 0 &amp; 0 &amp; 0 &amp; 1/2 \end{pmatrix}\] (A) Suppose $X_0 = 1$. What is the expected number of steps until the chain is in state 4? (B) Suppose $X_0 = 1$. What is the probability that the chain will enter state 5 before it enters state 3? answer. Part (A). We need to set up a recursive formula connecting the expected number of steps until reaching state 4 for each distinct state. Let $g(i)$ be the expected number of steps until reaching state $4$, when the chain has started at state $i$. We have that $g(4) = 0$. For all other state we have that: \[\begin{equation*} g(i) = 1 + \sum_{j=0, j \neq 4}^5P(i, j)g(j). \end{equation*}\] This gives a set of 4 equations with 4 unknowns ($g(1), g(2), g(3),\, \mathrm{and}\, g(5)$) as follows: \[\begin{align*} g(5) &amp; = 1 + \frac{1}{2}g(0) + \frac{1}{2}g(5) \\ g(3) &amp; = 1 + \frac{2}{5}g(4) + \frac{3}{5}g(5) \\ g(2) &amp; = 1 + \frac{1}{5}g(4) + \frac{4}{5}g(5) \\ g(1) &amp; = 1 + \frac{1}{2}g(2) + \frac{1}{2}g(3) \end{align*}\] Solving this system of equations gives us: $g(1) = \frac{34}{3}$. Part (B). We need to set up a recursive formula connecting how the chain can hit state 5 before state 3, while starting at state 1. Let $h(i)$ be the probability that the chain hits state $5$ before state 3, when the chain has started at state $i$. We have that $h(5) =1$ and $h(3) = 0$. For all other state we have that: \[\begin{equation*} h(i) = \sum_{j=1}^5P(i, j)h(j). \end{equation*}\] This gives a set of 3 equations with 3 unknowns ($h(1), h(2),\, \mathrm{and}\, h(4)$) as follows: \[\begin{align*} h(4) &amp; = h(1) \\ h(2) &amp; = \frac{1}{5}h(4) + \frac{4}{5}h(5) = \frac{1}{5}h(4) + \frac{4}{5}\\ h(1) &amp; = \frac{1}{2}h(2) + \frac{1}{2}h(3) = \frac{1}{2}h(2) \end{align*}\] Solving this system of equations gives us: $h(1) = \frac{4}{9}$. Source: Introduction to Stochastic Processes Theorem. Suppose the state space $S$ and the action space $A$ are finite. Then, there exits a deterministic stationary Markov Blackwell optimal policy. Proof. Let $\Pi^\mathrm{MD}$ be the set of all deterministic Markov polices for an MDP with finite state and action spaces. Since $\Pi^\mathrm{MD}$ is finite, there exits a sequence of discount factors {$\gamma_n$} converging to one for which there exits a $\pi^* \in \Pi^\mathrm{MD}$ with $\left(\pi^*\right)^\infty = (\pi, \pi, \dots) = (\pi_0, \pi_1, \dots)$ (as the stationary policy) being discount optimal for all $\gamma_n$. The reason the aforementioned fact is true is that since $\Pi^\mathrm{MD}$ finite and $0 \leq \gamma &lt;1$ is infinite, due to pigeonhole principle some optimal policies are shared for some discount factors. Therefore, we can pick a subsequence of discount factors that increases toward one, which will have an associated optimal policy. With having the above fact in mind, for each $\pi \in \Pi^\mathrm{MD}$, \[v_\gamma^{\left(\pi^*\right)^\infty}(s) - v_\gamma^{\pi^\infty}(s) \geq 0,\] for all states, $\gamma = \gamma_n$ and $n = 1, 2, \dots$ . Each function on L.H.S. is a rational function of $\gamma$, so is their difference. Hence, the difference is zero for all $\gamma$, or equals zero for at most finitely many $\gamma$s. Therefore, there exists a $\gamma_\pi &lt; 1$ for which the above display holds for $\gamma_\pi \leq \gamma &lt; 1$. Since $\Pi^\mathrm{MD}$ is finite the above displays holds for all $\gamma^* \leq \gamma &lt; 1$ where $\gamma^* = \max_\pi \gamma_{\pi}$. Now that we have fixed $\gamma$, by virtue of the existence of a deterministic stationary Markov policy in the discounted setting, the result follows. $\square$ I’ve been concise and incomplete for this theorem. I’ll add supplementary details one day that I stumbled on this post. :D Source: Markov Decision Processes: Discrete Stochastic Dynamic Programming Let $\Omega$ be a measurable set, and let $f: \Omega \to [0, \infty]$ be a non-negative measurable function. Prove that we have $0 \leq \int_\Omega f \leq \infty$. Furthermore, we have $\int_\Omega f = 0$ if and only if $f(x) = 0$ for almost every $x \in \Omega$. Proof. Since $f$ is a non-negative measurable function, we have that \[\int_\Omega f = \sup \{\int_\Omega s: s \text{ is non-negative, simple and dominated by } f \}.\] Step 1: $0 \leq \int_\Omega \leq \infty$. Consider a fixed $s$. Since $s$ is simple, $\int_\Omega s = \sum_{j = 1}^N c_j \cdot m(E_j)$, where $N \in \mathbb{N}, c_j &gt; 0, m: \Omega \to \mathbb{R}^*$ is the Lebesgue measure, $E_1, \dots, E_N \in \Omega$, and $E_i \cap E_j = \varnothing$ for all $i, j \in [N], \mathrm{and}\, i \neq j$. The sum of non-negative terms on the extended real line $\mathbb{R}^*$ is in $[0, \infty]$, hence is their supremum. Step 2: If $f = 0$ a.e., then $\int_\Omega f = 0$. Since $f$ dominates $s$, then $0 \leq s(x) \leq f(x)$, for all $x \in \Omega$. If $f(x) = 0$ for almost every $x \in \Omega$, then $s = 0$ a.e., hence $\int_\Omega s = 0$, and consequently $\sup \int_\Omega s = 0$. Step 3: If $\int_\Omega f = 0$, then $f = 0$ a.e. Consider the set \[E_j := \{x \in \Omega: f(x) &gt; \frac 1j \}, \quad j \geq 1.\] The function $s_j := \frac 1j \mathbb{1}_{E_j}$ is simple and also dominated by $f$ because $0 \leq s_j \leq f$. By Step 1, we have $\frac 1j m(E_j) = \int_\Omega s_j \leq \int_\Omega f = 0$. This means $m(E_j) = 0$ for all $j$. The domain of $f$ where it is non zero is \[\Omega' := \{x : f(x) &gt; 0 \} = \cup_{j = 1}^\infty E_j.\] By the subadditivity property of the Lebesgue measure we have \[m\left(\Omega' \right) = \sum_{j = 1}^\infty m(E_j) = 0 \Rightarrow f = 0\: \mathrm{a.e.}\] Source: Analysis II]]></summary></entry><entry><title type="html">Convergence of Positive Supermartingales</title><link href="https://alirezakazemipour.github.io/posts/2025/10/cnvrgnc-sprmrtngl/" rel="alternate" type="text/html" title="Convergence of Positive Supermartingales" /><published>2025-10-27T00:00:00-07:00</published><updated>2025-10-27T00:00:00-07:00</updated><id>https://alirezakazemipour.github.io/posts/2025/10/cnvrgnc-sprmrtngl</id><content type="html" xml:base="https://alirezakazemipour.github.io/posts/2025/10/cnvrgnc-sprmrtngl/"><![CDATA[\[\begin{align*}
+\newcommand{\I}{\mathbb{1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\sB}{\mathscr{B}}
+\DeclareMathOperator{\EE}{\mathbb{E}}
+\DeclareMathOperator{\PP}{\mathbb{P}}
+\newcommand{\Ev}[2]{\EE^{#2}\left[ #1 \right]}
+\newcommand{\Pr}[2]{\PP^{#2}\left( #1 \right)}
+\end{align*}\]
+
+<p>I really enjoyed reading Chapter two of <a href="https://www.sciencedirect.com/bookseries/north-holland-mathematical-library/vol/10/suppl/C">Discrete Parameter Martingales</a> and I thought why not making a blog post.</p>
+
+<p>The book is quite advanced,
+but I’ll try my best state everything clearly and simply given my temporal boredom threshold.
+Haha :)!</p>
+
+<p>Let me fix the probability space first. Our probability space (as usual) is $(\Omega, \mathscr{F}, \mathbb{P})$. HOWEVER, in what follows it is more convenient to define a subset of the above probability space as $(\Omega’, \mathscr{B}, \mathbb{P})$ (because we’re going to work with filterations and naturally they are sub-$\sigma$-algebras that are growing, so we’re always in the subset case).  A mapping $X$ only defined on $\Omega’$ is random variable on $\Omega’$ if it is measurable with respect to (w.r.t.) the trace $\sigma$-algebra $\mathscr{F} \cap \Omega’$. So, what is a trace $\sigma$-algebra? I found it <a href="https://proofwiki.org/wiki/Definition:Trace_Sigma-Algebra">here</a>.</p>
+
+<hr />
+<p><strong>Definition</strong>. Let $\Omega$ be a set, and let $\mathscr{F}$ be a $\sigma$-algebra on $\Omega$. Let $\Omega’ \subseteq \Omega$ be a subset of $\Omega$. Then, the trace $\sigma$-algebra (of $\Omega’$ in $\mathscr{F}$), $\mathscr{B}$, is defined as:</p>
+
+\[\mathscr{B} := \{\Omega' \cap F : F \in \mathscr{F}\}.\]
+
+<p>It is a $\sigma$-algebra on $\Omega’$.</p>
+
+<hr />
+<p>Now we can define what a positive supermartingale is. Let $(\Omega, \mathscr{F}, \mathbb{P})$ be our probability space and $(\mathscr{B}_n, n \in \mathbb{N})$ an increasing sub-$\sigma$-algebrs of $\mathscr{F}$ (a.k.a a filteration).</p>
+
+<p><strong>Definition</strong>. An adapted sequence $(X_n, n \in \mathbb{N})$ of <em>positive</em> random variables is called a positive supermartingale if the almost sure (a.s.) inequality</p>
+
+\[X_n \geq \mathbb{E}^{\mathscr{B}_n}(X_{n + 1})\]
+
+<p>is satisfied for all $n \in \mathbb{N}$. A supermartingale is by definition a sequence of random variables (r.v.s) which “decrease in conditional mean”. For a sequence positive r.v.s denoting the sequence of values of the fortune of a gambler, the supermartingale condition expresses the property that at each play the game is unfavourable to the player in conditional mean.</p>
+
+<p>We note that the inequality defining a supermartingale implies that</p>
+
+\[X_m \geq \mathbb{E}^{\mathscr{B}_m}(X_p), \; \forall p &gt; m.\]
+
+<p>In fact the defintion implies that,</p>
+
+\[\mathbb{E}^{\mathscr{B}_m}(X_n) \geq \mathbb{E}^{\mathscr{B}_m}\mathbb{E}^{\mathscr{B}_n}(X_{n + 1}) \stackrel{\text{tower rule}}{=} \mathbb{E}^{\mathscr{B}_m}(X_{n + 1}),\]
+
+<p>if $n \geq m$. Therefore, the sequence ($\mathbb{E}^{\mathscr{B}_m}(X_n)$) is decreasing.</p>
+
+<p>The following proposition is so cool and is so fundamental.</p>
+
+<p><strong>Proposition</strong> (Maximal inequality). For every positive supermartingale, the r.v. $\sup_n X_n$ is a.s. finite on the set {$X_0 &lt; \infty$}, and satisfies the following inequality</p>
+
+\[\mathbb{P}^{\mathscr{B}_0}(\sup_n X_n \geq a) \leq \min \left(\frac{X_0}{a}, 1\right)\]
+
+<p>for all constants $a &gt; 0$.</p>
+
+<p>Before going into the proof, remember that $\mathbb{P}^{\mathscr{B}}(A) = \mathbb{E}^{\mathscr{B}}(\mathbb{1}_A)$ and</p>
+
+\[\int_B\mathbb{P}^{\mathscr{B}}(A)d\mathbb{P} = \mathbb{P}(A \cap B), \quad B \in \mathscr{B}.\]
+
+<hr />
+
+<p>First, we need an auxiliary lemma which constitutes the switching principle for supermartingales. But before that, I need to talk about the concept of the <em>stopping time</em>.</p>
+
+<p>Stopping time (unsurprisingly) is a concept from gambling. A stopping rule for the player is a rule for leaving the game, based at each time on information it his/her disposal at that time. By this definition, a “dishonest” player who decides to leave the game any time already knowing certain subsequent outcomes of the game is excluded. Also, note that the stopping time could be $\infty$ meaning that the game never ends.</p>
+
+<p><strong>Definition</strong>. Let $\mathbb{N}^*$ denote $\mathbb{N} \cup {\infty}$. A mapping $\nu: \Omega \to \mathbb{N}^*$ is called a stopping time if</p>
+
+\[\{ \nu = n \} \in \mathscr{B}_n, \quad \forall n \in \mathbb{N}.\]
+
+<p>The $\sigma$-algebra $\mathscr{B}_\nu$ is associated with the stopping time as the subsets of $\Omega$ defined by</p>
+
+\[\mathscr{B}_\nu = \{B: B \in \mathscr{B}_\infty, B \cap \{\nu = n\} \in \mathscr{B}_n, \forall n \in \mathbb{N}\}.\]
+
+<p>Note that events in $\mathscr{B}_\nu$ are <strong>prior</strong> to $\nu$.</p>
+
+<p>Back to the considered lemma:</p>
+
+<hr />
+<p><strong>Lemma</strong> (master). Given tow positive supermartingales $(X^{(i)}_n)(i =1, 2)$ and a stopping time $\nu$ such that
+$X_\nu^{(1)} \geq X_\nu^{(2)}$ on {$\nu &lt; \infty$}, the formula</p>
+
+\[X_n(\omega) = \begin{cases}
+X_\nu^{(1)} &amp; \mathrm{if}\; n &lt; \nu(\omega)\\
+X_\nu^{(2)} &amp; \mathrm{if}\; n \geq \nu(\omega)
+\end{cases} \quad (n \in \mathbb{N}),\]
+
+<p>defines a new positive supermartingale.</p>
+
+<hr />
+<p><em>Proof</em>.  Indeed, the defining formula of the $X_n$ can also be written</p>
+
+\[X_n = \mathbb{1}_{\{v &gt; n\}}X_n^{(1)} + \mathbb{1}_{\{v \leq n\}}X_n^{(2)},\]
+
+<p>then it is clear that $X_n$ is $\mathscr{B}_n$ measurable. The supermartingale property of $X^{(i)}_n$ allows us to write</p>
+
+\[\begin{align*}
+X_n &amp;= \mathbb{1}_{\{v &gt; n\}}X_n^{(1)} + \mathbb{1}_{\{v \leq n\}}X_n^{(2)} \\
+&amp;\geq \mathbb{1}_{\{v &gt; n\}} \mathbb{E}^{\mathscr{B}_n}\left[X_{n+1}^{(1)}\right] + \mathbb{1}_{\{v \leq n\}} \mathbb{E}^{\mathscr{B}_n}\left[X_{n+1}^{(2)}\right] \\
+&amp; = \mathbb{E}^{\mathscr{B}_n}\left[\mathbb{1}_{\{v &gt; n\}} X_{n+1}^{(1)} + \mathbb{1}_{\{v \leq n\}}  X_{n+1}^{(2)}\right]. \tag{since $\nu$ is $\mathscr{B}_n$-measurable}
+\end{align*}\]
+
+<p>The assumption $X_\nu^{(1)} \geq X_\nu^{(2)}$ implies that $X_{n + 1}^{(1)} \geq X_{n + 1}^{(2)}$ on {$\nu = n + 1$}, and</p>
+
+\[\mathbb{1}_{\{v &gt; n\}} X_{n+1}^{(1)} - \mathbb{1}_{\{v &gt; n + 1\}} X_{n+1}^{(1)} + \mathbb{1}_{\{v \leq n\}} X_{n+1}^{(2)} - \mathbb{1}_{\{v \leq n + 1\}}  X_{n+1}^{(2)} = X_{n+1}^{(1)} - X_{n+1}^{(2)}.\]
+
+<p>Hence,</p>
+
+\[\mathbb{1}_{\{v &gt; n\}} X_{n+1}^{(1)} + \mathbb{1}_{\{v \leq n\}}  X_{n+1}^{(2)} \geq \mathbb{1}_{\{v &gt; n + 1\}} X_{n+1}^{(1)} + \mathbb{1}_{\{v \leq n + 1\}}  X_{n+1}^{(2)} = X_{n + 1}. \quad\square\]
+
+<p>Using the above lemma, let us associate with the positive supermartingale of the proposition the stopping time defined by</p>
+
+\[\nu_a = \begin{cases}
+\min(n:X_n &gt; a) = 0 &amp; \mathrm{if}\; \sup_n X_n &gt; a\\
+\infty &amp; \mathrm{if}\; \sup_n X_n \leq a 
+\end{cases}\; .\]
+
+<p>Since $X_{\nu_a} &gt; a$ on {$\nu_a &lt; \infty$} and since the constant $a$ can be considered a supermartingale, the formula,</p>
+
+<p>\(Y_n = \begin{cases}
+X_n &amp; n &lt; \nu_a\\
+a &amp; n \geq \nu_a
+\end{cases}\)
+defines a new supermartingale by our previous lemma. 
+Hence, $Y_0 \geq \mathbb{E}^{\mathscr{B}_0}[Y_n]$.
+Since $Y_0$ is equal to $X_0$ or $a$ according to the relation between $X_0$ and $a$,
+and since $Y_n \geq a \mathbb{1}_{{\nu_a \leq n}}$, we have:</p>
+
+\[a \mathbb{P}^{\mathscr{B}_0}(\nu_a \leq n) \leq \min(X_0, a).\]
+
+<p>Letting $n$ tend to infinity, we obtain</p>
+
+\[\mathbb{P}^{\mathscr{B}_0}(\sup_n X_n &gt; a) \leq \min\left(\frac{X_0}{a}, 1\right),\]
+
+<p>Since {$\nu_a &lt; \infty$} = {$\sup_n X_n &gt; a$}. It suffices to replace $a$ by $a\left(1 - k^{-1}\right)$ in the
+inequality above and let $k$ tend to infinity to obtain the same inequality with $\geq$ instead of $&gt;$ on the left-hand side. Let us integrate both sides over the event {$X_0 &lt; \infty$}, which belongs to $\mathscr{B}_0$. Let $A := {\sup_n X_n &gt; a}$ we find that</p>
+
+\[\begin{align*}
+ \int_{\{X_0 &lt; \infty\}}\mathbb{P}(A \mid \mathscr{B}_0) d\mathbb{P} &amp; \leq \int_{\{X_0 &lt; \infty\}} \min\left(\frac{X_0}{a}, 1\right)d\mathbb{P} \Rightarrow \\
+ \int_{\mathscr{B}_0}\mathbb{E}(\mathbb{1}_A \mid \mathscr{B}_0) d\mathbb{P} &amp;\leq \int_{\{X_0 &lt; \infty\}} \min\left(\frac{X_0}{a}, 1\right)d\mathbb{P} \Rightarrow \\
+\mathbb{E}[\mathbb{1}_{\mathscr{B}_0} \cdot \mathbb{E}(\mathbb{1}_A \mid \mathscr{B}_0)] &amp;\leq \int_{\{X_0 &lt; \infty\}} \min\left(\frac{X_0}{a}, 1\right)d\mathbb{P} \Rightarrow \\
+\mathbb{E}[\mathbb{E}(\mathbb{1}_{\mathscr{B}_0} \cdot\mathbb{1}_A \mid \mathscr{B}_0)] &amp;\leq \int_{\{X_0 &lt; \infty\}} \min\left(\frac{X_0}{a}, 1\right)d\mathbb{P} \Rightarrow \\
+\mathbb{E}(\mathbb{1}_{\mathscr{B}_0} \cdot\mathbb{1}_A) &amp;\leq \int_{\{X_0 &lt; \infty\}} \min\left(\frac{X_0}{a}, 1\right)d\mathbb{P} \Rightarrow \\
+\mathbb{P}(\mathscr{B}_0 \cap A) &amp;\leq \int_{\{X_0 &lt; \infty\}} \min\left(\frac{X_0}{a}, 1\right)d\mathbb{P} \Rightarrow \\
+\mathbb{P}(X_0 &lt; \infty, \sup_n X_n &gt; a) &amp;\leq \int_{\{X_0 &lt; \infty\}} \min\left(\frac{X_0}{a}, 1\right)d\mathbb{P}.
+\end{align*}\]
+
+<p>As $a$ tends to infinity, the R.H.S. tends to zero by the dominated convergence theorem and we have</p>
+
+\[\mathbb{P}(X_0 &lt; \infty, \sup_n X_n = \infty) = 0. \; \square\]
+
+<hr />
+<p><strong>Box</strong>. (<a href="https://link.springer.com/book/10.1007/978-981-19-7284-3">Analysis II</a>)  A box $B$ in $\mathbb{R}^n$ is any set of the form</p>
+
+\[B = \Pi_{i = 1}^n (a_i, b_i) := \{(x_1, \dots, x_n) \in \mathbb{R}^n: x_i \in (a_i, b_i)\: \text{for all}\: 1 \leq i \leq n\},\]
+
+<p>where $b_i \geq a_i$ are real numbers. The volume of this box is defined as</p>
+
+\[\mathrm{vol}(B) := \Pi_{i=1}^n (b_i - a_i).\]
+
+<p><strong>Outer Measure</strong>. (<a href="https://link.springer.com/book/10.1007/978-981-19-7284-3">Analysis II</a>) If $\Omega$ is a set, we define the outer measure $m^*(\Omega)$ of $\Omega$ to be quantity</p>
+
+\[m^*(\Omega) := \inf \left\{\sum_{j \in J}\mathrm{vol}(B_j): (B_j)_{j \in J}\: \mathrm{covers}\: \Omega;\: J\: \text{at most countable}\right\}.\]
+
+<p><strong>Measurable Sets</strong>. (<a href="https://link.springer.com/book/10.1007/978-981-19-7284-3">Analysis II</a>) Let $E$ be a subset of $\R^n$. We say $E$ is Lebesgue measurable, or measurable for short, iff we have the identity</p>
+
+<p>\(m^*(A) = m^*(A \cap E) + m^*(A-E)\)
+for every subset $A$ of $\R^n$.  If $E$ is measurable, we define the Lebesgue measure of $E$ to be $m(E)= m^*(E)$; if $E$ is not measurable, we leave $m(E)$ undefined. In words, $E$ being measurable means that if we use the set
+$E$ to divide up an arbitrary set $A$ into two parts, we keep the additivity property.</p>
+
+<p><strong>Measurable Functions</strong>. (<a href="https://link.springer.com/book/10.1007/978-981-19-7284-3">Analysis II</a>) Let  be a measurable subset of $\mathbb{R}^n$ and let $f: \Omega \to \R^m$ be a function. A function $f$ is measurable iff $f^{-1}(V)$ is measurable for <strong>every</strong> open set $V \subseteq \R^m$.  Another characterization of measurable functions is given by: Let $\Omega$ be a measurable subset of $\R^n$. A function $f: \Omega \to \R^*$ is said to be <em>measurable</em> iff $f^{-1}((a, \infty]))$ is measurable for every real number $a$.</p>
+
+<p><strong>Absolutely Integrable</strong>. (<a href="https://link.springer.com/book/10.1007/978-981-19-7284-3">Analysis II</a>) Let $\Omega$ be a measurable subset of . A measurable function $f: \Omega \to \mathbb{R}^* := \mathbb{R} \cup {-\infty, +\infty}$ is said to be absolutely integrable if the integral $\int_\Omega f$ (w.r.t. the Lebesgue measure) is finite.</p>
+
+<p><strong>Pointwise Convergence</strong>. (<a href="https://link.springer.com/book/10.1007/978-981-19-7284-3">Analysis II</a>) 
+The most obvious notion of convergence of functions is pointwise convergence, or <em>convergence at each point of the domain</em>.
+Let $\left(f^{(n)} \right)_{n = 1}^\infty$ be a sequence of functions from one metric space $(X, d_X$) to another
+$(Y, d_Y)$, and let $f: X \to Y$ be another function. We say that $\left(f^{(n)} \right)_{n = 1}^\infty$ converges pointwise
+to $f$ if we have</p>
+
+\[\lim_{n \to \infty}f^{(n)}(x) = f(x), \quad \forall x \in X,\]
+
+<p>i.e.,</p>
+
+\[\lim_{n \to \infty}d_Y\left(f^{(n)}(x), f(x)\right) = 0.\]
+
+<p>We call the function <em>f</em> the pointwise limit of the functions $f^{(n)}$.</p>
+
+<p><strong>Limits of measurable functions are measurable</strong> (<a href="https://link.springer.com/book/10.1007/978-981-19-7284-3">Analysis II</a>) 
+Let $\Omega$ be a measurable subset of $\mathbb{R}^n$, for each positive integer $n$,
+let $f_n: \Omega \to \mathbb{R}^*$ be a measurable function. Then, the functions
+$\sup_n f_n, \inf_n f_n, \limsup_{n \to \infty} f_n, \mathrm{and}\, \liminf_{n \to \infty} f_n$ are also measurable.
+In particular, if $f_n$ converge pointwise to another function $f: \Omega \to \mathbb{R}^*$, then $f$ is also measurable.</p>
+
+<p><em>Proof</em>. We first prove the claim about $\sup_n f_n$. Call this function $g$. We have to prove that $g^{-1}((a, \infty]))$ is measurable for every $a$. First we show that</p>
+
+\[g^{-1}((a, \infty])) = \cup_{n \geq 1}f_n^{-1}((a, \infty])),\]
+
+<p>then the claim follows since the countable union of measurable sets is measurable. To show the above display consdier two cases:</p>
+
+<ul>
+  <li>$\subseteq$</li>
+</ul>
+
+<p>If $x \in g^{-1}((a, \infty]))$, then $g(x) = sup_n f_n(x) &gt; a$.
+If every $f_n(x) \leq a$, then $\sup_n f_n(x) \leq a$ which is a contradiction.
+Hence, there exists some $n$ with $f_n(x) &gt; a$.
+Thus, $x \in f^{-1}((a, \infty]))$ for that $n$, so $x$ belongs to the union.</p>
+
+<ul>
+  <li>$\supseteq$</li>
+</ul>
+
+<p>If $x \in \cup_{n \geq 1}f_n^{-1}((a, \infty]))$, then for some $n$ we have $f_n(x) &gt; a$. Therefore, $g(x) = \sup_n f_n(x) \geq f_n(x) &gt; a$ and $x \in g^{-1}((a, \infty]))$.</p>
+
+<p>Since both inclusions hold, the sets are equal.</p>
+
+<p>One important note that we know {$g &gt; a$} $= \cup_n$ {$f_n &gt; a$}. But, {$g \geq a$} $\neq \cup_n$ {$f_n \geq a$}. Because if the supremum is at least $a$ does not mean that at least one of the $f_n$s will match it. We can fix this by using an approximation from below:</p>
+
+\[\{g \geq a\} = \cap_{m = 1}^\infty \cup_{n = 1}^\infty \{f_n \geq a - \frac 1m\}.\]
+
+<p>Back to the main proposition, a similar argument works for $\inf_n f_n$. The claim for $\limsup$ and $\liminf$ then follow from the identities</p>
+
+\[\limsup_{n \to \infty} f_n = \inf_{N \geq 1} \sup_{n \geq N} f_n, \quad \liminf_{n \to \infty} f_n = \sup_{N \geq 1} \inf_{n \geq N} f_n.\]
+
+<p><strong>Lebesgue Monotone Convergence Theorem</strong>. (<a href="https://link.springer.com/book/10.1007/978-981-19-7284-3">Analysis II</a>) Let $\Omega$ be a measurable subset of $\R^n$, and let  $f_n$ be a sequence of non-negative functions from $\Omega$ to $[0, \infty]$, which are increasing in the sense that</p>
+
+\[0 \leq f_1(x) \leq f_2(x) \leq \dots \quad \forall x \in \Omega,\]
+
+<p>Note we are assuming that $f_n(x)$ is increasing with respect to $n$; this is a different notion from $f_n(x)$ increasing with respect to $x$. We have</p>
+
+\[0 \leq \int_\Omega f_1 \leq \int_\Omega f_2 \leq \dots\]
+
+<p>and</p>
+
+\[\int_\Omega \sup_n f_n = \sup_n \int_\Omega f_n.\]
+
+<p><em>Proof</em>. For the first conclusion, we should prove that</p>
+
+<p>If $0 \leq f(x) \leq g(x)$ for all $x \in \Omega$ for measurable non-negative functions $f, g$, then we have $\int_\Omega f \leq \int_\Omega g$. Let $h := g - f \geq 0$. We proceed by showing that $0 \leq \int_\Omega h \leq \infty$.  Since $f, g$ are measurable, $h$ is measurable and since $h$ is non-negative as well, its Lebesgue integral is equal to</p>
+
+\[\int_\Omega h = \sup \left\{\int_\Omega s: s \text{ is simple, non-negative and dominated by } h \right\}.\]
+
+<p>Fix an $s$. Since $s$ is simple, it can be written as $s = \sum_{j = 1}^{N} c_j m(E_j)$, where $c_j &gt; 0, \cup_j E_j = \Omega$. The sum of non-negative numbers is between zero and $\infty$, hence their $\sup$ is between zero and infinity.</p>
+
+<p>Now the second conclusion. Following a similar argument of above,</p>
+
+\[\int_\Omega \sup_m f_m \geq \int_\Omega f_n\]
+
+<p>for every $n$ including its superimum, i.e.,</p>
+
+\[\int_\Omega \sup_m f_m \geq \sup_n \int_\Omega f_n.\]
+
+<p>If we show that $\int_\Omega \sup_m f_m \leq \sup_n \int_\Omega f_n$, then the proof will be completed. To proceed, by the definition of $\int_\Omega \sup_m f_m$, it is sufficient to show that for <strong>all</strong> non-negative measurable function $s$ that it is dominated by $\sup_m f_m$ the following holds</p>
+
+<p>\(\int_\Omega s \leq \sup_n \int_\Omega f_n.\)
+If we show that</p>
+
+<p>\(\int_\Omega s \leq \sup_n \int_\Omega f_n + \epsilon\int_\Omega s\)
+for every $0 &lt; \epsilon &lt; 1$ (note that our functions are all non-negative hence the range of the epsilon); the claim follows by taking limits as $\epsilon \to 0$. $(\star)$</p>
+
+<p>By construction,</p>
+
+\[s(x) \leq \sup_n f_n (x), \quad \forall x \in \Omega.\]
+
+<p>Hence, for all $x \in \Omega$, there exists an $N$ such that</p>
+
+<p>\(f_N(x) \geq (1 - \epsilon)s(x).\)
+Since $f_n$ are increasing, this implies taht $f_n(x) \geq (1 - \epsilon)s(x)$ for all $n \geq N$.</p>
+
+<p>Define the sets</p>
+
+<p>\(E_n := \{x \in \Omega: f_n(x) \geq (1 - \epsilon) s(x)\}.\)
+Since $f_n$ is measurable by assumption, $s$ is measurable because it’s a simple function, the function $f_n(x) - s(x) + \epsilon f(x)$ is measurable, hence is each $E_n$. We also have that $E_1 \subseteq E_2 \subseteq \dots$, and $\cup_{n = 1}^\infty E_n = \Omega$. We have that</p>
+
+\[(1 - \epsilon) \int_{E_n}s = \int_{E_n} (1 - \epsilon)s \leq \int_{E_n} f_n \stackrel{(\star\star)}{\leq} \int_{\Omega} f_n,\]
+
+<p>if we show that $(\star\star)$ holds. Then by taking limits as $\epsilon \to 0$ and taking suprema, it suffices to show that</p>
+
+\[\sup_n \int_{E_n}s = \int_{\Omega}s,\]
+
+<p>which would prove $(\star)$.</p>
+
+<p>Since $s$ is a simple function, $\int_\Omega s = \sum_{j = 1}^N c_j \cdot m(F_j)$, where $F_1, F_2, \dots$ are disjoint and in $\Omega$. Similarly, $\int_{E_n} s = \sum_{j = 1}^N c_j \cdot m(F_j \cap E_n)$. Since the sums are finite and the summands are positive, it suffices to show that $\sup_n m(F_j \cap E_n) = m(F_j)$. $(\star\star\star)$</p>
+
+<p>So to summarize, we need to prove the following that prove $(\star)$.</p>
+
+<ol>
+  <li>$\int_{E_n} f_n \leq \int_{\Omega} f_n$. $(\star\star)$</li>
+  <li>$\sup_n m(F_j \cap E_n) = m(F_j)$. $(\star\star\star)$</li>
+</ol>
+
+<p>The following proposition proves $(\star\star)$:</p>
+
+<p>Let $\Omega$ be a measurable set, and $f: \Omega \to [0, \infty]$ be a non-negative measurable function. 
+If $\Omega’ \subseteq \Omega$ is measurable, then $\int_{\Omega’} f = \int_{\Omega} f \mathbb{1}_{{\Omega’}} \leq \int_\Omega f$.</p>
+
+<p><em>Proof</em>. By the definition of the Lebesgue integral</p>
+
+\[\begin{align*}
+\int_\Omega f &amp;= \sup \left\{\int_\Omega s: s \text{ is simple, non-negative and dominated by } f \right\}, \\
+\int_{\Omega'} f &amp;= \sup \left\{\int_{\Omega'} s: s \text{ is simple, non-negative and dominated by } f \right\}.
+\end{align*}\]
+
+<p>Fix $s$. We have</p>
+
+\[\begin{align*}
+\int_\Omega s &amp;= \sum_{j = 1}^N c_j \cdot m(F_j), \\
+\int_{\Omega'} s &amp;= \sum_{j = 1}^N c_j \cdot m(F_j \cap \Omega').
+\end{align*}\]
+
+<p>But, $F_j \cap \Omega’ \subseteq F_j$. Therefore, $m\left(F_j \cap \Omega’\right) \leq m(F_j)$. By multiplying both sides by positive constants $c_j$ and summing over $j$ we get that $\int_{\Omega’} s \leq \int_{\Omega} s$. Taking suprema from both sides competes the proof.</p>
+
+<p>The following proposition helps proving $(\star\star\star)$:</p>
+
+<p>If $A_1 \subseteq A_2 \subseteq \dots$ is an increasing sequence of measurable sets, then</p>
+
+\[m\left(\cup_{j = 1}^\infty A_j \right) = \lim_{j \to \infty} m(A_j).\]
+
+<p><em>Proof</em>.</p>
+
+<p>Define</p>
+
+\[B_1 := A_1, \quad B_j = A_j \setminus A_{j - 1}, \quad j \geq 1.\]
+
+<p>Then, $A :=  \cup_{j = 1}^\infty A_j = \cup_{j = 1}^\infty B_j$, and $A_N :=  \cup_{j = 1}^N A_j = \cup_{j = 1}^N B_j$. Hence,</p>
+
+\[m(A) = m\left(\cup_{j = 1}^\infty B_j\right) = \lim_{N \to \infty} m\left(\cup_{j = 1}^N B_j\right) = \lim_{N \to \infty} m(A_N).\]
+
+<p>So in $(\star\star\star)$, we have</p>
+
+\[\sup_n m(F_j \cap E_n) \stackrel{\text{(monotonicity)}}{=} \lim_{n \to \infty} m(F_j \cap E_n) = m\left(F_j \cap \left(\cup_{n = 1}^\infty E_n\right) \right) = m\left(F_j \cap \Omega \right) = m(F_j).\]
+
+<p><strong>Fatou’s Lemma</strong>. (<a href="https://link.springer.com/book/10.1007/978-981-19-7284-3">Analysis II</a>) Let $\Omega$ be a measurable subset of $\mathbb{R}^n$, and let $f_1, f_2, \dots$ be a sequence of non-negative functions from $\Omega$ to $[0, \infty]$. Then</p>
+
+\[\int_\Omega \liminf_{n \to \infty} f_n \leq \liminf_{n \to \infty}\int_\Omega f_n.\]
+
+<p><em>Proof</em>.</p>
+
+\[\begin{align*}
+\int_\Omega \liminf_{n \to \infty} f_n &amp; = \int_\Omega \sup_{m \geq 1} \inf_{n \geq m} f_n \\
+&amp; = \sup_{m \geq 1} \int_\Omega \inf_{n \geq m} f_n \tag{monotone convergence}. 
+\end{align*}\]
+
+<p>$\inf_{n \geq m} f_n \leq f_j$ for all $j \geq m$. Hence, $\int_\Omega \inf_{n \geq m} f_n \leq \int_\Omega f_j$. By taking infima w.r.t. $j$, we have</p>
+
+\[\int_\Omega \inf_{n \geq m} f_n \leq \inf_{j \geq m}\int_\Omega f_j.\]
+
+<p>Therefore, we obtained the following that completes the proof</p>
+
+\[\int_\Omega \liminf_{n \to \infty} f_n \leq \sup_{m \geq 1}\int_\Omega \inf_{n \geq m} f_n \leq \sup_{m \geq 1}\inf_{j \geq m}\int_\Omega f_j = \liminf_{n \to \infty} \int_{\Omega} f_n.\]
+
+<p><strong>Lebesgue Dominated Convergence Theorem</strong>. (<a href="https://link.springer.com/book/10.1007/978-981-19-7284-3">Analysis II</a>) 
+Let $\Omega$ be a measurable subset of $\mathbb{R}^n$, and let $f_1, f_2, \dots$ be a sequence of measurable functions from 
+$\Omega$ to $\mathbb{R} \cup {-\infty, +\infty}$ which converge pointwise. Suppose also that there is an absolutely
+integrable function $F: \Omega \to [0, \infty]$ such that $|f_n(x)| &lt; F(x)$ for all
+$x \in \Omega$ and all $n = 1, 2, 3, \dots$. Then,</p>
+
+\[\int_{\Omega} \lim_{n \to \infty} f_n = \lim_{n \to \infty}\int_{\Omega} f_n.\]
+
+<p><em>Proof</em>. If $F$ was infinite on a set of non-zero meaure, then $F$ would not be absolutely integrable thus the set
+where $F$ is infinite has zero measure. We may delete this set from (this does not affect any of the integrals) and 
+thus assume without loss of generality that $F(x)$ is finite for every $x \in \Omega$, which implies the same assertion for the $f_n(x)$.</p>
+
+<p>Let $f:\Omega \to \mathbb{R} \cup$ {$-\infty, +\infty$} be the function $f(x) := \lim_{n \to \infty}f_n(x)$ which
+exists by assumption. Since $f$ is the limit of measurable functions, it’s measurable. Also, 
+since $|f_n(x)| \leq F(x)$ for all $n$ and all $x \in \Omega$ , we see that each $f_n$ is absolutely integrable, and by taking limits we obtain $| f(x)| \leq F(x)$ for all $x \in \Omega$ , so $f$ is also absolutely integrable. Our task is to show that $\lim_{n \to \infty}\int_{\Omega} f_n = \int_\Omega f$. The functions $F + f_n$ are non-negative and converge pointwise to $F + f$. So by Fatou’s lemma</p>
+
+\[\int_\Omega F + f \leq \int_\Omega F + \liminf_{n \to \infty} \int f_n \Rightarrow \int_\Omega f \leq \liminf_{n \to \infty} \int f_n.\]
+
+<p>But also, $F - f_n$ are non-negative and converge pointwise to $F + f$. So, again by Fatou’s lemma</p>
+
+\[\int_\Omega F - f \leq \int_\Omega F + \limsup_{n \to \infty} \int f_n \Rightarrow \int_\Omega f \geq \limsup_{n \to \infty} \int f_n.\]
+
+<p>Hence, we showed that</p>
+
+\[\int_\Omega f \leq \liminf_{n \to \infty} \int f_n \leq \limsup_{n \to \infty} \int f_n \leq \int_\Omega f.\]
+
+<p>Hence, the $\liminf$ and $\limsup$ of $\int_\Omega f_n$ are equal as we wanted.</p>
+
+<hr />
+<p><em>Remark</em>. The preceding proof is valid without any change if we change the constant $a$ with any $\sB_0$-measurable r.v. Say $A$ is such an r.v. Then, it means if $\mathbb{P}^{\sB_0}(A \leq \sup_n X_n) = 1$, then $A \leq X_0$, i.e., $X_0$ is largest $\sB_0$-measurable r.v. dominated by $\sup_n X_n$. More generally, for any $\sB_p$-measurable r.v. $A$ that satisfies $A \leq \sup_{n \leq p} X_n$ can be seen as applying the preceding results to the supermartigale $(\sup_{n \leq p} X_n, X_{p+1}, X_{p+2}, \dots)$ adapted to the $(\sB_p, \sB_{p + 1}, \dots)$.</p>
+
+<p><strong>Theorem</strong>. Every positive supermartingale $(X_n)$ almost surely converges. Furthermore, the limit $X_\infty = \lim_{n \to \infty} X_n$ a.s. satisfies the following inequality</p>
+
+\[\Ev{X_\infty}{\sB_n} \leq X_n, \quad n \ \in \mathbb{N}.\]
+
+<p><em>Proof</em>.</p>
+
+<p>First, we’ll discuss what it means that a sequence of real numbers converges.</p>
+
+<p>Given a sequence of real number $(x_n)$ in $\R^*$ and a pair of real number $a, b$ where $a&lt;b$, let us define $\nu_k (k \geq 1)$ as some special moments in time, where</p>
+
+\[\begin{align*}
+\nu_1 &amp;= \min\{n: n \geq 1, x_n \leq a\} \\
+\nu_2 &amp;= \min\{n: n \geq \nu_1, x_n \geq b\} \\
+\nu_3 &amp;= \min\{n: n \geq \nu_2, x_n \leq a\} \\
+\nu_4 &amp;= \min\{n: n \geq \nu_3, x_n \geq b\} \\
+&amp; \vdots .
+\end{align*}\]
+
+<p>If some $\nu_k$ is not defined, we put it equal to $\infty$ and all subsequent indices. Let $\beta_{a, b}$ be the largest value of $p$ where $\nu_{2p}$ is finite. If all $\nu_k$ are finite, then $\beta_{a, b} = \infty$. $\beta_{a, b}$ denote the number of upcrossings of the sequence $(x_n$) on $[a, b]$. We can see that</p>
+
+\[\liminf_{n \to \infty} x_n &lt; a &lt; b &lt; \limsup_{n \to \infty} x_n \Rightarrow \beta_{a, b} = \infty \Rightarrow \liminf_{n \to \infty} x_n \leq a &lt; b \leq \limsup_{n \to \infty} x_n.\]
+
+<p>Therefore, we can deduce that a sequence in $\R^*$ is convergent iff $\beta_{a, b} &lt;\infty$ for every $a &lt; b \in R$. Now, let’s considering the case of the sequence of r.v.s $(X_n)$. Note that the r.v.s $\nu_k(\omega$) are $\sB_n$-measurable. This is due to</p>
+
+<p>\(\{\nu_{2p} = n\} = \cup_{m &lt; n} \{\nu_{2p - 1} = m\: \mathrm{and}\: X_{m + 1} &lt; b, \dots, X_{n - 1} &lt; 1, X_n \geq b\},\)
+and a similar argument for the odd indices. The event {$\beta_{a, b} \geq p$} $=$ {$\nu_{2p} &lt; \infty$} shows that $\beta_{a, b}$ is also an r.v. Hence, the convergence criterion is</p>
+
+\[\{X_n \to \cdot\} = \cap_{a &lt; b \in \R} \{\beta_{a, b} &lt; \infty\} \stackrel{\Q\, \text{is dense}}{=} \cap_{a &lt; b \in \Q} \{\beta_{a, b} &lt; \infty\}.\]
+
+<hr />
+<p><strong>Rationals are dense.</strong> (<a href="https://link.springer.com/book/10.1007/978-981-19-7261-4">Analysis 1</a>) If $x$ and $y$ are two rationals that $x &lt; y$, then there exists a third rational $z$ such that $x &lt; z &lt; y$.</p>
+
+<p><em>Proof</em>.</p>
+
+<p>Set $z := \frac{x + y}{2}$. Since $x &lt;y$, then $\frac{x}{2} &lt; \frac{y}{2}$. If we add $\frac{y}{2}$ to the both sides, we get $z &lt; y$. A symmetrical argument shows $x &lt; z$, hence $x &lt; z &lt; y$. $\square$</p>
+
+<p><strong>A homeomorphism</strong>. (<a href="https://www.amazon.ca/Topology-2nd-James-Munkres/dp/0131816292">Topology</a>) Let $X$ and $Y$ be
+topological spaces (like open intervals); let $f: X \to Y$ be a bijection. 
+If both the function $f$ and the inverse function $f^{-1}: Y \to X$ are continuous, 
+then $f$ is called homeomorphism. You may have studied in modern algebra the notion of an isomorphism between
+algebraic objects such as groups or rings. An isomorphism is a bijective 
+correspondence that preserves the algebraic structure involved. The analogous concept in topology i s that of
+homeomorphism; i t is a bijective correspondence that preserves the topological structure involved.</p>
+
+<hr />
+<p>Hence, to prove our proposition, we need to prove $\beta_{a, b} &lt; \infty$ a.s. for every $0 &lt; a &lt; b \in \R$. We only considered positive numbers since $(X_n)$ is positive and we have a homeomorphism between $\R^*$ and $[0, \infty]$ using $f(x) = x, x \geq 0$.</p>
+
+<p>To this end, we need the Dubin’s inequalities.</p>
+
+<hr />
+<p><strong>Dubin’s inequalities</strong>.  For every positive super martingale $(X_n)$ the upcrossing numbers are r.v.s satisfying</p>
+
+\[\Pr{\beta_{a, b} \geq k}{\sB_0} \leq \left(\frac{a}{b}\right)^k \min\left(\frac{X_0}{a}, 1\right),\]
+
+<p>for every integer $k \geq 1$ and real numbers $a &lt; b$. Therefore, r.v.s $\beta_{a, b}$ are a.s. finite.</p>
+
+<p><em>Proof</em>. First note that the set of stopping times {$\omega: \nu_k(\omega) =n$} belong to $\sB_n$ so $\nu_k$ are $\sB_n$-measurable. Now extending the master lemma, we can define the following supermartingale:</p>
+
+\[\begin{align*}
+Y_n &amp; =1 \quad \mathrm{if}\: 0 \leq n &lt; \nu_1,
+\\
+&amp;= \frac{X_n}{a} \quad \mathrm{if}\: \nu_1 \leq n &lt; \nu_2,
+\\
+&amp;= \frac{b}{a} \cdot 1 \quad \mathrm{if}\: \nu_2 \leq n &lt; \nu_3, \\
+&amp; \vdots
+\\
+&amp; = \left(\frac{b}{a}\right)^{k -1} \cdot \frac{X_n}{a} \quad \mathrm{if}\: \nu_{2k - 1} \leq n &lt; \nu_{2k},
+\\
+&amp; = \left(\frac{b}{a}\right)^{k} \quad \mathrm{if}\: n \geq \nu_{2k}.
+\end{align*}\]
+
+<p>In fact we have that:</p>
+
+\[\begin{align*}
+1 &amp;\geq \frac{X_{\nu_1}}{a},
+\\
+\frac{X_{\nu_2}}{a} &amp;\geq \frac{b}{a},
+\\
+&amp;\vdots
+\\
+\left(\frac{b}{a}\right)^{k - 1} \cdot \frac{X_{\nu_{2k}}}{a} &amp;\geq \left(\frac{b}{a}\right)^k.
+\end{align*}\]
+
+<p>By construction we have that $Y_0 = \min\left(1, \frac{X_0}{a}\right)$.  Since {$Y_n$} is a supermartingale we have that $Y_0 \geq \Ev{Y_n}{\sB_0}$. Also on the set {$n \geq \nu_{2k}$}, $Y_n \geq \left(\frac{b}{a}\right)^{k}$, or equivalently $Y_n \geq \left(\frac{b}{a}\right)^{k} \cdot \I${$n \geq \nu_{2k}$}. Using all these facts, we have:</p>
+
+\[\begin{align*}
+\left(\frac{b}{a}\right)^k \Pr{\nu_{2k} \leq n}{\sB_0} \leq \min\left(1, \frac{X_0}{a}\right).
+\end{align*}\]
+
+<p>All that remains is to let $n \to \infty$ and noting that {$\nu_{2k} &lt; \infty$} $=$ {$\beta_{a,b} \geq k$}. $\square$
+___</p>
+
+<p>The final part of the proof involves showing that the limit $X_\infty = \lim_{n \to \infty} X_n$ a.s. satisfies the following inequality</p>
+
+<p>\(\Ev{X_\infty}{\sB_n} \leq X_n, \quad n \ \in \mathbb{N}.\)
+The inequality</p>
+
+\[\Ev{\inf_{m \geq n} X_m}{\sB_p} \leq \Ev{X_n}{\sB_p} \leq X_p\]
+
+<p>is valid if $n &gt; p$. Let $n$ tend to infinity, then</p>
+
+\[\Ev{X_\infty}{\sB_p} = \lim_{n \to \infty} \Ev{\inf_{m \geq n} X_m}{\sB_p} \leq X_p, \quad p \in \mathbb{N}.\]
+
+<p>where we used the Lebesgue dominated convergence theorem to exchange the expectation and the limit because $\left(\inf_{m \geq n} X_m, \, n \in \mathbb{N}\right)$ is an increasing bounded convergent sequence in $n$. The proof is completed.</p>
+
+<p>We had already showed that $\sup_n X_n &lt; \infty$ on {$X_0 &lt; \infty$}, which implies that $X_\infty &lt; \infty$ on {$X_0 &lt; \infty$}; applying this result to the supermartingale $(X_n, n \geq p)$ adapted to the sequence $(\sB_n, n \geq p)$,  we find that $X_\infty$ a.s. on {$X_p &lt; \infty$} for all $p \in \mathbb{N}$ which is another way of completing the last part of our proof.</p>
+
+<p><em>The end! :)</em></p>
+
+<iframe src="https://giphy.com/embed/3o7TKEP6YngkCKFofC" width="480" height="365" style="" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>
+<p><a href="https://giphy.com/gifs/tvlandclassic-andy-griffith-the-show-3o7TKEP6YngkCKFofC">via GIPHY</a></p>]]></content><author><name>Alireza Kazemipour</name></author><category term="learning" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Some cool things about finite Markov chains and thereof</title><link href="https://alirezakazemipour.github.io/posts/2025/09/mrkv-chns/" rel="alternate" type="text/html" title="Some cool things about finite Markov chains and thereof" /><published>2025-09-23T00:00:00-07:00</published><updated>2025-09-23T00:00:00-07:00</updated><id>https://alirezakazemipour.github.io/posts/2025/09/mrkv-chns</id><content type="html" xml:base="https://alirezakazemipour.github.io/posts/2025/09/mrkv-chns/"><![CDATA[<p>In this post, I wanna summarize Sections 1.5 and 1.6 of <a href="https://archive.org/details/introduction-to-stochastic-process-lawler/mode/1up?view=theater">Introduction to Stochastic Processes</a> and kinda blew my mind.</p>
+
+<p>Okay, so we’re dealing with finite Markov chains {$X_n$} that have transition matrix $P$. A markov chain can have some recurrent classes and some transient states. Therefore, we can divide $P$ in blocks that represent these concepts. Concretely,</p>
+
+\[P = \left(\begin{array}{c|c}
+\tilde{P} &amp; 0 \\
+\hline
+S &amp; Q
+\end{array}\right),\]
+
+<p>where $\tilde{P}$ contains the transitions of recurrent classes and $Q$ contains the transitions of transient states. The matrix $Q$ is a substochastic matrix and since it only contains transient states, its eigenvalues are strictly less than one, which implies $\lim_{n \to \infty} Q^n \to 0$.</p>
+
+<hr />
+<p>So, now let’s prove that if a matrix $A$ has eigenvalues less than one, then $\lim_{n \to \infty} A^n \to 0$.  We know that we can write any matrix $A$ in its Jordan form as $A = M J M^{-1}$, hence $A^n = MJ^nM^{-1}$. The matrix $J$ is of the form</p>
+
+\[J = \begin{pmatrix} J_1 &amp; \\ &amp; \ddots \\ &amp; &amp; J_s\end{pmatrix},\]
+
+<p>where</p>
+
+\[J_i =\begin{pmatrix}
+\lambda_i &amp; 1 &amp; \\
+&amp;  . &amp; . &amp; \\
+&amp;  &amp; . &amp; 1 \\
+&amp;  &amp;  &amp; \lambda_i
+\end{pmatrix}.\]
+
+<p>As $n$ tends to infinity, $J^n$ tends to zero, and as a result $A^n$ tends to zero.</p>
+
+<hr />
+<p>Let $i$ be a transient state and $Y_i$ denote the total number of visits to $i$ which by the virtue of being a transient state is finite almost surely. Suppose $X_0 =j$, where $j$ is another transient state. Then,</p>
+
+\[\begin{align*}
+\mathbb{E}[Y_i \mid X_0 = j] &amp; = \mathbb{E}\left[\sum_{n=0}^\infty \mathbb{I}\left\{X_n = i \right\} \mid X_0=j \right] \\
+&amp; = \sum_{n=0}^\infty \mathbb{P}\left(\{X_n = i\} \mid X_0=j \right) \\
+&amp; = \sum_{n = 0}^\infty p_n(j, i) \\
+&amp; = \left(I + P + P^2 \dots \right)_{ji} \\
+&amp; = \left(I + Q + Q^2 \dots \right)_{ji} &amp; \text{(We kept the indices)}.
+\end{align*}\]
+
+<p>However, we’ll show right away that $\left(I + Q + Q^2 \dots \right)(1 - Q) = I$.</p>
+
+<hr />
+<p><em>By ChatGPT</em>.</p>
+
+<p>Let $A$ be any matrix with eigenvalues’s magnitude strictly less than one, then</p>
+
+\[S := I + A + A^2 + \dots = (I - A)^{-1}.\]
+
+<p><em>Proof</em>.</p>
+
+<p>Consider the partial sum</p>
+
+<p>\(S_n = \sum_{k =0}^n A^k.\)
+Then,</p>
+
+\[\begin{align*}
+(I - A) S_n \stackrel{\text{telescopic sum}}{=} I - A^{n + 1}
+\end{align*}.\]
+
+<p>Hence,</p>
+
+<p>\(\begin{align*}
+S_n = (I - A)^{-1}\left(I - A^{n + 1}\right)
+\end{align*}.\)
+As $n$ tends to infinity, $S_n$ tends to $(I - A)^{-1}$.</p>
+
+<hr />
+
+<p>Therefore, define $M = (1 - Q)^{-1}$ to get $\mathbb{E}[Y_i \mid X_0 = j] = M_{ji}$. The upshot is: If we want to compute the expected number of steps until the chain enters a recurrent class, assuming $X_0 = j$, we need only sum $M_{ji}$ over all transient states $i$.</p>
+
+<p>We can also use this technique to determine the expected number of steps that an <em>irreducible</em> Markov chain takes to go from one state $j$ to another state $i$. We first write the transition matrix $P$ for the chain with $i$ being the first pivot:</p>
+
+\[P = \left(
+\begin{array}{c|c}
+P(i, i) &amp; R \\
+\hline
+S &amp; Q
+\end{array}
+\right).\]
+
+<p>We then change $i$ to an absorbing state</p>
+
+\[\widetilde{P} = \left(
+\begin{array}{c|c}
+1 &amp; \mathbf{0} \\
+\hline
+S &amp; Q
+\end{array}
+\right).\]
+
+<p>Let $T_i$ be the number of steps needed to reach state $i$. For any other state $k$ let $T_{i,k}$ be the number of visits to $k$ before reaching $i$.Then,</p>
+
+\[\mathbb{E}\left[T_i \mid X_0=j \right] = \mathbb{E}\left[\sum_{k\neq i} T_{i, k} \mid X_0=j \right] = \sum_{k \neq i}M_{jk}.\]
+
+<p>We now suppose that there are at least two different recurrent classes and ask the question: starting at a given transient state $j$, what is the probability that the Markov chain eventually ends up in a particular recurrent class?</p>
+
+<p>In order to answer this question, we can assume that the recurrent classes consist</p>
+
+<p>of single points $r_1,\dots , r_k$ with $p(r_i, r_i) = 1$. If we order the states so that the recurrent states $r_1,\dots , r_k$ precede the transient states $t_1, \dots, t_s$, then</p>
+
+\[\widetilde{P} = \left(
+\begin{array}{c|c}
+I &amp; \mathbf{0} \\
+\hline
+S &amp; Q
+\end{array}
+\right).\]
+
+<p>For $i = 1,\dots , s, \, j = 1,\dots , k$, let $\alpha(t_i, r_j)$ be the probability that the chain</p>
+
+<p>starting at $t_i$ eventually ends up in recurrent state $r_j$. We set $\alpha(r_i, r_i) = 1$ and $\alpha(r_i, r_j) = 0 \; \mathrm{if}\, i \neq j$. For any transient state $t_i$ and some $n$,</p>
+
+\[\begin{align}
+\alpha(t_i, r_j) &amp;= \mathbb{P}(X_n = r_j \mid X_0 = t_i) \\
+&amp; = \sum_{x \in S} \mathbb{P}(X_1 = x \mid X_0 = t_i) \mathbb{P}(X_n = r_j \mid X_1 = x) \\
+&amp; = \sum_{x \in S} P(t_i, x) \alpha(x, r_j).
+\end{align}\]
+
+<p>In the matrix form, if $A$ is an $s \times k$ matrix with $\alpha(t_i, r_j)$ entries, then the above display can be written as:</p>
+
+<p>\(\begin{pmatrix}
+I \\
+A
+\end{pmatrix} = P \begin{pmatrix}
+I \\
+A
+\end{pmatrix} = \begin{pmatrix}
+I &amp; 0 \\
+S &amp; Q
+\end{pmatrix}
+\begin{pmatrix}
+I \\
+A
+\end{pmatrix}.\)
+Hence,</p>
+
+\[A = S + QA \Rightarrow A = (I - Q)^{-1}S = MS.\]
+
+<p><strong>Example</strong>. Consider a random walk with absorbing boundary on {$0, 1, \dots, 4$}. If we order the states {$0, 4, 1, 2, 3$} so that the recurrent states precede the transient states then</p>
+
+\[P = 
+\left(
+\begin{array}{cc|ccc}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+\hline
+1/2 &amp; 0 &amp; 0 &amp;1/2 &amp; 0 \\
+0 &amp; 0 &amp; 1/2 &amp; 0 &amp; 1/2 \\
+0 &amp; 1/2 &amp; 0 &amp; 1/2 &amp; 0
+\end{array}
+\right)\]
+
+<p>Then,</p>
+
+\[S = \begin{pmatrix}
+1/2 &amp; 0 \\
+0 &amp; 0 \\
+0 &amp; 1/2
+\end{pmatrix}
+\quad
+M = \begin{pmatrix}
+3/2 &amp; 1 &amp; 1/2 \\
+1 &amp; 2 &amp; 1 \\
+1/2 &amp; 1 &amp; 3/2
+\end{pmatrix}
+\quad
+MS = \begin{pmatrix}
+3/4 &amp; 1/4 \\
+1/2 &amp; 1/2 \\
+1/4 &amp; 3/4
+\end{pmatrix}.\]
+
+<p>Hence , starting at state 1 the probability that the the walk is eventually absorbed at state 0 is 3/4.</p>
+
+<p><strong>Example</strong> (Gambler’s ruin). Consider the random walk with absorbing boundary on {$0, \dots , N$}. Let $\alpha(j) = \alpha(j, N)$ be the probability that the walker starting at state $j$ eventually ends up absorbed in state $N$. The boundary conditions are $\alpha(0) = 0, \alpha(N) = 1$. For state $0 &lt; j &lt; N$ we have:</p>
+
+\[\alpha(j) = (1 - p)\alpha(j - 1) + p \alpha(j+1)\]
+
+<p>This is a linear difference equation. So, let’s solve it. We need to test $\alpha(j) = \lambda^j$ in the equation:</p>
+
+\[\begin{align}
+&amp;\lambda^j = (1 - p)\lambda^{j - 1} + p \lambda^{j + 1} \Rightarrow \\ 
+&amp;\lambda = (1 - p) + p\lambda^2 \Rightarrow \\
+&amp;\lambda
+= \frac{-1/p \pm \sqrt{1/p^2 - 4\frac{1 - p}{p}}}{2} \\ 
+&amp;= \frac{-1 \pm \sqrt{1 - 4(1 - p)p}}{2p} \\ 
+&amp; = \frac{-1 \pm \sqrt{4p^2 - 4p + 1}}{2p} \\
+&amp; = \frac{-1 \pm \sqrt{(2p - 1)^2}}{2p} \Rightarrow \\
+&amp;\lambda = \begin{cases}
+\frac{p - 1}{p} &amp; p\neq 1/2 \\
+1 &amp; p\neq 1/2 \\
+-1 &amp; p = 1/2
+\end{cases}.
+\end{align}\]
+
+<p>Hence,</p>
+
+\[\alpha(j) = \begin{cases}
+c_1 + c_2(1 - 1/p)^j &amp; p \neq 1/2 \\
+c_1 + jc_2 &amp; p = 1/2
+\end{cases}.\]
+
+<p>After applying the boundary conditions:</p>
+
+\[\alpha(j) = \begin{cases}
+\frac{(1 - 1/p)^j - 1}{1 - (1 - 1/p)^N} &amp; p \neq 1/2 \\
+j/N &amp; p = 1/2
+\end{cases}.\]
+
+<p>Suppose $p = 1/2$, and let $T$ be the time it takes for the random walk to reach $0$ or $N$, and let</p>
+
+\[G(j) = \mathbb{E}[T \mid X_0 = j].\]
+
+<p>$G(0) = 0, G(N) = 0$ and by considering one step we can that</p>
+
+\[G (j) = 1 + 1/2 G (j - 1) + 1/2 G (j + 1), \quad j = 1,\dots , n - 1.\]
+
+<p>As an inhomogeneous linear difference equation, $G(j) = j^2$ is a solution. After solving the homogeneous version, we get:</p>
+
+\[G(j) = j^2 + c_1 + c_2j.\]
+
+<p>After applying the boundary conditions, we get:</p>
+
+\[G(j) = j(N - j).\]
+
+<hr />
+<p><strong>Example</strong> Simple Random Walk on a Circle. Let $N \geq 2$ be an integer. We can consider {$0, 1, … , N -1$} to be a “circle” by assuming that $N - 1$ is adjacent to $0$ as well as $N -2$. The invariant probability is the uniform distribution (why?). Assume that $X_0 = 0$ and let $T_k$ denote the first time at which the number of distinct points visited equals $k$. Then $T_N$ is the first time that every point has been visited. By definition  $T_1 = 0$, and $T_2 = 1$. We compute $r(k) = \mathbb{E}[T_k - T_{k-1}]$ for $k = 3,\dots , N$; a little thought will show that the value depends only on $k$ and not on $N$. At time $T_{k-1}$ the chain is at a boundary point so that one of the neighbors of $X_{T_{k - 1}}$, has been visited and the other has not. In the next step we will either visit the new point or we will go to an interior point. If we go to the interior point, the random walk has to continue until it reaches a boundary point and then we start afresh. By $G(j) = j(N - j)$ above, the expected time that it takes the random walk from the interior point (next to the boundary point) to reach a boundary point within {$1, \dots k - 1$} is</p>
+
+\[G(2) = (2-1) (k - 1 - 2) = k - 3\]
+
+<p>We therefore get the equation</p>
+
+<p>\(r(k) = 1/2 + 1/2[1 + (k - 3) + r(k)].\)
+Therefore,</p>
+
+\[\mathbb{E}[T_N] = \sum_{k = 2}^{n} r(k).\]
+
+<hr />
+<p><strong>Example</strong> (Urn Model). Suppose there is an urn with $N$ balls. Each ball is colored either red or green. In each time period, one ball is chosen at random from the urn and with probability $1/2$ is replaced with a ball of the other color; otherwise, the ball is returned to the urn. Let $j$ denote the number of red balls. This chain would tend to keep the number of red balls and green balls about the same. In fact, the invariant probability is given by the binomial distribution</p>
+
+<p>\(\pi(j) = {N \choose j}\frac{1}{2^N}.\)
+<em>Proof</em>.</p>
+
+\[\begin{align}
+(\pi P)(j) &amp;= \sum_{k = 0}^N\pi(k) P(k, j) \\
+&amp; = \pi(j - 1)P(j - 1, j) + \pi(j)P(j, j) + \pi(j + 1)P(j + 1, j) \\
+&amp; = \frac{1}{2^N}{N \choose j - 1}\frac{N - (j - 1)}{2N} + \frac{1}{2^N}{N \choose j}\frac{1}{2} + \frac{1}{2^N}{N \choose j + 1}\frac{j + 1}{2N} \\
+&amp; = \frac{1}{2^N} \left[{N \choose j - 1}\frac{N - (j - 1)}{2N} + {N \choose j}\frac{1}{2} + {N \choose j + 1}\frac{j + 1}{2N}\right]
+\end{align}.\]
+
+<p>And,</p>
+
+\[{N \choose j + 1}\frac{j + 1}{2N} = {N \choose j}\frac{N - j}{2N}, \quad  {N \choose j - 1}\frac{N - (j - 1)}{2N} = {N \choose j}\frac{j}{2N}.\]
+
+<p>Hence, their sum equals ${N \choose j}\frac{1}{2}$ and we have:</p>
+
+\[(\pi P)(j) = \sum_{k = 0}^N\pi(k) P(k, j) = {N \choose j}\frac{1}{2^N} = \pi(j). \square\]
+
+<hr />
+<p><strong>Example</strong> (Cell Genetics). Suppose each cell has $N$ particles each of type $I$ or $II$. Let $j$ be the number of particles of type $I$. In reproduction, it is assumed that the cell duplicates itself and then splits, distributing the particles. After duplication, the cell has $2j$ particles of type $I$ and $2(N - j)$ particles of type $II$. It then selects $N$ of these $2N$ particles for the next cell. By using the hypergeometric distribution we see that this gives rise to transition probabilities</p>
+
+\[P(j, k) = \frac{\binom{2j}{k}{2(N - j) \choose N - k}}{\binom{2N}{N}}.\]
+
+<p>This Markov chain has two absorbing states, $0$ and $N$. Eventually, all cells will have only particles of type
+$I$ or of type $II$.</p>
+
+<hr />
+<p><strong>Example</strong> (Card shuffling). Consider a deck of cards numbered $1, \dots, n$. At each time we draw a card at random and placing it at the top of the deck. This can be thought of as a Markov chain on $S_n$, the set of permutations of $n$ elements. If $\lambda$ denotes any permutation (one-to-one</p>
+
+<p>correspondence of {$1,\dots, n$} with itself), and $\nu_j$ denotes the permutation corresponding to moving the $j$th card to the top of the deck, then the transition probabilities for this chain are given by</p>
+
+\[p(\lambda, \nu_j \lambda) = \frac{1}{n}, \quad j = 1, \dots ,n.\]
+
+<p>This chain is irreducible and aperiodic (we have self-loops). The unique invariant probability is the uniform measure on $S_n$, the measure that assigns probability $1/n!$ to each permutation (how?).</p>]]></content><author><name>Alireza Kazemipour</name></author><category term="learning" /><summary type="html"><![CDATA[In this post, I wanna summarize Sections 1.5 and 1.6 of Introduction to Stochastic Processes and kinda blew my mind.]]></summary></entry><entry><title type="html">A reminder on Student’s t-distribution and p-values</title><link href="https://alirezakazemipour.github.io/posts/2025/08/t-dstrbtn-p-vls/" rel="alternate" type="text/html" title="A reminder on Student’s t-distribution and p-values" /><published>2025-09-14T00:00:00-07:00</published><updated>2025-09-14T00:00:00-07:00</updated><id>https://alirezakazemipour.github.io/posts/2025/08/t-dstrbtn-p-vls</id><content type="html" xml:base="https://alirezakazemipour.github.io/posts/2025/08/t-dstrbtn-p-vls/"><![CDATA[<p>Let’s see what Sir <a href="https://www.stat.cmu.edu/~brian/valerie/617-2022/0%20-%20books/2004%20-%20wasserman%20-%20all%20of%20statistics.pdf">Larry Wasserman</a> has to tell us about it.</p>
+
+<p>So we’re in the realm of hypothesis testing [<a href="https://stat.cmu.edu/~aramdas/icml25/ramdas1.pdf">Aaditya Ramdas</a> calls it stochastic proof by contraction, <em>I<br />
+love this phrase</em>]. Suppose we divide our parameter space $\Theta$ into two disjoint sets $\Theta_0$ and $\Theta_1$.<br />
+We wish to test</p>
+
+<p>\(H_0: \theta \in \Theta_0 \quad\text{versus} \quad H_1: \theta \in \Theta_1\).</p>
+
+<p>We call $H_0$ the null hypothesis that we’d like to reject. Because it says nothing interesting is going on <br />
+(hence the name null). Let $\mathbb{P}_\theta$ be a probability distribution with support $\mathcal{X}$<br />
+parameterized by $\theta$. Define $\mathcal{R} \subset \mathcal{X}$ called the rejection region.<br />
+Let $X \sim \mathbb{P}$<sub>$\theta$</sub>$(\cdot)$. Then, if</p>
+
+\[X \in \mathcal{R} \Rightarrow \text{ reject } H_0, \\  
+X \notin \mathcal{R} \Rightarrow \text{ retain } H_0.\]
+
+<p>Usually, the rejection region is of the form</p>
+
+\[R = \{x \in \mathcal{X}: T(x) &gt; c \},\]
+
+<p>where $T$ is a  test statistic and $c$ is a  critical value. The problem in hypothesis testing is to find an appropriate  test statistic $T$ and an appropriate critical value $c$.</p>
+
+<p>P.S.: A test statistic is  a single number calculated from sample data that is used to evaluate a hypothesis in statistical analysis. It quantifies the difference between the observed data and what would be expected if the null hypothesis were true. Essentially, it helps determine how compatible your data is with a specific hypothesis.</p>
+
+<p><strong>Definition</strong>: The power function of a test with rejection region $\mathcal{R}$ is defined by</p>
+
+\[\beta(\theta) = \mathbb{P}_\theta(X \in \mathcal{R}).\]
+
+<p>The size of a test is defined to be</p>
+
+\[\sup_{\theta \in \Theta_0} \beta(\theta).\]
+
+<p>A test is said to have level $\alpha$ if its size is less than or equal to $\alpha$.<br />
+Basically, the level $\alpha$ specifies the <strong>maximum</strong> probability of rejection the null hypothesis.</p>
+
+<p><strong>Definition</strong> (The Wald test). Consider testing:</p>
+
+\[H_0: \theta = \theta_0 \quad \mathrm{versus} \quad H_1: \theta = \theta_1.\]
+
+<p>Assume under $H_0$, $\hat{\theta}$ is asymptotically normal, i.e., as $n$ tends to infinity $\frac{\hat{\theta} -  \theta_0}{\hat{\sigma}}$ tends to $\mathcal{N}(0, 1)$ due to central limit theorem. Then, the size $\alpha$ Wald test is: reject $H_0$, when $|W|\geq F_W^{-1}(\frac \alpha2)$, where $W = \frac{\hat{\theta} -  \theta_0}{\hat{\sigma}}$ and $F_W$ is the law of $W$.</p>
+
+<p>The Wald test uses the central limit theorem and is only asymptotically valid. The <em>t-test</em> is instead used where we have finite sample size, with the caveat that we assume the data is coming from a Normal distribution. A random variable $T$ has a (Student’s) t-distribution with $k$ degrees of freedom with the following density function:</p>
+
+\[f(t_k) = \frac{\Gamma(\frac{k + 1}{2})}{\sqrt{k\pi}\Gamma(\frac{k}{2})(1 + \frac{t^2}{k})^{\frac{k+1}{2}}},\]
+
+<p>where $\Gamma(\alpha) = \int_0^\infty y^{\alpha - 1}e^{-y}dy$ is the gamma function. The t-distribution is equal to the Cauchy distribution $\left(f(x) = \frac{1}{\pi(1 + x^2)}\right)$ when $k=1$, and as $k$ tends to infinity, it tends to the normal distribution.</p>
+
+<p>Now, assume $X_1, X_2 \dots, X_n \sim \mathcal{N}(\mu, \sigma^2)$, where $\theta = (\mu, \sigma)$ are both unknown. Suppose we want to test $\mu = \mu_0$ versus $\mu \neq \mu_0$. Let</p>
+
+<p>\(T = \frac{\hat{\mu} - \mu_0}{\hat{\sigma}}.\)
+The same as the Wald test, for large $n$, $T \sim \mathcal{N}(0, 1)$ under $H_0$. However, the exact distribution of $T$ under $H_0$ has the $f(t_{n -1})$ density, i.e., the t-distribution with $n - 1$ degrees of freedom. Hence if we reject when $|T| \geq F_T^{-1}(\frac \alpha 2)$ then we get a size $\alpha$ test.</p>
+
+<hr />
+
+<p>To define the $p$-values, unfortunately Larry Wassermann doesn’t transition smoothly and uses $\alpha$ for different things that made me confused. That said, for the following don’t assume that $\alpha$ was defined above.</p>
+
+<p><strong>Definition</strong>. Let $X^n = (X_1, X_2, \dots, X_n)$ (n-fold Cartesian product of the random variable $X$). Suppose<br />
+that for very $\alpha \in (0, 1)$,  we have a size $\alpha$ test with rejection region $\mathcal{R}_\alpha$, Then,</p>
+
+\[p\text{-value} = \inf\{\alpha: T(X^n) \in \mathcal{R}_\alpha\}\]
+
+<p>That is, the $p$-value is the smallest level (<strong>probability</strong>) at which we can reject $H_0$ [quite the opposite of the definition above that involved $\beta$].</p>]]></content><author><name>Alireza Kazemipour</name></author><category term="learning" /><summary type="html"><![CDATA[Let’s see what Sir Larry Wasserman has to tell us about it. So we’re in the realm of hypothesis testing [Aaditya Ramdas calls it stochastic proof by contraction, I love this phrase]. Suppose we divide our parameter space $\Theta$ into two disjoint sets $\Theta_0$ and $\Theta_1$. We wish to test \(H_0: \theta \in \Theta_0 \quad\text{versus} \quad H_1: \theta \in \Theta_1\). We call $H_0$ the null hypothesis that we’d like to reject. Because it says nothing interesting is going on (hence the name null). Let $\mathbb{P}_\theta$ be a probability distribution with support $\mathcal{X}$ parameterized by $\theta$. Define $\mathcal{R} \subset \mathcal{X}$ called the rejection region. Let $X \sim \mathbb{P}$$\theta$$(\cdot)$. Then, if \[X \in \mathcal{R} \Rightarrow \text{ reject } H_0, \\ X \notin \mathcal{R} \Rightarrow \text{ retain } H_0.\] Usually, the rejection region is of the form \[R = \{x \in \mathcal{X}: T(x) &gt; c \},\] where $T$ is a test statistic and $c$ is a critical value. The problem in hypothesis testing is to find an appropriate test statistic $T$ and an appropriate critical value $c$. P.S.: A test statistic is a single number calculated from sample data that is used to evaluate a hypothesis in statistical analysis. It quantifies the difference between the observed data and what would be expected if the null hypothesis were true. Essentially, it helps determine how compatible your data is with a specific hypothesis. Definition: The power function of a test with rejection region $\mathcal{R}$ is defined by \[\beta(\theta) = \mathbb{P}_\theta(X \in \mathcal{R}).\] The size of a test is defined to be \[\sup_{\theta \in \Theta_0} \beta(\theta).\] A test is said to have level $\alpha$ if its size is less than or equal to $\alpha$. Basically, the level $\alpha$ specifies the maximum probability of rejection the null hypothesis.]]></summary></entry><entry><title type="html">Some reminders on Linear Algebra</title><link href="https://alirezakazemipour.github.io/posts/2025/09/lnr-algbr/" rel="alternate" type="text/html" title="Some reminders on Linear Algebra" /><published>2025-09-13T00:00:00-07:00</published><updated>2025-09-13T00:00:00-07:00</updated><id>https://alirezakazemipour.github.io/posts/2025/09/lnr-algbr</id><content type="html" xml:base="https://alirezakazemipour.github.io/posts/2025/09/lnr-algbr/"><![CDATA[<p>In this post I’ll mention a handful reminders of Linear Algebra.</p>
+
+<ul>
+  <li>We know that for an eigenvalue $\lambda$ of a matrix $A$ we have that $Ax = \lambda x$, or equivalently $(A - \lambda I)x = 0$. To find $\lambda$, we solve $\mathrm{det}(A - \lambda I) = 0$. But, why?</li>
+</ul>
+
+<p>The reason is that in order to find non-zero solutions of $(A - \lambda I)x = 0$, $(A - \lambda I)$ must be non-invertible, hence its determinant should be zero!</p>
+
+<p>Facts:</p>
+<ul>
+  <li>$\mathrm{trace}(A) = \lambda_1 + \lambda_2 + \dots$</li>
+  <li>
+    <p>$\mathrm{det}(A) = \lambda_1 \cdot \lambda_2 \dots$</p>
+  </li>
+  <li>Why $\mathrm{Det}(A) = \mathrm{Det}(A^\top)$ for any matrix $A$?</li>
+</ul>
+
+<p>We know that $PA = LU$ (using factorization by elimination), where $P$ is a permutation matrix (each row only has one element equal to one and the rest are zero), $L$ is a lower triangular matrix with its diagonal all equal to one, and $U$ is an upper triangular matrix with the pivots of $A$ on its diagonal. For$(PA)^\top = (LU)^\top$, we have that $A^\top P^\top = U^\top L^\top$. So,</p>
+
+\[\begin{align*}
+\mathrm{Det}(PA) &amp; = \mathrm{Det}(P)\cdot \mathrm{Det}(A) = \mathrm{Det}(L)\cdot \mathrm{Det}(U), \quad \mathrm{and} \\
+\mathrm{Det}\left((PA)^\top\right) &amp; = \mathrm{Det}\left(A^\top\right) \cdot \mathrm{Det}\left(P^\top\right) = \mathrm{Det}\left(U^\top\right)\cdot \mathrm{Det}\left(L^T\right).
+\end{align*}\]
+
+<p>We know since $L, U$ are triangular $\mathrm{Det}(L), \mathrm{Det}(U) = \mathrm{Det}\left(L^\top\right), \mathrm{Det}\left(U^\top\right)$. If $\mathrm{Det}(P) = \mathrm{Det}\left(P^\top\right)$, then it must be the case that $\mathrm{Det}(A) = \mathrm{Det}\left(A^\top\right)$. Now we prove that $\mathrm{Det}(P) = \mathrm{Det}\left(P^\top\right)$:</p>
+
+<p>Let $\pi \in S_n$ be a permutation and $P_\pi$ be the permutation matrix that is obtained by applying $\pi$ to the identity matrix. Then, $(P_\pi)_{ij} = 1$ if $i = \pi(j)$, and otherwise zero. Using Leibniz formula we have:</p>
+
+\[\mathrm{Det}(P_\pi) = \sum_{\sigma \in S_n}\mathrm{sgn}(\sigma) \Pi_{i = 1}^n (P_\pi)_{i\sigma(i)}.\]
+
+<p>They only way the inner product is non-zero is that if $\sigma = \pi$. 
+Hence, $\mathrm{Det}(P_\pi) = \mathrm{sgn}(\pi)$.  $\mathrm{sgn}(\pi)$ is equal to $(-1)^k$,
+where $k = \sum_{i = 1}^n \mathbb{I}${$i \neq \pi(i)$}. Hence, $\mathrm{Det}(P_\pi) = \pm 1$ . 
+Using the identity $PP^\top = I$, we have that $\mathrm{Det}(P)\cdot\mathrm{Det}(P^\top) = 1$. 
+Hence, $\mathrm{Det}(P)$ must be equal to $\mathrm{Det}\left(P^\top\right)$, so the identity holds. $\square$</p>
+
+<ul>
+  <li>Only full-rank matrices are invertible.</li>
+</ul>
+
+<p>Because if the matrix isn’t full-rank, then it means there is a null space which means there is an eigenvalue of zero,
+which means the determinant of the matrix is zero.</p>
+
+<h1 id="reference">Reference</h1>
+<ul>
+  <li><a href="https://math.mit.edu/~gs/linearalgebra/ila6/indexila6.html">Introduction to Linear Algebra</a></li>
+  <li>Google Gemini</li>
+</ul>]]></content><author><name>Alireza Kazemipour</name></author><category term="learning" /><summary type="html"><![CDATA[In this post I’ll mention a handful reminders of Linear Algebra.]]></summary></entry><entry><title type="html">Induction by Contradiction</title><link href="https://alirezakazemipour.github.io/posts/2025/09/indctn-by-cntrdctn/" rel="alternate" type="text/html" title="Induction by Contradiction" /><published>2025-09-12T00:00:00-07:00</published><updated>2025-09-12T00:00:00-07:00</updated><id>https://alirezakazemipour.github.io/posts/2025/09/indctn-by-cntrdctn</id><content type="html" xml:base="https://alirezakazemipour.github.io/posts/2025/09/indctn-by-cntrdctn/"><![CDATA[<p>In this post, we wanna prove <em>the correctness of the proof by induction itself</em>. Lol</p>
+
+<p><strong>Axiom</strong> (Well-ordering property). The well-ordering property of $\mathbb{N}$ states that if $S \subseteq \mathbb{N}$ and $S \neq \varnothing$, then there exists an $x \in S$ such that $x \leq y$ for all $y \in S$. In other words, there is always a smallest element.</p>
+
+<p><strong>Theorem</strong> (Induction). This concept was invented by Pascal in 1665. Let $P (n)$ be a statement depending on $n \in \mathbb{N}$. Assume that</p>
+
+<ol>
+  <li>
+    <p>(Base case) $P(1)$ is true and</p>
+  </li>
+  <li>
+    <p>(Inductive step) if $P(m)$ is true then $P(m + 1)$ is true.</p>
+  </li>
+</ol>
+
+<p>Then, $P(n)$ is true for all $n \in \mathbb{N}$.</p>
+
+<p><em>Proof</em>.</p>
+
+<p>Let $S = $  {$n \in \mid P(n)$ is not true}. We wish to show that $S= \varnothing$. We will prove this by contradiction. When we prove something by contradiction, we assume the conclusion we want is false, and then show that we will reach a false statement. Rules of logic thus imply that the initial statement must be false.</p>
+
+<p>Suppose that $S \neq \varnothing$. Then, by the well-ordering property of $\mathbb{N}$, $S$ has a least element $m \in S$. Since according to the theorem $P(1)$ is true, then it must be that $m &gt; 1$. Since $m$ is a least element of $S$, $m - 1 \notin S \Rightarrow P(m−1)$ is true. According to the theorem, this implies that $P(m)$ is true which implies that $m \in S$ by assumption. But, this is a contradiction. Thus $S = \varnothing$, and hence $P(n)$ is true for all $n \in \mathbb{N}$.</p>
+
+<h1 id="references">References</h1>
+<ul>
+  <li><a href="https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_lec110.pdf">Real Analysis</a></li>
+</ul>]]></content><author><name>Alireza Kazemipour</name></author><category term="learning" /><summary type="html"><![CDATA[In this post, we wanna prove the correctness of the proof by induction itself. Lol]]></summary></entry><entry><title type="html">When is a deterministic optimal policy in MDPs attainable?</title><link href="https://alirezakazemipour.github.io/posts/2025/09/dtrmnstc-mrkv-plcy/" rel="alternate" type="text/html" title="When is a deterministic optimal policy in MDPs attainable?" /><published>2025-09-10T00:00:00-07:00</published><updated>2025-09-10T00:00:00-07:00</updated><id>https://alirezakazemipour.github.io/posts/2025/09/dtrmnstc-mrkv-plcy</id><content type="html" xml:base="https://alirezakazemipour.github.io/posts/2025/09/dtrmnstc-mrkv-plcy/"><![CDATA[<p>In non-theory research papers, I often see that the optimal (deterministic Markov) policy for MDPs is defined as</p>
+
+\[\pi^* \in \arg\max_\pi v_\pi(s), \quad \forall s \in S,\]
+
+<p>where for a real-valued function $g$ on set $X$ $\arg\max$ is defined as</p>
+
+\[\arg\max_{x \in X} g(x) := \{x' \in X: g(x') \geq g(x), \: \forall x \in X \}.\]
+
+<p>But, if the $\max$ is unattainable the definition of the optimal policy is ill-defined. To rectify that, we can define the optimal policy $\pi^*$ as the policy  such that</p>
+
+\[v^*: = v_{\pi^*}(s) = \sup_\pi v_\pi(s), \quad \forall s \in S.\]
+
+<p>In this post, I wanna dig into Proposition 4.4.3 in <a href="https://onlinelibrary.wiley.com/doi/book/10.1002/9780470316887">Martin L. Puterman’s book</a>. So, here is the question: <strong>When is the supremum defined below attainable, i.e., $\sup = \max$?</strong></p>
+
+\[u^*_t(h_t) = \sup_{a \in A_s} \left\{r_t(s_t, a) + \sum_{j \in S}p_t(j \mid s_t, a)u^*_{t + 1}(h_t, a, j)\right\}.\]
+
+<p>In the above display, $u_t^*$ is optimal history dependent value function at time step $t$, $h_t = s_0, a_0, \dots, s_t$ is the history until time step $t$, $s_t$ is the state at time step $t$, $r_t$ is the deterministic reward function at time step $t$, $p_t$ is the transition dynamics at time step $t$, and $A_s$ is the set of available actions at state $s \in S$.</p>
+
+<p>Let’s first revisit the background we need.</p>
+
+<h1 id="background">Background</h1>
+
+<p>We will take limits, hence we need to make sure we can. For this, we need define the concepts of completeness and separability. I’ve already defined completeness in <a href="https://alirezakazemipour.github.io/posts/2025/08/sblv/">this post about Sobolev space</a>, so I only revisit separability here.</p>
+
+<h2 id="a-separable-metric-space">A separable metric space</h2>
+
+<p>First we need to know what is a dense a set.</p>
+
+<hr />
+<h3 id="a-dense-set">A dense set</h3>
+
+<p>Let $(X, D)$ be a metric space. Let $E \subset X$ be as subset and $\bar{E}$ be its closure. $E$ is dense if $\bar{E} = X$.</p>
+
+<hr />
+<p>A topological space X (which naturally can be thought of being generated by a metric distance that are open with respect to the metric distance) is separable if it has a countable dense subset, e.g., irrationals in reals. Or said differently: You can “approximate” any point in the space by points from a <strong>countable subset</strong>.</p>
+
+<h2 id="weak-convergence">Weak convergence</h2>
+
+<p>Let {$\mu_n$}$_{n \in \mathbb{N}}$ be a sequence of probability measures on $(X, \mathcal{F})$. We say that $\mu_n$ converges weakly to a probability measure $\mu$ on $(X, \mathcal{F})$ if $\int f d\mu_n = \int f d\mu$ for all bounded $\mathcal{F}$-measurable functions $f$.</p>
+
+<h2 id="semicontinuous-functions-aka-almost-everywhere-continuous-functions-not-jumpy-functions">Semicontinuous functions (a.k.a. almost everywhere continuous functions, not jumpy functions)</h2>
+
+<p>First we need to know what an open set is.</p>
+
+<hr />
+<h3 id="an-open-set">An open set</h3>
+
+<p>Let $(X, d)$ be a metric space. Given any $x \in X$ and $r &gt; 0$, define the open ball $B(x, r)$ centred at $x$ with radius $r$ to be the set of all $y \in X$ such that $d(x, y) &lt; r$. Given a set $E$, we say $x$ is an interior point of $E$ if there is some open ball centred at $x$, which is contained in $E$. A set is open if every point is an interior point</p>
+
+<hr />
+
+<p>Let $X$ be a complete separable metric space and $f$ a real-valued function on $X$. We say that $f$ is upper semicontinuous (u.s.c.) if, for any sequence ${x_n}$ of $X$’s elements which converges to $x^*$,</p>
+
+\[\lim\sup_{n \to \infty} f(x_n) \leq f(x^*).\]
+
+<p>Like</p>
+
+\[f(x) = \begin{cases}x + 1 &amp; \mathrm{if}\, x \geq 1 \\ x &amp; x &lt; 1 \end{cases}\]
+
+<p>and $x_n \to 1$. Similarly,
+$f$ is said to be lower semicontinuous (l.s.c.) whenever $-f$ is u.s.c., or equivalently,
+$\lim\inf_{n \to \infty} f(x_n) \geq f(x^*).$ A continuous function is both u.s.c and l.s.c.</p>
+
+\[f(x) = \begin{cases}x + 1 &amp; x &gt; 1\\ x &amp; x \leq 1\end{cases}\]
+
+<p>when  $x_n \to 1$ is l.s.c.</p>
+
+<hr />
+<p><strong>Lemma</strong> 1. Let $X$ be a complete separable metric space. Then,</p>
+<ol>
+  <li>If $f \geq 0$ and $g \geq 0$ are u.s.c. on $X$, then $fg$ is u.s.c. on $X$.</li>
+  <li>If $f,g$ are u.s.c. on $X$, then $f + g$ is u.s.c. on X.</li>
+  <li>If ${f_n}$ is a decreasing sequence of nonpositive u.s.c. functions on $X$, then $\lim_{n \to \infty} f_n$ is u.s.c. on $X$.</li>
+</ol>
+
+<p><em>Proof</em>. [ChatGPT]</p>
+
+<p>Part (1). 
+One convenient characterization of upper semicontinuity is that: $h$ is u.s.c. iff for every $\alpha \in \mathbb{R}$, the set {$x: h(x) &lt; \alpha$} is open.</p>
+
+<p>We will show that for every $c \in \mathbb{R}$ the set ${x \in X: f(x)g(x) &lt; c}$ is open. If $c \leq 0$, then $U_c = \varnothing$ because $f,g$ are nonnegative, and $\varnothing$ is open. So, fix $c &gt; 0$. We have</p>
+
+\[\{x \in X: f(x)g(x) &lt; c\} = \cup_{r &gt; 0} \{x \in X: f(x) &lt; r\; \mathrm{and} \;g(x) &lt; \frac{c}{r}\}.\]
+
+<p>So, $f,g$ are u.s.c, the sets ${x \in X: f(x) &lt; r } \; \mathrm{and} \; {x \in x: g(x) &lt; \frac{c}{r}}$ are open for any $r$, hence their intersection is open, and the union of open sets are open. $\square$</p>
+
+<p>Part (2). 
+A proof can be given similar to Part (1), however the result is also immediate from the definition of u.s.c.</p>
+
+<p>Part(3).
+Note that $f(x) := \lim_{n \to \infty}f_n(x) = \inf_{n}f_n(x)$. This indicates $f_1(x) \geq f_2(x) \geq \dots f_n(x) \geq \dots f(x)$. Hence since the sequence is decreasing, for each of the $f_n(x)$ that $f_n(x) &lt; c$ holds, it will hold for all $m &gt; n$, where $c$ is a real number. Hence,</p>
+
+\[\{x \in X:  f(x) &lt; c\} = \cup_{n =1}^\infty \{x \in X:  f_n(x) &lt; c\}.\]
+
+<p>The proof is completed by stating that since $f_n$s are u.s.c., ${x \in X:  f_n(x) &lt; c}$ is open and the union of open sets is open. $\square$</p>
+
+<p><strong>Proposition</strong> 1. Suppose $C$ is a compact subset of a complete separable metric space $X$, and $f$ is u.s.c. on $X$.
+Then there exists an $x^*$ in $C$ such that $f(x^*) \geq f(x)$ for all $x \in C.$</p>
+
+<p><em>Proof</em>. Let $y^* = \sup_{x \in C}f(x)$ and the corresponding $x$ by $x^*$. Let ${x_n}$ be a sequence in $C$ for which $\lim_{n \to \infty} f(x_n) = y^*$. Then, since $C$ is a compact subset of a complete separable metric space, there exists a subsequence ${x_{n_k}}$ which has a limit $x^*$. By since $f$ is u.s.c., then $f(x^*) \geq \lim_{k \to \infty}f(x_{n_k}) = y^*$. Hence, $f(x^*) = y^*$. $\square$</p>
+
+<p><strong>Proposition</strong> 2. Let $X$ be a countable set, $Y$ a complete separable metric space and $q(x, y)$ a bounded nonnegative real-valued function that is l.s.c. in $y$ for each $x \in X$. Let, $f(x)$ be bounded nonpositive real-values function on $X$ for which $\sum_{x \in X}f(x)$ is finite. Then,</p>
+
+\[h(y) = \sum_{x \in X}f(x)q(x, y)\]
+
+<p>is u.s.c on $Y$.</p>
+
+<p><strong>Proof</strong>. Based on the part (1) of the above Lemma 1, for each $x \in X, \; f(x)q(x, y) \leq 0$ is u.s.c. Let ${x_n}$ be an increasing sequence of finite subsets of $X$ such that $\cup_{n =1}^\infty X_n = X$. Then, by Lemma 1 we have that $h_n(y) := \sum_{x \in X_n} f(x)q(x, y)$ is u.s.c. in $y$ for each $n$. Since $h_n(y)$ is decreasing in $n$, by Part (3) of Lemma 1, $h(y) = \lim_{n \to \infty} h_n(y)$ is u.s.c. $\square$</p>
+
+<p>The following corollary. generalizes the previous proposition to nondiscrete sets. Note that a kernel $q(\cdot \mid y)$ on Borel subset of $X$ is continuous if $q(\cdot \mid y_n)$ converges weakly to $q(\cdot \mid y)$ whenever {$y_n$} converges to $y$. It means for a bounded measurable real-valued function $f$ on $X$,</p>
+
+\[\lim_{n \to \infty} \int_X f(x) q(dx \mid y_n) = \int_X f(x)q(dx \mid y).\]
+
+<p><strong>Corollary</strong>. 
+Let $X, Y$ be complete separable metric spaces, $f(x)$ a bounded u.s.c. function on $X$, and $q(\cdot \mid y)$ a continuous kernel on the Borel sets of $X$. Then, $h(y) := \int_X f(x) q(dx \mid y)$ is u.s.c. on $Y$.</p>
+
+<h1 id="main-body">Main body</h1>
+
+<p><strong>Proposition</strong>. Assume $S$ is finite or countable, and that</p>
+<ol>
+  <li>$A_s$ is finite for each $s \in S$, or</li>
+  <li>$A_s$ is a compact subset of a complete separable metric space, $r_t(s, a)$ is continuous in $a$ for each $s \in S$, there exists an $M &lt; \infty$ for which $|r_t(s_t, a)| &lt; M$ for all $a \in A_s$ and $s \in S$, and $p_t(j \mid s, a )$ is continuous in $a$ for each $j \in S$ and $s \in S$  and $t = 1,2,. . . , N$, or</li>
+  <li>$A_s$ is a compact subset of a complete separable metric space, $r_t(s, a)$ is u.s.c. in $a$ for each $s \in S$, there exists an $M &lt; \infty$ for which $|r_t(s_t, a)| &lt; M$ for all $a \in A_s$ and $s \in S$, and $p_t(j \mid s, a )$ is l.s.c. in $a$ for each $j \in S$ and $s \in S$  and $t = 1,2,. . . , N$.
+Then there exists a deterministic Markov policy which is optimal.</li>
+</ol>
+
+<hr />
+<p><em>Proof.</em></p>
+
+<p>We need to show that for each state $s$, there exists an action $a’ \in A_s$, for which</p>
+
+\[r_t(s, a') + \sum_{j \in S}p_t(j \mid s, a') u^*_{t + 1}(j) = \sup_{a \in A_s} \left\{r_t(s, a) + \sum_{j \in S}p_t(j \mid s, a) u^*_{t + 1}(j)\right\}.\]
+
+<p>If $A_s$ is finite the result is immediate. So, Part (1) follows naturally. Now consider the setting of Part (3). Since $|r_t(s_t, a)| &lt; M$ for all $a \in A_s$ and $s \in S$ and $t \in [N]$, Therefore, for each $t$, $u^*_t(s) - NM \leq 0$. Now we apply Proposition 2, where $X = S, f(x) = u^*_{t + 1}(x), \, \mathrm{and}\, q(x, y) = p_t(j \mid s, y)$ for a fixed state $x$. Then,</p>
+
+\[\sum_{j \in S}p_t(j \mid s, a)\left[u_{t + 1}^*(j) - NM\right]\]
+
+<p>is u.s.c., from which we can conclude that $\sum_{j \in S}p_t(j \mid s, a)u_{t + 1}^*(j)$ is u.s.c. because shifting by a constant doesn’t change the continuity. By, Part (2) of Lemma 1 we can conclude that $r_t(s, a) + \sum_{j \in S}p_t(j \mid s, a)u_{t + 1}^*(j)$ is u.s.c. in $a$ for each state $s$. Hence, by Proposition 1, the supermum over $A_s$ is attained. Part (2) is a special case of Part(3) since continuous functions are both upper and lower s.c. $\square$</p>
+<h1 id="references">References</h1>
+<ul>
+  <li><a href="https://onlinelibrary.wiley.com/doi/book/10.1002/9780470316887">Markov Decision Processes: Discrete Stochastic Dynamic Programming</a></li>
+  <li><a href="https://terrytao.wordpress.com/2009/01/30/254a-notes-8-a-quick-review-of-point-set-topology/">245B, Notes 8: A quick review of point set topology</a></li>
+  <li><a href="https://www.bios.unc.edu/~kosorok/">Introduction to Empirical Processes and Semiparametric Inference</a></li>
+  <li><a href="https://web.ma.utexas.edu/users/gordanz/notes/weak.pdf">Theory of Probability I</a></li>
+  <li><a href="https://www.probabilitycourse.com/chapter7/7_2_4_convergence_in_distribution.php">Introduction to Probability, Statistics, and Random Processes</a></li>
+  <li>ChatGPT [as always <em>:(</em>]</li>
+</ul>]]></content><author><name>Alireza Kazemipour</name></author><category term="learning" /><summary type="html"><![CDATA[In non-theory research papers, I often see that the optimal (deterministic Markov) policy for MDPs is defined as]]></summary></entry><entry><title type="html">Stochastic Approximation Part 1</title><link href="https://alirezakazemipour.github.io/posts/2025/09/stchstc-apprxmtn-1/" rel="alternate" type="text/html" title="Stochastic Approximation Part 1" /><published>2025-09-07T00:00:00-07:00</published><updated>2025-09-07T00:00:00-07:00</updated><id>https://alirezakazemipour.github.io/posts/2025/09/stchstc-apprxmtn-1</id><content type="html" xml:base="https://alirezakazemipour.github.io/posts/2025/09/stchstc-apprxmtn-1/"><![CDATA[<p>What struck my curiosity to investigate why $Q$-learning and SARSA converge was the realization that these methods use <br />
+their estimates of action values at time step $t$ to estimate the action values at time step $t + 1$ in their update<br />
+targets. This sounded really weired to me as though the convergence should not happen. So, I dug in and discovered the <br />
+answer lies in the topic of stochastic approximation. Stochastic approximation is fairly a big topic, hence I cover it<br />
+in four separate parts. In the last part I’ll turn my attention to Q-Learning and SARSA eventually.</p>
+
+<p>I’ll mention the assumption required to each proposition during their corresponding proofs to see where those<br />
+assumptions were inevitably needed.</p>
+
+<h1 id="needed-background">Needed background</h1>
+<p>In this section I’ll review some concepts needed throughout the document.</p>
+
+<h2 id="level-sets-of-a-function">Level sets of a function</h2>
+<p>The $\alpha$-sublevel set of a function $f: \mathbb{R}^n \to \mathbb{R}$ is defined as</p>
+
+\[C_\alpha = \{x \in \mathsf{dom}(f): f(x) \leq \alpha \}.\]
+
+<h2 id="stationary-point-of-a-function">Stationary point of a function</h2>
+<p>Stationary point of a function is where its derivative is zero</p>
+
+<h2 id="limit-point-of-a-sequence">Limit point of a sequence</h2>
+<p>Let $\left(a_i \right)^\infty_{i=m}$ be a sequence of real numbers,
+let $x$ be a real number, and let $\varepsilon&gt;0$ be a real number.
+We say that $x$ is $\varepsilon$-adherent to $\left(a_i \right)^\infty_{i=m}$ if
+and only if there exists $n \geq m$ such that $a_n$ is $\varepsilon$-close to $x$. We say that $x$ 
+is <em>continually</em> $\varepsilon$-adherent to $\left(a_i \right)^\infty_{i=m}$ if and only if it is $\varepsilon$-adherent
+to $\left(a_i \right)^\infty_{i=N}$ for every $N \geq m$. We say that $x$ is a limit point of
+$\left(a_i \right)^\infty_{i=m}$ if and only if it is <em>continually</em> $\varepsilon$-adherent
+to $\left(a_i \right)^\infty_{i=m}$ for every $\varepsilon &gt; 0$.</p>
+
+<h2 id="smooth-function">Smooth function</h2>
+<p>A continuously differentiable function $f: \mathbb{R}^n \to \infty$ is $\beta$-smooth if</p>
+
+\[f(y) \leq f(x) + \nabla f(x)^\top(y - x) + \frac \beta2 \lVert y - x\rVert^2 \qquad \forall y,x \in \mathbb{R}^n,\, \text{and } \beta &gt; 0.\]
+
+<p>The above condition is equivalent to a Lipschitz continuity over the gradients, i.e.,</p>
+
+\[\lVert \nabla f(y) - \nabla f(x)\rVert \leq \beta \lVert y - x\rVert, \qquad \forall y,x \in \mathbb{R}^n\, \text{and } \beta &gt; 0.\]
+
+<p>This assumption is satisfied, in particular, if $f$ is twice differentiable and all of its second derivatives are bounded globally by some constant.</p>
+
+<p><em>proof</em>.
+Assume $\lVert \nabla^2 f(x)\rVert \leq M$, then by mean value theorem we have $\lVert \nabla f(x) - \nabla f(y) \rVert \leq M \lVert x - y\rVert. \square$</p>
+
+<p><em>Proof of the equivalence</em>.
+Fix two vectors $r$ and $z$, let $\xi$ be a scalar parameter, and let $g(\xi) = f(r + \xi z)$. The chain rule yields $\frac{d}{d\xi}g(\xi) = z^\top\nabla f(r + \xi z)$. We have
+\(\begin{align*}
+f(r + z) - f(r) &amp; = g(1) - g(0) = \int_0^1\frac{d}{d\xi}g(\xi)d\xi = \int_0^1\ z^\top\nabla f(r + \xi z) d\xi \\
+&amp; \leq \int_0^1\ z^\top\nabla f(r) d\xi + \left\lvert \int_0^1\ z^\top\Bigl(\nabla f(r + \xi z) - \nabla f(r)\Bigr) d\xi \right\rvert \\
+&amp; \leq z^\top\nabla f(r) + \int_0^1\ \lVert z \rVert \cdot \lVert\nabla f(r + \xi z) - \nabla f(r)\rVert d\xi.
+\end{align*}\)</p>
+
+<p>Now assume there exists a $\beta \geq 0$ such that $\lVert \nabla f(x_1) - \nabla f(x_2)\rVert \leq \beta \lVert x_1 - x_2\rVert$ for all $x_1, x_2$ in the domain of $f. Then,</p>
+
+\[\begin{align*}
+f(r + z) - f(r) &amp; \leq z^\top\nabla f(r) + \int_0^1\ \lVert z \rVert \cdot \lVert\nabla f(r + \xi z) - \nabla f(r)\rVert d\xi \\
+&amp; \leq z^\top\nabla f(r) + \lVert z \rVert \int_0^1\ \beta\xi\lVert z \rVert d\xi \\
+&amp; = \leq z^\top\nabla f(r) + \frac \beta2 \lVert z \rVert^2.
+\end{align*}\]
+
+<p>By replacing $r = x$ and $r + z = y$ the proof is completed. $\square$</p>
+
+<h2 id="filterations">Filterations</h2>
+<p>Given a measurable space $(\Omega, \mathcal{F})$,
+a filteration is a sequence $\left(\mathcal{F}_t\right)^n_{t = 0}$ of sub-$\sigma$-algebras of $\mathcal{F}$, where
+$\mathcal{F}_t \subseteq \mathcal{F}_{t + 1}$ for all $t &lt; n$, $\mathcal{F}_n \subseteq \mathcal{F}$,
+and $\mathcal{F}_0 = {\varnothing, \Omega}$ (note that the set of
+$\mathcal{F}_0$-measurable functions is the set of constant functions on $\Omega$).
+A sequence of random variables $(X_t)^n_{t = 1}$ is adapted to filtration
+$\mathbb{F} = \left(\mathcal{F}_t\right)^n_{t = 0}$  if $X_t$ is $\mathcal{F}_t$-measurable for each t.
+We also say in this case that $(X_t)_t$ is $\mathbb{F}$-adapted.</p>
+
+<h2 id="super-martingale-difference-sequence">(Super) Martingale difference sequence</h2>
+<p>A $\mathbb{F}$-adapted sequence of random variables $(X_t)_{t \in \mathbb{N}}$ is a $\mathbb{F}$-adapted martingale if</p>
+<ol>
+  <li>$X_t$ is integrable, i.e., $\mathbb{E}[|x|] &lt; \infty$.</li>
+  <li>$\mathbb{E}[X_{t} \mid \mathcal{F}_{t - 1}] = X_{t - 1}$ almost surely for each $t \in {2, 3, \dots}$.
+If the equality in the second point is replaced with a less-than, then we call $(X_t)_t$ a supermartingale</li>
+</ol>
+
+<h2 id="martingle-convergence-theorem">Martingle convergence theorem</h2>
+<p>Let $X_t, t = 0, 1, 2, \dots$, be a sequence of random variables and let $\mathcal{F}_t, t = 0, 1,2 \dots$, be sets
+of random variables such that $\mathcal{F}_t \subseteq \mathcal{F}_{t + 1}$ for all $t$. Suppose that:</p>
+<ol>
+  <li>$X_t$ is $\mathcal{F}_t$-measurable.</li>
+  <li>For each $t$, we have $\mathbb{E}[X_{t + 1} \mid \mathcal{F}_t] = X_t$.</li>
+  <li>There exists a constant $M$ such that $\mathbb{E}[|X_t|] \leq M$ for all $t$. 
+Then $X_t$ converges to a random variable $X_\infty$ almost surely.</li>
+</ol>
+
+<p>The proof essentially comes from the fact that $\mathbb{E}[|X_t|] \leq M$ make any sub/super martingale upper/lower 
+bounded, thus converging. Hence, the martingale will also converge. An example of the proof is given in
+the supermartingale convergence section.</p>
+
+<h2 id="supermartingale-convergence-theorem">Supermartingale convergence theorem</h2>
+<p>Let $Y_t, X_t,\, \mathrm{and}\, Z_t, t = 0, 1, 2, \dots,$ be three sequences of random variables and 
+let $\mathcal{F}_t, t = 0, 1, 2, \dots,$ be sets of random variables such that
+$\mathcal{F}_t \subseteq \mathcal{F}_{t+1}$ for all $t$. Suppose that:</p>
+<ol>
+  <li>The random variables $Y_t, X_t,\, \mathrm{and}\, Z_t$ are nonnegative, and are functions of the random variables in $\mathcal{F}_t$.</li>
+  <li>For each $t$, we have $\mathbb{E}[Y_{t + 1} \mid \mathcal{F}_{t}] \leq Y_t - X_t + Z_t$.</li>
+  <li>There holds $\sum_{t = 0}^\infty Z_t &lt; \infty$.</li>
+</ol>
+
+<p>Then, we have $\sum_{t = 0}^\infty X_t &lt; \infty$, and the sequence $Y_t$ converges to a nonnegative random variable
+$Y$, with probability (w.p.) 1.</p>
+
+<p><em>Proof</em> (Gemini).
+Define the following $\mathcal{F}_t$ measurable process:</p>
+
+\[U_t := Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i).\]
+
+<p>We show that ${U_t}$ is a supermartingale:</p>
+
+\[\begin{align*}   
+\mathbb{E}[U_{t + 1} \mid \mathcal{F}\_t] &amp;= \mathbb{E}[Y_{t + 1} \mid \mathcal{F}\_t] +  
+\sum\_{i = 0}^{t}(Z_i - X_i) \leq Y_t +Z_t - X_t + \sum_{i = 0}^{t}(X_i - Z_i) \\  
+&amp; = Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i) = U_t.  
+\end{align*}\]
+
+<p>We now show that ${U_t}$ is bounded below:</p>
+
+\[U_t := Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i) \geq 0 + 0 -\sum_{i = 0}^{t - 1}Z_i \geq -\sum_{i = 0}^{\infty}Z_i\]
+
+<p>Since $S_\infty := \sum_{i = 0}^{\infty}Z_i$ is bounded by the assumption, then $U_t \geq -S_\infty$.
+Since ${U_t}$ is a supermartingale that is bounded below, the Supermartingale Convergence Theorem implies
+that $U_t$ must converge to a finite limit w.p. 1. Let’s call this limit $U$:</p>
+
+\[\lim_{t\to \infty} U_t = U &lt; \infty.\]
+
+<p>Substituting the definition of $U_t$:</p>
+
+<p>\(\lim_{t \to \infty} \left( Y_t + \sum_{i = 0}^{t - 1}(X_i - Z_i)\right) = U,\)
+which means</p>
+
+\[\lim_{t \to \infty} \left( Y_t + \sum_{i = 0}^{t - 1}X_i\right) = U + S_\infty.\]
+
+<p>For the sum of two non-negative sequences to converge to a finite limit, both sequences must be bounded. Hence,
+$\lim_{t \to \infty} Y_t = Y_\infty &lt; \infty$, and $\sum_{i = 0}^{\infty}X_i &lt; \infty$, 
+which means $X_t \to 0$. $\square$</p>
+
+<h2 id="mathematical-optimization">Mathematical optimization</h2>
+<p>A mathematical optimization problem is finding the maximum/minimum of a real-valued function.</p>
+
+<h2 id="iterative-algorithms">Iterative algorithms</h2>
+<p>Iterative algorithms solve problems by moving towards the solution one iteration at a time under two conditions:</p>
+
+<ol>
+  <li>The algorithm is loop invariant meaning that the found solution up until iteration $t$ that is not necessarily the terminal iteration is correct.</li>
+  <li>The algorithm terminates with probability one.</li>
+</ol>
+
+<h1 id="iterative-stochastic-approximation">(Iterative) Stochastic approximation</h1>
+<p>Optimization problems are often solved by the means of the iterative algorithms.  (Iterative) Stochastic approximation algorithms are algorithms that perform the optimization iteratively even in the presence of noise in the available information.</p>
+
+<p>Conceretly, let $H: \mathbb{R}^n \to \mathbb{R}^n$ be an operator and $r \in \mathbb{R}^n$ a real-valued vector. Then, we wanna solve</p>
+
+\[\begin{equation*}
+Hr = r.
+\end{equation*}\]
+
+<p>One possible solution is $r := Hr$ or any convex combination of $r$ and $Hr$, i.e., $r:= (1 - \gamma)r + \gamma Hr$ for $\gamma &lt; 1$, which is true since $r := Hr$. An interesting case is the optimization problem</p>
+
+\[\begin{equation*} r = Hr - \nabla f(r) \end{equation*},\]
+
+<p>where the solution $Hr = r$ mandates that $\nabla f(r) = 0$, which means $r$ is the minimizer of $f$ [Spoiler: the fixed point of $H$ is the minimizer of $f$].</p>
+
+<p>In general, we might not have direct access to $Hr$,  but instead some noisy corrupted measurement of it. Then our optimization problem takes the following form, where $w$ denotes the random noise</p>
+
+\[\begin{equation*} r := (1 - \gamma) r + \gamma (Hr + w) \end{equation*}.\]
+
+<p>More explicitly, suppose $Hr = \mathbb{E}[g(r, v)]$, where $v$ is a random variable with the a known distribution $v \sim P(\cdot \mid r)$ and $g$ is a known function. We would like to the equation:</p>
+
+\[r := (1 - \gamma)r + \gamma \mathbb{E}[g(r, v)],\]
+
+<p>but computing $\mathbb{E}[g(r, v)]$ is generally intractable. Since $P(\cdot \mid r)$ is known, through simulation, we can obtain $k$ samples use the following target:</p>
+
+\[Hr = \frac 1k \sum_{i = 1}^k g(r, v_i),\]
+
+<p>and as $k$ gets large, the law of large numbers gives the confidence that we’ll find the right answer. On the other extreme, we can set $k$ to one and use a single sample, an approach called the Robbins-Monro algorithm, and get</p>
+
+\[r := (1-\gamma)r + g(r, v_1).\]
+
+<p>In this case we have</p>
+
+\[r := (1 - \gamma)r +\gamma \left(\mathbb{E}[g(r, v) + g(r, v_1) - g(r, v)] \right) = (1 - \gamma)r +\gamma \left(Hr + w \right),\]
+
+<p>where $w = g(r, v_1) - \mathbb{E}[g(r, v)]$ is the zero mean noise term.</p>
+
+<p>So, in general we’re looking for the fixed point of $H$ and we use the following iterative algorithm</p>
+
+\[r_{t + 1}(i) = (1 - \gamma_t(i))r_t(i) + \gamma_t(i)((Hr_t)(i) + w(i)).\]
+
+<p>Note that we wrote the function equation for each component of $r$, and we made the stepsize $\gamma$ dependent on the iteration. The reason behind making stepsize dependent on the iteration is make sure our iterative algorithm eventually converges to the fixed point and a fixed stepsize doesn’t necessary gives us this guarantee. Specifically, the stepsize should meet the following two conditions known as the Robbins-Monro conditions</p>
+
+\[\text{A)} \sum_{t = 0}^\infty \gamma_t(i) = \infty, \qquad \text{B) }\sum_{t = 0}^\infty \gamma^2_t(i) &lt; \infty, \quad \forall i.\]
+
+<p>The first condition says that the stepsize should be big enough so we can make progress and also due to the upper limit of its summation, it mandates that every component should be updated infinitely-often. The second condition says that the stepsize should be small enough so we can converge (even in the presence of noise). Let’s see why these to conditions are necessary:</p>
+
+<h2 id="why-do-we-need-sum_t--0infty-gamma_ti--infty">Why do we need $\sum_{t = 0}^\infty \gamma_t(i) = \infty$?</h2>
+<p>The reason is that if we compute how much we have progressed from the initial iteration</p>
+
+\[|r_t(i) - r_0(i)|
+\stackrel{\text{traingle inequality}}{\leq} \sum_{\tau = 0}^{t - 1} \gamma_\tau(i) |(Hr_\tau)(i) + w_\tau - r_\tau(i)|,\]
+
+<p>and if the magnitude of the updates $|(Hr_\tau)(i) + w_\tau - r_\tau(i)|$
+is bounded and $\sum_{t = 0}^\infty \gamma_t(i)  = A &lt; \infty$, then the algorithm will be confined within
+a fixed radius and if the desired solution is outside of that radius, we’ll never succeed in getting it.</p>
+
+<h2 id="why-do-we-need-sum_t--0infty-gamma2_ti--infty">Why do we need $\sum_{t = 0}^\infty \gamma^2_t(i) &lt; \infty$?</h2>
+<p>Suppose we want to apply the Robbins-Monro algorithm on sequence of i.i.d. random variable with a unknown mean $\mu$ and known variance of one.</p>
+
+\[r_{t + 1} = (1 - \gamma_t)r_t + \gamma_t v_t = (1 - \gamma_t)r_t + \gamma_t \mu + \gamma_t (v_t - \mu).\]
+
+<p>If we want the above equation converge to $\mu$ we need to make sue that the total variance converges to zero. So, we need to show, $\sum_{t = 0}^\infty \mathbb{E}\left[\left(\gamma_t (v_t - \mu)\right)^2\right] \leq \infty$ (Infinite sum of non-zero variables can’t become bounded unless they become zero at some point).</p>
+
+\[\sum_{t = 0}^\infty \mathbb{E}\left[\left(\gamma_t (v_t - \mu)\right)^2\right] \leq \sum_{t = 0}^\infty \gamma_t^2.\]
+
+<p>So, the only way that the total variance is bounded is that $\sum_{t = 0}^\infty \gamma^2_t(i) &lt; \infty$.</p>
+
+<p>Throughout, we implicitly assume that the stepsize sequence meet the Robbins-Monro conditions and I don’t mention explicitly again. The stepsize can also easily become a random variable which is the case in reinforcement learning for example, which I’ll touch upon it later.</p>
+
+<p>There are three paradigm of optimization problems that can be solved by stochastic approximation. I’ll dig into each of separately. Instead of mentioning the required assumptions in the beginning, I’ll explain the required assumptions during proofs to see where they’re needed (except the Robbins-Monro conditions on the stepsize that I’ve assumed are met implicitly throughout).</p>
+<h2 id="convergence-under-a-smooth-lyapunov-or-potential-function">Convergence under a smooth Lyapunov or potential function</h2>
+
+<p>One way if determining the convergence to the fixed point $r^*$ is introducing a Lyapunov or in other words, a
+potential function that act as a distance such that $f(r_{t +1}) &lt; f(r_t)$ whenever $r_t \neq r^*$.
+Since noise is involved, instead of requiring $f(r_{t +1}) &lt; f(r_t)$, it’s more appropriate to want the
+<em>expected direction</em> of update is a <em>direction</em> of $f$’s decrease.</p>
+
+<p>In this section our algorithm is of the form</p>
+
+\[r_{t+1} = r_t + \gamma_t s_t,\]
+
+<p>and for simplicity we assume a universal stepsize sequence for all components of
+$r,$ $\Vert \cdot \rVert$ represents the Euclidean norm, i.e., 
+$\lVert r \rVert = r^\top \cdot r$, and $\mathcal{F}_t$
+represents the history ($\sigma$-algebra) of the algorithm until time $t$ as</p>
+
+<p>\(\mathcal{F}_t = \{r_0, \dots, r_t, s_0, \dots, s_{t - 1}, \gamma_0, \dots \gamma_t \}.\) Note that only the sequence of update until time $t-1$ is include in $\mathcal{F}_t$. I’ll mention two examples to problems that fit into this paradigm.</p>
+
+<h3 id="stochastic-gradient-algorithm">Stochastic gradient algorithm</h3>
+<p>In this example we have that</p>
+
+\[r_{t + 1} = r_{t} - \gamma_t (\nabla f(r_t) + w_t),\]
+
+<p>where $s_t = -\nabla f(r_t) - w_t$, the potential function is $f$, and the expected direction of the update, assuming that $\mathbb{E}[w_t \mid \mathcal{F}_t] = 0$, is $\mathbb{E}[s_t \mid \mathcal{F}_t] = -\nabla f(r_t)$.</p>
+
+<h3 id="euclidean-norm-pseudo-contractions">Euclidean norm pseudo-contractions</h3>
+<p>Recall the Robbins-Monro algorithm,
+\(r_{t + 1} = (1 - \gamma_t)r_t + \gamma_t(Hr_t + w_t),\)
+where $H$ is a pseudo-contraction with respect to (w.r.t) the Euclidean norm, i.e., 
+\(\lVert Hr - r^*\rVert \leq \beta \lVert r - r^* \rVert, \beta \in [0, 1], \: \mathrm{and} \: r^* \, \text{is the fixed point of } H.\)
+In this algorithm $f(r) = \frac 12 \lVert r - r^* \rVert^2$ is the potential function, $\nabla f(r) = r - r^*$, and $s_t = Hr_t - r_t + w_t$ is the update direction. Now, we can verify that the expected direction of the update $s_t$ is in a direction of $f$’s decrease:</p>
+
+<p>Using Hölder’s inequality and the fact that $H$ us a pseudo-contraction w.r.t the Euclidean norm, we have</p>
+
+\[(Hr - r^*)^\top(r - r^*) \leq \lVert Hr - r^*\rVert \cdot \lVert r - r^* \rVert \leq \beta \lVert r - r^* \rVert^2.\]
+
+<p>Subtract $(r - r^*)^\top(r - r^*)$ from both sides, and we get</p>
+
+\[(Hr - r)^\top(r - r*) \leq -(1 - \beta) \lVert r - r^* \rVert^2.\]
+
+<p>With $r = r_t$, the inequality can be rewritten as</p>
+
+\[\mathbb{E}[s_t \mid \mathcal{F}_t]^\top\nabla f(r_t) \leq -(1 - \beta)\lVert \nabla f(r_t) \rVert^2,\]
+
+<p>which means that $\mathbb{E}[s_t \mid \mathcal{F}_t]$ and $\nabla f(r_t)$ are not orthogonal, and they are in the opposite direction.</p>
+
+<hr />
+<p><strong>Proposition</strong>. Consider the algorithm $r_{t + 1} = r_t + \gamma_ts_t,$ with the potential function $f: \mathbb{R}^n \to \mathbb{R}$. Under certain assumptions that will be stated in the proof, the following holds with probability one:
+a): The sequence $f(r_t)$ converges.
+b): We have $\lim_{t \to \infty} \nabla f(r_t) = 0$.
+c): Every limit point of $r_t$ is a stationary point of $f$.</p>
+
+<hr />
+
+<p>Note that the above proposition says nothing about the convergence or the boundedness of the sequence $r_t$, however if $f$ has <strong>bounded level sets</strong>, part (1) implies 
+the sequence $r_t$ is bounded. Moreover, if $f$ has unique <strong>stationary point</strong> $r^*$, part (3) implies that $r^*$
+is the only <strong>limit point</strong> of $r_t$, and hence $r_t$ converges to $r^*$.</p>
+
+<p><em>Proof</em>.</p>
+
+<p>We need our first <strong>assumption</strong> to begin the proof.</p>
+
+<hr />
+<p><strong>One</strong>: We need to assume $f$ is $L$-smooth.</p>
+
+<hr />
+
+<p>Hence,</p>
+
+\[f(\bar r) \leq f(r) + \nabla f(r)^\top(\bar r - r) + \frac L2 \Vert \bar r - r \Vert^2.\]
+
+<p>By replacing $r = r_t$ and $\bar r  = r_{t + 1} = r_t + \gamma_t s_t$ we have</p>
+
+\[f(r_{t + 1}) \leq f(r_t) + \gamma_t \nabla f(r_t)^\top s_t + \gamma_t^2 \frac L2 s_t^2.\]
+
+<p>Now we need the next two <strong>assumptions</strong>. We want the magnitude of the update to be comparable to the gradient of $f$, and the expected direction of the update and the direction of $f$’s gradient never get orthogonal.</p>
+
+<hr />
+<p><strong>Two</strong>: There exists positive constants $K_2, K_2$ such that</p>
+
+\[\mathbb{E}\left[\Vert s_t \Vert^2 \mid \mathcal{F}_t\right] \leq K_1 + K_2 \Vert f(r_t) \Vert^2, \: \forall t.\]
+
+<p>Note that $s_t$ is allowed to be nonzero [because of the noise] even if $\nabla f(r_t)$ is zero.</p>
+
+<p><strong>Three</strong>: There exists a positive constant $c$ such that</p>
+
+\[c\Vert f(r_t) \Vert^2 \leq -\nabla f(r_t)^\top \mathbb{E}[s_t \mid \mathcal{F}_t], \: \forall t.\]
+
+<hr />
+
+<p>We have</p>
+
+\[\begin{align*}
+\mathbb{E}[f(r_{t + 1}) \mid \mathcal{F}_t] &amp; \leq f(r_t) - c\gamma_t \Vert \nabla f(r_t) \Vert^2 + \gamma_t^2 \frac L2 \left(K_1 + K_2 \Vert\nabla f(r_t)\Vert^2\right) \\
+&amp; = f(r_t) - \gamma_t \left( c - \frac{LK_2\gamma_t}{2} \right)\Vert \nabla f(r_t) \Vert^2 + \frac{LK_1\gamma_t^2}{2}.
+\end{align*}\]
+
+<p>We want to come to conclusion about the convergence of $f(r_t)$s and we already have relationship between $\mathbb{E}[f(r_{t + 1}) \mid \mathcal{F}_t]$ and $f(r_t$) which already is a reminisce of a (sub/super) martingale difference sequence. This relationship can be exploited if we can establish if we actually facing a (sub/super) martingale difference sequence. To so do, define</p>
+
+\[\begin{align*}
+X_t &amp;= \begin{cases}
+\gamma_t \left( c - \frac{LK_2\gamma_t}{2} \right)\Vert \nabla f(r_t) \Vert^2, &amp; \mathrm{if}\; LK_2\gamma_t \leq 2c, \\
+0, &amp; \mathrm{otherwise},
+\end{cases}\\
+&amp;\mathrm{and}\\
+Z_t &amp;= \begin{cases}
+\frac{LK_1\gamma_t^2}{2}, &amp; \mathrm{if}\; LK_2\gamma_t \leq 2c, \\
+\frac{LK_1\gamma_t^2}{2} - \gamma_t \left( c - \frac{LK_2\gamma_t}{2} \right)\Vert \nabla f(r_t) \Vert^2, &amp; \mathrm{otherwise}.
+\end{cases}
+\end{align*}\]
+
+<p>Note that $X_t$ and $Z_t$ are nonnegative and $\mathcal{F}_t$ measurable. Using the assumption
+$\sum_{t=0}\infty \gamma_t^2 &lt; \infty$, $\gamma_t$ converges to zero and 
+there exists some finite time after which $LK_2\gamma_t \leq 2c$. 
+Hence, after some finite time we have $Z_t = \frac{LK_1\gamma_t^2}{2}$ and 
+therefore $\sum_{t = 0}^\infty Z_t &lt; \infty$. Therefore, to use the positive
+supermartingale convergence theorem, we introduce the next <strong>assumption</strong> we need.</p>
+
+<hr />
+<p><strong>Four</strong>: $f(r) \geq 0, \forall r \in \mathbb{R}^n$.</p>
+
+<hr />
+
+<p>Now, the positive supermartingale convergence applies: $f(r_t)$ converges and $\sum_t X_t &lt; \infty$. Since $\gamma_t$ converges to zero, we have $LK_2\gamma_t \leq c$ after some finite time, and</p>
+
+\[X_t = \gamma_t \left( c - \frac{LK_2\gamma_t}{2} \right)\Vert \nabla f(r_t) \Vert^2 \geq \frac c2 \gamma_t\lVert \nabla f(r_t)\rVert^2.\]
+
+<p>Hence,</p>
+
+\[\sum_{t = 0}^\infty \gamma_t\lVert \nabla f(r_t)\rVert^2 &lt; \infty.\]
+
+<p>If $\lVert \nabla f(r_t)\rVert$ doesn’t converge to zero, then the condition $\sum_{t =0}^\infty \gamma_t = \infty$ creates a contradiction to the above finite inequality. Hence, it must be case that $\lVert \nabla f(r_t)\rVert$ gets infinitely-often arbitrarily close to zero, i.e., $\liminf_{t \to \infty} \lVert \nabla f(r_t)\rVert=0$. Why $\liminf$ and not simply $\lim$? Because of the noise $\lVert \nabla f(r_t)\rVert$ fluctuates, so now we need to prove that its fluctuations dampen as well so that actually $\lim_{t \to \infty}\lVert \nabla f(r_t)\rVert = 0$.</p>
+
+<p>To prove that $\lVert \nabla f(r_t)\rVert$ won’t be oscillating, now we show that it has finite <em>upcrossings</em>.</p>
+
+<p>Fix  a positive constant $\epsilon$. We say that the interval ${t, t+1, \dots, \bar{t}}$ is an upcrossing interval from $\epsilon/2$ to $\epsilon$ if</p>
+
+\[\Vert \nabla f(r_t) \Vert &lt; \frac{\epsilon}{2}, \quad \Vert \nabla f(r_\bar{t}) \Vert &gt; \epsilon,\]
+
+<p>and</p>
+
+\[\frac{\epsilon}{2} \leq \Vert \nabla f(r_\tau) \Vert \leq \epsilon, \quad t &lt; \tau &lt; \bar{t}.\]
+
+<p>To show the finiteness of the upcrossings for any sample path ${r_t}$, we need to show that the effect of the noise terms $w_t$ will be dampened out. Define $\bar{s}_t = \mathbb{E}[s_t \mid \mathcal{F}_t]$, so $w_t = s_t - \bar{s}_t$. Using assumption 2 we have</p>
+
+\[\Vert \bar{s}_t \Vert^2 + \mathbb{E}\left[\Vert w_t\Vert^2 \mid \mathcal{F}_t\right] = \mathbb{E}\left[\Vert s_t\Vert^2 \mid \mathcal{F}_t\right] \leq K_1 + K_2 \Vert \nabla f(r_t) \Vert^2, \quad \forall t.\]
+
+<p>We define the following $\mathcal{F}_t$ measurable indicator random variable that indicates whether an upcrossing has occurred or not:</p>
+
+\[\chi_t = \begin{cases}1, &amp; \mathrm{if}\, \Vert \nabla f(r_\tau) \Vert \leq \epsilon \\ 0, &amp; \mathrm{otherwise}. \end{cases}\]
+
+<p>The following lemma states that the cumulative discounted effect of noise on the events that upcrossings happen converges almost surely, which we will show later convergence is to zero.</p>
+
+<hr />
+<p><strong>Lemma</strong>. The sequence defined by $u_t$ converges w.p. 1:</p>
+
+\[u_t = \sum_{\tau =0}^{t - 1}\chi_\tau\gamma_\tau w_\tau, \quad u_0 := 0.\]
+
+<p><em>Proof</em>.
+Initially assume that $\sum_{t=0}^\infty \gamma_t^2 \leq A$, for some constant $A$. Note that:</p>
+
+\[\mathbb{E}[\chi_t\gamma_t w_t \mid \mathcal{F}\_t] = \chi_t\gamma_t \mathbb{E}[w_t \mid \mathcal{F}\_t]=0,\]
+
+<p>and therefore $\mathbb{E}\left[u_{t + 1} \mid \mathcal{F}_t\right] = \mathbb{E}\left[u_t + \chi_t\gamma_t w_t \mid \mathcal{F}_t\right] = u_t,$
+and ${u_t}$ is a martingale difference sequence.</p>
+
+<p>If $\chi_t$ is zero, then $\mathbb{E}\left[\Vert u_{t+1} \Vert^2 \mid \mathcal{F}_t \right] =
+\mathbb{E}\left[\Vert u_{t}\Vert^2 \mid \mathcal{F}_t \right] = \Vert u_{t}\Vert^2$. If on the other hand,
+$\chi_t$ is one then,</p>
+
+\[\begin{align}
+\mathbb{E}\left[\Vert u_{t+1} \Vert^2 \mid \mathcal{F}_t \right]&amp; = \mathbb{E}\left[\Vert u_t + \gamma_t w_t\Vert^2 \mid \mathcal{F}_t \right] \stackrel{\text{triangle inequality}}{\leq} \mathbb{E}\left[\left(\Vert u_t \Vert + \Vert \gamma_t w_t\Vert \right)^2 \mid \mathcal{F}_t \right] \\
+&amp; \leq \Vert u_{t} \Vert^2 + 2u^\top_t\gamma\mathbb{E}[w_t \mid \mathcal{F}_t] + \gamma^2_t\mathbb{E}[\Vert w_t \Vert^2 \mid \mathcal{F}_t] \\
+&amp; \leq \Vert u_{t} \Vert^2  + \gamma^2_t\left(K_1 + K_2\epsilon^2\right).
+\end{align}\]
+
+<p>Now, we take an unconditional expectation from the both sides and apply the tower rule, and sum over $t$ and apply the telescopic sum to obtain</p>
+
+\[\mathbb{E}\left[\Vert u_t \Vert^2 \right] \leq (K_1 + K_2\epsilon^2)\sum_{\tau = 0}^\infty \gamma_\tau^2 \leq (K_1 + K_2\epsilon^2)A, \quad \forall t,\]
+
+<p>and since $\Vert u_t \Vert \leq 1 + \Vert u_t \Vert^2$, we have $\sup_t \mathbb{E}[\Vert u_t \Vert] &lt; \infty$. Now, we can apply the martingale convergence theorem to ${u_t}$ and conclude it almost surely converges.</p>
+
+<p>Now let’s consider the case that $\gamma_t$ is stochastic and $\sum_{t=0}^\infty \gamma^2_t$ is finite (which implies
+$\gamma_t$ has finite variance) but not by a deterministic constant. Consider any arbitrary positive integer $k$ and
+let $u^k_t$ represent the process that is equal to $u_t$ as long as $\sum_{t=0}^\infty \gamma_t \leq k$ and stays
+constant afterward.
+Let $\Omega_k$ denote the set of sample paths $(r_0, r_1, \dots)$ for which $u^k_t$ doesn’t converge.
+Since $\sum_{t=0}^\infty \gamma^2_t &lt; \infty$ is finite, for every sample path there and $k$, there exists a
+time $t_0$, where  $\sum^\infty_{t=t_0}\gamma^2_t \leq k$ almost surely, hence the set $\cup_{k=1}^\infty \Omega_k$
+has measure zero, for every sample path and $k$, there exists a time $u_t = u_t^k$ for all $t \geq t_0$ and $u_t$
+converges almost surely.</p>
+
+<hr />
+
+<p>Let us now consider a sample path with an infinity of upcrossings and let ${t_k, \dots, \bar{t}_k}$ be the $k$th such interval. Using the above lemma we obtain:
+\(\lim_{k \to \infty} \sum_{t = t_k}^{\bar{t}\_k - 1} \gamma_t w_t = 0,\)
+which also implies that $\lim_{k \to \infty} \gamma_{t_k} w_{t_k} = 0$. Now we have</p>
+
+\[\begin{align*}
+\Vert \nabla f(r_{t_k + 1}) \Vert - \Vert \nabla f(r_{t_k}) \Vert &amp; \leq \Vert \nabla f(r_{t_k + 1}) - \nabla f(r_{t_k})\Vert \\
+&amp;\leq L \Vert r_{t_k + 1} - r_{t_k} \Vert \\
+&amp;= L \gamma_{t_k} \Vert \bar{s}_{t_k} + w_{t_k} \Vert \\
+&amp; \leq L \gamma_{t_k} \Vert \bar{s}\_{t_k} \Vert +  L \gamma_{t_k} \Vert w_{t_k} \Vert.
+\end{align*}\]
+
+<p>The right hand side of the above display goes to zero as $k$ goes to infinity
+because $\Vert \bar{s}_{t_k} \Vert^2$ is bounded by $K_1 + K_2 \epsilon^2$ and $\gamma_t$ goes to zero,
+and we have just proved it for $\Vert w_{t_k} \Vert$ as well. Then, since $\Vert \nabla f(r_{t_k + 1})
+\Vert \geq \epsilon/2$ (the condition of an upcrossing interval in the definition of $\chi_{t}, \, 
+t \in [t_k, \, \bar{t}_k]$), we have $\Vert \nabla f(r_{t_k}) \Vert \geq \epsilon/4$. Hence, for every $k$ we have</p>
+
+\[\begin{align*}
+\frac \epsilon2 &amp; \leq \Vert \nabla f(r_{\bar{t}_k}) \Vert - \Vert \nabla f(r_{t_k}) \Vert \\
+&amp; \leq \Vert \nabla f(r_{\bar{t}_k}) - \nabla f(r_{t_k}) \Vert \\
+&amp; \leq L \Vert r_{\bar{t}_k} - r_{t_k} \Vert \\
+&amp; \leq L \sum_{t = t_k}^{\bar{t}\_{t_k} -1} \gamma_t\Vert \bar{s}_t\Vert + L \sum_{t = t_k}^{\bar{t}_{t_k} -1} \gamma_t\Vert w_t\Vert.
+\end{align*}\]
+
+<p>We have proved that the second term on the right-hand side of the above display goes to zero. Also,
+for $t_k \leq t \leq \bar{t}_k - 1, \, \Vert \bar{s}_t \Vert^2 \leq K_1 + K_2 \epsilon^2$, which by the inequality
+$x \leq x^2 +1$ implies that $\Vert \bar{s}_t \Vert \leq 1 + K_1 + K_2 \epsilon^2:=d$. By taking the $\liminf_{k \to \infty}$ from the above display we have</p>
+
+\[\liminf\_{k \to \infty} \sum_{t = t_k}^{\bar{t}\_k - 1} \gamma_t \geq \frac{\epsilon}{2Ld}.\]
+
+<p>For $t_k \leq t \leq \bar{t}_k - 1$ we have</p>
+
+\[\begin{align*}
+\liminf_{k \to \infty} \sum_{t = t_k} ^{\bar{t}_k - 1} \gamma_t \Vert \nabla f(r_t)\Vert^2 \geq \frac{\epsilon}{2Ld} \cdot \frac{\epsilon^2}{16}.
+\end{align*}\]
+
+<p>This means by summing over all upcrossing intervals we get that
+$\sum_{t=0}^{\infty} \gamma_t \Vert \nabla f(r_t)\Vert^2 =\infty$
+(infinite sum of positive numbers is infinite). This is a contradiction because after assumption 4 we had shown
+that $\sum_{t=0}^{\infty} \gamma_t \Vert \nabla f(r_t)\Vert^2 &lt; \infty$, hence the number of upcrossings should be finite.</p>
+
+<p>Given that $\Vert \nabla f(r_t) \Vert$ comes infinitely often arbitrarily close to zero and since there 
+are finitely many upcrossings, it follows that $\Vert \nabla f(r_t) \Vert$ can exceed $\epsilon$ only a 
+finite number of times, and lim $\limsup_{t \to \infty}\Vert \nabla f(r_t) \Vert \leq \epsilon$.
+Since $\epsilon$ was arbitrary, it follows that $\limsup_{t \to \infty}\Vert \nabla f(r_t) \Vert  = 0$, and
+part (b) of the proposition has been proved. Finally, if $r$ is a limit point of $r_t$,  is the limit of some
+subsequence of $\nabla f(r_t)$ and must be equal to 0, which establishes part (c).</p>
+
+\[\begin{equation*}\textbf{END OF PART 1!}\end{equation*}\]
+
+<h1 id="references">References</h1>
+<ul>
+  <li><a href="https://web.mit.edu/dimitrib/www/NDP.pdf">Neuro-Dynamic Programming</a></li>
+  <li><a href="https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf">Convex Optimization</a></li>
+  <li><a href="https://math.hws.edu/bridgeman/courses/327/s25/">CPSC 327: Data Structures and Algorithms Spring 2025</a></li>
+  <li><a href="https://www.cs.toronto.edu/~amir/teaching/csc236f15/materials/lec08.pdf">CSC 236 H1F, Lecture 8</a></li>
+  <li><a href="https://ocw.mit.edu/courses/res-18-001-calculus-fall-2023/mitres_18_001_f17_full_book.pdf">Calculus</a></li>
+  <li><a href="https://tor-lattimore.com/downloads/book/book.pdf">Bandit algorithms</a></li>
+  <li><a href="https://ece.iisc.ac.in/~parimal/2018/spqt/lecture-20.pdf">Instructor: Parimal Parag</a></li>
+  <li><a href="https://arxiv.org/pdf/1909.05207">Introduction to Online Convex Optimization</a></li>
+  <li><a href="https://tiu-edu.uz/media/books/2024/05/28/1664976801.pdf">Analysis 1</a></li>
+  <li>ChatGPT and Google Gemini [Both a lot]</li>
+</ul>]]></content><author><name>Alireza Kazemipour</name></author><category term="learning" /><summary type="html"><![CDATA[What struck my curiosity to investigate why $Q$-learning and SARSA converge was the realization that these methods use their estimates of action values at time step $t$ to estimate the action values at time step $t + 1$ in their update targets. This sounded really weired to me as though the convergence should not happen. So, I dug in and discovered the answer lies in the topic of stochastic approximation. Stochastic approximation is fairly a big topic, hence I cover it in four separate parts. In the last part I’ll turn my attention to Q-Learning and SARSA eventually. I’ll mention the assumption required to each proposition during their corresponding proofs to see where those assumptions were inevitably needed. Needed background In this section I’ll review some concepts needed throughout the document.]]></summary></entry><entry><title type="html">The law of total variance in practice</title><link href="https://alirezakazemipour.github.io/posts/2025/08/ltv/" rel="alternate" type="text/html" title="The law of total variance in practice" /><published>2025-08-19T00:00:00-07:00</published><updated>2025-08-19T00:00:00-07:00</updated><id>https://alirezakazemipour.github.io/posts/2025/08/ltv</id><content type="html" xml:base="https://alirezakazemipour.github.io/posts/2025/08/ltv/"><![CDATA[<p>In this post, I’ll solve an example that requires the use the law of total variance in RL.</p>
+
+<h1 id="background">Background</h1>
+<p>Background on some technical tools used in the main section.  Before we start, note that for two random variables $X\, \mathrm{and}\, Y$, $\mathbb{E}[Y \mid X]$ is a shorthand notation for $\mathbb{E}[Y \mid \sigma(X)]$!</p>
+
+<h2 id="the-law-of-total-variance">The law of total variance</h2>
+<p>Let $(\Omega, \mathcal{F}, \mathbb{P})$ be a probability space, $\mathcal{G}_1 \subseteq \mathcal{G}_2 \subseteq \mathcal{F}$ two sub-$\sigma$-algebras of $\mathcal{F}$, $X$ an integrable random variable on $(\Omega, \mathcal{F}, \mathbb{P})$  with finite variance. The following holds true:</p>
+
+<p>\(\mathbb{V}(X \mid \mathcal{G}_1) = \mathbb{\mathbb{E}}[\mathbb{V}(X \mid \mathcal{G}_2) \mid \mathcal{G}_1] - \mathbb{\mathbb{V}}[\mathbb{E}(X \mid \mathcal{G}_2) \mid \mathcal{G}_1].\)</p>
+<h2 id="the-law-of-the-unconscious-statistician-lotus">The law of the unconscious statistician (LOTUS)</h2>
+<p>Let $\mathbb{P}_X$ be the pushforward of the random element $X \in \mathcal{X}$. For any real-valued, $f: \mathcal{X} \to \mathbb{R}$ measurable function,</p>
+
+\[\mathbb{E}[f(X)] = \sum_xf(x)\mathbb{P}_X(x),\]
+
+<p>or</p>
+
+\[\mathbb{E}[f(X)] = \int_\mathcal{X} f(x)\mathrm{d}\mathbb{P}_X(x),\]
+
+<p>provided that either the right-hand side, or the left-hand side exist. This is known as the “law  of  the  unconscious  statistician”, or LOTUS.</p>
+
+<h2 id="jensens-inequality">Jensen’s inequality</h2>
+
+<p>Let $\bar{\mathbb{R}} = \mathbb{R} \cup$ <a href="2025-08-19-ltv.md">2025-08-19-ltv.md</a><a href="2025-08-19-ltv.md">2025-08-19-ltv.md</a>{$ -\infty, +\infty$}, and $\mathrm{dom}(f) = {x \in \mathbb{R}^d: f(x) &lt; \infty }$ for a real-valued function $f$ on $\mathbb{R}^d$.</p>
+
+<p><em>Jensen’s inequality</em>: Let $f: \mathbb{R}^d \to \bar{\mathbb{R}}$ be a measurable convex function and $X$ be an $\mathbb{R}^d$-valued random element on some probability space such that $\mathbb{E}[X]$ exists and $X \in \mathrm{dom}(f)$ holds almost surely. Then,</p>
+
+\[\mathbb{E}[f(X)] \geq f(\mathbb{E}[X]).\]
+
+<h1 id="an-example-the-law-of-total-variance-in-practice">An example the law of total variance in practice</h1>
+<p>We want to compare the variance of the target for SARSA and expected SARSA. The update rule of is</p>
+
+\[Q_{t + 1}(S_t, A_t) = Q_t(S_t, A_t) + \alpha \left[R_{t + 1} + \gamma Q_t(S_{t + 1}, A_{t + 1}) - Q_t(S_t, A_t) \right].\]
+
+<p>And the update rule for expected SARSA is</p>
+
+\[Q_{t + 1}(S_t, A_t) = Q_t(S_t, A_t) + \alpha \left[R_{t + 1} + \gamma \sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) - Q_t(S_t, A_t) \right],\]
+
+<p>where $\pi$ is the fixed policy that was used to generate the data $S_0, A_0, R_1, \, \dots\;$.</p>
+
+<p>Let $H_t = (S_0, A_0, R_1, \dots, S_t)$, and $H’_t = (S_0, A_0, R_1, \dots, S_t, A_t)$.</p>
+
+<ol>
+  <li>Show that</li>
+</ol>
+
+\[\mathbb{V}\left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert H_{t + 1}\right] \geq \mathbb{V}\left[\sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert H_{t + 1}\right].\]
+
+<p>First, note that using Markov property, we can replace $H_{t + 1}$ in the above expressions with $S_{t + 1}$. Second,</p>
+
+\[\mathbb{V}\left[\sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert S_{t + 1}\right] = 0.\]
+
+<p>Because given $S_{t + 1}$ (it is not random anymore), the randomness in the actions is averaged out using the expectation, so there is no randomness remaining more. Third,</p>
+
+\[\begin{align*}  
+\mathbb{V}\left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert S_{t + 1}\right] &amp; = \mathbb{E}\left[Q_t(S_{t + 1}, A_{t + 1})^2 \middle\vert S_{t + 1}\right] - \mathbb{E}\left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert S_{t + 1}\right]^2 \quad \text{(def of variance)} \\  
+&amp; = \sum_{a \in \mathcal{A}} \pi(a \mid S_{t + 1}) Q_t(a, S_{t + 1})^2 - \left(\sum_{a \in \mathcal{A}} \pi(a \mid S_{t + 1}) Q_t(a, S_{t + 1}) \right)^2 \quad \text{(def of expectation and LOTUS)} \\  
+&amp;\geq \sum_{a \in \mathcal{A}} \pi(a \mid S_{t + 1}) Q_t(a, S_{t + 1})^2 - \sum_{a \in \mathcal{A}} \pi(a \mid S_{t + 1})^2 Q_t(a, S_{t + 1})^2 \quad \text{(Cauchy-Swhartz)} \\  
+&amp;\geq \sum_{a \in \mathcal{A}} \pi(a \mid S_{t + 1}) Q_t(a, S_{t + 1})^2 - \sum_{a \in \mathcal{A}} \pi(a \mid S_{t + 1}) Q_t(a, S_{t + 1})^2 \\  
+&amp;\geq 0.  
+\end{align*}\]
+
+<p>Right off the bat, we already knew that the variance is always non-negative anyway. 😅</p>
+<ol>
+  <li>When would have the equality happened?</li>
+</ol>
+
+<p>Well you’re asking when the variance of a random variable is zero. Then, the answer is when it’s deterministic. For a deterministic random variable $X$ we have that $\mathbb{E}[X] = X$. Hence, we want</p>
+
+\[\mathbb{E}\left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert S_{t + 1}\right] = Q_t(S_{t + 1}, A_{t + 1}),\]
+
+<p>which can only happen when the policy is deterministic.</p>
+
+<ol>
+  <li>Show that</li>
+</ol>
+
+\[\mathbb{V} \left[R_{t + 1} + \gamma Q_t(S_{t + 1}, A_{t + 1}) \middle\vert H'_t \right] \geq \mathbb{V}\left[R_{t + 1} + \gamma \sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert H'_t\right],\]
+
+<p>that is, the appropriate conditional variance of the SARSA target is always at least as large as that of for the expected SARSA target.</p>
+
+<p>For convenience, let $Z_t = (S_t, A_t)$. We have,</p>
+
+\[\begin{align*}  
+&amp; \mathbb{V} \left[R_{t + 1} + \gamma Q_t(S_{t + 1}, A_{t + 1}) \middle\vert H'_t \right] - \mathbb{V}\left[R_{t + 1} + \gamma \sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert H'_t\right] =  \\  
+&amp; \mathbb{V} [R_{t + 1} \mid Z_t] + \gamma^2 \mathbb{V} \left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert Z_t \right] + 2\mathrm{Cov}\left[R_{t + 1},  \gamma Q_t(S_{t + 1}, A_{t + 1}) \middle\vert Z_t \right] - \mathbb{V} [R_{t + 1} \mid Z_t] - \gamma^2 \mathbb{V}\left[\sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert Z_t\right]  - 2\mathrm{Cov}\left[R_{t + 1},  \gamma \sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right)  \middle\vert Z_t \right]= \\  
+&amp; \gamma^2 \mathbb{V} \left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert Z_t \right] + 2\mathrm{Cov}\left[R_{t + 1},  \gamma Q_t(S_{t + 1}, A_{t + 1}) \middle\vert Z_t \right]  - \gamma^2 \mathbb{V}\left[\sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert Z_t\right]  - 2\mathrm{Cov}\left[R_{t + 1},  \gamma \sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right)  \middle\vert Z_t \right].  
+\end{align*}\]
+
+<p>For covariance terms, note that although $R_{t + 1}$ is not independent of $Q_t$ but given $Z_t$, it is (it is naturally independent of $S_{t + 1}$ and $A_{t + 1}$). So, covariance terms are zero. Hence, we end up with</p>
+
+\[\mathbb{V} \left[R_{t + 1} + \gamma Q_t(S_{t + 1}, A_{t + 1}) \middle\vert H'_t \right] - \mathbb{V}\left[R_{t + 1} + \gamma \sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert H'_t\right] =   
+\gamma^2 \left(\mathbb{V} \left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert Z_t \right]   - \mathbb{V}\left[\sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert Z_t\right]\right).\]
+
+<p>Now we apply the law of total variance</p>
+
+\[\begin{align*}  
+&amp;\gamma^2 \left(\mathbb{V} \left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert Z_t \right]   - \mathbb{V}\left[\sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert Z_t\right]\right) = \\  
+&amp;\gamma^2 \left(\mathbb{E}\left[\mathbb{V}\left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert S_{t + 1} \right] \middle\vert Z_t \right]   -  \mathbb{V}\left[\mathbb{E}\left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert S_{t + 1} \right] \middle\vert Z_t \right] \right) - \\  
+&amp;\gamma^2 \left( \mathbb{E}\left[\mathbb{V}\left[\sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert S_{t + 1}\right] \middle\vert Z_t \right] - \mathbb{V}\left[\mathbb{E}\left[\sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert S_{t + 1}\right] \middle\vert Z_t \right] \right)  
+\end{align*}\]
+
+<p>First, $\mathbb{E}\left[\mathbb{V}\left[\sum_{a’ \in \mathcal{A}} \pi\left(a’ \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a’ \right) \middle\vert S_{t + 1} \right] \middle\vert Z_t \right] = 0$. Given $S_{t + 1}$ everything inside becomes deterministic. Also,</p>
+
+\[\mathbb{V}\left[\mathbb{E}\left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert S_{t + 1} \right] \middle\vert Z_t \right]  = \mathbb{V}\left[ \sum_{a'} \pi(a' \mid S_{t + 1})Q_t(S_{t + 1}, a') \middle\vert Z_t \right]= \mathbb{V}\left[\mathbb{E}\left[ \sum_{a'} \pi(a' \mid S_{t + 1})Q_t(S_{t + 1}, a') \middle\vert S_{t + 1}\right] \middle\vert Z_t \right]\]
+
+<p>So, we have</p>
+
+\[\mathbb{V} \left[R_{t + 1} + \gamma Q_t(S_{t + 1}, A_{t + 1}) \middle\vert H'_t \right] - \mathbb{V}\left[R_{t + 1} + \gamma \sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert H'_t\right] =  \gamma^2 \mathbb{E}[\mathbb{V}[Q_t(S_{t + 1}, A_{t + 1}) \mid S_{t + 1}] \mid Z_t] \geq 0.\]
+
+<p>Since the variance is always positive.</p>
+
+<h1 id="reference">Reference</h1>
+
+<ul>
+  <li><a href="https://szepi.github.io/cmput-365-w25/">CMPUT 365: Introduction to Reinforcement Learning</a>,  <a href="https://szepi.github.io/cmput-365-w25/documents/worksheets/w7_soln.pdf">Worksheet 7</a>.</li>
+  <li><a href="https://sites.ualberta.ca/~szepesva/books.html">Bandit Algorithms</a>.</li>
+</ul>]]></content><author><name>Alireza Kazemipour</name></author><category term="learning" /><summary type="html"><![CDATA[In this post, I’ll solve an example that requires the use the law of total variance in RL. Background Background on some technical tools used in the main section. Before we start, note that for two random variables $X\, \mathrm{and}\, Y$, $\mathbb{E}[Y \mid X]$ is a shorthand notation for $\mathbb{E}[Y \mid \sigma(X)]$! The law of total variance Let $(\Omega, \mathcal{F}, \mathbb{P})$ be a probability space, $\mathcal{G}_1 \subseteq \mathcal{G}_2 \subseteq \mathcal{F}$ two sub-$\sigma$-algebras of $\mathcal{F}$, $X$ an integrable random variable on $(\Omega, \mathcal{F}, \mathbb{P})$ with finite variance. The following holds true: \(\mathbb{V}(X \mid \mathcal{G}_1) = \mathbb{\mathbb{E}}[\mathbb{V}(X \mid \mathcal{G}_2) \mid \mathcal{G}_1] - \mathbb{\mathbb{V}}[\mathbb{E}(X \mid \mathcal{G}_2) \mid \mathcal{G}_1].\) The law of the unconscious statistician (LOTUS) Let $\mathbb{P}_X$ be the pushforward of the random element $X \in \mathcal{X}$. For any real-valued, $f: \mathcal{X} \to \mathbb{R}$ measurable function, \[\mathbb{E}[f(X)] = \sum_xf(x)\mathbb{P}_X(x),\] or \[\mathbb{E}[f(X)] = \int_\mathcal{X} f(x)\mathrm{d}\mathbb{P}_X(x),\] provided that either the right-hand side, or the left-hand side exist. This is known as the “law of the unconscious statistician”, or LOTUS. Jensen’s inequality Let $\bar{\mathbb{R}} = \mathbb{R} \cup$ 2025-08-19-ltv.md2025-08-19-ltv.md{$ -\infty, +\infty$}, and $\mathrm{dom}(f) = {x \in \mathbb{R}^d: f(x) &lt; \infty }$ for a real-valued function $f$ on $\mathbb{R}^d$. Jensen’s inequality: Let $f: \mathbb{R}^d \to \bar{\mathbb{R}}$ be a measurable convex function and $X$ be an $\mathbb{R}^d$-valued random element on some probability space such that $\mathbb{E}[X]$ exists and $X \in \mathrm{dom}(f)$ holds almost surely. Then, \[\mathbb{E}[f(X)] \geq f(\mathbb{E}[X]).\] An example the law of total variance in practice We want to compare the variance of the target for SARSA and expected SARSA. The update rule of is \[Q_{t + 1}(S_t, A_t) = Q_t(S_t, A_t) + \alpha \left[R_{t + 1} + \gamma Q_t(S_{t + 1}, A_{t + 1}) - Q_t(S_t, A_t) \right].\] And the update rule for expected SARSA is \[Q_{t + 1}(S_t, A_t) = Q_t(S_t, A_t) + \alpha \left[R_{t + 1} + \gamma \sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) - Q_t(S_t, A_t) \right],\] where $\pi$ is the fixed policy that was used to generate the data $S_0, A_0, R_1, \, \dots\;$. Let $H_t = (S_0, A_0, R_1, \dots, S_t)$, and $H’_t = (S_0, A_0, R_1, \dots, S_t, A_t)$. Show that \[\mathbb{V}\left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert H_{t + 1}\right] \geq \mathbb{V}\left[\sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert H_{t + 1}\right].\] First, note that using Markov property, we can replace $H_{t + 1}$ in the above expressions with $S_{t + 1}$. Second, \[\mathbb{V}\left[\sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert S_{t + 1}\right] = 0.\] Because given $S_{t + 1}$ (it is not random anymore), the randomness in the actions is averaged out using the expectation, so there is no randomness remaining more. Third, \[\begin{align*} \mathbb{V}\left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert S_{t + 1}\right] &amp; = \mathbb{E}\left[Q_t(S_{t + 1}, A_{t + 1})^2 \middle\vert S_{t + 1}\right] - \mathbb{E}\left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert S_{t + 1}\right]^2 \quad \text{(def of variance)} \\ &amp; = \sum_{a \in \mathcal{A}} \pi(a \mid S_{t + 1}) Q_t(a, S_{t + 1})^2 - \left(\sum_{a \in \mathcal{A}} \pi(a \mid S_{t + 1}) Q_t(a, S_{t + 1}) \right)^2 \quad \text{(def of expectation and LOTUS)} \\ &amp;\geq \sum_{a \in \mathcal{A}} \pi(a \mid S_{t + 1}) Q_t(a, S_{t + 1})^2 - \sum_{a \in \mathcal{A}} \pi(a \mid S_{t + 1})^2 Q_t(a, S_{t + 1})^2 \quad \text{(Cauchy-Swhartz)} \\ &amp;\geq \sum_{a \in \mathcal{A}} \pi(a \mid S_{t + 1}) Q_t(a, S_{t + 1})^2 - \sum_{a \in \mathcal{A}} \pi(a \mid S_{t + 1}) Q_t(a, S_{t + 1})^2 \\ &amp;\geq 0. \end{align*}\] Right off the bat, we already knew that the variance is always non-negative anyway. 😅 When would have the equality happened? Well you’re asking when the variance of a random variable is zero. Then, the answer is when it’s deterministic. For a deterministic random variable $X$ we have that $\mathbb{E}[X] = X$. Hence, we want \[\mathbb{E}\left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert S_{t + 1}\right] = Q_t(S_{t + 1}, A_{t + 1}),\] which can only happen when the policy is deterministic. Show that \[\mathbb{V} \left[R_{t + 1} + \gamma Q_t(S_{t + 1}, A_{t + 1}) \middle\vert H'_t \right] \geq \mathbb{V}\left[R_{t + 1} + \gamma \sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert H'_t\right],\] that is, the appropriate conditional variance of the SARSA target is always at least as large as that of for the expected SARSA target. For convenience, let $Z_t = (S_t, A_t)$. We have, \[\begin{align*} &amp; \mathbb{V} \left[R_{t + 1} + \gamma Q_t(S_{t + 1}, A_{t + 1}) \middle\vert H'_t \right] - \mathbb{V}\left[R_{t + 1} + \gamma \sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert H'_t\right] = \\ &amp; \mathbb{V} [R_{t + 1} \mid Z_t] + \gamma^2 \mathbb{V} \left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert Z_t \right] + 2\mathrm{Cov}\left[R_{t + 1}, \gamma Q_t(S_{t + 1}, A_{t + 1}) \middle\vert Z_t \right] - \mathbb{V} [R_{t + 1} \mid Z_t] - \gamma^2 \mathbb{V}\left[\sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert Z_t\right] - 2\mathrm{Cov}\left[R_{t + 1}, \gamma \sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert Z_t \right]= \\ &amp; \gamma^2 \mathbb{V} \left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert Z_t \right] + 2\mathrm{Cov}\left[R_{t + 1}, \gamma Q_t(S_{t + 1}, A_{t + 1}) \middle\vert Z_t \right] - \gamma^2 \mathbb{V}\left[\sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert Z_t\right] - 2\mathrm{Cov}\left[R_{t + 1}, \gamma \sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert Z_t \right]. \end{align*}\] For covariance terms, note that although $R_{t + 1}$ is not independent of $Q_t$ but given $Z_t$, it is (it is naturally independent of $S_{t + 1}$ and $A_{t + 1}$). So, covariance terms are zero. Hence, we end up with \[\mathbb{V} \left[R_{t + 1} + \gamma Q_t(S_{t + 1}, A_{t + 1}) \middle\vert H'_t \right] - \mathbb{V}\left[R_{t + 1} + \gamma \sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert H'_t\right] = \gamma^2 \left(\mathbb{V} \left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert Z_t \right] - \mathbb{V}\left[\sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert Z_t\right]\right).\] Now we apply the law of total variance \[\begin{align*} &amp;\gamma^2 \left(\mathbb{V} \left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert Z_t \right] - \mathbb{V}\left[\sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert Z_t\right]\right) = \\ &amp;\gamma^2 \left(\mathbb{E}\left[\mathbb{V}\left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert S_{t + 1} \right] \middle\vert Z_t \right] - \mathbb{V}\left[\mathbb{E}\left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert S_{t + 1} \right] \middle\vert Z_t \right] \right) - \\ &amp;\gamma^2 \left( \mathbb{E}\left[\mathbb{V}\left[\sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert S_{t + 1}\right] \middle\vert Z_t \right] - \mathbb{V}\left[\mathbb{E}\left[\sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert S_{t + 1}\right] \middle\vert Z_t \right] \right) \end{align*}\] First, $\mathbb{E}\left[\mathbb{V}\left[\sum_{a’ \in \mathcal{A}} \pi\left(a’ \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a’ \right) \middle\vert S_{t + 1} \right] \middle\vert Z_t \right] = 0$. Given $S_{t + 1}$ everything inside becomes deterministic. Also, \[\mathbb{V}\left[\mathbb{E}\left[Q_t(S_{t + 1}, A_{t + 1}) \middle\vert S_{t + 1} \right] \middle\vert Z_t \right] = \mathbb{V}\left[ \sum_{a'} \pi(a' \mid S_{t + 1})Q_t(S_{t + 1}, a') \middle\vert Z_t \right]= \mathbb{V}\left[\mathbb{E}\left[ \sum_{a'} \pi(a' \mid S_{t + 1})Q_t(S_{t + 1}, a') \middle\vert S_{t + 1}\right] \middle\vert Z_t \right]\] So, we have \[\mathbb{V} \left[R_{t + 1} + \gamma Q_t(S_{t + 1}, A_{t + 1}) \middle\vert H'_t \right] - \mathbb{V}\left[R_{t + 1} + \gamma \sum_{a' \in \mathcal{A}} \pi\left(a' \mid S_{t + 1}\right)Q_t \left(S_{t + 1}, a' \right) \middle\vert H'_t\right] = \gamma^2 \mathbb{E}[\mathbb{V}[Q_t(S_{t + 1}, A_{t + 1}) \mid S_{t + 1}] \mid Z_t] \geq 0.\] Since the variance is always positive. Reference CMPUT 365: Introduction to Reinforcement Learning, Worksheet 7. Bandit Algorithms.]]></summary></entry><entry><title type="html">Sobolev spaces (not too wiggly functions), Hilbert spaces, and RHKS</title><link href="https://alirezakazemipour.github.io/posts/2025/08/sblv/" rel="alternate" type="text/html" title="Sobolev spaces (not too wiggly functions), Hilbert spaces, and RHKS" /><published>2025-08-17T00:00:00-07:00</published><updated>2025-08-17T00:00:00-07:00</updated><id>https://alirezakazemipour.github.io/posts/2025/08/sblv-hlbrt-rkhs</id><content type="html" xml:base="https://alirezakazemipour.github.io/posts/2025/08/sblv/"><![CDATA[<p>This post will be hell of a post! Haha 🤩</p>
+
+<p>Ah before I forget, Sobolev spaces are useful in the regime of partial derivatives.</p>
+
+<h1 id="supplementary-definitions-and-notation">Supplementary definitions and notation</h1>
+
+<p>In this section we review the required notation and concepts.</p>
+
+<h2 id="multi-index-vert-alpha-vert">Multi-index $\vert \alpha \vert$</h2>
+
+<p>A list $\alpha = (\alpha_1, \dots, \alpha_n)$ of integers $\alpha_i \geq 0$ is a <strong>multi-inex</strong> of order</p>
+
+\[\vert \alpha \vert := \alpha_1 + \dots \alpha_n.\]
+
+<h2 id="closure-of-a-set-a">Closure of a set $A$</h2>
+
+\[\bar{A} = A \cup \{\text{all limit points of } A\}.\]
+
+<h3 id="intuitive-meaning">Intuitive meaning</h3>
+
+<ul>
+  <li>Take  $A$  and “fill in” all the boundary points you can approach from within  $A$.</li>
+  <li>If  $A$ is already closed, its closure is just  $A$.</li>
+  <li>If  $A$  is open, its closure adds all the points “on the edge.”</li>
+</ul>
+
+<h2 id="lebesgue-integrability">(Lebesgue) integrability</h2>
+
+<p>First, let’s visit some background.</p>
+
+<h3 id="sigma-algebra">$\sigma$-algebra.</h3>
+
+<p>A $\sigma$-algebra on a set $\mathcal{X}$ is set of subsets of $\mathcal{X}$ that is closed under certain operations:</p>
+
+<ol>
+  <li>The whole set and the empty set are in $\mathcal{F}$: $\varnothing, \mathcal{X} \in \mathcal{F}$.</li>
+  <li>Closed under complement: If $A \in \mathcal{F}$, then $A^\complement \in \mathcal{F}$.</li>
+  <li>Closed under countable unions: If $A_1, A_2, \dots \in \mathcal{F}$, then $\cup_{i = 1}^\infty A_i \in \mathcal{F}$.</li>
+</ol>
+
+<h3 id="borel-sigma-algebra">Borel $\sigma$-algebra</h3>
+
+<p>The smallest $\sigma$-algebra on a topological  space $\mathcal{X}$ that contains all open sets is called the Borel σ-algebra: $\mathfrak{B}(\mathcal{X})$.</p>
+
+<h3 id="a-measure-mu">A measure $\mu$</h3>
+
+<p>A measure $\mu: \mathcal{F} \to [0, \infty)$ is a function whose domain is a $\sigma$-algebra with he following conditions:</p>
+
+<ol>
+  <li>At least for one element of $X \in \mathcal{F}, \, \mu(X) &lt; \infty$.</li>
+  <li>$\mu$ is $\sigma$-additive: $\mu\left(\cup_{i = 1}^\infty X_i \right)  = \sum_{i = 1}^\infty \mu(X_i)$, where $\left(X_i \right)_{i = 1}^\infty \in \mathcal{F}$ are countable  pairwise disjoint sets.</li>
+</ol>
+
+<p>Elements of $X \in \mathcal{F}$ are called <strong>measurable sets</strong>. Those with measure zero $\mu(X) = 0$ are called <strong>null sets</strong>.  On $\mathfrak{B}(\mathbb{R}^n)$, there is a unique measure,, called <strong>Borel measure</strong> on $\mathbb{R}^n$, which is translation invariant and assigns measure 1 to the unit cube $[0, 1]^n$.</p>
+
+<h3 id="convergence">Convergence</h3>
+
+<p>Let $(X, d)$ be a metric space. A sequence $x_n$ of points in $X$ is said to converge to a limit $x \in X$ if one has $d(x_n, x) \to \infty$. As $n \to \infty$. In this case, we say that $x_n \to x$ in the metric $d$, as $n \to \infty$ and that $\lim_{n \to \infty} x_n \to x$ in the metric space.</p>
+
+<h3 id="cauchy-sequence">Cauchy sequence</h3>
+
+<p>Let $(X, d)$ be a metric space. A sequence $(x_n)_{n=1}^\infty$ of points in $X$ is Cauchy sequence if $d(x_n x_m) \to \infty$ as $n,m \to \infty$. In other words, for every $\varepsilon &gt; 0$, there exists $N &gt; 0$ such that $d(x_n, x_m) \leq \varepsilon$ for all $n,  m \geq N.$</p>
+
+<h3 id="completeness">Completeness</h3>
+
+<p>A space is complete if every Cauchy sequence is convergent.</p>
+
+<h3 id="lebesgue-measure">Lebesgue measure</h3>
+
+<p>In the definition of the measure, the domain was a $\sigma$-algebra. So the input to the measure is set, but the subset of the chosen set is not necessarily in the $\sigma$-algebra. Hence, if the chosen set has a measure zero, the subset would not which would be wierd. This can happen in Borel measure space. Lebesgue $\sigma$-algebra with its corresponding  measure $\lambda$ completes this gap by including every subset of the null sets to the $\sigma$-algebra and thus making measure zero sets consistent.</p>
+
+<p>A function $f: \mathbb{R}^n \to \mathbb{R}$ is called (Lebesgue) measurable if $\mathbb{R}^n$ equipped with Lebesgue $\sigma$-algebra $\mathfrak{L}(\mathbb{R}^n)$, and $\mathbb{R}$ equipped with Borel $\sigma$-algebra $\mathfrak{B}(\mathbb{R})$ and pre-images $f^{-1}(B) \in \mathfrak{L} (\mathbb{R^n})$, for all Borel measurable sets $B \in \mathfrak{B}(\mathbb{R})$ are $\mathfrak{L}(\mathbb{R}^n)$ measurable. $f$ will be called Borel measurable $\mathfrak{B}(\mathbb{R}^n)$ if $f^{-1}(B) \in \mathfrak{B}(\mathbb{R}^n) \subset \mathfrak{L}(\mathbb{R}^n)$.</p>
+
+<h3 id="almost-everywhere">Almost everywhere</h3>
+
+<p>Two function $f, g: \mathbb{R}^n \to \mathbb{R}$ are  equal <em>almost everywhere</em> if the set
+{$f \neq g$} $\subset \mathbb{R}^n$ is a Lebesgue null set.</p>
+
+<h2 id="mathcallpomega-spaces">$\mathcal{L}^p(\Omega)$ spaces</h2>
+
+<p>Let $f: \mathbb{R}^n \to \mathbb{R}$ be a measurable function. For $p \in [1, \infty]$ the $L^p$ norm of $f$ is the extended real defined by</p>
+
+\[\lVert f \rVert_p := \left( \int_{\mathbb{R}^n} |f|^p\right)^{\frac{1}{p}} \: \in [0, \infty].\]
+
+<p>On the other hand, consider the following (possibly empty) set:</p>
+
+\[I_f = \left\{ c \in [0, \infty): \text{ the set } \{|f| &gt; c\} \text{ has zero measure}\right\} \subset [0, \infty).\]
+
+<p>The infimum of such $c$ is called the $L^\infty$ norm of $f$:</p>
+
+\[\lVert f \rVert_\infty := \inf I_f = \mathrm{ess}\,\sup |f|.\]
+
+<p>By convention, $\inf \varnothing = \infty$. Hence $\lVert f \rVert_\infty \in [0, \infty].$</p>
+
+<p>Let $p \in [0, \infty]$. A measurable function $f: \mathbb{R}^n \to \mathbb{R}$ with finite $L^p$ norm is called $p$-integrable or an $L^p$-function.  A $1$-integrable function is called integrable. $\mathcal{L}^p(\mathbb{R}^n)$ is the space of real $L^p$-functions. Note that non-degeneracy does not apply to $L^p$ so it is not a norm. The reason is that $\lVert f \rVert_p = 0 \Rightarrow f = 0$ is an almost everywhere statement which doesn’t mean $f$ is absolutely zero.</p>
+
+<h3 id="locally-lebesgue-integrable-functions-mathcallp_textsflocomega">Locally (Lebesgue) integrable functions $\mathcal{L}^p_\textsf{loc}(\Omega)$</h3>
+
+<h3 id="q-subset-omega-pre-compact-subset-q-of-omega">$Q \Subset \Omega$, pre-compact subset $Q$ of $\Omega$</h3>
+
+<p>An open subset of $\Omega$ whose closure $Q^\complement$ is compact and contained in $\Omega$.</p>
+
+<h3 id="the-characteristic-function-chi_e-mathbbrn-to-mathbbr-of-e-is-defined-to-be">The characteristic function $\chi_E: \mathbb{R}^n \to \mathbb{R}$ of $E$ is defined to be</h3>
+
+\[\chi_E(x) =
+ \begin{cases}
+1, &amp; x \in E; \\
+0, &amp; x \notin E.
+\end{cases}\]
+
+<p>Let $p \in [1, \infty]$. $\mathcal{L}^p_\textsf{loc}(\Omega)$ is set of all measurable functions $f: \mathbb{R}^n \to \mathbb{R}$ such that $\chi_Q f$ is $p$-integrable for every pre-compact $Q \Subset \mathbb{R}^n$.</p>
+
+<h2 id="the-space-cinfty_comega">The space $C^\infty_c(\Omega)$</h2>
+
+<p>The space of infinitely often diﬀerentiable real functions with compact (closed and bounded) support, hence the subscript $c$, in $\Omega$ is defined by</p>
+
+\[C^\infty_c(\Omega) = \{v: v \in  C^\infty(\Omega), \, \mathrm{supp}(v) ⊂ Ω \},\]
+
+<p>where</p>
+
+\[\mathrm{supp}(v) = \overline{\{\mathbf{x} \in \Omega: v(\mathbf{x}) \neq 0 \}}.\]
+
+<p>These functions are called <em>test functions</em>. They are used to “localize” problems without worrying about boundary effects. Because they vanish in a neighborhood of the boundary.</p>
+
+<h2 id="weak-derivatives-dalpha">Weak derivatives $D^\alpha$</h2>
+
+\[D^\alpha f(x) := \frac{\partial^{\vert \alpha \vert}f(x)}{\partial x_1^{\alpha_1} \dots \partial x_n^{\alpha_n}}.\]
+
+<p>Weak derivatives are the extension of the classical derivatives to non-differentiable functions (like $\vert x \vert$).</p>
+
+<p><strong>Definition</strong>. Suppose $\Omega$ is an open set in $\mathbb{R}^n$. Let $F, f \in L_\textsf{loc}^1(\Omega)$.
+A function $u$ belongs to $L_\textsf{loc}^1(\Omega)$, if for each compact (closed bounded) subset $\Omega’ \subset \Omega$, it holds</p>
+
+\[\int_{\Omega'} |u(\mathbf{x})|d\mathbf{x} \leq \infty.\]
+
+<p>If for all functions $g \in C^\infty_c(\Omega$), it holds that</p>
+
+\[\int_\Omega f(\mathbf{x}) g(\mathbf{x})d\mathbf{x} =  (-1)^{\vert \alpha \vert} \int_\Omega F(\mathbf{x}) D^\alpha g(\mathbf{x})d\mathbf{x} ,\]
+
+<p>then $f(x)$ is called weak derivative of $F(x) $with respect to the multi-index $\vert \alpha \vert$.</p>
+
+<h3 id="on-the-weak-derivatives">On the weak derivatives</h3>
+
+<p>• The notion ‘weak’ is used in mathematics if something holds for all appropriate test elements (test functions).</p>
+
+<p>• If $F(x)$ is classically diﬀerentiable on $\Omega$, then the classical derivative is also the weak derivative.</p>
+
+<p>• The assumptions on $F(x)$ and $f(x)$ are such that the integrals in the definition of the weak derivative are well defined. In particular, since the test functions vanish in a neighborhood of the boundary, the behavior of $F(x)$ and $f(x)$ if $x$ approaches the boundary is not of importance.</p>
+
+<p>• The main aspect of the weak derivative is due to the fact that the (Lebesgue) integral is not influenced from the values of the functions on a set of (Lebesgue) measure zero. Hence, the weak derivative is defined only up to a set of measure zero. It follows that $F(x)$ might be not classically diﬀerentiable on a set of measure zero, e.g., in a point, but it can still be weakly diﬀerentiable.</p>
+
+<p>• The weak derivative is uniquely determined, in the sense described above.</p>
+
+<p><strong>Example</strong>.  The weak derivative of the function $F(x) = \vert x \vert$ is</p>
+
+\[f(x) = 
+\begin{cases}
+1, &amp; x &lt; 0; \\
+0, &amp; x = 0; \\
+1, &amp; x &gt; 0.
+\end{cases}\]
+
+<h1 id="main-definitions">Main definitions</h1>
+
+<p>In this section, we’ll give the main definitions we were looking for.</p>
+
+<h2 id="sobolev-space">Sobolev space</h2>
+
+<p>Suppose $\Omega$ is an open set in $\mathbb{R}^n, k \in \mathbb{N}$, and $1 \leq p \leq \infty$. The Sobolev space $W^{k, p}(\Omega)$ consists of all locally integrable functions $f: \Omega \to \mathbb{R}$ such that</p>
+
+<p>\(\begin{equation*}
+	D^\alpha f \in L^p(\Omega), \quad \text{for all } 0 \leq \lvert \alpha \rvert \leq k.
+\end{equation*}\)
+Or, in other words,</p>
+
+\[W^{k,p}(\Omega) = \left\{f \in L_{\textsf{loc}}^1(\Omega): D^\alpha f \in L^p(\Omega) \text{ with } \vert \alpha \vert \leq k \right\}.\]
+
+<p>For $u \in W^{k, p}(\Omega)$, this space is equipped with the norm</p>
+
+\[\lVert u \rVert_{k, p} = \left(\int_\Omega \sum_{\vert \alpha \vert \leq k} \left|D^\alpha u(x)\right|^p dx\right)^\frac{1}{p} = \left( \sum_{\vert \alpha \vert \leq k} \left\lVert D^\alpha u(x)\right\rVert_p^p \right)^\frac{1}{p} \: \in [0, \infty].\]
+
+<h2 id="hilbert-space">Hilbert space</h2>
+
+<p>Hilbert space $H$ is a complete normed vector space, where the norm is defined to be the square root of the inner product for $f, g \in H$ $\langle f, g \rangle := \sqrt{\int fg}$.</p>
+
+<p>Note that $\mathcal{L}^2(\Omega)$ is a Hilbert space when the non-degeneracy is taken care of through the quotient space. Complete normed vector spaces are called <em>Banach spaces</em>, hence Hilbert spaces are Banach spaces. $W^{2, k}(\Omega)$ is a Hilbert space as well.</p>
+
+<h2 id="reproducing-kernel-hilbert-space-rkhs">Reproducing kernel Hilbert space (RKHS)</h2>
+
+<p>Consider the following linear real-valued function class, where $\psi$ is a predefined feature vector:</p>
+
+\[\mathcal{F} = \left\{f(x; w): f(x; w) = \psi(x) w^\top = \left\langle w, \phi(x) \right\rangle \right\}.\]
+
+<p>In supervised learning we smetimes look for the following minimizer of the empirical risk measure:</p>
+
+\[\hat{w} = \arg\min_w \left\{\frac{1}{n} \sum_{i=1}^{n} \ell \left(\langle w, \phi(X_i) \rangle, Y_i \right) + \frac \lambda2 \Vert w \Vert^2  \right\}.\]
+
+<p>The problem is that if $\psi(x)$ is infinite-dimensional, the inner product can’t be computed. The remedy is to use the kernel trick. Assume $k(x_1, x_2) = \langle \psi(x_1), \psi(x_2) \rangle$. If $w = \sum_{i =1}^{n}\alpha_i \psi(x_i)$, then $f(x) = \sum_{i =1}^{n}\alpha_i k(x_i, x)$, and $\langle w, w \rangle = \sum_{i = 1}^{n} \sum_{j = 1}^{n} \alpha_i \alpha_j k(x_i, x_j).$ This observation gives way to the reproducing Hilber kernel space’s definition:</p>
+
+<p>Given a kernel $k$ such that $\sum_{i = 1}^{n} \sum_{j = 1}^{n} \alpha_i \alpha_j k(x_i, x_j) \geq 0$, we define RKHS of $k$ as the function space $\mathcal{H}_0$ of the form</p>
+
+\[\mathcal{H}_0 = \left \{f(x): f(x) = \sum_{i = 1}^m \alpha_i k(x_i, x) = k\pmb{\alpha}^\top\right\},\]
+
+<p>with the inner product (norm) defines as</p>
+
+\[\lVert f(x) \rVert_\mathcal{H}^2 = \sum_{i = 1}^m f(x_i)^2 = \mathbf{f}^\top\mathbf{f}  = \pmb{\alpha}k^\top k\pmb{\alpha}^\top =  \pmb{\alpha} \mathbf{K}\pmb{\alpha}^\top = \sum_{i = 1}^{m} \sum_{j = 1}^{m} \alpha_i \alpha_j k(x_i, x_j) = \langle w, w\rangle,\]
+
+<p>where</p>
+
+\[\mathbf{K} = \begin{bmatrix}
+k(x_1, x_1), &amp; \dots&amp;  k(x_1, x_m) \\
+ \vdots &amp; \cdots &amp; \vdots \\
+ k(x_m, x_1), &amp; \dots &amp; k(x_m, x_m) 
+\end{bmatrix}\]
+
+<p>is the kernel Gram matrix.</p>
+
+<h1 id="references">References</h1>
+
+<ol>
+  <li><a href="https://tongzhang-ml.org/lt-book.html">Mathematical Analysis of Machine Learning Algorithms</a></li>
+  <li><a href="https://terrytao.wordpress.com/2009/01/30/254a-notes-8-a-quick-review-of-point-set-topology/"># 245B, Notes 8: A quick review of point set topology</a></li>
+  <li><a href="https://archive.org/details/introduction-to-topology-and-modern-analysis-simmons">Topology and Modern Analysis</a></li>
+  <li><a href="ChatGPT.com">ChatGPT</a></li>
+  <li><a href="https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/">Introduction To Functional Analysis</a></li>
+  <li><a href="https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/3d4cc88026d44a01f936cd6a0aa995cb_MIT18_102s20_lec_FA.pdf">Functional Analysis, Lecture notes for 18.102, Spring 2020</a></li>
+  <li><a href="https://www.math.ucdavis.edu/~hunter/pdes/pde_notes.pdf">Notes on Partial Diﬀerential Equations, Chapter 1 &amp; 3</a></li>
+  <li><a href="https://www.math.stonybrook.edu/~joa/PUBLICATIONS/SOBOLEV.pdf">Introduction to Sobolev Spaces, Lecture Notes MM692 2018-2</a></li>
+  <li><a href="https://www.wias-berlin.de/people/john/LEHRE/lehre.html">Numerical Mathematics 3, Chapter 3</a></li>
+</ol>]]></content><author><name>Alireza Kazemipour</name></author><category term="learning" /><summary type="html"><![CDATA[This post will be hell of a post! Haha 🤩]]></summary></entry></feed>

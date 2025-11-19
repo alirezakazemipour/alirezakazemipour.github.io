@@ -1,0 +1,600 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Some cool things about finite Markov chains and thereof - Alireza Kazemipour</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="Alireza Kazemipour">
+<meta property="og:title" content="Some cool things about finite Markov chains and thereof">
+
+
+  <link rel="canonical" href="https://alirezakazemipour.github.io/posts/2025/09/mrkv-chns/">
+  <meta property="og:url" content="https://alirezakazemipour.github.io/posts/2025/09/mrkv-chns/">
+
+
+
+  <meta property="og:description" content="In this post, I wanna summarize Sections 1.5 and 1.6 of Introduction to Stochastic Processes and kinda blew my mind.">
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2025-09-23T00:00:00-07:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Alireza Kazemipour",
+      "url" : "https://alirezakazemipour.github.io",
+      "sameAs" : null
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://alirezakazemipour.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Alireza Kazemipour Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://alirezakazemipour.github.io/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="https://alirezakazemipour.github.io/images/apple-touch-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="https://alirezakazemipour.github.io/images/apple-touch-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="https://alirezakazemipour.github.io/images/apple-touch-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="https://alirezakazemipour.github.io/images/apple-touch-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="https://alirezakazemipour.github.io/images/apple-touch-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="https://alirezakazemipour.github.io/images/apple-touch-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="https://alirezakazemipour.github.io/images/apple-touch-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="https://alirezakazemipour.github.io/images/apple-touch-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="https://alirezakazemipour.github.io/images/apple-touch-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="https://alirezakazemipour.github.io/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="https://alirezakazemipour.github.io/images/android-chrome-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="icon" type="image/png" href="https://alirezakazemipour.github.io/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="https://alirezakazemipour.github.io/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="manifest" href="https://alirezakazemipour.github.io/images/manifest.json?v=M44lzPylqQ">
+<link rel="mask-icon" href="https://alirezakazemipour.github.io/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="https://alirezakazemipour.github.io/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="https://alirezakazemipour.github.io/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="https://alirezakazemipour.github.io/assets/css/academicons.css"/>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="https://alirezakazemipour.github.io/">Alireza Kazemipour</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://alirezakazemipour.github.io/misc/">Miscellaneous</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://alirezakazemipour.github.io/unfin/">Unfinished ideas</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://alirezakazemipour.github.io/crs_prjcts/">Course projects</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://alirezakazemipour.github.io/year-archive/">Journal</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Some cool things about finite Markov chains and thereof">
+    <meta itemprop="description" content="In this post, I wanna summarize Sections 1.5 and 1.6 of Introduction to Stochastic Processes and kinda blew my mind.">
+    <meta itemprop="datePublished" content="September 23, 2025">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Some cool things about finite Markov chains and thereof
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  12 minute read
+	
+</p>
+          
+        
+        
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2025-09-23T00:00:00-07:00">September 23, 2025</time></p>
+        
+        
+             
+        
+    
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>In this post, I wanna summarize Sections 1.5 and 1.6 of <a href="https://archive.org/details/introduction-to-stochastic-process-lawler/mode/1up?view=theater">Introduction to Stochastic Processes</a> and kinda blew my mind.</p>
+
+<p>Okay, so we’re dealing with finite Markov chains {$X_n$} that have transition matrix $P$. A markov chain can have some recurrent classes and some transient states. Therefore, we can divide $P$ in blocks that represent these concepts. Concretely,</p>
+
+\[P = \left(\begin{array}{c|c}
+\tilde{P} &amp; 0 \\
+\hline
+S &amp; Q
+\end{array}\right),\]
+
+<p>where $\tilde{P}$ contains the transitions of recurrent classes and $Q$ contains the transitions of transient states. The matrix $Q$ is a substochastic matrix and since it only contains transient states, its eigenvalues are strictly less than one, which implies $\lim_{n \to \infty} Q^n \to 0$.</p>
+
+<hr />
+<p>So, now let’s prove that if a matrix $A$ has eigenvalues less than one, then $\lim_{n \to \infty} A^n \to 0$.  We know that we can write any matrix $A$ in its Jordan form as $A = M J M^{-1}$, hence $A^n = MJ^nM^{-1}$. The matrix $J$ is of the form</p>
+
+\[J = \begin{pmatrix} J_1 &amp; \\ &amp; \ddots \\ &amp; &amp; J_s\end{pmatrix},\]
+
+<p>where</p>
+
+\[J_i =\begin{pmatrix}
+\lambda_i &amp; 1 &amp; \\
+&amp;  . &amp; . &amp; \\
+&amp;  &amp; . &amp; 1 \\
+&amp;  &amp;  &amp; \lambda_i
+\end{pmatrix}.\]
+
+<p>As $n$ tends to infinity, $J^n$ tends to zero, and as a result $A^n$ tends to zero.</p>
+
+<hr />
+<p>Let $i$ be a transient state and $Y_i$ denote the total number of visits to $i$ which by the virtue of being a transient state is finite almost surely. Suppose $X_0 =j$, where $j$ is another transient state. Then,</p>
+
+\[\begin{align*}
+\mathbb{E}[Y_i \mid X_0 = j] &amp; = \mathbb{E}\left[\sum_{n=0}^\infty \mathbb{I}\left\{X_n = i \right\} \mid X_0=j \right] \\
+&amp; = \sum_{n=0}^\infty \mathbb{P}\left(\{X_n = i\} \mid X_0=j \right) \\
+&amp; = \sum_{n = 0}^\infty p_n(j, i) \\
+&amp; = \left(I + P + P^2 \dots \right)_{ji} \\
+&amp; = \left(I + Q + Q^2 \dots \right)_{ji} &amp; \text{(We kept the indices)}.
+\end{align*}\]
+
+<p>However, we’ll show right away that $\left(I + Q + Q^2 \dots \right)(1 - Q) = I$.</p>
+
+<hr />
+<p><em>By ChatGPT</em>.</p>
+
+<p>Let $A$ be any matrix with eigenvalues’s magnitude strictly less than one, then</p>
+
+\[S := I + A + A^2 + \dots = (I - A)^{-1}.\]
+
+<p><em>Proof</em>.</p>
+
+<p>Consider the partial sum</p>
+
+<p>\(S_n = \sum_{k =0}^n A^k.\)
+Then,</p>
+
+\[\begin{align*}
+(I - A) S_n \stackrel{\text{telescopic sum}}{=} I - A^{n + 1}
+\end{align*}.\]
+
+<p>Hence,</p>
+
+<p>\(\begin{align*}
+S_n = (I - A)^{-1}\left(I - A^{n + 1}\right)
+\end{align*}.\)
+As $n$ tends to infinity, $S_n$ tends to $(I - A)^{-1}$.</p>
+
+<hr />
+
+<p>Therefore, define $M = (1 - Q)^{-1}$ to get $\mathbb{E}[Y_i \mid X_0 = j] = M_{ji}$. The upshot is: If we want to compute the expected number of steps until the chain enters a recurrent class, assuming $X_0 = j$, we need only sum $M_{ji}$ over all transient states $i$.</p>
+
+<p>We can also use this technique to determine the expected number of steps that an <em>irreducible</em> Markov chain takes to go from one state $j$ to another state $i$. We first write the transition matrix $P$ for the chain with $i$ being the first pivot:</p>
+
+\[P = \left(
+\begin{array}{c|c}
+P(i, i) &amp; R \\
+\hline
+S &amp; Q
+\end{array}
+\right).\]
+
+<p>We then change $i$ to an absorbing state</p>
+
+\[\widetilde{P} = \left(
+\begin{array}{c|c}
+1 &amp; \mathbf{0} \\
+\hline
+S &amp; Q
+\end{array}
+\right).\]
+
+<p>Let $T_i$ be the number of steps needed to reach state $i$. For any other state $k$ let $T_{i,k}$ be the number of visits to $k$ before reaching $i$.Then,</p>
+
+\[\mathbb{E}\left[T_i \mid X_0=j \right] = \mathbb{E}\left[\sum_{k\neq i} T_{i, k} \mid X_0=j \right] = \sum_{k \neq i}M_{jk}.\]
+
+<p>We now suppose that there are at least two different recurrent classes and ask the question: starting at a given transient state $j$, what is the probability that the Markov chain eventually ends up in a particular recurrent class?</p>
+
+<p>In order to answer this question, we can assume that the recurrent classes consist</p>
+
+<p>of single points $r_1,\dots , r_k$ with $p(r_i, r_i) = 1$. If we order the states so that the recurrent states $r_1,\dots , r_k$ precede the transient states $t_1, \dots, t_s$, then</p>
+
+\[\widetilde{P} = \left(
+\begin{array}{c|c}
+I &amp; \mathbf{0} \\
+\hline
+S &amp; Q
+\end{array}
+\right).\]
+
+<p>For $i = 1,\dots , s, \, j = 1,\dots , k$, let $\alpha(t_i, r_j)$ be the probability that the chain</p>
+
+<p>starting at $t_i$ eventually ends up in recurrent state $r_j$. We set $\alpha(r_i, r_i) = 1$ and $\alpha(r_i, r_j) = 0 \; \mathrm{if}\, i \neq j$. For any transient state $t_i$ and some $n$,</p>
+
+\[\begin{align}
+\alpha(t_i, r_j) &amp;= \mathbb{P}(X_n = r_j \mid X_0 = t_i) \\
+&amp; = \sum_{x \in S} \mathbb{P}(X_1 = x \mid X_0 = t_i) \mathbb{P}(X_n = r_j \mid X_1 = x) \\
+&amp; = \sum_{x \in S} P(t_i, x) \alpha(x, r_j).
+\end{align}\]
+
+<p>In the matrix form, if $A$ is an $s \times k$ matrix with $\alpha(t_i, r_j)$ entries, then the above display can be written as:</p>
+
+<p>\(\begin{pmatrix}
+I \\
+A
+\end{pmatrix} = P \begin{pmatrix}
+I \\
+A
+\end{pmatrix} = \begin{pmatrix}
+I &amp; 0 \\
+S &amp; Q
+\end{pmatrix}
+\begin{pmatrix}
+I \\
+A
+\end{pmatrix}.\)
+Hence,</p>
+
+\[A = S + QA \Rightarrow A = (I - Q)^{-1}S = MS.\]
+
+<p><strong>Example</strong>. Consider a random walk with absorbing boundary on {$0, 1, \dots, 4$}. If we order the states {$0, 4, 1, 2, 3$} so that the recurrent states precede the transient states then</p>
+
+\[P = 
+\left(
+\begin{array}{cc|ccc}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+\hline
+1/2 &amp; 0 &amp; 0 &amp;1/2 &amp; 0 \\
+0 &amp; 0 &amp; 1/2 &amp; 0 &amp; 1/2 \\
+0 &amp; 1/2 &amp; 0 &amp; 1/2 &amp; 0
+\end{array}
+\right)\]
+
+<p>Then,</p>
+
+\[S = \begin{pmatrix}
+1/2 &amp; 0 \\
+0 &amp; 0 \\
+0 &amp; 1/2
+\end{pmatrix}
+\quad
+M = \begin{pmatrix}
+3/2 &amp; 1 &amp; 1/2 \\
+1 &amp; 2 &amp; 1 \\
+1/2 &amp; 1 &amp; 3/2
+\end{pmatrix}
+\quad
+MS = \begin{pmatrix}
+3/4 &amp; 1/4 \\
+1/2 &amp; 1/2 \\
+1/4 &amp; 3/4
+\end{pmatrix}.\]
+
+<p>Hence , starting at state 1 the probability that the the walk is eventually absorbed at state 0 is 3/4.</p>
+
+<p><strong>Example</strong> (Gambler’s ruin). Consider the random walk with absorbing boundary on {$0, \dots , N$}. Let $\alpha(j) = \alpha(j, N)$ be the probability that the walker starting at state $j$ eventually ends up absorbed in state $N$. The boundary conditions are $\alpha(0) = 0, \alpha(N) = 1$. For state $0 &lt; j &lt; N$ we have:</p>
+
+\[\alpha(j) = (1 - p)\alpha(j - 1) + p \alpha(j+1)\]
+
+<p>This is a linear difference equation. So, let’s solve it. We need to test $\alpha(j) = \lambda^j$ in the equation:</p>
+
+\[\begin{align}
+&amp;\lambda^j = (1 - p)\lambda^{j - 1} + p \lambda^{j + 1} \Rightarrow \\ 
+&amp;\lambda = (1 - p) + p\lambda^2 \Rightarrow \\
+&amp;\lambda
+= \frac{-1/p \pm \sqrt{1/p^2 - 4\frac{1 - p}{p}}}{2} \\ 
+&amp;= \frac{-1 \pm \sqrt{1 - 4(1 - p)p}}{2p} \\ 
+&amp; = \frac{-1 \pm \sqrt{4p^2 - 4p + 1}}{2p} \\
+&amp; = \frac{-1 \pm \sqrt{(2p - 1)^2}}{2p} \Rightarrow \\
+&amp;\lambda = \begin{cases}
+\frac{p - 1}{p} &amp; p\neq 1/2 \\
+1 &amp; p\neq 1/2 \\
+-1 &amp; p = 1/2
+\end{cases}.
+\end{align}\]
+
+<p>Hence,</p>
+
+\[\alpha(j) = \begin{cases}
+c_1 + c_2(1 - 1/p)^j &amp; p \neq 1/2 \\
+c_1 + jc_2 &amp; p = 1/2
+\end{cases}.\]
+
+<p>After applying the boundary conditions:</p>
+
+\[\alpha(j) = \begin{cases}
+\frac{(1 - 1/p)^j - 1}{1 - (1 - 1/p)^N} &amp; p \neq 1/2 \\
+j/N &amp; p = 1/2
+\end{cases}.\]
+
+<p>Suppose $p = 1/2$, and let $T$ be the time it takes for the random walk to reach $0$ or $N$, and let</p>
+
+\[G(j) = \mathbb{E}[T \mid X_0 = j].\]
+
+<p>$G(0) = 0, G(N) = 0$ and by considering one step we can that</p>
+
+\[G (j) = 1 + 1/2 G (j - 1) + 1/2 G (j + 1), \quad j = 1,\dots , n - 1.\]
+
+<p>As an inhomogeneous linear difference equation, $G(j) = j^2$ is a solution. After solving the homogeneous version, we get:</p>
+
+\[G(j) = j^2 + c_1 + c_2j.\]
+
+<p>After applying the boundary conditions, we get:</p>
+
+\[G(j) = j(N - j).\]
+
+<hr />
+<p><strong>Example</strong> Simple Random Walk on a Circle. Let $N \geq 2$ be an integer. We can consider {$0, 1, … , N -1$} to be a “circle” by assuming that $N - 1$ is adjacent to $0$ as well as $N -2$. The invariant probability is the uniform distribution (why?). Assume that $X_0 = 0$ and let $T_k$ denote the first time at which the number of distinct points visited equals $k$. Then $T_N$ is the first time that every point has been visited. By definition  $T_1 = 0$, and $T_2 = 1$. We compute $r(k) = \mathbb{E}[T_k - T_{k-1}]$ for $k = 3,\dots , N$; a little thought will show that the value depends only on $k$ and not on $N$. At time $T_{k-1}$ the chain is at a boundary point so that one of the neighbors of $X_{T_{k - 1}}$, has been visited and the other has not. In the next step we will either visit the new point or we will go to an interior point. If we go to the interior point, the random walk has to continue until it reaches a boundary point and then we start afresh. By $G(j) = j(N - j)$ above, the expected time that it takes the random walk from the interior point (next to the boundary point) to reach a boundary point within {$1, \dots k - 1$} is</p>
+
+\[G(2) = (2-1) (k - 1 - 2) = k - 3\]
+
+<p>We therefore get the equation</p>
+
+<p>\(r(k) = 1/2 + 1/2[1 + (k - 3) + r(k)].\)
+Therefore,</p>
+
+\[\mathbb{E}[T_N] = \sum_{k = 2}^{n} r(k).\]
+
+<hr />
+<p><strong>Example</strong> (Urn Model). Suppose there is an urn with $N$ balls. Each ball is colored either red or green. In each time period, one ball is chosen at random from the urn and with probability $1/2$ is replaced with a ball of the other color; otherwise, the ball is returned to the urn. Let $j$ denote the number of red balls. This chain would tend to keep the number of red balls and green balls about the same. In fact, the invariant probability is given by the binomial distribution</p>
+
+<p>\(\pi(j) = {N \choose j}\frac{1}{2^N}.\)
+<em>Proof</em>.</p>
+
+\[\begin{align}
+(\pi P)(j) &amp;= \sum_{k = 0}^N\pi(k) P(k, j) \\
+&amp; = \pi(j - 1)P(j - 1, j) + \pi(j)P(j, j) + \pi(j + 1)P(j + 1, j) \\
+&amp; = \frac{1}{2^N}{N \choose j - 1}\frac{N - (j - 1)}{2N} + \frac{1}{2^N}{N \choose j}\frac{1}{2} + \frac{1}{2^N}{N \choose j + 1}\frac{j + 1}{2N} \\
+&amp; = \frac{1}{2^N} \left[{N \choose j - 1}\frac{N - (j - 1)}{2N} + {N \choose j}\frac{1}{2} + {N \choose j + 1}\frac{j + 1}{2N}\right]
+\end{align}.\]
+
+<p>And,</p>
+
+\[{N \choose j + 1}\frac{j + 1}{2N} = {N \choose j}\frac{N - j}{2N}, \quad  {N \choose j - 1}\frac{N - (j - 1)}{2N} = {N \choose j}\frac{j}{2N}.\]
+
+<p>Hence, their sum equals ${N \choose j}\frac{1}{2}$ and we have:</p>
+
+\[(\pi P)(j) = \sum_{k = 0}^N\pi(k) P(k, j) = {N \choose j}\frac{1}{2^N} = \pi(j). \square\]
+
+<hr />
+<p><strong>Example</strong> (Cell Genetics). Suppose each cell has $N$ particles each of type $I$ or $II$. Let $j$ be the number of particles of type $I$. In reproduction, it is assumed that the cell duplicates itself and then splits, distributing the particles. After duplication, the cell has $2j$ particles of type $I$ and $2(N - j)$ particles of type $II$. It then selects $N$ of these $2N$ particles for the next cell. By using the hypergeometric distribution we see that this gives rise to transition probabilities</p>
+
+\[P(j, k) = \frac{\binom{2j}{k}{2(N - j) \choose N - k}}{\binom{2N}{N}}.\]
+
+<p>This Markov chain has two absorbing states, $0$ and $N$. Eventually, all cells will have only particles of type
+$I$ or of type $II$.</p>
+
+<hr />
+<p><strong>Example</strong> (Card shuffling). Consider a deck of cards numbered $1, \dots, n$. At each time we draw a card at random and placing it at the top of the deck. This can be thought of as a Markov chain on $S_n$, the set of permutations of $n$ elements. If $\lambda$ denotes any permutation (one-to-one</p>
+
+<p>correspondence of {$1,\dots, n$} with itself), and $\nu_j$ denotes the permutation corresponding to moving the $j$th card to the top of the deck, then the transition probabilities for this chain are given by</p>
+
+\[p(\lambda, \nu_j \lambda) = \frac{1}{n}, \quad j = 1, \dots ,n.\]
+
+<p>This chain is irreducible and aperiodic (we have self-loops). The unique invariant probability is the uniform measure on $S_n$, the measure that assigns probability $1/n!$ to each permutation (how?).</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://alirezakazemipour.github.io/tags/#learning" class="page__taxonomy-item" rel="tag">learning</a>
+    
+    </span>
+  </p>
+
+
+
+
+      </footer>
+
+      
+
+      
+
+
+  <nav class="pagination">
+    
+      <a href="https://alirezakazemipour.github.io/posts/2025/08/t-dstrbtn-p-vls/" class="pagination--pager" title="A reminder on Student’s t-distribution and p-values
+">Previous</a>
+    
+    
+      <a href="https://alirezakazemipour.github.io/posts/2025/10/cnvrgnc-sprmrtngl/" class="pagination--pager" title="Convergence of Positive Supermartingales
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<a href="/sitemap/">Sitemap</a>
+<!-- end custom footer snippets -->
+
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="http://github.com/alirezakazemipour"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <!-- <li><a href="https://alirezakazemipour.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li> -->
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Alireza Kazemipour. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script src="https://alirezakazemipour.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  </body>
+</html>
+

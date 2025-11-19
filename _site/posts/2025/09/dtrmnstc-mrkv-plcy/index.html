@@ -1,0 +1,473 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>When is a deterministic optimal policy in MDPs attainable? - Alireza Kazemipour</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="Alireza Kazemipour">
+<meta property="og:title" content="When is a deterministic optimal policy in MDPs attainable?">
+
+
+  <link rel="canonical" href="https://alirezakazemipour.github.io/posts/2025/09/dtrmnstc-mrkv-plcy/">
+  <meta property="og:url" content="https://alirezakazemipour.github.io/posts/2025/09/dtrmnstc-mrkv-plcy/">
+
+
+
+  <meta property="og:description" content="In non-theory research papers, I often see that the optimal (deterministic Markov) policy for MDPs is defined as">
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2025-09-10T00:00:00-07:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Alireza Kazemipour",
+      "url" : "https://alirezakazemipour.github.io",
+      "sameAs" : null
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://alirezakazemipour.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Alireza Kazemipour Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://alirezakazemipour.github.io/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="https://alirezakazemipour.github.io/images/apple-touch-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="https://alirezakazemipour.github.io/images/apple-touch-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="https://alirezakazemipour.github.io/images/apple-touch-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="https://alirezakazemipour.github.io/images/apple-touch-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="https://alirezakazemipour.github.io/images/apple-touch-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="https://alirezakazemipour.github.io/images/apple-touch-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="https://alirezakazemipour.github.io/images/apple-touch-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="https://alirezakazemipour.github.io/images/apple-touch-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="https://alirezakazemipour.github.io/images/apple-touch-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="https://alirezakazemipour.github.io/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="https://alirezakazemipour.github.io/images/android-chrome-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="icon" type="image/png" href="https://alirezakazemipour.github.io/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="https://alirezakazemipour.github.io/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="manifest" href="https://alirezakazemipour.github.io/images/manifest.json?v=M44lzPylqQ">
+<link rel="mask-icon" href="https://alirezakazemipour.github.io/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="https://alirezakazemipour.github.io/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="https://alirezakazemipour.github.io/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="https://alirezakazemipour.github.io/assets/css/academicons.css"/>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="https://alirezakazemipour.github.io/">Alireza Kazemipour</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://alirezakazemipour.github.io/misc/">Miscellaneous</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://alirezakazemipour.github.io/unfin/">Unfinished ideas</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://alirezakazemipour.github.io/crs_prjcts/">Course projects</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://alirezakazemipour.github.io/year-archive/">Journal</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="When is a deterministic optimal policy in MDPs attainable?">
+    <meta itemprop="description" content="In non-theory research papers, I often see that the optimal (deterministic Markov) policy for MDPs is defined as">
+    <meta itemprop="datePublished" content="September 10, 2025">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">When is a deterministic optimal policy in MDPs attainable?
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  10 minute read
+	
+</p>
+          
+        
+        
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2025-09-10T00:00:00-07:00">September 10, 2025</time></p>
+        
+        
+             
+        
+    
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>In non-theory research papers, I often see that the optimal (deterministic Markov) policy for MDPs is defined as</p>
+
+\[\pi^* \in \arg\max_\pi v_\pi(s), \quad \forall s \in S,\]
+
+<p>where for a real-valued function $g$ on set $X$ $\arg\max$ is defined as</p>
+
+\[\arg\max_{x \in X} g(x) := \{x' \in X: g(x') \geq g(x), \: \forall x \in X \}.\]
+
+<p>But, if the $\max$ is unattainable the definition of the optimal policy is ill-defined. To rectify that, we can define the optimal policy $\pi^*$ as the policy  such that</p>
+
+\[v^*: = v_{\pi^*}(s) = \sup_\pi v_\pi(s), \quad \forall s \in S.\]
+
+<p>In this post, I wanna dig into Proposition 4.4.3 in <a href="https://onlinelibrary.wiley.com/doi/book/10.1002/9780470316887">Martin L. Puterman’s book</a>. So, here is the question: <strong>When is the supremum defined below attainable, i.e., $\sup = \max$?</strong></p>
+
+\[u^*_t(h_t) = \sup_{a \in A_s} \left\{r_t(s_t, a) + \sum_{j \in S}p_t(j \mid s_t, a)u^*_{t + 1}(h_t, a, j)\right\}.\]
+
+<p>In the above display, $u_t^*$ is optimal history dependent value function at time step $t$, $h_t = s_0, a_0, \dots, s_t$ is the history until time step $t$, $s_t$ is the state at time step $t$, $r_t$ is the deterministic reward function at time step $t$, $p_t$ is the transition dynamics at time step $t$, and $A_s$ is the set of available actions at state $s \in S$.</p>
+
+<p>Let’s first revisit the background we need.</p>
+
+<h1 id="background">Background</h1>
+
+<p>We will take limits, hence we need to make sure we can. For this, we need define the concepts of completeness and separability. I’ve already defined completeness in <a href="https://alirezakazemipour.github.io/posts/2025/08/sblv/">this post about Sobolev space</a>, so I only revisit separability here.</p>
+
+<h2 id="a-separable-metric-space">A separable metric space</h2>
+
+<p>First we need to know what is a dense a set.</p>
+
+<hr />
+<h3 id="a-dense-set">A dense set</h3>
+
+<p>Let $(X, D)$ be a metric space. Let $E \subset X$ be as subset and $\bar{E}$ be its closure. $E$ is dense if $\bar{E} = X$.</p>
+
+<hr />
+<p>A topological space X (which naturally can be thought of being generated by a metric distance that are open with respect to the metric distance) is separable if it has a countable dense subset, e.g., irrationals in reals. Or said differently: You can “approximate” any point in the space by points from a <strong>countable subset</strong>.</p>
+
+<h2 id="weak-convergence">Weak convergence</h2>
+
+<p>Let {$\mu_n$}$_{n \in \mathbb{N}}$ be a sequence of probability measures on $(X, \mathcal{F})$. We say that $\mu_n$ converges weakly to a probability measure $\mu$ on $(X, \mathcal{F})$ if $\int f d\mu_n = \int f d\mu$ for all bounded $\mathcal{F}$-measurable functions $f$.</p>
+
+<h2 id="semicontinuous-functions-aka-almost-everywhere-continuous-functions-not-jumpy-functions">Semicontinuous functions (a.k.a. almost everywhere continuous functions, not jumpy functions)</h2>
+
+<p>First we need to know what an open set is.</p>
+
+<hr />
+<h3 id="an-open-set">An open set</h3>
+
+<p>Let $(X, d)$ be a metric space. Given any $x \in X$ and $r &gt; 0$, define the open ball $B(x, r)$ centred at $x$ with radius $r$ to be the set of all $y \in X$ such that $d(x, y) &lt; r$. Given a set $E$, we say $x$ is an interior point of $E$ if there is some open ball centred at $x$, which is contained in $E$. A set is open if every point is an interior point</p>
+
+<hr />
+
+<p>Let $X$ be a complete separable metric space and $f$ a real-valued function on $X$. We say that $f$ is upper semicontinuous (u.s.c.) if, for any sequence ${x_n}$ of $X$’s elements which converges to $x^*$,</p>
+
+\[\lim\sup_{n \to \infty} f(x_n) \leq f(x^*).\]
+
+<p>Like</p>
+
+\[f(x) = \begin{cases}x + 1 &amp; \mathrm{if}\, x \geq 1 \\ x &amp; x &lt; 1 \end{cases}\]
+
+<p>and $x_n \to 1$. Similarly,
+$f$ is said to be lower semicontinuous (l.s.c.) whenever $-f$ is u.s.c., or equivalently,
+$\lim\inf_{n \to \infty} f(x_n) \geq f(x^*).$ A continuous function is both u.s.c and l.s.c.</p>
+
+\[f(x) = \begin{cases}x + 1 &amp; x &gt; 1\\ x &amp; x \leq 1\end{cases}\]
+
+<p>when  $x_n \to 1$ is l.s.c.</p>
+
+<hr />
+<p><strong>Lemma</strong> 1. Let $X$ be a complete separable metric space. Then,</p>
+<ol>
+  <li>If $f \geq 0$ and $g \geq 0$ are u.s.c. on $X$, then $fg$ is u.s.c. on $X$.</li>
+  <li>If $f,g$ are u.s.c. on $X$, then $f + g$ is u.s.c. on X.</li>
+  <li>If ${f_n}$ is a decreasing sequence of nonpositive u.s.c. functions on $X$, then $\lim_{n \to \infty} f_n$ is u.s.c. on $X$.</li>
+</ol>
+
+<p><em>Proof</em>. [ChatGPT]</p>
+
+<p>Part (1). 
+One convenient characterization of upper semicontinuity is that: $h$ is u.s.c. iff for every $\alpha \in \mathbb{R}$, the set {$x: h(x) &lt; \alpha$} is open.</p>
+
+<p>We will show that for every $c \in \mathbb{R}$ the set ${x \in X: f(x)g(x) &lt; c}$ is open. If $c \leq 0$, then $U_c = \varnothing$ because $f,g$ are nonnegative, and $\varnothing$ is open. So, fix $c &gt; 0$. We have</p>
+
+\[\{x \in X: f(x)g(x) &lt; c\} = \cup_{r &gt; 0} \{x \in X: f(x) &lt; r\; \mathrm{and} \;g(x) &lt; \frac{c}{r}\}.\]
+
+<p>So, $f,g$ are u.s.c, the sets ${x \in X: f(x) &lt; r } \; \mathrm{and} \; {x \in x: g(x) &lt; \frac{c}{r}}$ are open for any $r$, hence their intersection is open, and the union of open sets are open. $\square$</p>
+
+<p>Part (2). 
+A proof can be given similar to Part (1), however the result is also immediate from the definition of u.s.c.</p>
+
+<p>Part(3).
+Note that $f(x) := \lim_{n \to \infty}f_n(x) = \inf_{n}f_n(x)$. This indicates $f_1(x) \geq f_2(x) \geq \dots f_n(x) \geq \dots f(x)$. Hence since the sequence is decreasing, for each of the $f_n(x)$ that $f_n(x) &lt; c$ holds, it will hold for all $m &gt; n$, where $c$ is a real number. Hence,</p>
+
+\[\{x \in X:  f(x) &lt; c\} = \cup_{n =1}^\infty \{x \in X:  f_n(x) &lt; c\}.\]
+
+<p>The proof is completed by stating that since $f_n$s are u.s.c., ${x \in X:  f_n(x) &lt; c}$ is open and the union of open sets is open. $\square$</p>
+
+<p><strong>Proposition</strong> 1. Suppose $C$ is a compact subset of a complete separable metric space $X$, and $f$ is u.s.c. on $X$.
+Then there exists an $x^*$ in $C$ such that $f(x^*) \geq f(x)$ for all $x \in C.$</p>
+
+<p><em>Proof</em>. Let $y^* = \sup_{x \in C}f(x)$ and the corresponding $x$ by $x^*$. Let ${x_n}$ be a sequence in $C$ for which $\lim_{n \to \infty} f(x_n) = y^*$. Then, since $C$ is a compact subset of a complete separable metric space, there exists a subsequence ${x_{n_k}}$ which has a limit $x^*$. By since $f$ is u.s.c., then $f(x^*) \geq \lim_{k \to \infty}f(x_{n_k}) = y^*$. Hence, $f(x^*) = y^*$. $\square$</p>
+
+<p><strong>Proposition</strong> 2. Let $X$ be a countable set, $Y$ a complete separable metric space and $q(x, y)$ a bounded nonnegative real-valued function that is l.s.c. in $y$ for each $x \in X$. Let, $f(x)$ be bounded nonpositive real-values function on $X$ for which $\sum_{x \in X}f(x)$ is finite. Then,</p>
+
+\[h(y) = \sum_{x \in X}f(x)q(x, y)\]
+
+<p>is u.s.c on $Y$.</p>
+
+<p><strong>Proof</strong>. Based on the part (1) of the above Lemma 1, for each $x \in X, \; f(x)q(x, y) \leq 0$ is u.s.c. Let ${x_n}$ be an increasing sequence of finite subsets of $X$ such that $\cup_{n =1}^\infty X_n = X$. Then, by Lemma 1 we have that $h_n(y) := \sum_{x \in X_n} f(x)q(x, y)$ is u.s.c. in $y$ for each $n$. Since $h_n(y)$ is decreasing in $n$, by Part (3) of Lemma 1, $h(y) = \lim_{n \to \infty} h_n(y)$ is u.s.c. $\square$</p>
+
+<p>The following corollary. generalizes the previous proposition to nondiscrete sets. Note that a kernel $q(\cdot \mid y)$ on Borel subset of $X$ is continuous if $q(\cdot \mid y_n)$ converges weakly to $q(\cdot \mid y)$ whenever {$y_n$} converges to $y$. It means for a bounded measurable real-valued function $f$ on $X$,</p>
+
+\[\lim_{n \to \infty} \int_X f(x) q(dx \mid y_n) = \int_X f(x)q(dx \mid y).\]
+
+<p><strong>Corollary</strong>. 
+Let $X, Y$ be complete separable metric spaces, $f(x)$ a bounded u.s.c. function on $X$, and $q(\cdot \mid y)$ a continuous kernel on the Borel sets of $X$. Then, $h(y) := \int_X f(x) q(dx \mid y)$ is u.s.c. on $Y$.</p>
+
+<h1 id="main-body">Main body</h1>
+
+<p><strong>Proposition</strong>. Assume $S$ is finite or countable, and that</p>
+<ol>
+  <li>$A_s$ is finite for each $s \in S$, or</li>
+  <li>$A_s$ is a compact subset of a complete separable metric space, $r_t(s, a)$ is continuous in $a$ for each $s \in S$, there exists an $M &lt; \infty$ for which $|r_t(s_t, a)| &lt; M$ for all $a \in A_s$ and $s \in S$, and $p_t(j \mid s, a )$ is continuous in $a$ for each $j \in S$ and $s \in S$  and $t = 1,2,. . . , N$, or</li>
+  <li>$A_s$ is a compact subset of a complete separable metric space, $r_t(s, a)$ is u.s.c. in $a$ for each $s \in S$, there exists an $M &lt; \infty$ for which $|r_t(s_t, a)| &lt; M$ for all $a \in A_s$ and $s \in S$, and $p_t(j \mid s, a )$ is l.s.c. in $a$ for each $j \in S$ and $s \in S$  and $t = 1,2,. . . , N$.
+Then there exists a deterministic Markov policy which is optimal.</li>
+</ol>
+
+<hr />
+<p><em>Proof.</em></p>
+
+<p>We need to show that for each state $s$, there exists an action $a’ \in A_s$, for which</p>
+
+\[r_t(s, a') + \sum_{j \in S}p_t(j \mid s, a') u^*_{t + 1}(j) = \sup_{a \in A_s} \left\{r_t(s, a) + \sum_{j \in S}p_t(j \mid s, a) u^*_{t + 1}(j)\right\}.\]
+
+<p>If $A_s$ is finite the result is immediate. So, Part (1) follows naturally. Now consider the setting of Part (3). Since $|r_t(s_t, a)| &lt; M$ for all $a \in A_s$ and $s \in S$ and $t \in [N]$, Therefore, for each $t$, $u^*_t(s) - NM \leq 0$. Now we apply Proposition 2, where $X = S, f(x) = u^*_{t + 1}(x), \, \mathrm{and}\, q(x, y) = p_t(j \mid s, y)$ for a fixed state $x$. Then,</p>
+
+\[\sum_{j \in S}p_t(j \mid s, a)\left[u_{t + 1}^*(j) - NM\right]\]
+
+<p>is u.s.c., from which we can conclude that $\sum_{j \in S}p_t(j \mid s, a)u_{t + 1}^*(j)$ is u.s.c. because shifting by a constant doesn’t change the continuity. By, Part (2) of Lemma 1 we can conclude that $r_t(s, a) + \sum_{j \in S}p_t(j \mid s, a)u_{t + 1}^*(j)$ is u.s.c. in $a$ for each state $s$. Hence, by Proposition 1, the supermum over $A_s$ is attained. Part (2) is a special case of Part(3) since continuous functions are both upper and lower s.c. $\square$</p>
+<h1 id="references">References</h1>
+<ul>
+  <li><a href="https://onlinelibrary.wiley.com/doi/book/10.1002/9780470316887">Markov Decision Processes: Discrete Stochastic Dynamic Programming</a></li>
+  <li><a href="https://terrytao.wordpress.com/2009/01/30/254a-notes-8-a-quick-review-of-point-set-topology/">245B, Notes 8: A quick review of point set topology</a></li>
+  <li><a href="https://www.bios.unc.edu/~kosorok/">Introduction to Empirical Processes and Semiparametric Inference</a></li>
+  <li><a href="https://web.ma.utexas.edu/users/gordanz/notes/weak.pdf">Theory of Probability I</a></li>
+  <li><a href="https://www.probabilitycourse.com/chapter7/7_2_4_convergence_in_distribution.php">Introduction to Probability, Statistics, and Random Processes</a></li>
+  <li>ChatGPT [as always <em>:(</em>]</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://alirezakazemipour.github.io/tags/#learning" class="page__taxonomy-item" rel="tag">learning</a>
+    
+    </span>
+  </p>
+
+
+
+
+      </footer>
+
+      
+
+      
+
+
+  <nav class="pagination">
+    
+      <a href="https://alirezakazemipour.github.io/posts/2025/09/stchstc-apprxmtn-1/" class="pagination--pager" title="Stochastic Approximation Part 1
+">Previous</a>
+    
+    
+      <a href="https://alirezakazemipour.github.io/posts/2025/09/indctn-by-cntrdctn/" class="pagination--pager" title="Induction by Contradiction
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<a href="/sitemap/">Sitemap</a>
+<!-- end custom footer snippets -->
+
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="http://github.com/alirezakazemipour"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <!-- <li><a href="https://alirezakazemipour.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li> -->
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Alireza Kazemipour. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script src="https://alirezakazemipour.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  </body>
+</html>
+

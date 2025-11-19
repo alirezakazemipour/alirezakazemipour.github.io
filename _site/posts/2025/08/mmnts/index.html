@@ -1,0 +1,435 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Random variables’ moments and thereof - Alireza Kazemipour</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="Alireza Kazemipour">
+<meta property="og:title" content="Random variables’ moments and thereof">
+
+
+  <link rel="canonical" href="https://alirezakazemipour.github.io/posts/2025/08/mmnts/">
+  <meta property="og:url" content="https://alirezakazemipour.github.io/posts/2025/08/mmnts/">
+
+
+
+  <meta property="og:description" content="Mostly from All of Statistics.">
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2025-08-17T00:00:00-07:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Alireza Kazemipour",
+      "url" : "https://alirezakazemipour.github.io",
+      "sameAs" : null
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://alirezakazemipour.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Alireza Kazemipour Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://alirezakazemipour.github.io/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="https://alirezakazemipour.github.io/images/apple-touch-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="https://alirezakazemipour.github.io/images/apple-touch-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="https://alirezakazemipour.github.io/images/apple-touch-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="https://alirezakazemipour.github.io/images/apple-touch-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="https://alirezakazemipour.github.io/images/apple-touch-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="https://alirezakazemipour.github.io/images/apple-touch-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="https://alirezakazemipour.github.io/images/apple-touch-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="https://alirezakazemipour.github.io/images/apple-touch-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="https://alirezakazemipour.github.io/images/apple-touch-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="https://alirezakazemipour.github.io/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="https://alirezakazemipour.github.io/images/android-chrome-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="icon" type="image/png" href="https://alirezakazemipour.github.io/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="https://alirezakazemipour.github.io/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="manifest" href="https://alirezakazemipour.github.io/images/manifest.json?v=M44lzPylqQ">
+<link rel="mask-icon" href="https://alirezakazemipour.github.io/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="https://alirezakazemipour.github.io/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="https://alirezakazemipour.github.io/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="https://alirezakazemipour.github.io/assets/css/academicons.css"/>
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="https://alirezakazemipour.github.io/">Alireza Kazemipour</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://alirezakazemipour.github.io/misc/">Miscellaneous</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://alirezakazemipour.github.io/unfin/">Unfinished ideas</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://alirezakazemipour.github.io/crs_prjcts/">Course projects</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://alirezakazemipour.github.io/year-archive/">Journal</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Random variables’ moments and thereof">
+    <meta itemprop="description" content="Mostly from All of Statistics.">
+    <meta itemprop="datePublished" content="August 17, 2025">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Random variables’ moments and thereof
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  5 minute read
+	
+</p>
+          
+        
+        
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2025-08-17T00:00:00-07:00">August 17, 2025</time></p>
+        
+        
+             
+        
+    
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>Mostly from <a href="https://www.stat.cmu.edu/~brian/valerie/617-2022/0%20-%20books/2004%20-%20wasserman%20-%20all%20of%20statistics.pdf">All of Statistics</a>.</p>
+
+<h1 id="definitions">Definitions</h1>
+
+<p><strong>Definition</strong>. The $k^{\text{th}}$ moment of a random variable $X$ is $\mathbb{E}\left[X^k\right]$,<br />
+assuming $\mathbb{E}\left[\lvert X \rvert^k\right]$ exits. With this definition the mean is the first moment.</p>
+
+<p><strong>Definition</strong>. The variance of a random variable $X$ with mean $\mu$ is defined by</p>
+
+\[\mathbb{V}(X) = \mathbb{E}[X - m]^2.\]
+
+<p>The relation between the first and second moment, and the variance is as follows (the variance is the difference between the second and the first moment square):</p>
+
+\[\mathbb{V}(X) = \mathbb{E}[X^2] - \mathbb{E}[X]^2 .\]
+
+<h2 id="moment-generating-function-mgf">Moment generating function (MGF)</h2>
+
+<p>MGFs are useful for finding random variables’ moments.</p>
+
+<p>MGF or Laplace transform of $X$ is defined by</p>
+
+\[\psi_X(t) = \mathbb{E}\left[e^{tX}\right] = \int e^{tX} d\mathbb{P}(x), \quad t \in \mathbb{R}.\]
+
+<p>Suppose MGF is well-defined (discussed below) around $t = 0$ (so we can exchange the derivatives and expectations). Then,</p>
+
+\[\psi'(0) = \frac{d}{dt} \mathbb{E}\left[e^{tX}\right]  \Big\vert_{t = 0} = \mathbb{E}\left[\frac{d}{dt} e^{tX}\right]  \Big\vert_{t = 0} = \mathbb{E}\left[X e^{tX}\right]  \Big\vert_{t = 0} = \mathbb{E}[X].\]
+
+<p>Hence, by taking $k$ derivatives, $\psi^{(k)}(0) = \mathbb{E}\left[X^k \right]$.</p>
+
+<h3 id="when-can-we-exchange-the-order-of-applying-a-derivative-with-an-expectation">When can we exchange the order of applying a derivative with an expectation?</h3>
+
+<p><strong>Proposition</strong>. Let $X \in \mathcal{X}$ be random variable, $g: \mathbb{R} \times \mathcal{X} \to \mathbb{R}$ be a function such that $g(t, X)$ is integrable for all $t$ and is courteously differentiable with respect to $t$. Assume there exits a random variable $Z$, where $\left \vert\frac{\partial}{\partial t} g(t, X) \right\vert &lt; Z$ almost surely for all $t$ and $\mathbb{Z} &lt; \infty$. Then,</p>
+
+\[\frac{\partial}{\partial t}\mathbb{E}[g(t, X)] =\mathbb{E}\left[\frac{\partial}{\partial t} g(t, X) \right]\]
+
+<p><em>Proof</em>.</p>
+
+\[\begin{align*}
+ \frac{\partial}{\partial t}\mathbb{E}[g(t, X)] &amp; = \lim_{h \to 0} \frac 1h \mathbb{E}[g(t + h, X) - g(t, X)] \\ 
+ &amp;= \lim_{h \to 0} \mathbb{E}\left[\frac{g(t + h, X) - g(t, X)}{h}\right] \\
+ &amp; = \lim_{h \to 0} \mathbb{E}\left[\frac{\partial}{\partial t}g(\tau(h), X)\right], 
+\end{align*}\]
+
+<p>where $\tau(h) \in (t, t + h)$ exits by the mean value theorem. Since $\left \vert\frac{\partial}{\partial t} g(\tau(h), X) \right\vert &lt; Z$, we can use the dominated convergence theorem and send the limit to the inside,</p>
+
+\[\lim_{h \to 0} \mathbb{E}\left[\frac{\partial}{\partial t}g(\tau(h), X)\right] = \mathbb{E}\left[\lim_{h \to 0} \frac{\partial}{\partial t}g(\tau(h), X)\right] = \mathbb{E}\left[\frac{\partial}{\partial t}g(t, X)\right]. \; \square\]
+
+<p>If you wanna take the derivative around a single point $t^\star$, boundedness only around $t^\star$ is needed,
+which is the case for $t^\star=0$ in MGFs to compute moments.</p>
+
+<h1 id="mean-and-variance-in-discounted-mdps">Mean and variance in discounted MDPs</h1>
+
+<p>We assume we’re in the episodic settings.<br />
+The state space is finite $\mathcal{X} = {1, \dots, n}$ and there is a special terminal state $x_T$.<br />
+We assume the agent follows a <em>fixed</em> proper (definition below) policy $\pi$.<br />
+Let $r_\pi \in \mathbb{R}^n$ and $P_\pi \in \mathbb{R}^{n \times n}$ denote the expected reward vector,<br />
+and the transition probability induced by $\pi$. Let $\tau = \min {t &gt; 0 \mid X_t = X_T }$ denote the first visit time to the terminal state, and let the random variable $G$ denote the accumulated discounted reward along the trajectory until that time</p>
+
+\[G = \sum_{t = 0}^{\tau - 1} \gamma^t r_\pi(X_t).\]
+
+<p>Then, the first and the second moment of $G$ are equal to</p>
+
+\[J(x) = \mathbb{E}[G \mid X_0 = x] \\  
+M(x) = \mathbb{E}[G^2 \mid X_0 = x] .\]
+
+<p>Let’s expand each. First $J(x)$:</p>
+
+\[\begin{align*}   
+J(x)  &amp;= \mathbb{E} \left[ \sum_{t = 0}^{\tau - 1} \gamma^t r_\pi(X_t) \middle\vert X_0 = x \right] \\  
+&amp;= r_\pi(x) + \mathbb{E} \left[ \sum_{t = 1}^{\tau - 1} \gamma^t r_\pi(X_t) \middle\vert X_0 = x\right] \\  
+&amp; = r_\pi(x) + \gamma \mathbb{E} \left[ \mathbb{E}\left[\sum_{t = 1}^{\tau - 1} \gamma^{t - 1} r_\pi(X_t) \middle\vert X_0 = x, X_1 = x' \right]\right] &amp; \text{(tower rule)} \\  
+&amp; = r_\pi(x) + \gamma \mathbb{E}\left[J(x') \right] \\  
+&amp; = r_\pi(x) + \gamma \sum_{x'} P_\pi\left(x' \middle\vert x\right)J\left(x'\right). &amp;  \text{(Bellman equation)}  
+\end{align*}\]
+
+<p>Now $M(x)$:<br />
+\(\begin{align*}   
+M(x)  &amp;= \mathbb{E} \left[ \left(\sum_{t = 0}^{\tau - 1} \gamma^t r_\pi(X_t)\right)^2 \middle\vert X_0 = x \right] \\  
+&amp;= \mathbb{E} \left[ \left(r_\pi(x) + \sum_{t = 1}^{\tau - 1} \gamma^t r_\pi(X_t)\right)^2 \middle\vert X_0 = x \right] \\  
+&amp; = r_\pi(x)^2 + 2r_\pi(x)\mathbb{E} \left[  \sum_{t = 1}^{\tau - 1} \gamma^t r_\pi(X_t) \middle\vert X_0 = x \right] + \mathbb{E} \left[ \left(\sum_{t = 1}^{\tau - 1} \gamma^t r_\pi(X_t)\right)^2 \middle\vert X_0 = x \right] \\  
+&amp; r_\pi(x)^2 + 2\gamma r_\pi(x) \sum_{x' }P_\pi\left(x' \middle\vert x\right)J(x') + \gamma^2 \sum_{x' }P_\pi\left(x' \middle\vert x\right)M(x') &amp; \text{(tower rule)}.  
+\end{align*}\)</p>
+
+<p>So the variance of $G$ at state $x$ is equal to</p>
+
+\[\begin{align*}  
+V(x) = \mathbb{V}(G \mid X_0=x) &amp; = M(x) - J(x)^2  \\  
+&amp; = \gamma^2 \sum_{x' }P_\pi\left(x' \middle\vert x\right)M(x') - \left(\gamma \sum_{x'} P_\pi\left(x' \middle\vert x\right)J\left(x'\right)\right)^2 \\   
+&amp; = \gamma^2\left[ \sum_{x' }P_\pi\left(x' \middle\vert x\right)M(x')  - \left(\sum_{x'} P_\pi\left(x' \middle\vert x\right)J\left(x'\right)\right)^2 \right] \\  
+&amp; \geq \gamma^2\left[ \sum_{x' }P_\pi\left(x' \middle\vert x\right)M(x')  - \sum_{x'} P_\pi\left(x' \middle\vert x\right)^2 J\left(x'\right)^2 \right] &amp; \text {(Cauchy-Swhartz)} \\  
+&amp; \geq \gamma^2\left[ \sum_{x'} P_\pi\left(x' \middle\vert x\right) \left(M\left(x'\right) - J(x')^2\right) \right] \\  
+&amp; = \gamma^2 \mathbb{E}\left[V(x') \right].  
+\end{align*}\]
+
+<p>The above display shows that the variance of the return for a state is mostly influenced by the states that are temporally close to it. Further states’ variance is discounted at a fast geometric rate. For example, the effect of the variance at the state just before the terminal state on the initial state is about $\gamma^{2n}$. This matches our intuition as well.</p>
+
+<p><strong>Definition</strong>. A stationary policy $\pi$ is said to be proper if, using this policy, there is positive probability that the termination state will be reached after at most $n$ stages, regardless of the initial state, that is, if</p>
+
+\[\begin{equation*}  
+\max_{x = 1, \dots, n} \mathbb{P}_{\pi} \left( X_n \neq x_T \mid X_0=x\right) &lt; 1  
+\end{equation*}.\]
+
+<h1 id="references">References</h1>
+<ol>
+  <li><a href="https://jmlr.org/papers/volume17/14-335/14-335.pdf">Tamar, et al. 2013</a>.</li>
+  <li><a href="https://www.stat.cmu.edu/~brian/valerie/617-2022/0%20-%20books/2004%20-%20wasserman%20-%20all%20of%20statistics.pdf">All of Statistics</a></li>
+  <li><a href="https://math.stackexchange.com/a/1986477/950224">When can we interchange the derivative with an expectation?</a></li>
+  <li><a href="https://web.mit.edu/dimitrib/www/NDP.pdf">Bertsekas, Neuro dynamic programming</a></li>
+</ol>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://alirezakazemipour.github.io/tags/#learning" class="page__taxonomy-item" rel="tag">learning</a>
+    
+    </span>
+  </p>
+
+
+
+
+      </footer>
+
+      
+
+      
+
+
+  <nav class="pagination">
+    
+      <a href="https://alirezakazemipour.github.io/posts/2025/08/rlc/" class="pagination--pager" title="What to remember from RLC 2025
+">Previous</a>
+    
+    
+      <a href="https://alirezakazemipour.github.io/posts/2025/08/sblv/" class="pagination--pager" title="Sobolev spaces (not too wiggly functions), Hilbert spaces, and RHKS
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<a href="/sitemap/">Sitemap</a>
+<!-- end custom footer snippets -->
+
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+    
+      <li><a href="http://github.com/alirezakazemipour"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <!-- <li><a href="https://alirezakazemipour.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li> -->
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Alireza Kazemipour. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script src="https://alirezakazemipour.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  </body>
+</html>
+
