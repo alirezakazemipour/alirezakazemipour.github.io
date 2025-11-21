@@ -83,7 +83,7 @@ analytics:
 author:
   name             : "Alireza Kazemipour"
   avatar           : "profile_pic.jpg"
-  bio              : "Student at the U of A"
+  bio              : "Student at the UAlberta"
   location         :
   employer         :
   pubmed           :
@@ -236,7 +236,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
+      share: false
       comments: true
   # _crs_prjcts
   - scope:

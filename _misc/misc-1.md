@@ -6,7 +6,6 @@ permalink: /misc/misc-1
 
 Dr. Alan Mandell:
 > Real treasures of life silently sit right in front of us:
-> 
 > Thank you for the roof above me, thank you for the food on the table, thank you for the people who cared about me,
 > Thank you for this body that carries me though this life, thank you for giving the strength to get through what I 
 > thought would break me, etc. 
@@ -97,7 +96,7 @@ WC:
 > Succes is the ability tp go from one failure to another with no loss of enthusiasm.
 
 # Generic
-[Learning how to learn course](https://www.coursera.org/learn/learning-how-to-learn)
+[Learning how to learn](https://www.coursera.org/learn/learning-how-to-learn)
 
 # If you're struggling with Ulcerative Colitis
 [What I Eat to Optimize My Gut | Daily Routine After UC & IBD](https://www.youtube.com/watch?v=7Lo2I1gUYfg)
