@@ -4,8 +4,9 @@ collection: misc
 permalink: /misc/misc-1
 ---
 
-Dr. Alan Mandell:
+Dr. Alan Mandell
 > Real treasures of life silently sit right in front of us:
+> 
 > Thank you for the roof above me, thank you for the food on the table, thank you for the people who cared about me,
 > Thank you for this body that carries me though this life, thank you for giving the strength to get through what I 
 > thought would break me, etc. 
@@ -38,7 +39,7 @@ Dr. Alan Mandell:
 - [You Don’t Get the Gold Without the Dragon-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids%2FYou%20Don%E2%80%99t%20Get%20the%20Gold%20Without%20the%20Dragon-JP.mp4)
 - [Maintain your faith in your darkest hours-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids%2FMaintain%20your%20faith%20in%20your%20darkest%20hours.mp4)
 - [The perils of jealousy-HA (Only in persian)](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/jealousy-HA.mp4)
-- [Half of the men already hate you, do it-AT](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/Half%20of%20the%20men%20already%20hate%20you,%20do%20it-AT.mp4)
+- [Half of the men already hate you-AT](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/Half%20of%20the%20men%20already%20hate%20you,%20do%20it-AT.mp4)
 - [What do you want-JP](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/What%20do%20you%20want-JP.mp4)
 - [Will all my impossible dreams come true? The answer is yes!-HG (Only in persian)](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/All%20impossible%20dreams%20come%20true.mp4)
 - [THE BEST POSSIBLE OUTCOME-JP](https://www.youtube.com/watch?v=qVic3EqUqo8)
