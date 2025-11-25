@@ -6,14 +6,12 @@ tags:
  - learning
 ---
 
-What struck my curiosity to investigate why $Q$-learning and SARSA converge was the realization that these methods use   
-their estimates of action values at time step $t$ to estimate the action values at time step $t + 1$ in their update  
+What struck my curiosity to investigate why $Q$-learning and SARSA converge was the realization that these methods use their estimates of action values at time step $t$ to estimate the action values at time step $t + 1$ in their update  
 targets. This sounded really weired to me as though the convergence should not happen. So, I dug in and discovered the   
 answer lies in the topic of stochastic approximation. Stochastic approximation is fairly a big topic, hence I cover it  
 in four separate parts. In the last part I'll turn my attention to Q-Learning and SARSA eventually.  
   
-I'll mention the assumption required to each proposition during their corresponding proofs to see where those  
-assumptions were inevitably needed.  
+I'll mention the assumption required to each proposition during their corresponding proofs to see where those assumptions were inevitably needed.  
   
 # Needed background  
 In this section I'll review some concepts needed throughout the document.
@@ -250,7 +248,7 @@ In this example we have that
 
 $$r_{t + 1} = r_{t} - \gamma_t (\nabla f(r_t) + w_t),$$
 
-where $s_t = -\nabla f(r_t) - w_t$, the potential function is $f$, and the expected direction of the update, assuming that $\mathbb{E}[w_t \mid \mathcal{F}_t] = 0$, is $\mathbb{E}[s_t \mid \mathcal{F}_t] = -\nabla f(r_t)$.
+where $s_t = -\nabla f(r_t) - w_t$, the potential function is $f$, and the expected direction of the update, assuming that $\mathbb{E}[w_t \mid \mathcal{F}_t] = 0$, is $\mathbb{E}[s_t \mid \mathcal{F}_t] = -\nabla f(r_t).$
 
 ### Euclidean norm pseudo-contractions
 Recall the Robbins-Monro algorithm,
@@ -276,7 +274,9 @@ which means that $\mathbb{E}[s_t \mid \mathcal{F}_t]$ and $\nabla f(r_t)$ are no
 ---
 __Proposition__. Consider the algorithm $r_{t + 1} = r_t + \gamma_ts_t,$ with the potential function $f: \mathbb{R}^n \to \mathbb{R}$. Under certain assumptions that will be stated in the proof, the following holds with probability one:
 a): The sequence $f(r_t)$ converges.
+
 b): We have $\lim_{t \to \infty} \nabla f(r_t) = 0$.
+
 c): Every limit point of $r\_t$ is a stationary point of $f$.
 
 ---
