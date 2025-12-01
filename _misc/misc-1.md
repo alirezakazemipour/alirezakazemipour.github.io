@@ -54,6 +54,7 @@ Dr. Alan Mandell
 - [If you failed or lost, etc., it's fine. Don't worry.-AN (Only in persian)](https://www.instagram.com/reel/DMgH1PjIMdk/?l=1)
 - [More than a number-MM](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/more%20than%20a%20number.mp4)
 - [True manhood is about mastery over your mind, emotions, actions, etc.- JR](https://www.youtube.com/watch?v=p0Hlvi5q9QM&t=328s)
+- [You seek out challenge because that's the only way you can improve](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/You%20seek%20out%20challenge%20because%20that's%20the%20only%20way%20you%20can%20improve.mp4)
 
 JP: 
 > You're in a damaged structure, you're a damaged structure, you're ina damaged structure.
