@@ -58,14 +58,14 @@ Dr. Alan Mandell
 - [You seek out challenge because that's the only way you can improve-FD](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/You%20seek%20out%20challenge%20because%20that's%20the%20only%20way%20you%20can%20improve.mp4)
 
 JP: 
-> You're in a damaged structure, you're a damaged structure, you're ina damaged structure.
+> You're in a damaged structure, you're a damaged structure, you're in a damaged structure.
 
 JP:
 > It has to be that the fragility is built into the courage. If it wasn't the case that you could be hurt or ended up
 > in failure, where is the moral courage in the endeavour.
 
 JP:
-> In many sense, you're made of the unknown. The more you voluntarily encounter it, the more you get made of it. The
+> In many ways, you're made of the unknown. The more you voluntarily encounter it, the more you get made of it. The
 > more you get made of, there more is to you.
 
 JP:
@@ -96,7 +96,7 @@ TT:
 > Solving a math problem isn't about winning or losing; it's about if you learned something from it.
 
 WC:
-> Succes is the ability tp go from one failure to another with no loss of enthusiasm.
+> Success is the ability tp go from one failure to another with no loss of enthusiasm.
 
 # Generic
 [Learning how to learn](https://www.coursera.org/learn/learning-how-to-learn)
