@@ -98,6 +98,9 @@ TT:
 WC:
 > Success is the ability tp go from one failure to another with no loss of enthusiasm.
 
+NA:
+> It's a small step for a man, but it's a giant leap for the mankind.
+
 # Generic
 [Learning how to learn](https://www.coursera.org/learn/learning-how-to-learn)
 
