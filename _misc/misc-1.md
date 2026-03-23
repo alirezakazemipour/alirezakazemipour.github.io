@@ -8,8 +8,8 @@ Dr. Alan Mandell
 > Real treasures of life silently sit right in front of us:
 > 
 > Thank you for the roof above me, thank you for the food on the table, thank you for the people who cared about me,
-> Thank you for this body that carries me though this life, thank you for giving the strength to get through what I 
-> thought would break me, etc. 
+> Thank you for this body that carries me though this life, thank you for giving me the strength to get through what I 
+> thought would break me... . 
 
 - [failure is your friend](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/failure%20is%20your%20friend.mp4)
 - [Failure-BO](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids%2FFailure-BO.mp4)
