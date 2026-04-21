@@ -101,6 +101,9 @@ WC:
 NA:
 > It's a small step for a man, but it's a giant leap for the mankind.
 
+CW:
+> Adversity is a terrible thing to waste!
+
 # Generic
 [Learning how to learn](https://www.coursera.org/learn/learning-how-to-learn)
 
