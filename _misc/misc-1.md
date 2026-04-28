@@ -56,6 +56,7 @@ Dr. Alan Mandell
 - [You have to let your failures teach you-BO](https://www.facebook.com/100063488143417/videos/thoughts-on-failure-from-barack-obama-you-cant-let-your-failures-define-you-you-/693268471350283/)
 - [True manhood is about mastery over your mind, emotions, actions, etc.-JR](https://www.youtube.com/watch?v=p0Hlvi5q9QM&t=328s)
 - [You seek out challenge because that's the only way you can improve-FD](https://github.com/alirezakazemipour/alirezakazemipour.github.io/raw/refs/heads/master/_vids/You%20seek%20out%20challenge%20because%20that's%20the%20only%20way%20you%20can%20improve.mp4)
+- [You're gonna get what your deserve and it's based on YOU-JW]()
 
 JP: 
 > You're in a damaged structure, you're a damaged structure, you're in a damaged structure.
